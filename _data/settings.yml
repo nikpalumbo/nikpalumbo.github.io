@@ -167,7 +167,7 @@ blog:
   enable: true
 
 blog__settings:
-  blog__title: Writing
+  blog__title: Blog
   blog__description:
 
 
@@ -178,8 +178,9 @@ footer__background__image: "/images/bg.jpg"
 #-------------------------------
 # Contact Settings
 contact:
-  email: your@email.com # Add your form_id
-  description: Akio comes with a built-in contact form, that you can use with Formspree service to handle up to 50 submissions per month for free. You could also easily switch to another contact form service if you want. # Add a description of your form
+  email: nicola@sdw.solutions # Add your form_id
+  description: Whether you have an idea for an AI agent you'd like to see developed, want to sponsor a use case, or you're a developer looking to contribute your skills,  we’d love to hear from you.
+SDW is where ideas turn into working prototypes and real solutions. Tell us what you're thinking, and let's explore the possibilities together. # Add a description of your form
 
 # NOTE
 # Akio theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
