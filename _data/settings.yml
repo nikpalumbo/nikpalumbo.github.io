@@ -1,8 +1,8 @@
 #-------------------------------
 # Site Settings
-title: Akio
+title: sdw
 logo: '/images/sdw.png'
-description: Creative Portfolio Theme for Jekyll.
+description: AI Solutions. Real Results.
 color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
 
 
@@ -24,7 +24,7 @@ menu__settings:
 #-------------------------------
 # Author Settings
 author:
-  author__name: Nicola Palumbo
+  author__name: sdw
   author__bio: Hi, I’m Luca. I turn your business case into a working AI agent — from CHF 5K MVPs to CHF 30K live products in 6 to 12 weeks. Leave your email to get a tailored quote.
   author__avatar: '/images/01.jpg'
 
@@ -45,7 +45,7 @@ social:
 hero:
   enable: true
   hero__title: AI Solutions. Real Results.
-  hero__description: Hi, I’m Luca. I turn your business case into a working AI agent — from CHF 5K MVPs to CHF 30K live products in 6 to 12 weeks. Leave your email to get a tailored quote.
+  hero__description: Hi, I’m Luca. I turn your business case into a working AI agent, from CHF 5K MVPs to CHF 30K live products in 6 to 12 weeks. Leave your email to get a tailored quote.
   hero__image: "/images/01-1.jpg"
 
 
@@ -93,8 +93,8 @@ mailchimp:
 # Work Settings
 work:
   enable: true
-  work__title: Work
-  work__description: I shows only the best websites and portfolios built completely with passion, simplicity & creativity!
+  work__title: Agents
+  work__description: AI agents worth launching. User cases worth funding.
 
 
 #-------------------------------
@@ -106,59 +106,59 @@ testimonial__title: Clients
 testimonial__description:
 
 testimonial__items:
-  - name: "Hanna Septimus"
+  - name: "Sundar Pichai"
     image: "/images/client-1.jpg"
-    designation: "Product Designer"
-    link: "https://twitter.com/"
-    content : "Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration"
+    designation: "CEO of Google"
+    link: "#"
+    content : "The future of AI is not about replacing humans, it's about augmenting human capabilities."
 
-  - name: "Carla Rosser"
+  - name: "Satya Nadella"
     image: "/images/client-2.jpg"
-    designation: "Statistician"
-    link: "https://facebook.com/"
-    content : "Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration"
+    designation: "CEO of Microsoft"
+    link: "#"
+    content : "AI agents will become the primary way we interact with computers in the future. They will be able to understand our needs and preferences, and proactively help us with tasks and decision making"
 
-  - name: "Maria Curtis"
+  - name: "Sam Altman"
     image: "/images/client-3.jpg"
-    designation: "Team Lead"
-    link: "https://twitter.com/"
-    content : "Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration"
+    designation: "CEO of OpenAI"
+    link: "#"
+    content : "Generative AI is a tool that can be used for good or bad, and we need to be mindful of its potential impact on society."
 
-  - name: "Carter Bergson"
+  - name: "Andrew Ng"
     image: "/images/client-4.jpg"
-    designation: "CEO, Founder"
-    link: "https://facebook.com/"
-    content : "Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration"
+    designation: "Co-founder of Google Brain"
+    link: "#"
+    content : "AI is like electricity. Just as electricity transformed every major industry a century ago, AI is now poised to do the same."
 
-  - name: "Jordyn Franci"
+  - name: "Elon Musk"
     image: "/images/client-5.jpg"
-    designation: "Personal Trainer"
-    link: "https://twitter.com/"
-    content : "Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration"
+    designation: "CEO of Tesla and SpaceX"
+    link: "#"
+    content : "Mark my words… AI is far more dangerous than nukes."
 
-  - name: "Mira Carder"
+  - name: "Fei-Fei Li"
     image: "/images/client-6.jpg"
-    designation: "Data Scientist"
-    link: "https://facebook.com/"
-    content : "Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration"
+    designation: "Professor at Stanford University"
+    link: "#"
+    content : "Artificial intelligence is not a substitute for human intelligence; it is a tool to amplify human creativity and ingenuity."
 
-  - name: "Madelyn Herwitz"
+  - name: "Geoffrey Hinton"
     image: "/images/client-7.jpg"
-    designation: "Frontend Engineer"
-    link: "https://twitter.com/"
-    content : "Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration"
+    designation: "AI Pioneer"
+    link: "#"
+    content : "I thought [AI] was 30 to 50 years or even longer away. Obviously, I no longer think that."
 
-  - name: "Anika Schleifer"
+  - name: "Vinod Khosla"
     image: "/images/client-8.jpg"
-    designation: "Fitness Director"
-    link: "https://facebook.com/"
+    designation: "Venture Capitalist"
+    link: "#"
     content : "Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration"
 
-  - name: "Wilson Dorwart"
+  - name: "Shantanu Narayen"
     image: "/images/client-9.jpg"
-    designation: "Financial Manager"
-    link: "https://twitter.com/"
-    content : "Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration"
+    designation: "CEO of Adobe"
+    link: "#"
+    content : "People who use AI will replace those who don't."
 
 
 #-------------------------------
