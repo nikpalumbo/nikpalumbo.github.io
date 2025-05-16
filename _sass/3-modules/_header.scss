@@ -1,6 +1,8 @@
 /* Header */
 .header {
   margin-bottom: 20px;
+  transform: none !important;
+
 
   .header__inner {
     position: relative;
@@ -119,7 +121,6 @@
           font-size: 18px;
           text-align: right;
           transition: color .25s ease;
-          line-height: 1.4;
 
           &::before {
             content: none;
