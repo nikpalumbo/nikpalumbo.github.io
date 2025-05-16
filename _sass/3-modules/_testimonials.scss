@@ -5,12 +5,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 32px; // ✅ vertical and horizontal spacing
-  margin-bottom: 64px; // ✅ prevents last row from sticking to next section
 }
 
 /* Each card wrapper */
 .testimonial-item {
   display: flex;
+  padding-bottom: 64px;
+
 }
 
 .testimonial-grid {
