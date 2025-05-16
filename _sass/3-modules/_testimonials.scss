@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 32px; // ✅ vertical and horizontal spacing
-  padding-bottom: 64px; // ✅ prevents last row from sticking to next section
+  margin-bottom: 64px; // ✅ prevents last row from sticking to next section
 }
 
 /* Each card wrapper */
