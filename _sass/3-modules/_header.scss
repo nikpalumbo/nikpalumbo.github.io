@@ -23,25 +23,23 @@
 }
 
 .logo__image {
-  //display: block;
-  max-width: 120px;
-  height: 32px;
-  vertical-align: middle;
+  height: 40px;
+  width: auto;
+  display: block;
 }
+
 
 .logo {
   display: flex;
   align-items: center;
+  height: 100%; // make it match parent height
 }
 
 /* Logo */
 .logo__link {
-  font-family: $heading-font-family;
-  font-size: 32px;
-  line-height: 1;
-  font-weight: 800;
-  transition: color .25s ease;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 /* Nav */
