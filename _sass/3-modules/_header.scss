@@ -100,7 +100,7 @@
             display: block;
             padding: 10px 0;
             font-size: 18px;
-            line-height: 1.4;
+            
 
             &:hover {
               color: var(--primary-color);
@@ -119,6 +119,7 @@
           font-size: 18px;
           text-align: right;
           transition: color .25s ease;
+          line-height: 1.4;
 
           &::before {
             content: none;
