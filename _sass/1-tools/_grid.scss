@@ -16,11 +16,6 @@ $mq: ( $mobile:$columns, $tablet:$columns, $desktop:$columns );
   padding-right: $container-offset;
 }
 
-.container-big {
-  max-width: 100%;
-  padding-left: calc(#{$container-offset} * 2.5);
-  padding-right: calc(#{$container-offset} * 2.5);
-}
 
 .container,
 .container-big {
