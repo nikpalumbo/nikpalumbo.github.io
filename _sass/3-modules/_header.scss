@@ -1,8 +1,6 @@
 /* Header */
 .header {
   margin-bottom: 20px;
-  transform: none !important;
-
 
   .header__inner {
     position: relative;
@@ -17,8 +15,6 @@
     box-sizing: border-box;
     }
 
-  }
-
   @media (max-width: $mobile) {
     .header__inner {
       padding: 32px $base-spacing-unit;
@@ -27,7 +23,7 @@
 }
 
 .logo__image {
-  display: block;
+  //display: block;
   max-width: 120px;
   height: 32px;
   vertical-align: middle;
