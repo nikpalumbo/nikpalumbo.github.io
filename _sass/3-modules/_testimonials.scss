@@ -1,12 +1,15 @@
 /* Testimonials */
-.testimonial-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
+
+/* Container for all testimonials */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px; // ✅ vertical and horizontal spacing
+  padding-bottom: 64px; // ✅ prevents last row from sticking to next section
 }
 
+/* Each card wrapper */
 .testimonial-item {
-  flex: 1 1 30%; // adjust to fit 3 per row or auto
   display: flex;
 }
 
@@ -16,13 +19,14 @@
   gap: 32px; // ✅ This adds vertical AND horizontal space between cards
 }
 
+/* Content inside the card */
 .testimonial-content {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-grow: 1;
   padding: 32px;
-  min-height: 100%; // ← important!
+  min-height: 100%;
   background-color: var(--background-color);
   border-radius: $global-radius;
   position: relative;
