@@ -118,6 +118,7 @@
           font-size: 18px;
           text-align: right;
           transition: color .25s ease;
+          -webkit-font-smoothing: antialiased;
 
           &::before {
             content: none;
