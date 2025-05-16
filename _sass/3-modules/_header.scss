@@ -9,6 +9,7 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 40px $base-spacing-unit;
+    width: 100%;
   }
 
   @media (max-width: $mobile) {
