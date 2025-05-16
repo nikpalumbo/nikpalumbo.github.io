@@ -17,7 +17,7 @@
 .testimonial-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 32px; // ✅ This adds vertical AND horizontal space between cards
+  gap: 32px;
 }
 
 /* Content inside the card */
