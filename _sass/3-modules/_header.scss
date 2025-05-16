@@ -18,6 +18,17 @@
   }
 }
 
+.logo__image {
+  display: block;
+  max-width: 120px;
+  height: 32px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
 /* Logo */
 .logo__link {
   font-family: $heading-font-family;
@@ -25,6 +36,7 @@
   line-height: 1;
   font-weight: 800;
   transition: color .25s ease;
+  display: inline-block;
 }
 
 /* Nav */
