@@ -15,6 +15,8 @@
     padding: 32px 24px;
     width: 100%;
     box-sizing: border-box;
+    }
+
   }
 
   @media (max-width: $mobile) {
@@ -28,6 +30,7 @@
   display: block;
   max-width: 120px;
   height: 32px;
+  vertical-align: middle;
 }
 
 .logo {
