@@ -8,7 +8,11 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 40px $base-spacing-unit;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   @media (max-width: $mobile) {
