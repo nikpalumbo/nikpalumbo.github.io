@@ -72,10 +72,6 @@ logo__items:
     link: "https://claude.ai/"
     image: "/images/claude.svg"
 
-  - name: Haystack
-    link: "https://haystack.deepset.ai/"
-    image: "/images/haystack.png"
-
   - name: PostgreSQL
     link: "https://www.postgresql.org/"
     image: "/images/postgresql.svg"
