@@ -68,9 +68,9 @@ logo__items:
     link: "https://openai.com/"
     image: "/images/openai.svg"
 
-  - name: Claude Sonnet
+  - name: Claude
     link: "https://claude.ai/"
-    image: "/images/claude.svg"
+    image: "/images/claude.png"
 
   - name: Haystack
     link: "https://haystack.deepset.ai/"
