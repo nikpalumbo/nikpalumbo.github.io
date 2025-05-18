@@ -72,9 +72,9 @@ logo__items:
     link: "https://claude.ai/"
     image: "/images/claude.svg"
 
-  - name: Chroma
-    link: "https://www.trychroma.com/"
-    image: "/images/chroma.webp"
+  - name: Haystack
+    link: "https://haystack.deepset.ai/"
+    image: "/images/haystack.png"
 
   - name: PostgreSQL
     link: "https://www.postgresql.org/"
