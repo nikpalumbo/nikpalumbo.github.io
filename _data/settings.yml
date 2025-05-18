@@ -70,7 +70,7 @@ logo__items:
 
   - name: Claude
     link: "https://claude.ai/"
-    image: "/images/claude.png"
+    image: "/images/claude.svg"
 
   - name: Haystack
     link: "https://haystack.deepset.ai/"
