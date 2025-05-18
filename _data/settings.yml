@@ -74,7 +74,7 @@ logo__items:
 
   - name: Chroma
     link: "https://www.trychroma.com/"
-    image: "/images/chroma.svg"
+    image: "/images/chroma.webp"
 
   - name: PostgreSQL
     link: "https://www.postgresql.org/"
