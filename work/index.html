@@ -1,39 +1,84 @@
 ---
 layout: default
-title: Agents
-description: AI agents worth launching. User cases worth funding.
+title: Case Studies
+description: Real projects. Measurable results. Proven methodologies that drive growth.
 ---
 
-<div class="container">
-  <div class="page-section-head">
-    <h1 class="page-title">{% if page.title %}{{ page.title }}{% else %}{{ site.data.settings.work.work__title }}{% endif %}</h1>
-    {% if page.description %}
-      <p class="page-description">{{ page.description }}</p>
-    {% else site.data.settings.work.work__description %}
-      <p class="page-description">{{ site.data.settings.work.work__description }}</p>
-    {% endif %}
+<!-- Case Studies Header -->
+<div class="case-studies-header">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="case-studies-header__content">
+          <h1 class="case-studies-title">{{ page.title }}</h1>
+          <p class="case-studies-description">{{ page.description }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="work-page container animate">
-  <div class="row">
-    {% for work in site.works reversed %}
-      <article class="work col col-4 col-d-6 col-t-12">
-        <div class="work__content">
-          <a href="{{ work.url }}" class="work__image">
-            <img class="lazy" data-src="{{ work.image }}" alt="{{ work.title }}">
-          </a>
-          <div class="work__info">
-            {% if work.category %}
-            <div class="work__category">{{ work.category }}</div>
-            {% endif %}
-            <h3 class="work__title"><a href="{{ work.url }}">{{ work.title }}</a></h3>
-            {% if work.description %}
-            <p class="work__description">{{ work.description }}</p>
-            {% endif %}
-          </div>
+<!-- Case Studies Grid -->
+<div class="case-studies-content">
+  <div class="container">
+    
+    <!-- Category Filter (Optional) -->
+    <div class="row">
+      <div class="col col-12">
+        <div class="category-filters">
+          <button class="filter-btn active" data-category="all">All Projects</button>
+          <button class="filter-btn" data-category="Intelligent Growth Systems">Growth Systems</button>
+          <button class="filter-btn" data-category="AI Agent Development">AI Agents</button>
+          <button class="filter-btn" data-category="Smart Conversion Websites">Websites</button>
+          <button class="filter-btn" data-category="Product-Led Growth Prototyping">Prototyping</button>
         </div>
-      </article>
-    {% endfor %}
+      </div>
+    </div>
+
+    <!-- Case Studies Grid -->
+    <div class="row">
+      <div class="col col-12">
+        <div class="case-studies-grid">
+          {% assign sorted_works = site.works | sort: 'date' | reverse %}
+          {% for work in sorted_works %}
+          <article class="case-study-card" data-category="{{ work.category }}">
+            <div class="case-study-card__content">
+              <div class="case-study-card__header">
+                {% if work.category %}
+                <div class="case-study-card__category">{{ work.category }}</div>
+                {% endif %}
+                <h3 class="case-study-card__title">
+                  <a href="{{ work.url }}">{{ work.title }}</a>
+                </h3>
+              </div>
+              
+              <div class="case-study-card__body">
+                {% if work.description %}
+                <p class="case-study-card__description">{{ work.description }}</p>
+                {% endif %}
+                
+                <div class="case-study-card__meta">
+                  {% if work.role %}
+                  <div class="meta-item">
+                    <span class="meta-label">Role:</span>
+                    <span class="meta-value">{{ work.role }}</span>
+                  </div>
+                  {% endif %}
+                  {% if work.client %}
+                  <div class="meta-item">
+                    <span class="meta-label">Client:</span>
+                    <span class="meta-value">{{ work.client }}</span>
+                  </div>
+                  {% endif %}
+                </div>
+                
+                <a href="{{ work.url }}" class="case-study-card__link">Read Case Study →</a>
+              </div>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -25,14 +25,26 @@ layout: default
             {% endif %}
             {% if page.date %}
             <div class="meta-item">
-              <div class="meta-label">Timeline</div>
+              <div class="meta-label">Year</div>
               <div class="meta-value">{{ page.date | date: "%Y" }}</div>
             </div>
             {% endif %}
             {% if page.client %}
             <div class="meta-item">
-              <div class="meta-label">Client</div>
+              <div class="meta-label">Project</div>
               <div class="meta-value">{{ page.client }}</div>
+            </div>
+            {% endif %}
+            {% if page.duration %}
+            <div class="meta-item">
+              <div class="meta-label">Duration</div>
+              <div class="meta-value">{{ page.duration }}</div>
+            </div>
+            {% endif %}
+            {% if page.team_size %}
+            <div class="meta-item">
+              <div class="meta-label">Team</div>
+              <div class="meta-value">{{ page.team_size }}</div>
             </div>
             {% endif %}
           </div>
