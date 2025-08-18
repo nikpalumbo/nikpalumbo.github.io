@@ -1,0 +1,67 @@
+I"�<!-- About Header -->
+<div class="case-studies-header">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="case-studies-header__content">
+          <h1 class="case-studies-title">About</h1>
+          <p class="case-studies-description">From zero to traction, I bring a founder's mindset, a product manager's discipline, and technical fluency to every project.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Vision Section -->
+<div class="vision-section">
+  <div class="container">
+    <div class="vision-grid">
+      <div class="vision-left">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <div class="section-badge">Vision</div>
+          </div>
+          <h3 class="service-card__title">I help companies design products that <span class="highlight">delight users</span> and accelerate growth</h3>
+          <p class="service-card__description">From zero to traction, I bring a founder's mindset, a product manager's discipline, and technical fluency to every project. I've walked the path from idea to scale—building, growing, and leading teams that deliver real results.</p>
+          
+          <div class="service-card__benefits">
+            <div class="benefit-line">🚀 Short MVP cycles, launching quickly to validate with real users</div>
+            <div class="benefit-line">⚡ Structured scoping, outcome-driven execution, and measurable ROI</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="vision-photo">
+        <img src="/images/nicola-professional.jpg" alt="Nicola Palumbo" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about-story-section">
+  <div class="container">
+    <div class="about-story-grid">
+      <div class="about-story-content">
+        <h2 class="section-title">Our Story</h2>
+        <p class="story-lead">I know the path from idea to scale—because I've walked it.</p>
+        <p>As the founder of an AI-driven SaaS platform, I grew from scratch to <strong>500+ clients</strong>, including Fortune 500 and a Big 4 firm, achieving <strong>4× year-over-year growth</strong>. Along the way, I wrote the code, shaped the brand, closed deals, and led cross-functional teams.</p>
+        <p>That journey taught me something simple: <strong>growth isn't about luck</strong>. It's about building intelligent systems and products that solve real problems, delight users, and scale with the business.</p>
+      </div>
+      <div class="about-story-stats">
+        <div class="stat-card">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Clients Served</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4×</div>
+          <div class="stat-label">YoY Growth</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+:ET

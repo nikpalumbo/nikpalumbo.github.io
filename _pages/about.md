@@ -1,63 +1,73 @@
 ---
-layout: page
+layout: default
 title: About
-description: From building my own SaaS to helping teams grow smarter. I know the path from zero to traction—because I've walked it.
+description: From zero to traction, I bring a founder's mindset, a product manager's discipline, and technical fluency to every project.
 permalink: /about/
-image: '/images/01-2.jpg'
-image_caption: 'Photo by [Bruce Dixon](https://unsplash.com/photos/3M9WJQVHzog) on [Unsplash](https://unsplash.com/)'
 ---
 
-## From Building My Own Product to Helping Teams Grow Smarter
-
-I know the path from zero to traction—because I've walked it.
-
-As the founder of a SaaS platform, I scaled from an idea to recurring **Fortune 500** and **Big 4 clients**, achieving **4× year-over-year growth**.
-
-I wrote the code, built the backend infrastructure, designed the UX, shaped the brand, closed deals, led cross-functional teams, and drove execution from MVP to scale.
-
-But growth isn't about luck. It's about building systems that work.
-
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/100.jpg" loading="lazy">
-    <img src="/images/101.jpg" loading="lazy">
-    <img src="/images/102.jpg" loading="lazy">
+<!-- About Header -->
+<div class="case-studies-header">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="case-studies-header__content">
+          <h1 class="case-studies-title">{{ page.title }}</h1>
+          <p class="case-studies-description">{{ page.description }}</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <em>Gallery / <a href="https://unsplash.com/" target="_blank">Unsplash</a></em>
 </div>
 
-## What I Do Now
-
-Today, I help companies design products that delight users and accelerate growth through:
-
-- **Intelligent Growth Systems** that automate outreach and fill your CRM with qualified leads
-- **AI Agents** that handle support tickets, qualify leads, or generate instant quotes—tailored to your workflows  
-- **Smart Conversion Websites** that onboard users with interactive AI, respond in real-time, and scale to thousands of visitors
-- **Product-Led Growth Prototyping** with real, functional web applications that validate ideas fast
-
-> Every engagement begins with something real. Every decision is tied to business value. You stay focused on results. I handle the build.
-
-## My Approach
-
-I work with a lean, agile process shaped by both startup urgency and enterprise precision. Every engagement begins with a structured scoping session using battle-tested tools from top consulting frameworks.
-
-<div class="gallery-box">
-  <div class="gallery">
-    <img src="/images/103.jpg" loading="lazy">
+<!-- Vision Section -->
+<div class="vision-section">
+  <div class="container">
+    <div class="vision-grid">
+      <div class="vision-left">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <div class="section-badge">Vision</div>
+          </div>
+          <h3 class="service-card__title">I help companies design products that <span class="highlight">delight users</span> and accelerate growth</h3>
+          <p class="service-card__description">From zero to traction, I bring a founder's mindset, a product manager's discipline, and technical fluency to every project. I've walked the path from idea to scale—building, growing, and leading teams that deliver real results.</p>
+          
+          <div class="service-card__benefits">
+            <div class="benefit-line">🚀 Short MVP cycles, launching quickly to validate with real users</div>
+            <div class="benefit-line">⚡ Structured scoping, outcome-driven execution, and measurable ROI</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="vision-photo">
+        <img src="/images/nicola-professional.jpg" alt="Nicola Palumbo">
+      </div>
+    </div>
   </div>
-  <em>Photo by <a href="https://unsplash.com/photos/TMpQ5R9mbOc" target="_blank">Caroline Hernandez</a></em>
 </div>
 
-From there, I move fast:
-
-- We break work into **short MVP cycles**, launching quickly to validate
-- You get **working prototypes in days**, not months
-- I handle the full stack—from scoping to wireframes to working code
-
-Whether you're looking to experiment fast or build something production-ready, I bring a **founder's mindset**, a **product owner's discipline**, and **technical fluency**—so nothing gets lost in translation.
-
-## Ready to Build Something Real?
-
-Every sprint ends with something real. Every decision is tied to business value.
-
-Let's talk about what you're building and how I can help you get there faster.
+<div class="about-story-section">
+  <div class="container">
+    <div class="about-story-grid">
+      <div class="about-story-content">
+        <h2 class="section-title">Our Story</h2>
+        <p class="story-lead">I know the path from idea to scale—because I've walked it.</p>
+        <p>As the founder of an AI-driven SaaS platform, I grew from scratch to <strong>500+ clients</strong>, including Fortune 500 and a Big 4 firm, achieving <strong>4× year-over-year growth</strong>. Along the way, I wrote the code, shaped the brand, closed deals, and led cross-functional teams.</p>
+        <p>That journey taught me something simple: <strong>growth isn't about luck</strong>. It's about building intelligent systems and products that solve real problems, delight users, and scale with the business.</p>
+      </div>
+      <div class="about-story-stats">
+        <div class="stat-card">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Clients Served</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4×</div>
+          <div class="stat-label">YoY Growth</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

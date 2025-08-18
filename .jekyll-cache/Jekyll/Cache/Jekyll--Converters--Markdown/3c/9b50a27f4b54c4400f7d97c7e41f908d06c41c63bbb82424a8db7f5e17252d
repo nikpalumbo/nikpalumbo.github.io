@@ -1,0 +1,140 @@
+I"a<div class="about-hero-premium">
+  <div class="about-hero-premium__content">
+    <div class="about-hero-premium__badge">Growth Systems &amp; AI Development</div>
+    <h1 class="about-hero-premium__title">I help companies design products that <span class="highlight">delight users</span> and accelerate growth</h1>
+    <p class="about-hero-premium__subtitle">From zero to traction, I bring a founder's mindset, a product manager's discipline, and technical fluency to every project.</p>
+  </div>
+  <div class="about-hero-premium__image">
+    <img src="/images/nicola-professional.jpg" alt="Nicola Palumbo - Founder &amp; Product Engineer" class="hero-portrait" />
+  </div>
+</div>
+
+<div class="about-story-section">
+  <div class="container">
+    <div class="about-story-grid">
+      <div class="about-story-content">
+        <h2 class="section-title">Our Story</h2>
+        <p class="story-lead">I know the path from idea to scale—because I've walked it.</p>
+        <p>As the founder of an AI-driven SaaS platform, I grew from scratch to <strong>500+ clients</strong>, including Fortune 500 and a Big 4 firm, achieving <strong>4× year-over-year growth</strong>. Along the way, I wrote the code, shaped the brand, closed deals, and led cross-functional teams.</p>
+        <p>That journey taught me something simple: <strong>growth isn't about luck</strong>. It's about building intelligent systems and products that solve real problems, delight users, and scale with the business.</p>
+      </div>
+      <div class="about-story-stats">
+        <div class="stat-card">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Clients Served</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4×</div>
+          <div class="stat-label">YoY Growth</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about-philosophy-section">
+  <div class="container">
+    <h2 class="section-title text-center">Our Philosophy</h2>
+    <div class="philosophy-hero">
+      <h3>We work at the intersection of speed and precision.</h3>
+    </div>
+    
+    <div class="philosophy-cards">
+      <div class="philosophy-card">
+        <div class="philosophy-icon">⚡</div>
+        <h4>Startup Urgency</h4>
+        <p>Short MVP cycles, launching quickly to validate with real users.</p>
+      </div>
+      
+      <div class="philosophy-card">
+        <div class="philosophy-icon">🎯</div>
+        <h4>Enterprise Discipline</h4>
+        <p>Structured scoping, outcome-driven execution, and measurable ROI.</p>
+      </div>
+    </div>
+    
+    <div class="philosophy-quote">
+      <blockquote>Every sprint ends with something real. Every decision is tied to business value.</blockquote>
+    </div>
+  </div>
+</div>
+
+<div class="about-values-section">
+  <div class="container">
+    <h2 class="section-title text-center">Our Values</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h4>Integrity</h4>
+        <p>Long-term trust over short-term wins.</p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">👂</div>
+        <h4>Respect</h4>
+        <p>Listening deeply to clients and users.</p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">🚀</div>
+        <h4>Innovation</h4>
+        <p>Prototyping fast, learning faster.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about-who-section">
+  <div class="container">
+    <div class="who-content">
+      <h2 class="section-title">Who We Are</h2>
+      <p class="who-description">I'm <strong>Nicola Palumbo</strong>—founder, product manager, and software engineer with 15+ years in SaaS, finance, and AI platforms. I've worked across startups, supercomputing, and enterprises—but my mission stays the same: helping companies design products that accelerate growth.</p>
+    </div>
+  </div>
+</div>
+
+<div class="about-achievements-section">
+  <div class="container">
+    <h2 class="section-title text-center">Proof &amp; Achievements</h2>
+    <div class="achievements-showcase">
+      <div class="achievement-card">
+        <div class="achievement-icon">🏆</div>
+        <div class="achievement-content">
+          <h4>500+ clients served</h4>
+          <p>Including Fortune 500 and Big 4</p>
+        </div>
+      </div>
+      
+      <div class="achievement-card">
+        <div class="achievement-icon">📈</div>
+        <div class="achievement-content">
+          <h4>4× year-over-year growth</h4>
+          <p>With my SaaS startup</p>
+        </div>
+      </div>
+      
+      <div class="achievement-card">
+        <div class="achievement-icon">🥇</div>
+        <div class="achievement-content">
+          <h4>Innovation competitions winner</h4>
+          <p>In Malta and Lugano</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about-cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to Design Products That Delight Users and Accelerate Growth?</h2>
+      <p class="cta-description">Let's discuss your project and how we can help you achieve remarkable results.</p>
+      <a href="/contact/" class="button button--primary button--large">Book a Consultation</a>
+    </div>
+  </div>
+</div>
+:ET
