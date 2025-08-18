@@ -57,7 +57,7 @@
   display: grid;
   grid-template-columns: 1fr 400px;
   gap: 60px;
-  align-items: start;
+  align-items: stretch;
 
   @media (max-width: 968px) {
     grid-template-columns: 1fr;
@@ -187,18 +187,24 @@
 }
 
 .vision-photo {
-  text-align: center;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  height: 100%;
 
   img {
     width: 400px;
-    height: 400px;
+    height: 100%;
     border-radius: 20px;
     object-fit: cover;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 
     @media (max-width: 968px) {
+      width: 350px;
+    }
+
+    @media (max-width: 576px) {
       width: 300px;
-      height: 300px;
     }
   }
 }
