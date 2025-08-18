@@ -136,54 +136,7 @@
   }
 }
 
-// Stats Section
-.hero__stats {
-  display: flex;
-  justify-content: center;
-  gap: 80px;
-  margin-top: 24px;
 
-  @media (max-width: 768px) {
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-
-  @media (max-width: 576px) {
-    flex-direction: column;
-    gap: 32px;
-    text-align: center;
-  }
-}
-
-.stat {
-  text-align: center;
-
-  &__number {
-    font-size: 48px;
-    font-weight: 800;
-    color: #1f2937;
-    line-height: 1;
-    margin-bottom: 8px;
-
-    @media (max-width: 768px) {
-      font-size: 36px;
-    }
-
-    @media (max-width: 576px) {
-      font-size: 32px;
-    }
-  }
-
-  &__label {
-    font-size: 16px;
-    color: #6b7280;
-    font-weight: 500;
-
-    @media (max-width: 576px) {
-      font-size: 14px;
-    }
-  }
-}
 
 .hero__right {
   position: relative;

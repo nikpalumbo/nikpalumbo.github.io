@@ -1,60 +1,49 @@
 {% if site.data.settings.services.enable == true %}
 <!-- begin services -->
-<div class="container">
-  <section id="services" class="section services animate">
+<section id="services" class="section services animate">
+  <div class="container">
     <div class="row">
       <div class="col col-12">
-        <div class="section__info section__info--center">
-          <h2 class="section__title">{{ site.data.settings.services.services__title }}</h2>
+        <div class="services__header">
+          <h2 class="services__title">{{ site.data.settings.services.services__title }}</h2>
           {% if site.data.settings.services.services__description %}
-          <p class="section__description">{{ site.data.settings.services.services__description }}</p>
+          <p class="services__description">{{ site.data.settings.services.services__description }}</p>
           {% endif %}
         </div>
       </div>
     </div>
     
-    <div class="row">
-      {% for service in site.data.settings.services.service__items %}
-      <div class="col col-6 col-d-12">
-        <div class="service">
-          <div class="service__head">
-            {% if service.icon %}
-            <div class="service__icon">
-              <i class="{{ service.icon }}"></i>
-            </div>
-            {% endif %}
-            <h3 class="service__title">{{ service.title }}</h3>
+    <div class="services__grid">
+      {% for service in site.data.settings.service__items %}
+      <div class="service-card">
+        <div class="service-card__header">
+          {% if service.icon %}
+          <div class="service-card__icon">
+            <i class="{{ service.icon }}"></i>
           </div>
-          <div class="service__content">
-            <p class="service__description">{{ service.description }}</p>
-            {% if service.features %}
-            <ul class="service__features">
-              {% for feature in service.features %}
-              <li>{{ feature }}</li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-            {% if service.outcomes %}
-            <div class="service__outcomes">
-              <h4>Typical Outcomes:</h4>
-              <ul>
-                {% for outcome in service.outcomes %}
-                <li>{{ outcome }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-            {% endif %}
-            {% if service.price_range %}
-            <div class="service__pricing">
-              <strong>{{ service.price_range }}</strong>
-            </div>
-            {% endif %}
+          {% endif %}
+          <h3 class="service-card__title">{{ service.title }}</h3>
+        </div>
+        
+        <div class="service-card__content">
+          <p class="service-card__description">{{ service.description }}</p>
+          
+          {% if service.outcomes %}
+          <div class="service-card__outcomes">
+            {% for outcome in service.outcomes %}
+            <div class="outcome-badge">{{ outcome }}</div>
+            {% endfor %}
           </div>
+          {% endif %}
+          
+          {% if service.price_range %}
+          <div class="service-card__pricing">{{ service.price_range }}</div>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
     </div>
-  </section>
-</div>
+  </div>
+</section>
 <!-- end services -->
 {% endif %}

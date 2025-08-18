@@ -1,67 +1,77 @@
 {% if site.data.settings.process.enable == true %}
 <!-- begin process -->
-<div class="container">
-  <section class="section process animate">
+<section class="section process animate">
+  <div class="container">
+    
+    <!-- Process Header -->
     <div class="row">
       <div class="col col-12">
-        <div class="section__info section__info--center">
-          <h2 class="section__title">{{ site.data.settings.process.process__title }}</h2>
-          {% if site.data.settings.process.process__description %}
-          <p class="section__description">{{ site.data.settings.process.process__description }}</p>
-          {% endif %}
+        <div class="process__header">
+          <div class="process__badge">{{ site.data.settings.process.process__subtitle }}</div>
+          <h2 class="process__title">{{ site.data.settings.process.process__title }}</h2>
+          <p class="process__description">{{ site.data.settings.process.process__description }}</p>
         </div>
       </div>
     </div>
-    
-    <!-- GitLab-style process cards -->
+
+    <!-- Approach Section -->
     <div class="row">
-      <div class="col col-4 col-d-6 col-m-12">
-        <div class="process__card">
-          <div class="process__card-number">01</div>
-          <h3 class="process__card-title">Structured Scoping</h3>
-          <p class="process__card-description">Battle-tested frameworks from top consulting firms to define the right goals, outcomes, and constraints from day one.</p>
-        </div>
-      </div>
-      <div class="col col-4 col-d-6 col-m-12">
-        <div class="process__card">
-          <div class="process__card-number">02</div>
-          <h3 class="process__card-title">MVP Cycles</h3>
-          <p class="process__card-description">Short iterations with working prototypes in days, not months. Every sprint ends with something real you can test.</p>
-        </div>
-      </div>
-      <div class="col col-4 col-d-6 col-m-12">
-        <div class="process__card">
-          <div class="process__card-number">03</div>
-          <h3 class="process__card-title">Real Results</h3>
-          <p class="process__card-description">Founder's mindset, product owner's discipline, technical fluency. Every decision tied to business value.</p>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Clean process summary -->
-    <div class="row">
-      <div class="col col-10 push-1 col-d-12 push-d-0">
-        <div class="process__summary">
-          <h3>Why This Works</h3>
-          <p>Every engagement begins with structured scoping using battle-tested frameworks—so we define the right goals from day one. Then we move fast with short MVP cycles, launching quickly to validate ideas.</p>
-          <div class="process__benefits">
-            <div class="benefit">
-              <span class="benefit__icon">⚡</span>
-              <span class="benefit__text">Working prototypes in days, not months</span>
-            </div>
-            <div class="benefit">
-              <span class="benefit__icon">🎯</span>
-              <span class="benefit__text">Every decision tied to business value</span>
-            </div>
-            <div class="benefit">
-              <span class="benefit__icon">🚀</span>
-              <span class="benefit__text">Founder's mindset meets technical execution</span>
-            </div>
+      <div class="col col-12">
+        <div class="process__approach">
+          <div class="approach__content">
+            <h3 class="approach__title">{{ site.data.settings.process.process__approach.title }}</h3>
+            <p class="approach__description">{{ site.data.settings.process.process__approach.description }}</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
-</div>
+
+    <!-- Methodology Steps -->
+    <div class="process__methodology">
+      <h3 class="methodology__title">From there, I move fast:</h3>
+      <div class="methodology__steps">
+        {% for step in site.data.settings.process.process__methodology %}
+        <div class="methodology__step">
+          <div class="step__header">
+            <div class="step__number">{{ step.step }}</div>
+            <div class="step__icon">
+              <i class="{{ step.icon }}"></i>
+            </div>
+          </div>
+          <h4 class="step__title">{{ step.title }}</h4>
+          <p class="step__description">{{ step.description }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Value Propositions -->
+    <div class="row">
+      <div class="col col-12">
+        <div class="process__values">
+          <h3 class="values__title">Whether you're looking to experiment fast or build something production-ready, I bring:</h3>
+          <div class="values__grid">
+            {% for value in site.data.settings.process.process__value_props %}
+            <div class="value__item">
+              <h4 class="value__title">{{ value.title }}</h4>
+              <p class="value__description">{{ value.description }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Promise Statement -->
+    <div class="row">
+      <div class="col col-12">
+        <div class="process__promise">
+          <p>{{ site.data.settings.process.process__promise }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 <!-- end process -->
 {% endif %}

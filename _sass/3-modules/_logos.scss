@@ -1,4 +1,62 @@
-/* Logos */
+/* Stats Section (replaces logos) */
+.section.stats {
+  padding: 20px 0 0 0;
+  margin-top: -80px;
+  border-top: none;
+}
+
+.section.stats::before {
+  display: none;
+}
+
+.stats__grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+
+  @media (max-width: $tablet) {
+    gap: 60px;
+  }
+
+  @media (max-width: $mobile) {
+    gap: 40px;
+    flex-direction: column;
+  }
+}
+
+.stats__item {
+  text-align: center;
+}
+
+.stats__number {
+  font-size: 48px;
+  font-weight: 800;
+  color: #1f2937;
+  line-height: 1;
+  margin-bottom: 8px;
+
+  @media (max-width: $tablet) {
+    font-size: 40px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 36px;
+  }
+}
+
+.stats__label {
+  font-size: 16px;
+  color: #6b7280;
+  font-weight: 500;
+
+  @media (max-width: $mobile) {
+    font-size: 14px;
+  }
+}
+
+/* Legacy logos styles (kept for compatibility) */
 .section.logos {
   padding-top: 0;
   border-top: none;

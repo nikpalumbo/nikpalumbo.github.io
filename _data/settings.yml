@@ -53,31 +53,20 @@ hero:
 
 
 #-------------------------------
-# Logos Settings
-logos:
+# Stats Settings
+stats:
   enable: true
-  logos__title: Trusted platforms. Reliable execution.
+  stats__title: Track record that speaks for itself
 
-logo__items:
-  - name: LangChain
-    link: "https://www.langchain.com/"
-    image: "/images/langchain.svg"
+stats__items:
+  - number: "50+"
+    label: "Projects Delivered"
 
-  - name: Ollama
-    link: "https://ollama.com/"
-    image: "/images/ollama.svg"
+  - number: "3-6x"
+    label: "YoY Growth Systems Create"
 
-  - name: OpenAI
-    link: "https://openai.com/"
-    image: "/images/openai.svg"
-
-  - name: Claude
-    link: "https://claude.ai/"
-    image: "/images/claude.svg"
-
-  - name: PostgreSQL
-    link: "https://www.postgresql.org/"
-    image: "/images/postgresql.svg"
+  - number: "500+"
+    label: "Customers Served"
 
 #-------------------------------
 # Newsletter
@@ -92,13 +81,13 @@ mailchimp:
 # Services Settings
 services:
   enable: true
-  services__title: My Services
-  services__description: I turn business challenges into working solutions through four core offerings
+  services__title: How I Drive Your Growth
+  services__description: Strategic solutions that turn your biggest challenges into competitive advantages
   
 service__items:
   - title: "Intelligent Growth Systems"
     icon: "ion ion-md-trending-up"
-    description: "I design and implement full-funnel growth engines—from value proposition to lead conversion. We define your ideal customer profiles, select the best channels, craft compelling outreach, and automate workflows inside your CRM or marketing stack."
+    description: "Full-funnel growth engines from value proposition to lead conversion. Define ideal customers, select channels, craft outreach, and automate CRM workflows."
     outcomes:
       - "Clear positioning and messaging that resonates with your market"
       - "Consistent flow of qualified leads from multiple channels" 
@@ -107,8 +96,7 @@ service__items:
     
   - title: "AI Agent Development"
     icon: "ion ion-md-cog"
-    description: "I turn business challenges into working AI solutions. Whether it's an internal assistant, a customer-facing bot, or a domain-specific tool, I design, build, and deploy agents tailored to your workflows."
-    price_range: "CHF 5K MVPs to CHF 30K production rollouts, 6–12 weeks"
+    description: "Custom AI solutions for internal tasks or customer-facing interactions. Tailored agents built on your data, not generic templates."
     outcomes:
       - "A faster way to handle repetitive tasks or customer interactions"
       - "Custom solutions built on your data, not generic templates"
@@ -117,7 +105,7 @@ service__items:
     
   - title: "Smart Conversion Websites"
     icon: "ion ion-md-desktop"
-    description: "I create high-performance websites designed to convert users, not just inform. Fast, mobile-first, and integrated with AI features like guided onboarding, instant quotes, or personalized content."
+    description: "High-performance sites designed to convert, not just inform. AI-integrated features like guided onboarding and instant quotes."
     outcomes:
       - "Higher engagement and conversion rates from day one"
       - "Faster load times and mobile optimization for better UX and SEO"
@@ -126,7 +114,7 @@ service__items:
     
   - title: "Product-Led Growth Prototyping"
     icon: "ion ion-md-rocket"
-    description: "I build real, functional web applications that help you validate product ideas, onboard users, or launch internal tools—fast. These are production-grade MVPs, designed to test real usage and drive growth."
+    description: "Functional web apps that validate ideas and drive growth through real user interaction. Production-grade MVPs delivered in weeks."
     outcomes:
       - "Fully functional web apps delivered in weeks, not months"
       - "Rapid experimentation with real users, not mockups"
@@ -167,34 +155,40 @@ cta:
 process:
   enable: true
   process__title: "Fast Starts. Real Outcomes. No Guesswork."
+  process__subtitle: "HOW"
   process__description: "I work with a lean, agile process that's been shaped by both startup urgency and enterprise precision."
-  process__content: |
-    Every engagement begins with a **structured scoping session** using battle-tested tools from top consulting frameworks—so we define the right goals, outcomes, and constraints from day one.
-
-    From there, I move fast:
-
-    - We break work into **short MVP cycles**, launching quickly to validate
-    - You get **working prototypes in days**, not months  
-    - I handle the full stack—from scoping to wireframes to working code
-
-    Whether you're looking to experiment fast or build something production-ready, I bring a **founder's mindset**, a **product owner's discipline**, and **technical fluency**—so nothing gets lost in translation.
-
-    Every sprint ends with something real. Every decision is tied to business value.
+  
+  process__approach:
+    title: "Structured Start, Agile Execution"
+    description: "Every engagement begins with a structured scoping session using battle-tested tools from top consulting frameworks so we define the right goals, outcomes, and constraints from day one."
     
-    **You stay focused on results. I handle the build.**
-    
-  process__highlights:
-    - title: "Founder's Mindset"
-      icon: "ion ion-md-bulb"
-      description: "I understand the urgency of building something that works and drives real business value."
+  process__methodology:
+    - step: "01"
+      title: "MVP Cycles"
+      description: "We break work into short MVP cycles, launching quickly to validate."
+      icon: "ion ion-md-refresh"
       
-    - title: "Product Discipline" 
-      icon: "ion ion-md-checkmark-circle"
-      description: "Every feature and decision is validated against clear business outcomes and user needs."
+    - step: "02" 
+      title: "Fast Prototypes"
+      description: "You get working prototypes in days, not months."
+      icon: "ion ion-md-flash"
+      
+    - step: "03"
+      title: "Full-Stack Execution"  
+      description: "I handle the full stack—from scoping to wireframes to working code."
+      icon: "ion ion-md-construct"
+      
+  process__value_props:
+    - title: "Founder's Mindset"
+      description: "Business urgency with strategic thinking"
+      
+    - title: "Product Owner's Discipline"
+      description: "Every decision tied to business value"
       
     - title: "Technical Fluency"
-      icon: "ion ion-md-code"
-      description: "Full-stack execution from concept to deployment, with no translation gaps."
+      description: "Nothing gets lost in translation"
+      
+  process__promise: "Every sprint ends with something real. Every decision is tied to business value. You stay focused on results. I handle the build."
 
 
 #-------------------------------
