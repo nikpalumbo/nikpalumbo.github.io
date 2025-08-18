@@ -1,18 +1,11 @@
----
-layout: default
-title: About
-description: From zero to traction, I bring a founder's mindset, a product manager's discipline, and technical fluency to every project.
-permalink: /about/
----
-
-<!-- About Header -->
+I"ˆ<!-- About Header -->
 <div class="case-studies-header">
   <div class="container">
     <div class="row">
       <div class="col col-12">
         <div class="case-studies-header__content">
-          <h1 class="case-studies-title">{{ page.title }}</h1>
-          <p class="case-studies-description">{{ page.description }}</p>
+          <h1 class="case-studies-title">About</h1>
+          <p class="case-studies-description">From zero to traction, I bring a founder's mindset, a product manager's discipline, and technical fluency to every project.</p>
         </div>
       </div>
     </div>
@@ -26,7 +19,6 @@ permalink: /about/
       <div class="vision-left">
         <div class="service-card">
           <div class="service-card__icon">
-            <i class="ion ion-md-eye"></i>
           </div>
           <h3 class="service-card__title">I help companies design products that <span class="highlight">delight users</span> and accelerate growth</h3>
           <p class="service-card__description">From zero to traction, I bring a founder's mindset, a product manager's discipline, and technical fluency to every project. I've walked the path from idea to scaleâ€”building, growing, and leading teams that deliver real results.</p>
@@ -39,7 +31,7 @@ permalink: /about/
       </div>
       
       <div class="vision-photo">
-        <img src="/images/nicola-professional.jpg" alt="Nicola Palumbo">
+        <img src="/images/nicola-professional.jpg" alt="Nicola Palumbo" />
       </div>
     </div>
   </div>
@@ -71,3 +63,4 @@ permalink: /about/
     </div>
   </div>
 </div>
+:ET
