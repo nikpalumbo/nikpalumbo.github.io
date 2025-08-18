@@ -1,18 +1,11 @@
----
-layout: default
-title: About
-description: I work with trusted professionals from my network and leverage cutting-edge AI tools like ChatGPT, Cursor, and Loveable to deliver enterprise-grade results at startup speed.
-permalink: /about/
----
-
-<!-- About Header -->
+I"Ñ<!-- About Header -->
 <div class="case-studies-header">
   <div class="container">
     <div class="row">
       <div class="col col-12">
         <div class="case-studies-header__content">
-          <h1 class="case-studies-title">{{ page.title }}</h1>
-          <p class="case-studies-description">{{ page.description }}</p>
+          <h1 class="case-studies-title">About</h1>
+          <p class="case-studies-description">From zero to traction, I bring a founder's mindset, a product manager's discipline, and technical fluency to every project.</p>
         </div>
       </div>
     </div>
@@ -39,7 +32,7 @@ permalink: /about/
       </div>
       
       <div class="vision-photo">
-        <img src="/images/nicola-professional.jpg" alt="Nicola Palumbo">
+        <img src="/images/nicola-professional.jpg" alt="Nicola Palumbo" />
       </div>
     </div>
   </div>
@@ -71,3 +64,4 @@ permalink: /about/
     </div>
   </div>
 </div>
+:ET
