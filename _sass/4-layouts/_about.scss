@@ -137,31 +137,7 @@
   }
 }
 
-.service-card__benefits {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 20px;
-  margin-top: 24px;
-}
 
-.benefit-line {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #374151;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  @media (max-width: 576px) {
-    font-size: 14px;
-  }
-}
 
 .section-badge {
   background: var(--primary-color);
