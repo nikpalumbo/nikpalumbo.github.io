@@ -1,0 +1,140 @@
+/* Services
+================================================== */
+.services {
+  padding: 80px 0;
+
+  .section__info--center {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+}
+
+.service {
+  padding: 40px 30px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-color);
+  }
+}
+
+.service__head {
+  margin-bottom: 25px;
+  
+  .service__icon {
+    width: 60px;
+    height: 60px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+    i {
+      font-size: 24px;
+      color: white;
+    }
+  }
+  
+  .service__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: var(--heading-font-color);
+  }
+}
+
+.service__content {
+  flex-grow: 1;
+  
+  .service__description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--text-color);
+  }
+  
+  .service__features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+    
+    li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      
+      &:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+        font-weight: bold;
+      }
+    }
+  }
+  
+  .service__outcomes {
+    margin-bottom: 25px;
+    
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--heading-font-color);
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      
+      li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 8px;
+        font-size: 14px;
+        
+        &:before {
+          content: "→";
+          position: absolute;
+          left: 0;
+          color: var(--accent-color);
+        }
+      }
+    }
+  }
+  
+  .service__pricing {
+    margin-top: auto;
+    padding: 15px 20px;
+    background: var(--background-alt-color);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--accent-color);
+    font-weight: 500;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .services {
+    padding: 60px 0;
+  }
+  
+  .service {
+    padding: 30px 20px;
+  }
+  
+  .service__head .service__title {
+    font-size: 20px;
+  }
+}

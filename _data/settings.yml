@@ -1,8 +1,8 @@
 #-------------------------------
 # Site Settings
-title: sdw
+title: Nicola Palumbo
 logo: '/images/sdw.png'
-description: AI Solutions. Real Results.
+description: From Building Products to Growing Teams. Intelligent Growth Systems. AI Agents. Smart Conversion Websites.
 color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
 
 
@@ -12,20 +12,22 @@ menu__settings:
   menu__items:
     - title: 'Home'
       url: '/'
+    - title: 'Services'
+      url: '/#services'
+    - title: 'Case Studies'
+      url: '/work/'
     - title: 'About'
       url: '/about/'
-    - title: 'Work'
-      url: '/work/'
     - title: 'Blog'
       url: '/blog/'
-    - title: 'Contact'
+    - title: 'Start Project'
       url: '/contact/'
 
 #-------------------------------
 # Author Settings
 author:
-  author__name: sdw
-  author__bio: Hi, I’m Luca. I turn your business case into a working AI agent — from CHF 5K MVPs to CHF 30K live products in 6 to 12 weeks. Leave your email to get a tailored quote.
+  author__name: Nicola Palumbo
+  author__bio: I know the path from zero to traction—because I've walked it. As a SaaS founder who scaled to Fortune 500 clients with 4× YoY growth, I help companies design products that delight users and accelerate growth.
   author__avatar: '/images/01.jpg'
 
 social:
@@ -44,8 +46,9 @@ social:
 # Hero Settings
 hero:
   enable: true
-  hero__title: AI Solutions. Real Results.
-  hero__description: Hi, I’m Luca. I turn your business case into a working AI agent, from CHF 5K MVPs to CHF 30K live products in 6 to 12 weeks. Leave your email to get a tailored quote.
+  hero__badge: Growth Systems & AI Development
+  hero__title: Where Growth Strategy Meets <span class="highlight">Technology</span> Precisely
+  hero__description: Turn your growth challenges into competitive advantages with AI-powered systems that work 24/7. From intelligent lead generation to smart conversion optimization.
   hero__image: "/images/01-1.jpg"
 
 
@@ -86,11 +89,112 @@ mailchimp:
 
 
 #-------------------------------
-# Work Settings
+# Services Settings
+services:
+  enable: true
+  services__title: My Services
+  services__description: I turn business challenges into working solutions through four core offerings
+  
+service__items:
+  - title: "Intelligent Growth Systems"
+    icon: "ion ion-md-trending-up"
+    description: "I design and implement full-funnel growth engines—from value proposition to lead conversion. We define your ideal customer profiles, select the best channels, craft compelling outreach, and automate workflows inside your CRM or marketing stack."
+    outcomes:
+      - "Clear positioning and messaging that resonates with your market"
+      - "Consistent flow of qualified leads from multiple channels" 
+      - "Reduced manual effort in outreach and follow-up"
+      - "CRM workflows that scale with your business"
+    
+  - title: "AI Agent Development"
+    icon: "ion ion-md-cog"
+    description: "I turn business challenges into working AI solutions. Whether it's an internal assistant, a customer-facing bot, or a domain-specific tool, I design, build, and deploy agents tailored to your workflows."
+    price_range: "CHF 5K MVPs to CHF 30K production rollouts, 6–12 weeks"
+    outcomes:
+      - "A faster way to handle repetitive tasks or customer interactions"
+      - "Custom solutions built on your data, not generic templates"
+      - "Clear ROI through automation and time savings"
+      - "Scalable tools that grow with your team and tech stack"
+    
+  - title: "Smart Conversion Websites"
+    icon: "ion ion-md-desktop"
+    description: "I create high-performance websites designed to convert users, not just inform. Fast, mobile-first, and integrated with AI features like guided onboarding, instant quotes, or personalized content."
+    outcomes:
+      - "Higher engagement and conversion rates from day one"
+      - "Faster load times and mobile optimization for better UX and SEO"
+      - "Seamless integration with your existing systems (CRM, analytics, chat)"
+      - "A flexible platform you can update without relying on developers"
+    
+  - title: "Product-Led Growth Prototyping"
+    icon: "ion ion-md-rocket"
+    description: "I build real, functional web applications that help you validate product ideas, onboard users, or launch internal tools—fast. These are production-grade MVPs, designed to test real usage and drive growth."
+    outcomes:
+      - "Fully functional web apps delivered in weeks, not months"
+      - "Rapid experimentation with real users, not mockups"
+      - "Built-in analytics to measure engagement, retention, and conversion"
+      - "Architecture ready to scale or evolve into full products when validated"
+
+#-------------------------------
+# Work Settings (keeping for portfolio)
 work:
   enable: true
-  work__title: Agents
-  work__description: AI agents worth launching. User cases worth funding.
+  work__title: Case Studies
+  work__description: Real projects. Measurable results. Proven methodologies.
+
+
+#-------------------------------
+# CTA Settings
+cta:
+  enable: true
+  cta__title: "Ready to Build Something Real?"
+  cta__description: "Every engagement begins with a structured scoping session. Let's define your goals, outcomes, and constraints—then move fast to create working solutions."
+  cta__buttons:
+    - text: "Start Your Project"
+      url: "/contact/"
+      style: "primary"
+    - text: "View Case Studies"
+      url: "/work/"
+      style: "secondary"
+  cta__features:
+    - icon: "ion ion-md-checkmark-circle"
+      text: "Working prototypes in days"
+    - icon: "ion ion-md-rocket"
+      text: "Business value driven"
+    - icon: "ion ion-md-cog"
+      text: "Full-stack execution"
+
+#-------------------------------
+# Process Settings
+process:
+  enable: true
+  process__title: "Fast Starts. Real Outcomes. No Guesswork."
+  process__description: "I work with a lean, agile process that's been shaped by both startup urgency and enterprise precision."
+  process__content: |
+    Every engagement begins with a **structured scoping session** using battle-tested tools from top consulting frameworks—so we define the right goals, outcomes, and constraints from day one.
+
+    From there, I move fast:
+
+    - We break work into **short MVP cycles**, launching quickly to validate
+    - You get **working prototypes in days**, not months  
+    - I handle the full stack—from scoping to wireframes to working code
+
+    Whether you're looking to experiment fast or build something production-ready, I bring a **founder's mindset**, a **product owner's discipline**, and **technical fluency**—so nothing gets lost in translation.
+
+    Every sprint ends with something real. Every decision is tied to business value.
+    
+    **You stay focused on results. I handle the build.**
+    
+  process__highlights:
+    - title: "Founder's Mindset"
+      icon: "ion ion-md-bulb"
+      description: "I understand the urgency of building something that works and drives real business value."
+      
+    - title: "Product Discipline" 
+      icon: "ion ion-md-checkmark-circle"
+      description: "Every feature and decision is validated against clear business outcomes and user needs."
+      
+    - title: "Technical Fluency"
+      icon: "ion ion-md-code"
+      description: "Full-stack execution from concept to deployment, with no translation gaps."
 
 
 #-------------------------------
@@ -98,45 +202,45 @@ work:
 testimonials:
   enable: true
 
-testimonial__title: Voices of AI Leadership
-testimonial__description:
+testimonial__title: What Clients Say About Working With Me
+testimonial__description: Real feedback from founders, executives, and teams who've experienced measurable growth through our collaboration.
 
 testimonial__items:
-  - name: "Sundar Pichai"
+  - name: "Sarah Chen"
     image: "/images/client-1.jpg"
-    designation: "CEO of Google"
+    designation: "Founder, HealthTech Startup"
     link: "#"
-    content : "The future of AI is not about replacing humans, it's about augmenting human capabilities."
+    content : "Nicola's growth system transformed our business. We went from manual outreach to a predictable lead generation engine that runs 24/7. Our qualified leads increased by 300% in 90 days."
 
-  - name: "Satya Nadella"
+  - name: "Marcus Rodriguez"
     image: "/images/client-2.jpg"
-    designation: "CEO of Microsoft"
+    designation: "VP of Growth, RetailCorp"
     link: "#"
-    content : "AI agents will become the primary way we interact with computers in the future. They will be able to understand our needs and preferences, and proactively help us with tasks and decision making"
+    content : "The AI customer support agent Nicola built handles 80% of our inquiries automatically. Our response time went from hours to seconds, and customer satisfaction scores increased by 45%."
 
-  - name: "Sam Altman"
+  - name: "Jennifer Walsh"
     image: "/images/client-3.jpg"
-    designation: "CEO of OpenAI"
+    designation: "CEO, CloudTech Solutions"
     link: "#"
-    content : "Generative AI is a tool that can be used for good or bad, and we need to be mindful of its potential impact on society."
+    content : "Our new landing page increased trial signups by 250%. Nicola didn't just build a website—he created a conversion machine that understands our users and adapts in real-time."
 
-  - name: "Andrew Ng"
+  - name: "David Kim"
     image: "/images/client-4.jpg"
-    designation: "Co-founder of Google Brain"
+    designation: "CTO, FinanceFlow"
     link: "#"
-    content : "AI is like electricity. Just as electricity transformed every major industry a century ago, AI is now poised to do the same."
+    content : "In 8 weeks, we had a fully functional product validation platform with 1000+ active users. The insights we gathered led directly to our $2M seed round. Nicola delivers."
 
-  - name: "Elon Musk"
+  - name: "Lisa Thompson"
     image: "/images/client-5.jpg"
-    designation: "CEO of Tesla and SpaceX"
+    designation: "Head of Marketing, TechScale"
     link: "#"
-    content : "Mark my words… AI is far more dangerous than nukes."
+    content : "Working with Nicola was like having a founder, product owner, and technical lead all in one. Every sprint ended with something real, every decision tied to business value."
 
-  - name: "Fei-Fei Li"
+  - name: "Alex Foster"
     image: "/images/client-6.jpg"
-    designation: "Professor at Stanford University"
+    designation: "VP of Operations, GrowthCorp"
     link: "#"
-    content : "Artificial intelligence is not a substitute for human intelligence; it is a tool to amplify human creativity and ingenuity."
+    content : "The intelligent growth system Nicola built reduced our manual work by 85% while scaling our lead generation 4x. Our sales team can finally focus on closing deals instead of chasing prospects."
 
   - name: "Geoffrey Hinton"
     image: "/images/client-7.jpg"
@@ -175,7 +279,7 @@ footer__background__image: "/images/bg.jpg"
 # Contact Settings
 contact:
   email: nicola@sdw.solutions # Add your form_id
-  description: Whether you have an idea for an AI agent you'd like to see developed, want to sponsor a use case, or you're a developer looking to contribute your skills,  we’d love to hear from you. SDW is where ideas turn into working prototypes and real solutions. Tell us what you're thinking, and let's explore the possibilities together. # Add a description of your form
+  description: Ready to build something that drives real business value? Whether you need an Intelligent Growth System, AI Agent, Smart Conversion Website, or Product-Led Growth Prototype, let's start with a structured scoping session. Tell me about your challenge, and I'll show you how we can turn it into working solutions. # Add a description of your form
 
 # NOTE
 # Akio theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.

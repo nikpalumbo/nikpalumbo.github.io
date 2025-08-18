@@ -1,15 +1,21 @@
 ---
 layout: page
 title: About
-description: I'm a creative and curious person who has a lot of experience and fond moments working with design, websites, and marketing.
+description: From building my own SaaS to helping teams grow smarter. I know the path from zero to traction—because I've walked it.
 permalink: /about/
 image: '/images/01-2.jpg'
 image_caption: 'Photo by [Bruce Dixon](https://unsplash.com/photos/3M9WJQVHzog) on [Unsplash](https://unsplash.com/)'
 ---
 
-Hymnals are books with collections of musical hymns that can typically be found in churches. Prayerbooks or missals are books that contain written prayers and are commonly carried by monks, nuns, and other devoted followers or clergy. Lap books are a learning tool created by students.
+## From Building My Own Product to Helping Teams Grow Smarter
 
-There are several other types of books which are not commonly found under this system. Albums are books for holding a group of items belonging to a particular theme, such as a set of photographs, card collections, and memorabilia. One common example is stamp albums, which are used by many hobbyists to protect and organize their collections of postage stamps. Such albums are often made using removable plastic pages held inside in a ringed binder or other similar holder. Picture books are books for children with pictures on every page and less text (or even no text).
+I know the path from zero to traction—because I've walked it.
+
+As the founder of a SaaS platform, I scaled from an idea to recurring **Fortune 500** and **Big 4 clients**, achieving **4× year-over-year growth**.
+
+I wrote the code, built the backend infrastructure, designed the UX, shaped the brand, closed deals, led cross-functional teams, and drove execution from MVP to scale.
+
+But growth isn't about luck. It's about building systems that work.
 
 <div class="gallery-box">
   <div class="gallery">
@@ -20,11 +26,20 @@ There are several other types of books which are not commonly found under this s
   <em>Gallery / <a href="https://unsplash.com/" target="_blank">Unsplash</a></em>
 </div>
 
-Dummy books (or faux books) are books that are designed to imitate a real book by appearance to deceive people, some books may be whole with empty pages, others may be hollow or in other cases, there may be a whole panel carved with spines which are then painted to look like books, titles of some books may also be fictitious.
+## What I Do Now
 
-> The longer I live, the more I realize that I am never wrong about anything, and that all the pains I have so humbly taken to verify my notions have only wasted my time!
+Today, I help companies design products that delight users and accelerate growth through:
 
-The advent of paperback books in the 20th century led to an explosion of popular publishing. Paperback books made owning books affordable for many people. Paperback books often included works from genres that had previously been published mostly in pulp magazines. As a result of the low cost of such books and the spread of bookstores filled with them (in addition to the creation of a smaller market of extremely cheap used paperbacks) owning a private library ceased to be a status symbol for the rich.
+- **Intelligent Growth Systems** that automate outreach and fill your CRM with qualified leads
+- **AI Agents** that handle support tickets, qualify leads, or generate instant quotes—tailored to your workflows  
+- **Smart Conversion Websites** that onboard users with interactive AI, respond in real-time, and scale to thousands of visitors
+- **Product-Led Growth Prototyping** with real, functional web applications that validate ideas fast
+
+> Every engagement begins with something real. Every decision is tied to business value. You stay focused on results. I handle the build.
+
+## My Approach
+
+I work with a lean, agile process shaped by both startup urgency and enterprise precision. Every engagement begins with a structured scoping session using battle-tested tools from top consulting frameworks.
 
 <div class="gallery-box">
   <div class="gallery">
@@ -33,6 +48,16 @@ The advent of paperback books in the 20th century led to an explosion of popular
   <em>Photo by <a href="https://unsplash.com/photos/TMpQ5R9mbOc" target="_blank">Caroline Hernandez</a></em>
 </div>
 
-This form of the book chain has hardly changed since the eighteenth century, and has not always been this way. Thus, the author has asserted gradually with time, and the copyright dates only from the nineteenth century. For many centuries, especially before the invention of printing, each freely copied out books that passed through his hands, adding if necessary his own comments. Similarly, bookseller and publisher jobs have emerged with the invention of printing, which made the book an industrial product, requiring structures of production and marketing.
+From there, I move fast:
 
-Paper was first made in China as early as 200 BC, and reached Europe through Muslim territories. At first made of rags, the industrial revolution changed paper-making practices, allowing for paper to be made out of wood pulp. Papermaking in Europe began in the 11th century, although vellum was also common there as page material up until the beginning of the 16th century, vellum being the more expensive and durable option.
+- We break work into **short MVP cycles**, launching quickly to validate
+- You get **working prototypes in days**, not months
+- I handle the full stack—from scoping to wireframes to working code
+
+Whether you're looking to experiment fast or build something production-ready, I bring a **founder's mindset**, a **product owner's discipline**, and **technical fluency**—so nothing gets lost in translation.
+
+## Ready to Build Something Real?
+
+Every sprint ends with something real. Every decision is tied to business value.
+
+Let's talk about what you're building and how I can help you get there faster.

@@ -1,0 +1,67 @@
+{% if site.data.settings.process.enable == true %}
+<!-- begin process -->
+<div class="container">
+  <section class="section process animate">
+    <div class="row">
+      <div class="col col-12">
+        <div class="section__info section__info--center">
+          <h2 class="section__title">{{ site.data.settings.process.process__title }}</h2>
+          {% if site.data.settings.process.process__description %}
+          <p class="section__description">{{ site.data.settings.process.process__description }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    
+    <!-- GitLab-style process cards -->
+    <div class="row">
+      <div class="col col-4 col-d-6 col-m-12">
+        <div class="process__card">
+          <div class="process__card-number">01</div>
+          <h3 class="process__card-title">Structured Scoping</h3>
+          <p class="process__card-description">Battle-tested frameworks from top consulting firms to define the right goals, outcomes, and constraints from day one.</p>
+        </div>
+      </div>
+      <div class="col col-4 col-d-6 col-m-12">
+        <div class="process__card">
+          <div class="process__card-number">02</div>
+          <h3 class="process__card-title">MVP Cycles</h3>
+          <p class="process__card-description">Short iterations with working prototypes in days, not months. Every sprint ends with something real you can test.</p>
+        </div>
+      </div>
+      <div class="col col-4 col-d-6 col-m-12">
+        <div class="process__card">
+          <div class="process__card-number">03</div>
+          <h3 class="process__card-title">Real Results</h3>
+          <p class="process__card-description">Founder's mindset, product owner's discipline, technical fluency. Every decision tied to business value.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Clean process summary -->
+    <div class="row">
+      <div class="col col-10 push-1 col-d-12 push-d-0">
+        <div class="process__summary">
+          <h3>Why This Works</h3>
+          <p>Every engagement begins with structured scoping using battle-tested frameworks—so we define the right goals from day one. Then we move fast with short MVP cycles, launching quickly to validate ideas.</p>
+          <div class="process__benefits">
+            <div class="benefit">
+              <span class="benefit__icon">⚡</span>
+              <span class="benefit__text">Working prototypes in days, not months</span>
+            </div>
+            <div class="benefit">
+              <span class="benefit__icon">🎯</span>
+              <span class="benefit__text">Every decision tied to business value</span>
+            </div>
+            <div class="benefit">
+              <span class="benefit__icon">🚀</span>
+              <span class="benefit__text">Founder's mindset meets technical execution</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- end process -->
+{% endif %}

@@ -1,10 +1,10 @@
 ---
-title: Geametric band
-description: An alternative to paperback is the glossy cover, otherwise known as a dust cover, found on magazines, and comic books.
-category: Music flyer
+title: Product Validation Platform for Fintech
+description: Built a functional web application that validated a new fintech concept with 1000+ users in 8 weeks, leading to $2M seed funding.
+category: Product-Led Growth Prototyping
 date: 2022-01-08 08:01:35 +0300
-client: Music Festival
-role: Graphic Designer
+client: FinanceFlow
+role: Product Development Lead
 image: '/images/work-3.jpg'
 image_caption: 'Photo by [Freepik](https://www.freepik.com/)'
 ---

@@ -1,0 +1,95 @@
+/* Call to Action
+================================================== */
+.cta {
+  padding: 100px 0;
+  background: var(--accent-color);
+  color: white;
+  text-align: center;
+}
+
+.cta__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta__title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: white;
+  
+  @media only screen and (max-width: 768px) {
+    font-size: 32px;
+  }
+}
+
+.cta__description {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  
+  @media only screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.cta__buttons {
+  margin-bottom: 50px;
+  
+  .button {
+    margin: 0 10px 15px;
+    
+    &.button--primary {
+      background: white;
+      color: var(--accent-color);
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateY(-2px);
+      }
+    }
+    
+    &.button--secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      
+      &:hover {
+        background: white;
+        color: var(--accent-color);
+      }
+    }
+  }
+}
+
+.cta__features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  
+  @media only screen and (max-width: 768px) {
+    gap: 20px;
+  }
+}
+
+.cta__feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  opacity: 0.9;
+  
+  i {
+    font-size: 20px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    font-size: 14px;
+    
+    i {
+      font-size: 16px;
+    }
+  }
+}

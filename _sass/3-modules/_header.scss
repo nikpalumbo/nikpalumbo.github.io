@@ -8,7 +8,8 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 40px 16px; 
+    padding: 20px 48px;
+    min-height: 60px;
   }
 
   @media (max-width: $mobile) {
@@ -19,24 +20,23 @@
 }
 
 .logo__image {
-  //height: 50px;
-  //width: auto;
-  //display: block;
-  max-height: 50px;
+  max-height: 55px;
+  width: auto;
+  display: block;
 }
 
 
 .logo {
   display: flex;
   align-items: center;
-  height: 100%; // make it match parent height
+  margin-top: -6px;
 }
 
 /* Logo */
 .logo__link {
   display: flex;
   align-items: center;
-  height: 100%;
+  text-decoration: none;
 }
 
 /* Nav */

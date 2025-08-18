@@ -1,10 +1,10 @@
 ---
-title: Festival of colors
-description: An alternative to paperback is the glossy cover, otherwise known as a dust cover, found on magazines, and comic books.
-category: Print Design
+title: AI Customer Support Agent for E-commerce
+description: Developed a conversational AI agent that handles 80% of customer inquiries automatically, reducing response time from hours to seconds.
+category: AI Agent Development
 date: 2022-01-06 08:01:35 +0300
-client: Club Presents
-role: Graphic Designer
+client: RetailCorp
+role: AI Solutions Developer
 image: '/images/work-5.jpg'
 image_caption: 'Photo by [Freepik](https://www.freepik.com/)'
 ---

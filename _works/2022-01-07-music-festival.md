@@ -1,10 +1,10 @@
 ---
-title: Music festival
-description: An alternative to paperback is the glossy cover, otherwise known as a dust cover, found on magazines, and comic books.
-category: Music flyer
+title: High-Converting SaaS Landing Page
+description: Designed and built a smart conversion website that increased trial signups by 250% through AI-powered personalization and dynamic content.
+category: Smart Conversion Websites
 date: 2022-01-07 08:01:35 +0300
-client: Music Festival
-role: Graphic Designer
+client: CloudTech Solutions
+role: Conversion Optimization Specialist
 image: '/images/work-4.jpg'
 image_caption: 'Photo by [Freepik](https://www.freepik.com/)'
 ---
