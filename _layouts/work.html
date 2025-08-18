@@ -2,105 +2,84 @@
 layout: default
 ---
 
-<div class="work-head">
+<!-- Case Study Header -->
+<div class="case-study-header">
   <div class="container">
-
     <div class="row">
-      {% if page.image %}
-      <div class="col col-5 col-d-12">
-        <div class="work-head__left">
-          <div class="work-head__image">
-            <img class="lazy" data-src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}">
-          </div>
-          {% if page.image_caption %}
-          <div class="page-image-caption">{{ page.image_caption | markdownify | replace: '<p>' | replace: '</p>' }}</div>
-          {% endif %}
-        </div>
-      </div>
-      {% endif %}
-
-      <div class="col col-7 col-d-12">
-        <div class="work-head__right">
+      <div class="col col-12">
+        <div class="case-study-header__content">
           {% if page.category %}
-          <div class="work-category">{{ page.category }}</div>
+          <div class="case-study-badge">{{ page.category }}</div>
           {% endif %}
-          <h1 class="page-title">{{ page.title }}</h1>
+          <h1 class="case-study-title">{{ page.title }}</h1>
           {% if page.description %}
-          <p class="page-description">{{ page.description }}</p>
+          <p class="case-study-description">{{ page.description }}</p>
           {% endif %}
-          <ul class="work-meta list-reset">
+          
+          <div class="case-study-meta">
+            {% if page.role %}
+            <div class="meta-item">
+              <div class="meta-label">Role</div>
+              <div class="meta-value">{{ page.role }}</div>
+            </div>
+            {% endif %}
             {% if page.date %}
-            <li class="work-meta__item"><strong>Date:</strong> <span>{{ page.date | date_to_string }}</span></li>
+            <div class="meta-item">
+              <div class="meta-label">Timeline</div>
+              <div class="meta-value">{{ page.date | date: "%Y" }}</div>
+            </div>
             {% endif %}
             {% if page.client %}
-            <li class="work-meta__item"><strong>Client:</strong> <span>{{ page.client }}</span></li>
+            <div class="meta-item">
+              <div class="meta-label">Client</div>
+              <div class="meta-value">{{ page.client }}</div>
+            </div>
             {% endif %}
-            {% if page.role %}
-            <li class="work-meta__item"><strong>Role:</strong> <span>{{ page.role }}</span></li>
-            {% endif %}
-          </ul>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="container animate">
-
-  <div class="page">
-    {{ content }}
-  </div>
-
-  <section class="section work-navigation">
-    <div class="row">
-
-      <div class="col col-12">
-        <div class="section__info">
-          <div class="section__head">
-            <h2 class="section__title">Next</h2>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-        <div class="row">
-          {% if page.previous.url %}
-          <article class="work col col-6 col-d-12">
-            <div class="work__content">
-              <a href="{{ page.previous.url }}" class="work__image">
-                <img class="lazy" data-src="{{ page.previous.image }}" alt="{{ page.previous.title }}">
-              </a>
-              <div class="work__info">
-                {% if page.previous.category %}
-                <div class="work__category">{{ page.previous.category }}</div>
-                {% endif %}
-                <h3 class="work__title"><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></h3>
-                {% if page.previous.category %}
-                <p class="work__description">{{ page.previous.description }}</p>
-                {% endif %}
-              </div>
-            </div>
-          </article>
-          {% endif %}
-          {% if page.next.url %}
-          <article class="work col col-6 col-d-12">
-            <div class="work__content">
-              <a href="{{ page.next.url }}" class="work__image">
-                <img class="lazy" data-src="{{ page.next.image }}" alt="{{ page.next.title }}">
-              </a>
-              <div class="work__info">
-                {% if page.next.category %}
-                <div class="work__category">{{ page.next.category }}</div>
-                {% endif %}
-                <h3 class="work__title"><a href="{{ page.next.url }}">{{ page.next.title }}</a></h3>
-                {% if page.next.category %}
-                <p class="work__description">{{ page.next.description }}</p>
-                {% endif %}
-              </div>
-            </div>
-          </article>
-          {% endif %}
+<!-- Case Study Content -->
+<div class="case-study-content">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="case-study-body">
+          {{ content }}
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </div>
+
+<!-- Navigation -->
+<section class="case-study-navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="navigation-header">
+          <h3>More Case Studies</h3>
+        </div>
+        
+        <div class="navigation-grid">
+          {% assign current_category = page.category %}
+          {% assign related_works = site.works | where_exp: "item", "item.category != current_category" | limit: 2 %}
+          
+          {% for work in related_works %}
+          <div class="navigation-card">
+            <div class="nav-card-category">{{ work.category }}</div>
+            <h4 class="nav-card-title">
+              <a href="{{ work.url }}">{{ work.title }}</a>
+            </h4>
+            <p class="nav-card-description">{{ work.description | truncate: 120 }}</p>
+            <a href="{{ work.url }}" class="nav-card-link">View Case Study →</a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
