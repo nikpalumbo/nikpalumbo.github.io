@@ -113,6 +113,66 @@
 <body>
 
   
+    <!-- Google Analytics 4 (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SD2QBP5JP5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-SD2QBP5JP5', {
+    // Enhanced measurement for better tracking
+    send_page_view: true,
+    // Track file downloads, outbound clicks, site search, video engagement
+    enhanced_measurement: {
+      scrolls: true,
+      outbound_clicks: true,
+      file_downloads: true,
+      page_views: true
+    },
+    // Custom dimensions for better insights
+    custom_map: {
+      'custom_parameter_1': 'page_type',
+      'custom_parameter_2': 'user_type'
+    }
+  });
+
+  // Track page type for better segmentation
+  
+  gtag('event', 'page_view', {
+    'page_type': 'work',
+    'page_title': 'TrueFit AI Agent - Personalized Cover Letter Generation Case Study',
+    'page_location': 'http://0.0.0.0:4000/work/ai-agent-truefit'
+  });
+  
+
+  // Track case study views
+  
+  gtag('event', 'case_study_view', {
+    'case_study_name': 'TrueFit AI Agent - Personalized Cover Letter Generation Case Study',
+    'case_study_category': 'AI Agent Development',
+    'client': 'TrueFit (Open Source)'
+  });
+  
+
+  // Track contact form interactions
+  function trackFormInteraction(action) {
+    gtag('event', action, {
+      'event_category': 'Contact Form',
+      'event_label': 'Contact Page'
+    });
+  }
+
+  // Track CTA button clicks
+  function trackCTA(buttonText, location) {
+    gtag('event', 'cta_click', {
+      'event_category': 'CTA',
+      'event_label': buttonText,
+      'cta_location': location
+    });
+  }
+</script>
+  
 
   <!-- begin header -->
 <header class="header">
@@ -397,8 +457,8 @@ Python, LangGraph, LangSmith, GPT-4o, Claude Sonnet, Tavily API, TrustCall</p>
         <div class="case-study-cta__content">
           <h2 class="case-study-cta__title">Ready to achieve similar results for your project?</h2>
           <div class="hero__buttons">
-            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0fakbJiTFTnP2psXCdItY2EbGQslNZ0JoSN2Ah3sOpMkiWi--1mbMt6DiKjzUOLz_Ffatm25Uv" target="_blank" class="button button--secondary">Book a Call</a>
-            <a href="/work/" class="button button--primary">View More Cases</a>
+            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0fakbJiTFTnP2psXCdItY2EbGQslNZ0JoSN2Ah3sOpMkiWi--1mbMt6DiKjzUOLz_Ffatm25Uv" target="_blank" class="button button--secondary" onclick="trackCTA('Book a Call', 'Case Study CTA')">Book a Call</a>
+            <a href="/work/" class="button button--primary" onclick="trackCTA('View More Cases', 'Case Study CTA')">View More Cases</a>
           </div>
         </div>
       </div>

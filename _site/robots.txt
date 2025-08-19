@@ -1,13 +1,1 @@
-User-agent: *
-Allow: /
-
-# Important pages
-Allow: /about/
-Allow: /work/
-Allow: /case-studies/
-
-# Sitemap location
-Sitemap: https://sdw.solutions/sitemap.xml
-
-# Crawl-delay (be nice to servers)
-Crawl-delay: 1
+Sitemap: http://0.0.0.0:4000/sitemap.xml
