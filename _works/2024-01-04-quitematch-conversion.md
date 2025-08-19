@@ -1,5 +1,6 @@
 ---
 title: QuiteMatch - AI-Powered Recruitment Platform
+subtitle: AI recruitment platform with 40% conversion improvement and automated workflows
 description: Built a complete recruitment platform with AI-powered candidate assessment, employer onboarding, and conversion-optimized landing page that achieved 40% conversion improvement and automated hiring workflows.
 category: Smart Conversion Websites
 date: 2025-01-04 08:01:35 +0300

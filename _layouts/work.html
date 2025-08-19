@@ -3,51 +3,93 @@ layout: default
 ---
 
 <!-- Case Study Header -->
-<div class="case-study-header">
+<div class="case-studies-header">
   <div class="container">
     <div class="row">
       <div class="col col-12">
-        <div class="case-study-header__content">
+        <div class="case-studies-header__content">
           {% if page.category %}
           <div class="case-study-badge">{{ page.category }}</div>
           {% endif %}
-          <h1 class="case-study-title">{{ page.title }}</h1>
-          {% if page.description %}
-          <p class="case-study-description">{{ page.description }}</p>
+          <h1 class="case-studies-title">{{ page.title }}</h1>
+          {% if page.subtitle %}
+          <p class="case-studies-description">{{ page.subtitle }}</p>
+          {% elsif page.description %}
+          <p class="case-studies-description">{{ page.description }}</p>
           {% endif %}
-          
-          <div class="case-study-meta">
-            {% if page.role %}
-            <div class="meta-item">
-              <div class="meta-label">Role</div>
-              <div class="meta-value">{{ page.role }}</div>
-            </div>
-            {% endif %}
-            {% if page.date %}
-            <div class="meta-item">
-              <div class="meta-label">Year</div>
-              <div class="meta-value">{{ page.date | date: "%Y" }}</div>
-            </div>
-            {% endif %}
-            {% if page.client %}
-            <div class="meta-item">
-              <div class="meta-label">Project</div>
-              <div class="meta-value">{{ page.client }}</div>
-            </div>
-            {% endif %}
-            {% if page.duration %}
-            <div class="meta-item">
-              <div class="meta-label">Duration</div>
-              <div class="meta-value">{{ page.duration }}</div>
-            </div>
-            {% endif %}
-            {% if page.team_size %}
-            <div class="meta-item">
-              <div class="meta-label">Team</div>
-              <div class="meta-value">{{ page.team_size }}</div>
-            </div>
-            {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Case Study Visual Info -->
+<div class="case-study-visual-info">
+  <div class="container">
+    <div class="case-study-info-grid">
+      <!-- Left Side - Main Content Card -->
+      <div class="case-study-info-left">
+        <div class="case-study-card">
+          {% if page.category %}
+          <div class="case-study-card__badge">
+            <i class="ion ion-md-rocket"></i>
+            {{ page.category }}
           </div>
+          {% endif %}
+          <h3 class="case-study-card__title">{{ page.title }}</h3>
+          {% if page.description %}
+          <p class="case-study-card__description">{{ page.description }}</p>
+          {% endif %}
+        </div>
+      </div>
+      
+      <!-- Right Side - Meta Info Stats -->
+      <div class="case-study-info-right">
+        <div class="case-study-stats">
+          {% if page.role %}
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="ion ion-md-person"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-label">Role</div>
+              <div class="stat-value">{{ page.role }}</div>
+            </div>
+          </div>
+          {% endif %}
+          {% if page.date %}
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="ion ion-md-calendar"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-label">Year</div>
+              <div class="stat-value">{{ page.date | date: "%Y" }}</div>
+            </div>
+          </div>
+          {% endif %}
+          {% if page.client %}
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="ion ion-md-briefcase"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-label">Project</div>
+              <div class="stat-value">{{ page.client }}</div>
+            </div>
+          </div>
+          {% endif %}
+          {% if page.duration %}
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="ion ion-md-time"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-label">Duration</div>
+              <div class="stat-value">{{ page.duration }}</div>
+            </div>
+          </div>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -57,15 +99,28 @@ layout: default
 <!-- Case Study Content -->
 <div class="case-study-content">
   <div class="container">
+    <div class="case-study-body">
+      {{ content }}
+    </div>
+  </div>
+</div>
+
+<!-- CTA Section -->
+<section class="case-study-cta">
+  <div class="container">
     <div class="row">
       <div class="col col-12">
-        <div class="case-study-body">
-          {{ content }}
+        <div class="case-study-cta__content">
+          <h2 class="case-study-cta__title">Ready to achieve similar results for your project?</h2>
+          <div class="hero__buttons">
+            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0fakbJiTFTnP2psXCdItY2EbGQslNZ0JoSN2Ah3sOpMkiWi--1mbMt6DiKjzUOLz_Ffatm25Uv" target="_blank" class="button button--secondary">Book a Call</a>
+            <a href="/work/" class="button button--primary">View More Cases</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- Navigation -->
 <section class="case-study-navigation">

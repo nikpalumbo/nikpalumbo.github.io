@@ -8,93 +8,55 @@ image: '/images/work-2.jpg'
 image_caption: 'AI-powered personalization system'
 ---
 
-## Challenge
+## Results That Matter
 
-E-commerce platforms struggle with generic product recommendations that don't account for individual user preferences, body types, or usage patterns. This leads to high return rates, poor customer satisfaction, and missed revenue opportunities.
+<div class="results-grid">
+  <div class="result-card">
+    <div class="result-number">85%</div>
+    <div class="result-label">Improvement in Recommendation Accuracy</div>
+  </div>
+  <div class="result-card">
+    <div class="result-number">60%</div>
+    <div class="result-label">Reduction in Return Rates</div>
+  </div>
+  <div class="result-card">
+    <div class="result-number">300%</div>
+    <div class="result-label">ROI Within 6 Months</div>
+  </div>
+  <div class="result-card">
+    <div class="result-number">25%</div>
+    <div class="result-label">Increase in Average Order Value</div>
+  </div>
+</div>
 
-**Key Problems:**
-- Generic "one-size-fits-all" product recommendations
-- High return rates due to poor fit predictions
-- No integration of user-specific data (preferences, measurements, usage patterns)
-- Lack of learning from user feedback and behavior
+**Additional Impact:**
+- 35% improvement in customer retention
+- 92% user satisfaction score for personalized suggestions
+- Sub-100ms response time with 99.9% uptime
 
-## Solution: Intelligent Recommendation Agent
+## The Challenge
 
-I built TrueFit, an AI agent that combines multiple data sources to provide highly personalized product recommendations, particularly for clothing and accessories.
+E-commerce platforms struggle with generic product recommendations, leading to high return rates and poor customer satisfaction. The client needed a solution that could understand individual preferences, body types, and usage patterns.
 
-### Core AI Capabilities
-**Multi-Factor Analysis:**
-- User preference learning from browsing and purchase history
-- Body measurement integration for fit prediction
-- Style preference analysis from user interactions
-- Seasonal and occasion-based recommendation adjustments
+**Key Issues:**
+- 40% return rate due to poor fit predictions
+- Generic recommendations ignoring user preferences
+- No learning from customer feedback
+- Lost revenue from missed personalization opportunities
 
-**Machine Learning Pipeline:**
-- Real-time user behavior tracking and analysis
-- Collaborative filtering combined with content-based recommendations
-- Feedback loop integration for continuous improvement
-- A/B testing framework for recommendation optimization
+## The Solution
 
-### Technical Implementation
-**AI Architecture:**
-- Python-based recommendation engine with scikit-learn and TensorFlow
-- Real-time data processing for immediate personalization
-- RESTful API for seamless e-commerce integration
-- Vector similarity search for efficient product matching
+I developed TrueFit, an AI agent that analyzes multiple data sources to deliver highly personalized product recommendations in real-time.
 
-**Data Integration:**
-- User profile management with privacy-first approach
-- Product catalog analysis and feature extraction
-- Purchase history and return pattern analysis
-- Feedback collection and sentiment analysis
+**Core Features:**
+- **Smart Learning:** Combines browsing history, purchase patterns, and user feedback
+- **Fit Prediction:** Integrates body measurements and size preferences
+- **Real-Time Adaptation:** Updates recommendations instantly based on session behavior
+- **Privacy-First:** GDPR-compliant data handling with user control
 
-## Results
-
-**User Experience:**
-- **85% improvement** in recommendation accuracy
-- **60% reduction** in return rates for recommended items
-- **40% increase** in click-through rates on recommendations
-- **92% user satisfaction** score for personalized suggestions
-
-**Business Impact:**
-- **25% increase** in average order value
-- **35% improvement** in customer retention
-- **50% reduction** in customer service inquiries about sizing
-- **ROI of 300%** within 6 months of implementation
-
-**Technical Performance:**
-- **Sub-100ms** response time for recommendation generation
-- **99.9% uptime** with fault-tolerant architecture
-- **Scalable to 10,000+** concurrent users
-- **GDPR-compliant** data handling and user privacy
-
-## Key Innovations
-
-**Hybrid Recommendation Approach:**
-Combined collaborative filtering, content-based filtering, and deep learning for more accurate predictions than single-method approaches.
-
-**Real-Time Personalization:**
-Built system to adapt recommendations instantly based on current session behavior, not just historical data.
-
-**Feedback Integration:**
-Created sophisticated feedback loop that learns from both explicit user ratings and implicit behavior signals.
-
-## Technologies Used
-
-- **AI/ML**: Python, TensorFlow, scikit-learn, pandas
-- **Backend**: FastAPI, PostgreSQL, Redis for caching
-- **Frontend**: React.js for demo interface
-- **Infrastructure**: Docker, AWS deployment
-- **Analytics**: Custom metrics dashboard for performance tracking
-
-## Demo & Code
-
-**Video Demonstration:**
-Interactive demo showing real-time recommendation generation and user preference learning (available upon request).
-
-**Open Source:**
-Complete implementation available on GitHub with documentation, setup instructions, and example integrations.
+**Technical Stack:**
+Python, TensorFlow, FastAPI, PostgreSQL, Redis, React.js
 
 ---
 
-*This project showcases how AI agents can transform user experience through intelligent personalization, creating measurable business value while maintaining user privacy and system performance.*
+*This AI agent demonstrates how intelligent personalization creates measurable business value while maintaining user privacy and system performance.*
