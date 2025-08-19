@@ -83,7 +83,7 @@ Created transparent scoring system where users can see exactly why each ETF was 
 
 ## Open Source & GitHub
 
-**Repository**: [github.com/nikpalumbo/etf-profiler](https://github.com/nikpalumbo/etf-profiler)
+**Repository**: [View ETFProfiler Source Code →](https://github.com/nikpalumbo/etf-profiler)
 
 **Key Features:**
 - Complete source code with documentation

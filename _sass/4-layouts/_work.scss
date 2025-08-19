@@ -103,6 +103,25 @@
 .case-study-content {
   padding: 80px 0;
   background: white;
+
+  /* External Links Styling */
+  a[href*="youtube.com"],
+  a[href*="github.com"],
+  a[href*="youtu.be"],
+  a[href^="http"]:not([href*="nikpalumbo.github.io"]) {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 2px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: #e6b800 !important;
+      border-bottom-color: #e6b800;
+      transform: translateY(-1px);
+    }
+  }
 }
 
 .case-study-body {

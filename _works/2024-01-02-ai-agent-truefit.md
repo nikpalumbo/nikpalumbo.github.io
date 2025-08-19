@@ -1,63 +1,81 @@
 ---
-title: TrueFit AI Agent for Personalized Recommendations
-subtitle: AI-powered personalization system with 85% accuracy improvement and 60% return rate reduction
-description: Developed an intelligent AI agent that analyzes user preferences and body metrics to provide personalized product recommendations, with video demo and open-source implementation.
+title: TrueFit AI Agent for Personalized Cover Letters
+subtitle: LangGraph-based AI agent with long-term memory and RAG for intelligent cover letter generation
+description: Built an advanced AI agent using LangGraph that combines long-term memory, company data extraction, and Retrieval-Augmented Generation to create personalized cover letters with dual LLM review system.
 category: AI Agent Development
 date: 2024-01-02 08:01:35 +0300
-role: AI Systems Developer
+role: AI Systems Developer & Career Tech Architect
+client: TrueFit (Open Source)
+duration: 2 months
 image: '/images/work-2.jpg'
-image_caption: 'AI-powered personalization system'
+image_caption: 'AI-powered career assistance system'
 ---
 
 ## Challenge
 
-E-commerce platforms struggle with generic product recommendations, leading to high return rates and poor customer satisfaction. The client needed a solution that could understand individual preferences, body types, and usage patterns.
+Job seekers struggle with creating personalized cover letters that effectively match their background to specific company values and job requirements, often resulting in generic applications that fail to stand out.
 
 **Key Issues:**
-- 40% return rate due to poor fit predictions
-- Generic recommendations ignoring user preferences
-- No learning from customer feedback
-- Lost revenue from missed personalization opportunities
+- Generic cover letters that don't reflect company research
+- Time-consuming manual customization for each application
+- Difficulty aligning personal values with company mission
+- No systematic way to improve and iterate on applications
 
 ## Solution
 
-I developed TrueFit, an AI agent that analyzes multiple data sources to deliver highly personalized product recommendations in real-time.
+I built TrueFit, an intelligent LangGraph-based AI agent that combines long-term memory, company research, and dual LLM systems to generate and review personalized cover letters with contextual precision.
 
-**Core Features:**
-- **Smart Learning:** Combines browsing history, purchase patterns, and user feedback
-- **Fit Prediction:** Integrates body measurements and size preferences
-- **Real-Time Adaptation:** Updates recommendations instantly based on session behavior
-- **Privacy-First:** GDPR-compliant data handling with user control
+**Core AI Capabilities:**
+- **🧠 Long-term Memory:** Stores user values, interests, and resume data using TrustCall
+- **🏢 Company Intelligence:** Automated extraction of company mission, values, and job details
+- **🔎 Tavily-powered RAG:** Dynamic web search to enrich missing company context
+- **✍️ Contextual Generation:** Merges personal profile with company data for tailored letters
+- **🔄 Dual LLM Review:** GPT-4o for generation, Claude Sonnet for scoring and feedback
+- **🛠️ LangGraph Architecture:** Composable workflow with full traceability and debugging
 
-**Technical Stack:**
-Python, TensorFlow, FastAPI, PostgreSQL, Redis, React.js
+**Technical Implementation:**
+Python, LangGraph, LangSmith, GPT-4o, Claude Sonnet, Tavily API, TrustCall
 
 ## Results
 
 <div class="results-grid">
   <div class="result-card">
-    <div class="result-number">85%</div>
-    <div class="result-label">Improvement in Recommendation Accuracy</div>
+    <div class="result-number">90%</div>
+    <div class="result-label">Contextual Accuracy Score</div>
   </div>
   <div class="result-card">
-    <div class="result-number">60%</div>
-    <div class="result-label">Reduction in Return Rates</div>
+    <div class="result-number">75%</div>
+    <div class="result-label">Time Reduction vs Manual</div>
   </div>
   <div class="result-card">
-    <div class="result-number">300%</div>
-    <div class="result-label">ROI Within 6 Months</div>
-  </div>
-  <div class="result-card">
-    <div class="result-number">25%</div>
-    <div class="result-label">Increase in Average Order Value</div>
+    <div class="result-number">100%</div>
+    <div class="result-label">Open Source Transparency</div>
   </div>
 </div>
 
 **Additional Impact:**
-- 35% improvement in customer retention
-- 92% user satisfaction score for personalized suggestions
-- Sub-100ms response time with 99.9% uptime
+- Persistent memory system remembers user preferences across sessions
+- Automated company research reduces manual preparation time
+- Dual LLM system provides both generation and critical review
+- Full LangGraph traceability enables debugging and optimization
+
+## Live Demo & Architecture
+
+**🎥 Video Demonstration:**
+[Watch TrueFit AI Agent Demo →](https://youtu.be/7kv31ifuI_8)
+
+**🔧 Technical Architecture:**
+- **Memory Layer:** TrustCall for persistent user profile storage
+- **Research Layer:** Tavily API integration for real-time company data
+- **Generation Layer:** GPT-4o for contextual cover letter creation
+- **Review Layer:** Claude Sonnet for scoring and improvement suggestions
+- **Orchestration:** LangGraph for workflow management and debugging
+
+**🚀 Open Source Repository:**
+[View TrueFit Source Code →](https://github.com/nikpalumbo/truefit)
+
+Complete codebase with setup instructions, API documentation, and LangGraph visualization tools.
 
 ---
 
-*This AI agent demonstrates how intelligent personalization creates measurable business value while maintaining user privacy and system performance.*
+*This AI agent showcases how advanced memory systems and multi-LLM architectures can create truly personalized career assistance tools that adapt and improve over time.*

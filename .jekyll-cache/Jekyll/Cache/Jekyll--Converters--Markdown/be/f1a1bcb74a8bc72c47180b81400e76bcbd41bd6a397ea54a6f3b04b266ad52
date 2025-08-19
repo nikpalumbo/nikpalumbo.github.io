@@ -1,0 +1,98 @@
+I"�<h2 id="challenge">Challenge</h2>
+
+<p>Individual investors struggle to navigate the overwhelming landscape of ETFs, with thousands of options and complex financial documents that are difficult to parse and compare effectively.</p>
+
+<p><strong>Key Issues:</strong></p>
+<ul>
+  <li>3,000+ ETFs in the market with complex documentation</li>
+  <li>Generic investment advice that doesn’t consider personal goals</li>
+  <li>Manual research requiring hours to analyze single ETF</li>
+  <li>Financial jargon and data overload preventing informed decisions</li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<p>I built ETFProfiler, an intelligent AI agent powered by LangGraph that conducts conversational interviews to understand investor preferences, then analyzes hundreds of ETF documents to provide personalized recommendations.</p>
+
+<p><strong>Core AI Capabilities:</strong></p>
+<ul>
+  <li><strong>🧠 Conversational Profiling:</strong> Interactive questioning to understand investment style and goals</li>
+  <li><strong>📄 Document Intelligence:</strong> Automated parsing and embedding of ETF factsheets and prospectuses</li>
+  <li><strong>🧭 LLM-Powered Matching:</strong> GPT-4 interprets and scores ETFs based on user compatibility</li>
+  <li><strong>🔍 Semantic Retrieval:</strong> ChromaDB surfaces most relevant ETF documents before analysis</li>
+  <li><strong>🛠️ LangGraph Architecture:</strong> Fully transparent, debuggable workflow with customizable nodes</li>
+</ul>
+
+<p><strong>Technical Implementation:</strong>
+Python, LangGraph, GPT-4, ChromaDB, Vector Embeddings, PDF Processing</p>
+
+<h2 id="results">Results</h2>
+
+<div class="results-grid">
+
+  <div class="result-card">
+    <div class="result-number">3,000+</div>
+    <div class="result-label">ETF Documents Processed</div>
+  </div>
+  <div class="result-card">
+    <div class="result-number">85%</div>
+    <div class="result-label">Reduction in Research Time</div>
+  </div>
+  <div class="result-card">
+    <div class="result-number">100%</div>
+    <div class="result-label">Open Source Transparency</div>
+  </div>
+</div>
+
+<p><strong>Additional Impact:</strong></p>
+<ul>
+  <li>Automated analysis of complex 50+ page ETF prospectuses</li>
+  <li>Natural language interface accessible to non-financial professionals</li>
+  <li>Fully transparent decision-making process through LangGraph visualization</li>
+</ul>
+
+<h2 id="key-innovations">Key Innovations</h2>
+
+<p><strong>LangGraph Workflow Architecture:</strong>
+Designed a transparent, node-based AI workflow where each step (profiling, document retrieval, scoring, recommendation) is a separate, debuggable component.</p>
+
+<p><strong>Conversational Investment Profiling:</strong>
+Built an intelligent questioning system that adapts based on user responses, extracting nuanced investment preferences through natural conversation.</p>
+
+<p><strong>Multi-Document Semantic Analysis:</strong>
+Implemented vector embedding system that processes hundreds of ETF documents simultaneously, enabling semantic search across complex financial information.</p>
+
+<p><strong>Explainable AI Recommendations:</strong>
+Created transparent scoring system where users can see exactly why each ETF was recommended, building trust through explainability.</p>
+
+<h2 id="technical-architecture">Technical Architecture</h2>
+
+<ul>
+  <li><strong>AI Framework</strong>: LangGraph for workflow orchestration</li>
+  <li><strong>Language Model</strong>: GPT-4 for natural language understanding and generation</li>
+  <li><strong>Vector Database</strong>: ChromaDB for semantic document retrieval</li>
+  <li><strong>Document Processing</strong>: Python libraries for PDF parsing and text extraction</li>
+  <li><strong>Embeddings</strong>: OpenAI embeddings for semantic similarity matching</li>
+  <li><strong>Development</strong>: Python for rapid prototyping and experimentation</li>
+</ul>
+
+<h2 id="open-source--github">Open Source &amp; GitHub</h2>
+
+<p><strong>Repository</strong>: <a href="https://github.com/nikpalumbo/etf-profiler">View ETFProfiler Source Code →</a></p>
+
+<p><strong>Key Features:</strong></p>
+<ul>
+  <li>Complete source code with documentation</li>
+  <li>LangGraph workflow visualization</li>
+  <li>Example ETF document processing pipeline</li>
+  <li>Python modules demonstrating each component</li>
+  <li>Setup instructions for local development</li>
+</ul>
+
+<p><strong>Transparency:</strong>
+Every decision the AI makes is logged and explainable, making it suitable for financial advisory contexts where transparency is crucial.</p>
+
+<hr />
+
+<p><em>This AI agent demonstrates how LangGraph and modern NLP can create intelligent, transparent systems that handle complex domain knowledge while maintaining user trust through explainability.</em></p>
+:ET
