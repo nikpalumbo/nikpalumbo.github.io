@@ -37,10 +37,8 @@
 
   <script>
     
-    if (localStorage.getItem("theme") === "dark") {
-      document.documentElement.setAttribute("dark", "");
-      document.documentElement.classList.add('dark-mode');
-    }
+      document.documentElement.setAttribute("light", "");
+      document.documentElement.classList.add('light-mode');
     
   </script>
 
@@ -134,12 +132,7 @@
           <div class="hamburger">
             <div></div>
           </div>
-          
-          <div class="toggle-theme toggle-theme-js">
-            <div class="toggle-moon" title="Enable dark mode"><i class="ion ion-ios-moon"></i></div>
-            <div class="toggle-sun" title="Enable light mode"><i class="ion ion-ios-sunny"></i></div>
-          </div>
-          
+
         </div>
 
       </div>
@@ -609,7 +602,7 @@
           <div class="footer__content">
             <div class="footer__company">Smart Data Way GmbH</div>
             <div class="footer__address">Seestrasse 112, 8806 Freienbach</div>
-            <div class="footer__credits">Published with <a href="https://jekyllrb.com/">Jekyll</a>. Crafted & Designed by Nicola Palumbo.</div>
+            <div class="footer__credits">Crafted & Designed by Nicola Palumbo.</div>
           </div>
         </div>
       </div>
