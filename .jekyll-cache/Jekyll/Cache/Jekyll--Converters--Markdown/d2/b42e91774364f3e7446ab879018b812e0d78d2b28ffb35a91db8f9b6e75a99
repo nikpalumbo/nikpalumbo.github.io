@@ -1,18 +1,54 @@
----
-layout: default
-title: About
-description: I work with trusted professionals from my network and leverage cutting-edge AI tools like ChatGPT, Cursor, and Loveable to deliver enterprise-grade results at startup speed.
-permalink: /about/
----
-
-<!-- About Header -->
+I"4<!-- About Header -->
 <div class="case-studies-header">
   <div class="container">
     <div class="row">
       <div class="col col-12">
         <div class="case-studies-header__content">
-          <h1 class="case-studies-title">{{ page.title }}</h1>
-          <p class="case-studies-description">{{ page.description }}</p>
+          <h1 class="case-studies-title">About</h1>
+          <p class="case-studies-description">I work with trusted professionals from my network and leverage cutting-edge AI tools like ChatGPT, Cursor, and Loveable to deliver enterprise-grade results at startup speed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Values & Philosophy Section -->
+<div class="values-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Values &amp; Philosophy That Guide Every Decision</h2>
+      <p class="section-subtitle">The principles and mindset that shape how I work with clients and approach every challenge</p>
+    </div>
+    <div class="values-grid">
+      <div class="values-left">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <i class="ion ion-md-heart"></i>
+          </div>
+          <h3 class="service-card__title">Core Values</h3>
+          <p class="service-card__description">The fundamental beliefs that drive every interaction, decision, and deliverable in my work with clients.</p>
+          
+          <div class="service-card__outcomes">
+            <div class="outcome-badge">Integrity over quick wins—building lasting partnerships</div>
+            <div class="outcome-badge">Transparency in communication and honest feedback</div>
+            <div class="outcome-badge">Results-driven focus with measurable outcomes</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="values-right">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <i class="ion ion-md-bulb"></i>
+          </div>
+          <h3 class="service-card__title">Work Philosophy</h3>
+          <p class="service-card__description">How I approach problems, collaborate with teams, and deliver solutions that create lasting impact.</p>
+          
+          <div class="service-card__outcomes">
+            <div class="outcome-badge">Move fast, validate early, iterate based on real data</div>
+            <div class="outcome-badge">Combine startup agility with enterprise precision</div>
+            <div class="outcome-badge">Build systems that scale, not just quick fixes</div>
+          </div>
         </div>
       </div>
     </div>
@@ -43,7 +79,7 @@ permalink: /about/
       </div>
       
       <div class="vision-photo">
-        <img src="/images/nicola-professional.jpg" alt="Nicola Palumbo">
+        <img src="/images/nicola-professional.jpg" alt="Nicola Palumbo" />
       </div>
     </div>
   </div>
@@ -98,7 +134,7 @@ permalink: /about/
 <div class="values-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Values & Philosophy That Guide Every Decision</h2>
+      <h2 class="section-title">Values &amp; Philosophy That Guide Every Decision</h2>
       <p class="section-subtitle">The principles and mindset that shape how I work with clients and approach every challenge</p>
     </div>
     <div class="values-grid">
@@ -136,13 +172,4 @@ permalink: /about/
     </div>
   </div>
 </div>
-
-<!-- CTA Section -->
-<div class="cta-section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Ready to design products that delight users and accelerate growth?</h2>
-      <a href="/contact/" class="button button--primary button--large">Book a Consultation</a>
-    </div>
-  </div>
-</div>
+:ET
