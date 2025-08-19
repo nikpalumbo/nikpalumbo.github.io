@@ -294,14 +294,21 @@
 }
 
 .work-card__link {
-  color: var(--primary-color);
+  display: inline-block;
+  padding: 12px 24px;
+  background: #1f2937;
+  color: white;
   font-weight: 600;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
+  border-radius: 8px;
   margin-top: auto;
+  transition: all 0.2s ease;
 
   &:hover {
-    color: #e6b800;
+    background: #111827;
+    color: white;
+    transform: translateY(-1px);
   }
 }
 

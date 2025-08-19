@@ -385,3 +385,32 @@
     display: none;
   }
 }
+
+/* Navigation Button Styling */
+.nav__link--button {
+  background: #1f2937 !important;
+  color: white !important;
+  padding: 12px 24px !important;
+  border-radius: 8px !important;
+  margin-left: 16px !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+
+  &:hover {
+    background: #111827 !important;
+    color: white !important;
+    transform: translateY(-1px) !important;
+  }
+
+  &.active-link {
+    background: #111827 !important;
+    color: white !important;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 0 !important;
+    margin-top: 8px !important;
+    text-align: center !important;
+    display: inline-block !important;
+  }
+}

@@ -20,8 +20,9 @@ menu__settings:
       url: '/about/'
     - title: 'Blog'
       url: '/blog/'
-    - title: 'Start Project'
+    - title: 'Book a Call'
       url: '/contact/'
+      button: true
 
 #-------------------------------
 # Author Settings
