@@ -1,7 +1,8 @@
 ---
-title: ETFProfiler AI-Powered Investment Analysis Agent
+title: "ETFProfiler AI Investment Analysis Agent - Smart ETF Matching Case Study"
 subtitle: LangGraph-powered AI agent that matches investors with optimal ETFs based on personal goals and preferences
-description: Built an intelligent AI agent using Python and LangGraph that analyzes ETF documents, conducts conversational profiling, and provides personalized investment recommendations through semantic retrieval and GPT-4 powered matching.
+description: "ETFProfiler AI agent case study: LangGraph-powered investment analysis system with semantic retrieval and GPT-4 matching. Processes 3,000+ ETF documents for personalized investment recommendations."
+keywords: "ETFProfiler AI agent, investment analysis AI, ETF matching system, LangGraph investment, AI investment advisor, semantic retrieval, GPT-4 finance"
 category: AI Agent Development
 date: 2024-01-03 08:01:35 +0300
 role: AI Systems Developer & Investment Tech Architect

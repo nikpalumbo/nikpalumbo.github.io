@@ -5,6 +5,19 @@
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.data.settings.title }}{% endif %}</title>
   <meta name='description' content='{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.settings.description }}{% endif %}'>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}AI agent development, intelligent growth systems, smart conversion websites, SaaS growth consultant, AI automation, startup growth, SME automation, enterprise AI, Swiss AI developer, conversion optimization{% endif %}">
+  <meta name="author" content="Nicola Palumbo">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  
+  <!-- Geographic SEO -->
+  <meta name="geo.region" content="CH-SZ">
+  <meta name="geo.placename" content="Freienbach, Switzerland">
+  <meta name="geo.position" content="47.2043;8.7584">
+  <meta name="ICBM" content="47.2043, 8.7584">
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.data.settings.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
@@ -58,4 +71,99 @@
   {% endcapture %}
   {{ include_to_scssify | scssify }}
   </style>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Smart Data Way GmbH",
+    "alternateName": "Nicola Palumbo",
+    "url": "{{ site.url }}",
+    "logo": "{{ site.url }}/images/sdw.png",
+    "description": "{{ site.data.settings.description }}",
+    "founder": {
+      "@type": "Person",
+      "name": "Nicola Palumbo",
+      "jobTitle": "AI Systems Developer & Growth Strategist",
+      "url": "{{ site.url }}/about/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Seestrasse 112",
+      "addressLocality": "Freienbach",
+      "postalCode": "8806",
+      "addressCountry": "CH"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 47.2043,
+      "longitude": 8.7584
+    },
+    "areaServed": ["Switzerland", "Europe", "Global"],
+    "serviceType": [
+      "AI Agent Development",
+      "Intelligent Growth Systems",
+      "Smart Conversion Websites",
+      "SaaS Growth Consulting",
+      "Process Automation",
+      "Digital Transformation"
+    ],
+    "sameAs": [
+      "https://github.com/nikpalumbo",
+      "https://linkedin.com/in/nicolapalumbo"
+    ]
+  }
+  </script>
+
+  {% if page.url == "/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "{{ site.data.settings.title }}",
+    "description": "{{ site.data.settings.description }}",
+    "url": "{{ site.url }}",
+    "image": "{{ site.url }}/images/sdw.png",
+    "provider": {
+      "@type": "Organization",
+      "name": "Smart Data Way GmbH"
+    },
+    "serviceArea": {
+      "@type": "Country",
+      "name": "Switzerland"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI & Growth Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI Agent Development",
+            "description": "Custom AI agents for automation and intelligent workflows"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Intelligent Growth Systems",
+            "description": "Scalable systems for lead generation and business growth"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Smart Conversion Websites",
+            "description": "High-converting websites optimized for growth"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+  {% endif %}
 </head>

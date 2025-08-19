@@ -1,7 +1,8 @@
 ---
-title: QuiteMatch - AI-Powered Recruitment Platform
+title: "QuiteMatch AI Recruitment Platform - 40% Conversion Improvement Case Study"
 subtitle: AI recruitment platform with 40% conversion improvement and automated workflows
-description: Built a complete recruitment platform with AI-powered candidate assessment, employer onboarding, and conversion-optimized landing page that achieved 40% conversion improvement and automated hiring workflows.
+description: "QuiteMatch AI recruitment platform case study: 40% conversion improvement, automated hiring workflows, and intelligent candidate assessment. See how AI-powered systems transformed recruitment."
+keywords: "QuiteMatch case study, AI recruitment platform, 40% conversion improvement, automated hiring workflows, recruitment AI, candidate assessment"
 category: Intelligent Growth Systems
 date: 2025-01-04 08:01:35 +0300
 role: Full-Stack Developer & Growth Systems Architect
