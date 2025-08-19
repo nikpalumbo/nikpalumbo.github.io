@@ -18,10 +18,8 @@ menu__settings:
       url: '/work/'
     - title: 'About'
       url: '/about/'
-    - title: 'Blog'
-      url: '/blog/'
     - title: 'Book a Call'
-      url: '/contact/'
+      url: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0fakbJiTFTnP2psXCdItY2EbGQslNZ0JoSN2Ah3sOpMkiWi--1mbMt6DiKjzUOLz_Ffatm25Uv'
       button: true
 
 #-------------------------------
