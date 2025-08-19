@@ -1,18 +1,37 @@
----
-layout: default
-title: About
-description: I work with trusted professionals from my network and leverage cutting-edge AI tools like ChatGPT, Cursor, and Loveable to deliver enterprise-grade results at startup speed.
-permalink: /about/
----
-
-<!-- About Header -->
-<div class="case-studies-header">
+I"ê<!-- About Hero Section -->
+<div class="about-hero">
   <div class="container">
-    <div class="row">
-      <div class="col col-12">
-        <div class="case-studies-header__content">
-          <h1 class="case-studies-title">{{ page.title }}</h1>
-          <p class="case-studies-description">{{ page.description }}</p>
+    <div class="about-hero-grid">
+      <div class="about-hero-content">
+        <div class="hero-badge">About Nicola</div>
+        <h1 class="about-hero-title">Building <span class="highlight">intelligent systems</span> that drive real growth</h1>
+        <p class="about-hero-description">I work with trusted professionals from my network and leverage cutting-edge AI tools like ChatGPT, Cursor, and Loveable to deliver enterprise-grade results at startup speed.</p>
+        
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-number">50+</div>
+            <div class="stat-text">Projects</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number">3-6x</div>
+            <div class="stat-text">Growth</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number">500+</div>
+            <div class="stat-text">Customers</div>
+          </div>
+        </div>
+        
+        <div class="hero-cta">
+          <a href="/contact/" class="button button--primary">Start Your Project</a>
+          <a href="#vision" class="button button--outline">Learn My Approach</a>
+        </div>
+      </div>
+      
+      <div class="about-hero-visual">
+        <div class="hero-image-container">
+          <img src="/images/nicola-professional.jpg" alt="Nicola Palumbo" class="hero-image" />
+          <div class="hero-decoration"></div>
         </div>
       </div>
     </div>
@@ -22,6 +41,10 @@ permalink: /about/
 <!-- Vision Section -->
 <div class="vision-section">
   <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">What Drives My Work</h2>
+      <p class="section-subtitle">Combining strategic thinking with hands-on execution to deliver measurable results</p>
+    </div>
     <div class="vision-grid">
       <div class="vision-left">
         <div class="service-card">
@@ -39,7 +62,7 @@ permalink: /about/
       </div>
       
       <div class="vision-photo">
-        <img src="/images/nicola-professional.jpg" alt="Nicola Palumbo">
+        <img src="/images/nicola-professional.jpg" alt="Nicola Palumbo" />
       </div>
     </div>
   </div>
@@ -94,7 +117,7 @@ permalink: /about/
 <div class="values-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Values & Philosophy That Guide Every Decision</h2>
+      <h2 class="section-title">Values &amp; Philosophy That Guide Every Decision</h2>
       <p class="section-subtitle">The principles and mindset that shape how I work with clients and approach every challenge</p>
     </div>
     <div class="values-grid">
@@ -138,10 +161,8 @@ permalink: /about/
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Ready to design products that delight users and accelerate growth?</h2>
-      <div class="hero__buttons">
-        <a href="/contact/" class="button button--primary">Book a Call</a>
-        <a href="/work/" class="button button--secondary">View Case Studies</a>
-      </div>
+      <a href="/contact/" class="button button--primary button--large">Book a Consultation</a>
     </div>
   </div>
 </div>
+:ET

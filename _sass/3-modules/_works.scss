@@ -394,3 +394,15 @@
     }
   }
 }
+
+/* Works Section on Homepage - Reduced Spacing
+================================================== */
+.section.works {
+  margin-top: 60px !important;
+  margin-bottom: 40px !important;
+
+  @media (max-width: 768px) {
+    margin-top: 40px !important;
+    margin-bottom: 30px !important;
+  }
+}

@@ -1,0 +1,135 @@
+I"F<!-- Services Header -->
+<div class="case-studies-header">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="case-studies-header__content">
+          <h1 class="case-studies-title">Services</h1>
+          <p class="case-studies-description">Strategic solutions that turn your biggest challenges into competitive advantages through intelligent growth systems and AI-powered automation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Services Content -->
+<div class="services-page-section">
+  <div class="container">
+    <div class="services-grid">
+      
+      <div class="service-card">
+        <div class="service-card__header">
+          <div class="service-card__icon">
+            <i class="ion ion-md-trending-up"></i>
+          </div>
+        </div>
+        <div class="service-card__content">
+          <h3 class="service-card__title">Intelligent Growth Systems</h3>
+          <p class="service-card__description">Full-funnel growth engines from value proposition to lead conversion. Define ideal customers, select channels, craft outreach, and automate CRM workflows.</p>
+          
+          
+          <div class="service-card__outcomes">
+            
+            <div class="outcome-badge">Clear positioning and messaging that resonates with your market</div>
+            
+            <div class="outcome-badge">Consistent flow of qualified leads from multiple channels</div>
+            
+            <div class="outcome-badge">Reduced manual effort in outreach and follow-up</div>
+            
+            <div class="outcome-badge">CRM workflows that scale with your business</div>
+            
+          </div>
+          
+          
+          
+        </div>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-card__header">
+          <div class="service-card__icon">
+            <i class="ion ion-md-cog"></i>
+          </div>
+        </div>
+        <div class="service-card__content">
+          <h3 class="service-card__title">AI Agent Development</h3>
+          <p class="service-card__description">Custom AI solutions for internal tasks or customer-facing interactions. Tailored agents built on your data, not generic templates.</p>
+          
+          
+          <div class="service-card__outcomes">
+            
+            <div class="outcome-badge">A faster way to handle repetitive tasks or customer interactions</div>
+            
+            <div class="outcome-badge">Custom solutions built on your data, not generic templates</div>
+            
+            <div class="outcome-badge">Clear ROI through automation and time savings</div>
+            
+            <div class="outcome-badge">Scalable tools that grow with your team and tech stack</div>
+            
+          </div>
+          
+          
+          
+        </div>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-card__header">
+          <div class="service-card__icon">
+            <i class="ion ion-md-desktop"></i>
+          </div>
+        </div>
+        <div class="service-card__content">
+          <h3 class="service-card__title">Smart Conversion Websites</h3>
+          <p class="service-card__description">High-performance sites designed to convert, not just inform. AI-integrated features like guided onboarding and instant quotes.</p>
+          
+          
+          <div class="service-card__outcomes">
+            
+            <div class="outcome-badge">Higher engagement and conversion rates from day one</div>
+            
+            <div class="outcome-badge">Faster load times and mobile optimization for better UX and SEO</div>
+            
+            <div class="outcome-badge">Seamless integration with your existing systems (CRM, analytics, chat)</div>
+            
+            <div class="outcome-badge">A flexible platform you can update without relying on developers</div>
+            
+          </div>
+          
+          
+          
+        </div>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-card__header">
+          <div class="service-card__icon">
+            <i class="ion ion-md-rocket"></i>
+          </div>
+        </div>
+        <div class="service-card__content">
+          <h3 class="service-card__title">Product-Led Growth Prototyping</h3>
+          <p class="service-card__description">Functional web apps that validate ideas and drive growth through real user interaction. Production-grade MVPs delivered in weeks.</p>
+          
+          
+          <div class="service-card__outcomes">
+            
+            <div class="outcome-badge">Fully functional web apps delivered in weeks, not months</div>
+            
+            <div class="outcome-badge">Rapid experimentation with real users, not mockups</div>
+            
+            <div class="outcome-badge">Built-in analytics to measure engagement, retention, and conversion</div>
+            
+            <div class="outcome-badge">Architecture ready to scale or evolve into full products when validated</div>
+            
+          </div>
+          
+          
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+:ET

@@ -194,7 +194,7 @@ process:
 #-------------------------------
 # Testimonials Section
 testimonials:
-  enable: true
+  enable: false
 
 testimonial__title: What Clients Say About Working With Me
 testimonial__description: Real feedback from founders, executives, and teams who've experienced measurable growth through our collaboration.
@@ -258,7 +258,7 @@ testimonial__items:
 #-------------------------------
 # Blog Section
 blog:
-  enable: true
+  enable: false
 
 blog__settings:
   blog__title: Blog
