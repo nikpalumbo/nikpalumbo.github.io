@@ -1,5 +1,6 @@
 ---
 title: Complete Growth System for SaaS Startup
+subtitle: End-to-end growth infrastructure with 300% increase in qualified leads and systematic market positioning
 description: Built end-to-end growth infrastructure from positioning to lead generation, establishing clear USP and systematic outbound process for Swiss market entry.
 category: Intelligent Growth Systems
 date: 2024-01-01 08:01:35 +0300

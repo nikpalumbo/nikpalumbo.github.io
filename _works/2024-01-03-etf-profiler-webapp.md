@@ -1,5 +1,6 @@
 ---
 title: ETFProfiler - AI-Powered Investment Analysis Agent
+subtitle: Smart investment platform with 78% bounce rate reduction and 40% visitor-to-user conversion
 description: Developed an intelligent AI agent for ETF analysis and investment recommendations, featuring machine learning-driven insights, natural language queries, and personalized portfolio suggestions.
 category: AI Agent Development
 date: 2024-01-03 08:01:35 +0300
@@ -10,64 +11,52 @@ image_caption: 'Financial data visualization platform'
 
 ## Challenge
 
-Investment professionals and individual investors needed a comprehensive tool to analyze and compare ETFs (Exchange-Traded Funds) but existing solutions were either too complex, too expensive, or lacked real-time data integration.
+Investment professionals needed a comprehensive ETF analysis tool, but existing solutions were either too complex, too expensive, or lacked real-time data integration.
 
-**Key Problems:**
+**Key Issues:**
 - Fragmented ETF data across multiple sources
-- Complex financial interfaces intimidating to non-professionals
+- Complex interfaces intimidating to non-professionals
 - Slow loading times with large datasets
 - Poor mobile experience for on-the-go analysis
-- No intelligent filtering or recommendation system
 
-## Solution: Smart Investment Platform
+## Solution
 
 I developed ETFProfiler, a conversion-optimized web application that transforms complex financial data into actionable insights through intelligent design and real-time processing.
 
-### User Experience Design
-**Conversion-Focused Interface:**
-- Progressive disclosure of complex information
-- Interactive data visualizations for immediate insights
-- Smart onboarding flow to reduce bounce rate
-- Mobile-first responsive design for accessibility
+**Core Features:**
+- **AI-Powered Recommendations:** Risk profile-based ETF suggestions
+- **Natural Language Search:** Plain English queries like "low-cost European tech funds"
+- **Real-Time Data:** Live price feeds and market updates
+- **Mobile-First Design:** Progressive Web App for mobile performance
 
-**Intelligent Features:**
-- AI-powered ETF recommendations based on risk profile
-- Real-time comparison tools with drag-and-drop interface
-- Advanced filtering with natural language queries
-- Personalized watchlists and portfolio tracking
-
-### Technical Implementation
-**High-Performance Architecture:**
-- React.js frontend with optimized bundle splitting
-- Node.js backend with efficient data caching
-- Real-time WebSocket connections for live data
-- Progressive Web App (PWA) for mobile performance
-
-**Data Integration:**
-- Multiple financial data provider APIs
-- Real-time price feeds and market data
-- Historical performance analysis engine
-- Custom data normalization and validation
+**Technical Stack:**
+React.js, Node.js, PostgreSQL, WebSocket, AWS, Redis
 
 ## Results
 
-**User Engagement:**
-- **78% reduction** in bounce rate compared to competitor sites
-- **4.2 minutes** average session duration (industry average: 1.8 minutes)
-- **65% of users** return within 7 days
-- **92% mobile usability** score from Google PageSpeed
+<div class="results-grid">
+  <div class="result-card">
+    <div class="result-number">78%</div>
+    <div class="result-label">Reduction in Bounce Rate</div>
+  </div>
+  <div class="result-card">
+    <div class="result-number">40%</div>
+    <div class="result-label">Visitor-to-User Conversion</div>
+  </div>
+  <div class="result-card">
+    <div class="result-number">4.2 min</div>
+    <div class="result-label">Average Session Duration</div>
+  </div>
+  <div class="result-card">
+    <div class="result-number">99.8%</div>
+    <div class="result-label">Platform Uptime</div>
+  </div>
+</div>
 
-**Performance Metrics:**
-- **Sub-2 second** initial page load time
-- **99.8% uptime** with global CDN distribution
-- **10,000+ concurrent users** supported
-- **SEO score of 95/100** for organic discovery
-
-**Business Impact:**
-- **40% conversion rate** from visitor to registered user
-- **25% increase** in premium subscription sign-ups
-- **60% reduction** in customer support queries
-- **Featured** in 3 major financial publications
+**Additional Impact:**
+- 25% increase in premium subscription sign-ups
+- 65% of users return within 7 days
+- Featured in 3 major financial publications
 
 ## Key Innovations
 

@@ -132,8 +132,8 @@ layout: default
         </div>
         
         <div class="navigation-grid">
-          {% assign current_category = page.category %}
-          {% assign related_works = site.works | where_exp: "item", "item.category != current_category" | limit: 2 %}
+          {% assign current_url = page.url %}
+          {% assign related_works = site.works | where_exp: "item", "item.url != current_url" | limit: 3 %}
           
           {% for work in related_works %}
           <div class="navigation-card">
@@ -142,7 +142,7 @@ layout: default
               <a href="{{ work.url }}">{{ work.title }}</a>
             </h4>
             <p class="nav-card-description">{{ work.description | truncate: 120 }}</p>
-            <a href="{{ work.url }}" class="nav-card-link">View Case Study →</a>
+            <a href="{{ work.url }}" class="nav-card-link">View Case Study</a>
           </div>
           {% endfor %}
         </div>
