@@ -19,7 +19,7 @@ A growing SaaS platform needed to dramatically improve their landing page conver
 
 ## Solution
 
-I built a comprehensive recruitment platform that combines high-converting landing pages with intelligent candidate assessment and streamlined employer onboarding—all designed as a growth system to systematically build their user database.
+I built a comprehensive recruitment platform that combines high-converting landing pages with intelligent candidate assessment and streamlined employer onboarding, all designed as a growth system to systematically build their user database.
 
 **Core Features:**
 - **Psychology-Driven Design:** Hero sections with immediate value clarity and social proof

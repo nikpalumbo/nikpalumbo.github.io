@@ -26,7 +26,7 @@ menu__settings:
 # Author Settings
 author:
   author__name: Nicola Palumbo
-  author__bio: I know the path from zero to traction—because I've walked it. As a SaaS founder who scaled to Fortune 500 clients with 4× YoY growth, I help companies design products that delight users and accelerate growth.
+  author__bio: I know the path from zero to traction because I've walked it. As a SaaS founder who scaled to Fortune 500 clients with 4× YoY growth, I help companies design products that delight users and accelerate growth.
   author__avatar: '/images/01.jpg'
 
 social:
@@ -47,7 +47,7 @@ hero:
   enable: true
   hero__badge: Growth Systems & AI Development
   hero__title: Where Growth Strategy Meets <span class="highlight">Technology</span> Precisely
-  hero__description: Turn your growth challenges into competitive advantages with AI-powered systems that work 24/7. From intelligent lead generation to smart conversion optimization.
+  hero__description: "I've scaled my own SaaS from zero to Fortune 500 clients. Now I help companies build intelligent systems: AI agents, growth engines, and smart conversion websites that deliver results 24/7."
   hero__image: "/images/01-1.jpg"
 
 
@@ -133,7 +133,7 @@ work:
 cta:
   enable: true
   cta__title: "Ready to Build Something Real?"
-  cta__description: "Every engagement begins with a structured scoping session. Let's define your goals, outcomes, and constraints—then move fast to create working solutions."
+  cta__description: "Every engagement begins with a structured scoping session. Let's define your goals, outcomes, and constraints, then move fast to create working solutions."
   cta__buttons:
     - text: "Start Your Project"
       url: "/contact/"
@@ -174,7 +174,7 @@ process:
       
     - step: "03"
       title: "Full-Stack Execution"  
-      description: "I handle the full stack—from scoping to wireframes to working code."
+      description: "I handle the full stack: from scoping to wireframes to working code."
       icon: "ion ion-md-construct"
       
   process__value_props:
@@ -215,7 +215,7 @@ testimonial__items:
     image: "/images/client-3.jpg"
     designation: "CEO, CloudTech Solutions"
     link: "#"
-    content : "Our new landing page increased trial signups by 250%. Nicola didn't just build a website—he created a conversion machine that understands our users and adapts in real-time."
+    content : "Our new landing page increased trial signups by 250%. Nicola didn't just build a website, he created a conversion machine that understands our users and adapts in real-time."
 
   - name: "David Kim"
     image: "/images/client-4.jpg"

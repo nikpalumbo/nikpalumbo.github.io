@@ -1,0 +1,93 @@
+I"�<h2 id="challenge">Challenge</h2>
+
+<p>Individual investors struggle to navigate the overwhelming landscape of ETFs, with thousands of options and complex financial documents that are difficult to parse and compare effectively.</p>
+
+<p><strong>Key Issues:</strong></p>
+<ul>
+  <li>3,000+ ETFs in the market with complex documentation</li>
+  <li>Generic investment advice that doesn’t consider personal goals</li>
+  <li>Manual research requiring hours to analyze single ETF</li>
+  <li>Financial jargon and data overload preventing informed decisions</li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<p>I built ETFProfiler, an intelligent AI agent powered by LangGraph that conducts conversational interviews to understand investor preferences, then analyzes hundreds of ETF documents to provide personalized recommendations.</p>
+
+<p><strong>Core AI Capabilities:</strong></p>
+<ul>
+  <li><strong>🧠 Conversational Profiling:</strong> Interactive questioning to understand investment style and goals</li>
+  <li><strong>📄 Document Intelligence:</strong> Automated parsing and embedding of ETF factsheets and prospectuses</li>
+  <li><strong>🧭 LLM-Powered Matching:</strong> GPT-4 interprets and scores ETFs based on user compatibility</li>
+  <li><strong>🔍 Semantic Retrieval:</strong> ChromaDB surfaces most relevant ETF documents before analysis</li>
+  <li><strong>🛠️ LangGraph Architecture:</strong> Fully transparent, debuggable workflow with customizable nodes</li>
+</ul>
+
+<p><strong>Technical Implementation:</strong>
+Python, LangGraph, GPT-4, ChromaDB, Vector Embeddings, PDF Processing</p>
+
+<h2 id="results">Results</h2>
+
+<div class="results-grid">
+  <div class="result-card">
+    <div class="result-number">78%</div>
+    <div class="result-label">Reduction in Bounce Rate</div>
+  </div>
+  <div class="result-card">
+    <div class="result-number">40%</div>
+    <div class="result-label">Visitor-to-User Conversion</div>
+  </div>
+  <div class="result-card">
+    <div class="result-number">4.2 min</div>
+    <div class="result-label">Average Session Duration</div>
+  </div>
+  <div class="result-card">
+    <div class="result-number">99.8%</div>
+    <div class="result-label">Platform Uptime</div>
+  </div>
+</div>
+
+<p><strong>Additional Impact:</strong></p>
+<ul>
+  <li>25% increase in premium subscription sign-ups</li>
+  <li>65% of users return within 7 days</li>
+  <li>Featured in 3 major financial publications</li>
+</ul>
+
+<h2 id="key-innovations">Key Innovations</h2>
+
+<p><strong>Smart Data Visualization:</strong>
+Created interactive charts that automatically adjust complexity based on user expertise level, making financial data accessible to beginners while providing depth for professionals.</p>
+
+<p><strong>Intelligent Filtering System:</strong>
+Built natural language processing for ETF search, allowing users to find investments using plain English queries like “low-cost European tech funds.”</p>
+
+<p><strong>Performance Optimization:</strong>
+Implemented advanced caching strategies and lazy loading to handle large financial datasets without compromising user experience.</p>
+
+<h2 id="technologies-used">Technologies Used</h2>
+
+<ul>
+  <li><strong>Frontend</strong>: React.js, D3.js for visualizations, Material-UI</li>
+  <li><strong>Backend</strong>: Node.js, Express.js, PostgreSQL</li>
+  <li><strong>Real-time</strong>: WebSocket connections, Redis for caching</li>
+  <li><strong>Infrastructure</strong>: AWS deployment, CloudFront CDN</li>
+  <li><strong>Analytics</strong>: Custom tracking for user behavior analysis</li>
+  <li><strong>Testing</strong>: Jest, Cypress for end-to-end testing</li>
+</ul>
+
+<h2 id="live-demo--code">Live Demo &amp; Code</h2>
+
+<p><strong>Public Application:</strong>
+Fully functional platform available for testing and demonstration with real financial data.</p>
+
+<p><strong>Open Source Repository:</strong>
+Complete codebase available on GitHub including setup documentation, API specifications, and deployment guides.</p>
+
+<p><strong>Mobile Experience:</strong>
+PWA installable on mobile devices with offline data access for core features.</p>
+
+<hr />
+
+<p><em>This project demonstrates how smart conversion design combined with high-performance architecture can transform complex data into user-friendly experiences that drive engagement and business results.</em></p>
+:ET

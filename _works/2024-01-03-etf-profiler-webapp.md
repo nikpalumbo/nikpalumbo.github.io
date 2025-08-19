@@ -1,94 +1,100 @@
 ---
-title: ETFProfiler - AI-Powered Investment Analysis Agent
-subtitle: Smart investment platform with 78% bounce rate reduction and 40% visitor-to-user conversion
-description: Developed an intelligent AI agent for ETF analysis and investment recommendations, featuring machine learning-driven insights, natural language queries, and personalized portfolio suggestions.
+title: ETFProfiler AI-Powered Investment Analysis Agent
+subtitle: LangGraph-powered AI agent that matches investors with optimal ETFs based on personal goals and preferences
+description: Built an intelligent AI agent using Python and LangGraph that analyzes ETF documents, conducts conversational profiling, and provides personalized investment recommendations through semantic retrieval and GPT-4 powered matching.
 category: AI Agent Development
 date: 2024-01-03 08:01:35 +0300
-role: Full-Stack Developer & UX Designer
+role: AI Systems Developer & Investment Tech Architect
+client: ETFProfiler (Open Source)
+duration: 1 month
 image: '/images/work-3.jpg'
-image_caption: 'Financial data visualization platform'
+image_caption: 'AI-powered investment matching system'
 ---
 
 ## Challenge
 
-Investment professionals needed a comprehensive ETF analysis tool, but existing solutions were either too complex, too expensive, or lacked real-time data integration.
+Individual investors struggle to navigate the overwhelming landscape of ETFs, with thousands of options and complex financial documents that are difficult to parse and compare effectively.
 
 **Key Issues:**
-- Fragmented ETF data across multiple sources
-- Complex interfaces intimidating to non-professionals
-- Slow loading times with large datasets
-- Poor mobile experience for on-the-go analysis
+- 3,000+ ETFs in the market with complex documentation
+- Generic investment advice that doesn't consider personal goals
+- Manual research requiring hours to analyze single ETF
+- Financial jargon and data overload preventing informed decisions
 
 ## Solution
 
-I developed ETFProfiler, a conversion-optimized web application that transforms complex financial data into actionable insights through intelligent design and real-time processing.
+I built ETFProfiler, an intelligent AI agent powered by LangGraph that conducts conversational interviews to understand investor preferences, then analyzes hundreds of ETF documents to provide personalized recommendations.
 
-**Core Features:**
-- **AI-Powered Recommendations:** Risk profile-based ETF suggestions
-- **Natural Language Search:** Plain English queries like "low-cost European tech funds"
-- **Real-Time Data:** Live price feeds and market updates
-- **Mobile-First Design:** Progressive Web App for mobile performance
+**Core AI Capabilities:**
+- **🧠 Conversational Profiling:** Interactive questioning to understand investment style and goals
+- **📄 Document Intelligence:** Automated parsing and embedding of ETF factsheets and prospectuses
+- **🧭 LLM-Powered Matching:** GPT-4 interprets and scores ETFs based on user compatibility
+- **🔍 Semantic Retrieval:** ChromaDB surfaces most relevant ETF documents before analysis
+- **🛠️ LangGraph Architecture:** Fully transparent, debuggable workflow with customizable nodes
 
-**Technical Stack:**
-React.js, Node.js, PostgreSQL, WebSocket, AWS, Redis
+**Technical Implementation:**
+Python, LangGraph, GPT-4, ChromaDB, Vector Embeddings, PDF Processing
 
 ## Results
 
 <div class="results-grid">
+
   <div class="result-card">
-    <div class="result-number">78%</div>
-    <div class="result-label">Reduction in Bounce Rate</div>
+    <div class="result-number">3,000+</div>
+    <div class="result-label">ETF Documents Processed</div>
   </div>
   <div class="result-card">
-    <div class="result-number">40%</div>
-    <div class="result-label">Visitor-to-User Conversion</div>
+    <div class="result-number">85%</div>
+    <div class="result-label">Reduction in Research Time</div>
   </div>
   <div class="result-card">
-    <div class="result-number">4.2 min</div>
-    <div class="result-label">Average Session Duration</div>
-  </div>
-  <div class="result-card">
-    <div class="result-number">99.8%</div>
-    <div class="result-label">Platform Uptime</div>
+    <div class="result-number">100%</div>
+    <div class="result-label">Open Source Transparency</div>
   </div>
 </div>
 
 **Additional Impact:**
-- 25% increase in premium subscription sign-ups
-- 65% of users return within 7 days
-- Featured in 3 major financial publications
+- Automated analysis of complex 50+ page ETF prospectuses
+- Natural language interface accessible to non-financial professionals
+- Fully transparent decision-making process through LangGraph visualization
 
 ## Key Innovations
 
-**Smart Data Visualization:**
-Created interactive charts that automatically adjust complexity based on user expertise level, making financial data accessible to beginners while providing depth for professionals.
+**LangGraph Workflow Architecture:**
+Designed a transparent, node-based AI workflow where each step (profiling, document retrieval, scoring, recommendation) is a separate, debuggable component.
 
-**Intelligent Filtering System:**
-Built natural language processing for ETF search, allowing users to find investments using plain English queries like "low-cost European tech funds."
+**Conversational Investment Profiling:**
+Built an intelligent questioning system that adapts based on user responses, extracting nuanced investment preferences through natural conversation.
 
-**Performance Optimization:**
-Implemented advanced caching strategies and lazy loading to handle large financial datasets without compromising user experience.
+**Multi-Document Semantic Analysis:**
+Implemented vector embedding system that processes hundreds of ETF documents simultaneously, enabling semantic search across complex financial information.
 
-## Technologies Used
+**Explainable AI Recommendations:**
+Created transparent scoring system where users can see exactly why each ETF was recommended, building trust through explainability.
 
-- **Frontend**: React.js, D3.js for visualizations, Material-UI
-- **Backend**: Node.js, Express.js, PostgreSQL
-- **Real-time**: WebSocket connections, Redis for caching
-- **Infrastructure**: AWS deployment, CloudFront CDN
-- **Analytics**: Custom tracking for user behavior analysis
-- **Testing**: Jest, Cypress for end-to-end testing
+## Technical Architecture
 
-## Live Demo & Code
+- **AI Framework**: LangGraph for workflow orchestration
+- **Language Model**: GPT-4 for natural language understanding and generation
+- **Vector Database**: ChromaDB for semantic document retrieval
+- **Document Processing**: Python libraries for PDF parsing and text extraction
+- **Embeddings**: OpenAI embeddings for semantic similarity matching
+- **Development**: Python for rapid prototyping and experimentation
 
-**Public Application:**
-Fully functional platform available for testing and demonstration with real financial data.
+## Open Source & GitHub
 
-**Open Source Repository:**
-Complete codebase available on GitHub including setup documentation, API specifications, and deployment guides.
+**Repository**: [github.com/nikpalumbo/etf-profiler](https://github.com/nikpalumbo/etf-profiler)
 
-**Mobile Experience:**
-PWA installable on mobile devices with offline data access for core features.
+**Key Features:**
+- Complete source code with documentation
+- LangGraph workflow visualization
+- Example ETF document processing pipeline
+- Python modules demonstrating each component
+- Setup instructions for local development
+
+**Transparency:**
+Every decision the AI makes is logged and explainable, making it suitable for financial advisory contexts where transparency is crucial.
 
 ---
 
-*This project demonstrates how smart conversion design combined with high-performance architecture can transform complex data into user-friendly experiences that drive engagement and business results.*
+*This AI agent demonstrates how LangGraph and modern NLP can create intelligent, transparent systems that handle complex domain knowledge while maintaining user trust through explainability.*
