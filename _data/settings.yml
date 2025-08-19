@@ -14,6 +14,8 @@ menu__settings:
       url: '/'
     - title: 'Services'
       url: '/#services'
+    - title: 'Who We Serve'
+      url: '/#solutions'
     - title: 'Case Studies'
       url: '/work/'
     - title: 'About'

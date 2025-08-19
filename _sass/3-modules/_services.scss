@@ -4,6 +4,17 @@
   padding: 60px 0 100px 0;
   margin: 40px 0 0 0 !important;
   background: linear-gradient(135deg, #f8f9ff 0%, #f1f5f9 100%);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: white;
+  }
 }
 
 .services__header {
