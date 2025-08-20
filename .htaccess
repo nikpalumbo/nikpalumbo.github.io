@@ -1,0 +1,14 @@
+# MIME Type Configuration for SVG files
+<IfModule mod_mime.c>
+    AddType image/svg+xml .svg .svgz
+</IfModule>
+
+# Force SVG MIME type
+<FilesMatch "\.svg$">
+    Header set Content-Type "image/svg+xml"
+</FilesMatch>
+
+# Prevent MIME type sniffing
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options nosniff
+</IfModule>
