@@ -1,10 +1,16 @@
 User-agent: *
 Allow: /
 
+# Block old blog and work content
+Disallow: /blog/
+Disallow: /tags/
+Disallow: /2022-*/
+Disallow: /work/
+
 # Important pages
 Allow: /about/
-Allow: /work/
 Allow: /case-studies/
+Allow: /contact/
 
 # Sitemap location
 Sitemap: https://sdw.solutions/sitemap.xml

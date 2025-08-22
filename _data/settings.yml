@@ -17,7 +17,7 @@ menu__settings:
     - title: 'Who We Serve'
       url: '/#solutions'
     - title: 'Case Studies'
-      url: '/work/'
+      url: '/case-studies/'
     - title: 'About'
       url: '/about/'
     - title: 'Book a Call'
@@ -141,7 +141,7 @@ cta:
       url: "/contact/"
       style: "primary"
     - text: "View Case Studies"
-      url: "/work/"
+      url: "/case-studies/"
       style: "secondary"
   cta__features:
     - icon: "ion ion-md-checkmark-circle"

@@ -1,3 +1,8 @@
-/images/*.svg
-  Content-Type: image/svg+xml
-  X-Content-Type-Options: nosniff
+# Redirect old work URLs to new case-studies URLs
+/work/ /case-studies/ 301
+/work/* /case-studies/:splat 301
+
+# Block old blog and tag URLs
+/blog/ /404.html 404
+/tags/ /404.html 404
+/2022-* /404.html 404
