@@ -19,7 +19,7 @@ include: [".htaccess"]
 collections:
   pages:
     output: true
-    permalink: /:name
+    permalink: /:name/
   works:
     output: true
     permalink: /case-studies/:slug
