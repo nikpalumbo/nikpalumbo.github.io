@@ -14,7 +14,7 @@ menu__settings:
       url: '/'
     - title: 'Services'
       url: '/#services'
-    - title: 'Who We Serve'
+    - title: 'Who I Serve'
       url: '/#solutions'
     - title: 'Case Studies'
       url: '/case-studies/'
@@ -49,7 +49,7 @@ hero:
   enable: true
   hero__badge: Growth Systems & AI Development
   hero__title: Where Growth Strategy Meets <span class="highlight">Technology</span> Precisely
-  hero__description: "I've scaled my own SaaS from zero to Fortune 500 clients. Now I help companies build intelligent systems: AI agents, growth engines, and smart conversion websites that deliver results 24/7."
+  hero__description: "Growth doesn't come from luck. Manual work and disconnected tools slow companies down. The fastest-growing firms put growth on autopilot with intelligent systems."
   hero__image: "/images/01-1.jpg"
 
 
@@ -82,8 +82,8 @@ mailchimp:
 # Services Settings
 services:
   enable: true
-  services__title: How I Drive Your Growth
-  services__description: Strategic solutions that turn your biggest challenges into competitive advantages
+  services__title: "Today's Growth Companies Put Growth on Autopilot"
+  services__description: "Top-performing companies are scaling 3× faster by automating their growth engines with"
   
 service__items:
   - title: "Intelligent Growth Systems"
@@ -161,23 +161,28 @@ process:
   
   process__approach:
     title: "Structured Start, Agile Execution"
-    description: "Every engagement begins with a structured scoping session using battle-tested tools from top consulting frameworks so we define the right goals, outcomes, and constraints from day one."
+    description: "Every engagement begins with a structured scoping session using battle-tested tools from top consulting frameworks so I define the right goals, outcomes, and constraints from day one."
     
   process__methodology:
     - step: "01"
-      title: "MVP Cycles"
-      description: "We break work into short MVP cycles, launching quickly to validate."
-      icon: "ion ion-md-refresh"
+      title: "Problem / Need Identification"
+      description: "I start with a structured scoping session using proven consulting tools to uncover pain points, align on goals, and define success metrics."
+      icon: "ion ion-md-search"
       
-    - step: "02" 
-      title: "Fast Prototypes"
-      description: "You get working prototypes in days, not months."
-      icon: "ion ion-md-flash"
+    - step: "02"
+      title: "Strategy"
+      description: "I translate these insights into a pragmatic roadmap with clear priorities, measurable outcomes, performance goals and a plan designed for speed without sacrificing quality."
+      icon: "ion ion-md-map"
       
     - step: "03"
-      title: "Full-Stack Execution"  
-      description: "I handle the full stack: from scoping to wireframes to working code."
+      title: "Build"
+      description: "Work is broken into short MVP cycles so I validate quickly. You get working prototypes in days, not months. I manage the full stack from wireframes to code so nothing gets lost in translation."
       icon: "ion ion-md-construct"
+      
+    - step: "04"
+      title: "Maintain"
+      description: "Launch is just the beginning. I put in place monitoring, analytics, and optimization routines so your systems keep improving over time. This ensures performance stays high, integrations remain reliable, and your solution is always ready to scale as your business grows."
+      icon: "ion ion-md-settings"
       
   process__value_props:
     - title: "Founder's Mindset"
