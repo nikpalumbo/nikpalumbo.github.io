@@ -12,7 +12,7 @@ plugins:
   - jekyll-sitemap
 
 # SVG MIME type handling
-include: [".htaccess", "_headers"]
+include: [".htaccess"]
 
 #-------------------------------
 # Collections

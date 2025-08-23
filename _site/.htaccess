@@ -12,3 +12,15 @@
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options nosniff
 </IfModule>
+
+# Redirect old work URLs to new case-studies URLs
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^work/?$ /case-studies/ [R=301,L]
+    RewriteRule ^work/(.*)$ /case-studies/$1 [R=301,L]
+    
+    # Block old blog and tag URLs
+    RewriteRule ^blog/ /404.html [R=404,L]
+    RewriteRule ^tags/ /404.html [R=404,L]
+    RewriteRule ^2022- /404.html [R=404,L]
+</IfModule>
