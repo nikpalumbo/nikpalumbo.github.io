@@ -342,7 +342,7 @@
   display: block;
   width: 100%;
   aspect-ratio: 1/1;
-  border-radius: $global-radius;
+  border-radius: 16px;
   user-select: none;
   transform: translate(0);
   overflow: hidden;
@@ -352,7 +352,7 @@
     transform: translateY(-4px);
 
     img {
-      transition: $global-transition;
+      transition: all .3s;
     }
   }
 
@@ -363,7 +363,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: $global-radius;
+    border-radius: 16px;
     pointer-events: none;
   }
 
@@ -406,13 +406,13 @@
     color: var(--text-alt-color);
   }
 
-  @media (max-width: $desktop) {
+  @media (max-width: 1024px) {
     .work__title {
       font-size: 28px;
     }
   }
 
-  @media (max-width: $tablet) {
+  @media (max-width: 768px) {
     margin-top: 24px;
 
     .work__category {

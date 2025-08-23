@@ -1,0 +1,92 @@
+I"Ò<!-- Case Studies Header -->
+<div class="container">
+  <div class="page-section-head">
+    <h1 class="page-title">Case Studies</h1>
+    <p class="page-description">AI agents worth launching. User cases worth funding.</p>
+  </div>
+</div>
+
+<!-- Case Studies Grid -->
+<div class="work-page container animate">
+  <div class="row">
+    
+    
+    <article class="work col col-4 col-d-6 col-t-12">
+      <div class="work__content">
+        <a href="/case-studies/quitematch-conversion" class="work__image">
+          
+          <img class="lazy" data-src="/images/work-2.jpg" alt="QuiteMatch AI Recruitment Platform - 40% Conversion Improvement Case Study" />
+          
+        </a>
+        <div class="work__info">
+          
+          <div class="work__category">Intelligent Growth Systems</div>
+          
+          <h3 class="work__title"><a href="/case-studies/quitematch-conversion">QuiteMatch AI Recruitment Platform - 40% Conversion Improvement Case Study</a></h3>
+          
+          <p class="work__description">QuiteMatch AI recruitment platform case study: 40% conversion improvement, automated hiring workflows, and intelligent candidate assessment. See how AI-powered systems transformed recruitment.</p>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="work col col-4 col-d-6 col-t-12">
+      <div class="work__content">
+        <a href="/case-studies/growth-system-saas" class="work__image">
+          
+          <img class="lazy" data-src="/images/work-3.jpg" alt="Complete Growth System for SaaS Startup - Swiss Market Entry Case Study" />
+          
+        </a>
+        <div class="work__info">
+          
+          <div class="work__category">Intelligent Growth Systems</div>
+          
+          <h3 class="work__title"><a href="/case-studies/growth-system-saas">Complete Growth System for SaaS Startup - Swiss Market Entry Case Study</a></h3>
+          
+          <p class="work__description">SaaS startup growth system case study: 16-week structured strategy for Swiss market entry, systematic lead generation, and market positioning. Complete growth infrastructure for Swiss software company.</p>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="work col col-4 col-d-6 col-t-12">
+      <div class="work__content">
+        <a href="/case-studies/etf-profiler-webapp" class="work__image">
+          
+          <img class="lazy" data-src="/images/work-3.jpg" alt="ETFProfiler AI Investment Analysis Agent - Smart ETF Matching Case Study" />
+          
+        </a>
+        <div class="work__info">
+          
+          <div class="work__category">AI Agent Development</div>
+          
+          <h3 class="work__title"><a href="/case-studies/etf-profiler-webapp">ETFProfiler AI Investment Analysis Agent - Smart ETF Matching Case Study</a></h3>
+          
+          <p class="work__description">ETFProfiler AI agent case study: LangGraph-powered investment analysis system with semantic retrieval and GPT-4 matching. Processes 3,000+ ETF documents for personalized investment recommendations.</p>
+          
+        </div>
+      </div>
+    </article>
+    
+    <article class="work col col-4 col-d-6 col-t-12">
+      <div class="work__content">
+        <a href="/case-studies/ai-agent-truefit" class="work__image">
+          
+          <img class="lazy" data-src="/images/work-2.jpg" alt="TrueFit AI Agent - Personalized Cover Letter Generation Case Study" />
+          
+        </a>
+        <div class="work__info">
+          
+          <div class="work__category">AI Agent Development</div>
+          
+          <h3 class="work__title"><a href="/case-studies/ai-agent-truefit">TrueFit AI Agent - Personalized Cover Letter Generation Case Study</a></h3>
+          
+          <p class="work__description">TrueFit AI agent case study: LangGraph-based system with long-term memory, company data extraction, and RAG for personalized cover letters. Open-source AI agent with dual LLM review system.</p>
+          
+        </div>
+      </div>
+    </article>
+    
+  </div>
+</div>
+:ET
