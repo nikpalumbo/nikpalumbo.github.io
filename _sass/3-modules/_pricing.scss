@@ -146,12 +146,13 @@
 .config-left {
   /* Remove the flex properties that didn't work */
   padding-top: 0; /* Ensure no extra top padding */
+  margin-top: 0; /* Ensure no extra top margin */
 }
 
 .config-right {
   position: sticky;
-  top: 32px; /* Account for parent container padding */
   padding-top: 0; /* Ensure no extra top padding */
+  margin-top: 0; /* Ensure no extra top margin */
   
   @media (max-width: 1024px) {
     position: static;
@@ -198,6 +199,12 @@
       margin-bottom: 16px;
     }
   }
+}
+
+/* Ensure first config-section in each side has no top margin */
+.config-left .config-section:first-child,
+.config-right .config-section:first-child {
+  margin-top: 0;
 }
 
 .config-options {
