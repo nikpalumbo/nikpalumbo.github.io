@@ -264,6 +264,19 @@
   &::after {
     display: none;
   }
+
+  .hero__title {
+    font-size: 48px;
+    margin-bottom: 16px; /* Match about and case studies pages */
+    
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+    
+    @media (max-width: 576px) {
+      font-size: 28px;
+    }
+  }
 }
 
 /* Hero Subtitle */
