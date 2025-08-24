@@ -18,6 +18,8 @@ menu__settings:
       url: '/#solutions'
     - title: 'Case Studies'
       url: '/case-studies/'
+    - title: 'Pricing'
+      url: '/pricing/'
     - title: 'About'
       url: '/about/'
     - title: 'Book a Call'

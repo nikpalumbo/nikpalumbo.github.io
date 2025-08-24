@@ -1,0 +1,371 @@
+I"i><!-- begin pricing section -->
+<section class="pricing">
+  <div class="container">
+    <!-- Service Tabs -->
+    <div class="service-tabs">
+      <button class="service-tab active" data-service="growth-systems">
+        <i class="fas fa-chart-line"></i>
+        Intelligent Growth Systems
+      </button>
+      <button class="service-tab" data-service="ai-agents">
+        <i class="fas fa-robot"></i>
+        AI Agent Development
+      </button>
+      <button class="service-tab" data-service="conversion-websites">
+        <i class="fas fa-globe"></i>
+        Smart Conversion Websites
+      </button>
+      <button class="service-tab" data-service="product-growth">
+        <i class="fas fa-rocket"></i>
+        Product-Led Growth Prototyping
+      </button>
+    </div>
+
+    <!-- Growth Systems Pricing -->
+    <div class="pricing-content active" id="growth-systems">
+      <div class="pricing-intro">
+        <h2>Intelligent Growth Systems</h2>
+        <p>Low-code/no-code setup with strategic consulting for vision building and growth automation.</p>
+      </div>
+      
+      <div class="pricing-calculator">
+        <div class="calculator-inputs">
+          <div class="input-group">
+            <label>Company Size</label>
+            <select id="company-size" class="pricing-select">
+              <option value="startup">Startup (1-10 employees)</option>
+              <option value="sme" selected="">SME (11-50 employees)</option>
+              <option value="enterprise">Enterprise (50+ employees)</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>Growth Goals</label>
+            <select id="growth-goals" class="pricing-select">
+              <option value="basic">Basic Growth</option>
+              <option value="advanced" selected="">Advanced Growth</option>
+              <option value="scaling">Scaling &amp; Expansion</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>Implementation Time</label>
+            <select id="implementation-time" class="pricing-select">
+              <option value="1-2">1-2 months</option>
+              <option value="3-4" selected="">3-4 months</option>
+              <option value="5-6">5-6 months</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="pricing-result">
+          <div class="estimated-price">
+            <span class="price-label">Estimated Investment</span>
+            <span class="price-amount" id="growth-price">€8,500</span>
+            <span class="price-period">one-time</span>
+          </div>
+          <a href="mailto:nicola@sdw.solutions?subject=Growth Systems Inquiry" class="button button--primary">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Agents Pricing -->
+    <div class="pricing-content" id="ai-agents">
+      <div class="pricing-intro">
+        <h2>AI Agent Development</h2>
+        <p>Custom AI solutions built with Python, LangChain, and LangSmith. Certified expertise in cutting-edge AI technologies.</p>
+        <div class="certification-badges">
+          <span class="cert-badge">LangChain Certified</span>
+          <span class="cert-badge">LangSmith Expert</span>
+          <span class="cert-badge">Python AI Development</span>
+        </div>
+      </div>
+      
+      <div class="pricing-calculator">
+        <div class="calculator-inputs">
+          <div class="input-group">
+            <label>AI Agent Complexity</label>
+            <select id="agent-complexity" class="pricing-select">
+              <option value="simple">Simple Agent (Basic tasks)</option>
+              <option value="medium" selected="">Medium Agent (Multi-step workflows)</option>
+              <option value="complex">Complex Agent (Advanced reasoning)</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>Integration Requirements</label>
+            <select id="integration-level" class="pricing-select">
+              <option value="basic">Basic API integration</option>
+              <option value="advanced" selected="">Advanced integrations</option>
+              <option value="enterprise">Enterprise systems</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>Training Data Size</label>
+            <select id="training-data" class="pricing-select">
+              <option value="small">Small dataset</option>
+              <option value="medium" selected="">Medium dataset</option>
+              <option value="large">Large dataset</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="pricing-result">
+          <div class="estimated-price">
+            <span class="price-label">Estimated Investment</span>
+            <span class="price-amount" id="ai-price">€12,500</span>
+            <span class="price-period">one-time</span>
+          </div>
+          <a href="mailto:nicola@sdw.solutions?subject=AI Agent Development Inquiry" class="button button--primary">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conversion Websites Pricing -->
+    <div class="pricing-content" id="conversion-websites">
+      <div class="pricing-intro">
+        <h2>Smart Conversion Websites</h2>
+        <p>High-converting websites with three flexible packages to match your business needs.</p>
+      </div>
+      
+      <div class="pricing-packages">
+        <div class="package-card">
+          <div class="package-header">
+            <h3>Base</h3>
+            <div class="package-price">
+              <span class="price">€2,500</span>
+              <span class="period">one-time</span>
+            </div>
+          </div>
+          <ul class="package-features">
+            <li><i class="fas fa-check"></i> 5-page responsive website</li>
+            <li><i class="fas fa-check"></i> Basic SEO optimization</li>
+            <li><i class="fas fa-check"></i> Contact forms</li>
+            <li><i class="fas fa-check"></i> Google Analytics setup</li>
+            <li><i class="fas fa-check"></i> 2 rounds of revisions</li>
+          </ul>
+          <a href="mailto:nicola@sdw.solutions?subject=Base Website Package" class="button button--secondary">Choose Base</a>
+        </div>
+        
+        <div class="package-card featured">
+          <div class="package-badge">Most Popular</div>
+          <div class="package-header">
+            <h3>Standard</h3>
+            <div class="package-price">
+              <span class="price">€4,500</span>
+              <span class="period">one-time</span>
+            </div>
+          </div>
+          <ul class="package-features">
+            <li><i class="fas fa-check"></i> 8-page responsive website</li>
+            <li><i class="fas fa-check"></i> Advanced SEO optimization</li>
+            <li><i class="fas fa-check"></i> E-commerce integration</li>
+            <li><i class="fas fa-check"></i> Conversion optimization</li>
+            <li><i class="fas fa-check"></i> 3 rounds of revisions</li>
+            <li><i class="fas fa-check"></i> 1 month of support</li>
+          </ul>
+          <a href="mailto:nicola@sdw.solutions?subject=Standard Website Package" class="button button--primary">Choose Standard</a>
+        </div>
+        
+        <div class="package-card">
+          <div class="package-header">
+            <h3>Premium</h3>
+            <div class="package-price">
+              <span class="price">€7,500</span>
+              <span class="period">one-time</span>
+            </div>
+          </div>
+          <ul class="package-features">
+            <li><i class="fas fa-check"></i> Unlimited pages</li>
+            <li><i class="fas fa-check"></i> Premium SEO &amp; performance</li>
+            <li><i class="fas fa-check"></i> Advanced integrations</li>
+            <li><i class="fas fa-check"></i> A/B testing setup</li>
+            <li><i class="fas fa-check"></i> Unlimited revisions</li>
+            <li><i class="fas fa-check"></i> 3 months of support</li>
+          </ul>
+          <a href="mailto:nicola@sdw.solutions?subject=Premium Website Package" class="button button--secondary">Choose Premium</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Growth Pricing -->
+    <div class="pricing-content" id="product-growth">
+      <div class="pricing-intro">
+        <h2>Product-Led Growth Prototyping</h2>
+        <p>Custom web app development with pricing based on development sprints and complexity.</p>
+      </div>
+      
+      <div class="pricing-calculator">
+        <div class="calculator-inputs">
+          <div class="input-group">
+            <label>Number of Sprints</label>
+            <select id="sprint-count" class="pricing-select">
+              <option value="2">2 sprints (4 weeks)</option>
+              <option value="4" selected="">4 sprints (8 weeks)</option>
+              <option value="6">6 sprints (12 weeks)</option>
+              <option value="8">8 sprints (16 weeks)</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>App Complexity</label>
+            <select id="app-complexity" class="pricing-select">
+              <option value="simple">Simple (Basic CRUD)</option>
+              <option value="medium" selected="">Medium (User auth + features)</option>
+              <option value="complex">Complex (Advanced workflows)</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>User Base Size</label>
+            <select id="user-base" class="pricing-select">
+              <option value="small">Small (1-100 users)</option>
+              <option value="medium" selected="">Medium (100-1000 users)</option>
+              <option value="large">Large (1000+ users)</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="pricing-result">
+          <div class="estimated-price">
+            <span class="price-label">Estimated Investment</span>
+            <span class="price-amount" id="product-price">€18,000</span>
+            <span class="price-period">project-based</span>
+          </div>
+          <a href="mailto:nicola@sdw.solutions?subject=Product Growth Prototyping Inquiry" class="button button--primary">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="pricing-faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>What's included in the pricing?</h3>
+          <p>All pricing includes consultation, development, testing, deployment, and initial support. Ongoing support and maintenance can be added as needed.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I upgrade or change plans?</h3>
+          <p>Yes! You can upgrade or modify your plan at any time. We'll prorate the difference and ensure a smooth transition.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you offer payment plans?</h3>
+          <p>We offer flexible payment terms for larger projects, typically 50% upfront and 50% upon completion.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What about ongoing support?</h3>
+          <p>We offer various support packages from basic maintenance to full-time development support, depending on your needs.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="pricing-cta">
+      <h2>Ready to Accelerate Your Growth?</h2>
+      <p>Let's discuss your specific needs and find the perfect solution for your business.</p>
+      <div class="cta-buttons">
+        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-NcwHUpy2VQTbjOwTbXwdd0qIVBbaPQvmwg8sujsRnwtn8LEFTFOVc_qFpKQKZASWyQwaIJO8?gv=true" target="_blank" class="button book-call-btn">Book a Call</a>
+        <a href="mailto:nicola@sdw.solutions" target="_blank" class="button button--primary">Email for Custom Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Service tab switching
+  const serviceTabs = document.querySelectorAll('.service-tab');
+  const pricingContents = document.querySelectorAll('.pricing-content');
+  
+  serviceTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetService = tab.dataset.service;
+      
+      // Update active tab
+      serviceTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      
+      // Update active content
+      pricingContents.forEach(content => {
+        content.classList.remove('active');
+        if (content.id === targetService) {
+          content.classList.add('active');
+        }
+      });
+    });
+  });
+
+  // Growth Systems Calculator
+  function updateGrowthPrice() {
+    const companySize = document.getElementById('company-size').value;
+    const growthGoals = document.getElementById('growth-goals').value;
+    const implementationTime = document.getElementById('implementation-time').value;
+    
+    let basePrice = 5000;
+    
+    // Company size multiplier
+    if (companySize === 'startup') basePrice *= 0.8;
+    else if (companySize === 'enterprise') basePrice *= 1.5;
+    
+    // Growth goals multiplier
+    if (growthGoals === 'basic') basePrice *= 0.7;
+    else if (growthGoals === 'scaling') basePrice *= 1.3;
+    
+    // Implementation time multiplier
+    if (implementationTime === '1-2') basePrice *= 0.8;
+    else if (implementationTime === '5-6') basePrice *= 1.2;
+    
+    document.getElementById('growth-price').textContent = '€' + Math.round(basePrice).toLocaleString();
+  }
+
+  // AI Agents Calculator
+  function updateAIPrice() {
+    const complexity = document.getElementById('agent-complexity').value;
+    const integration = document.getElementById('integration-level').value;
+    const trainingData = document.getElementById('training-data').value;
+    
+    let basePrice = 8000;
+    
+    if (complexity === 'simple') basePrice *= 0.7;
+    else if (complexity === 'complex') basePrice *= 1.4;
+    
+    if (integration === 'basic') basePrice *= 0.8;
+    else if (integration === 'enterprise') basePrice *= 1.3;
+    
+    if (trainingData === 'small') basePrice *= 0.9;
+    else if (trainingData === 'large') basePrice *= 1.2;
+    
+    document.getElementById('ai-price').textContent = '€' + Math.round(basePrice).toLocaleString();
+  }
+
+  // Product Growth Calculator
+  function updateProductPrice() {
+    const sprints = parseInt(document.getElementById('sprint-count').value);
+    const complexity = document.getElementById('app-complexity').value;
+    const userBase = document.getElementById('user-base').value;
+    
+    let basePrice = sprints * 3000;
+    
+    if (complexity === 'simple') basePrice *= 0.8;
+    else if (complexity === 'complex') basePrice *= 1.3;
+    
+    if (userBase === 'small') basePrice *= 0.9;
+    else if (userBase === 'large') basePrice *= 1.2;
+    
+    document.getElementById('product-price').textContent = '€' + Math.round(basePrice).toLocaleString();
+  }
+
+  // Add event listeners for calculators
+  document.getElementById('company-size').addEventListener('change', updateGrowthPrice);
+  document.getElementById('growth-goals').addEventListener('change', updateGrowthPrice);
+  document.getElementById('implementation-time').addEventListener('change', updateGrowthPrice);
+  
+  document.getElementById('agent-complexity').addEventListener('change', updateAIPrice);
+  document.getElementById('integration-level').addEventListener('change', updateAIPrice);
+  document.getElementById('training-data').addEventListener('change', updateAIPrice);
+  
+  document.getElementById('sprint-count').addEventListener('change', updateProductPrice);
+  document.getElementById('app-complexity').addEventListener('change', updateProductPrice);
+  document.getElementById('user-base').addEventListener('change', updateProductPrice);
+});
+</script>
+
+<!-- end pricing section -->
+
+:ET

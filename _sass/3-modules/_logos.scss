@@ -1,13 +1,5 @@
 /* Stats Section (replaces logos) */
-.section.stats {
-  padding: 20px 0 0 0;
-  margin-top: -80px;
-  border-top: none;
-}
-
-.section.stats::before {
-  display: none;
-}
+/* Note: .section.stats styles are now defined in _hero.scss */
 
 .stats__grid {
   display: flex;
