@@ -1,0 +1,202 @@
+I"?<!-- Case Studies Header -->
+<div class="case-studies-header">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="case-studies-header__content">
+          <h1 class="case-studies-title">Case Studies</h1>
+          <p class="case-studies-description">Real projects. Measurable results. Proven methodologies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Case Studies Grid -->
+<div class="case-studies-content">
+  <div class="container">
+    
+    <!-- Category Filter (Optional) -->
+    <div class="row">
+      <div class="col col-12">
+        <div class="category-filters">
+          <button class="filter-btn active" data-category="all">
+            <i class="fas fa-th-large"></i>
+            All Projects
+          </button>
+          <button class="filter-btn" data-category="Intelligent Growth Systems">
+            <i class="fas fa-chart-line"></i>
+            Intelligent Growth Systems
+          </button>
+          <button class="filter-btn" data-category="AI Agent Development">
+            <i class="fas fa-robot"></i>
+            AI Agent Development
+          </button>
+          <button class="filter-btn" data-category="Smart Conversion Websites">
+            <i class="fas fa-globe"></i>
+            Smart Conversion Websites
+          </button>
+          <button class="filter-btn" data-category="Product-Led Growth Prototyping">
+            <i class="fas fa-rocket"></i>
+            Product-Led Growth Prototyping
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Studies Grid -->
+    <div class="row">
+      <div class="col col-12">
+        <div class="case-studies-grid">
+          
+          
+          <article class="case-study-card" data-category="Intelligent Growth Systems">
+            <div class="case-study-card__header">
+              
+              <div class="case-study-card__category">Intelligent Growth Systems</div>
+              
+              <h3 class="case-study-card__title">
+                <a href="/case-studies/quitematch-conversion">QuiteMatch AI Recruitment Platform - 40% Conversion Improvement Case Study</a>
+              </h3>
+            </div>
+            
+            <div class="case-study-card__body">
+              
+              <p class="case-study-card__description">AI recruitment platform with 40% conversion improvement and automated workflows</p>
+              
+              
+              <div class="case-study-card__footer">
+                <div class="case-study-card__meta">
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-person"></i>
+                    <span class="meta-value">Full-Stack Developer &amp; Growth Systems Architect</span>
+                  </div>
+                  
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-briefcase"></i>
+                    <span class="meta-value">QuiteMatch (Recruitment Platform)</span>
+                  </div>
+                  
+                </div>
+                
+                <a href="/case-studies/quitematch-conversion" class="case-study-card__link">View Case Study</a>
+              </div>
+            </div>
+          </article>
+          
+          <article class="case-study-card" data-category="Intelligent Growth Systems">
+            <div class="case-study-card__header">
+              
+              <div class="case-study-card__category">Intelligent Growth Systems</div>
+              
+              <h3 class="case-study-card__title">
+                <a href="/case-studies/growth-system-saas">Complete Growth System for SaaS Startup - Swiss Market Entry Case Study</a>
+              </h3>
+            </div>
+            
+            <div class="case-study-card__body">
+              
+              <p class="case-study-card__description">Structured 16-week growth strategy for Swiss market entry with systematic lead generation and positioning</p>
+              
+              
+              <div class="case-study-card__footer">
+                <div class="case-study-card__meta">
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-person"></i>
+                    <span class="meta-value">Growth Systems Architect &amp; Strategic Partner</span>
+                  </div>
+                  
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-briefcase"></i>
+                    <span class="meta-value">Swiss Software Company</span>
+                  </div>
+                  
+                </div>
+                
+                <a href="/case-studies/growth-system-saas" class="case-study-card__link">View Case Study</a>
+              </div>
+            </div>
+          </article>
+          
+          <article class="case-study-card" data-category="AI Agent Development">
+            <div class="case-study-card__header">
+              
+              <div class="case-study-card__category">AI Agent Development</div>
+              
+              <h3 class="case-study-card__title">
+                <a href="/case-studies/etf-profiler-webapp">ETFProfiler AI Investment Analysis Agent - Smart ETF Matching Case Study</a>
+              </h3>
+            </div>
+            
+            <div class="case-study-card__body">
+              
+              <p class="case-study-card__description">LangGraph-powered AI agent that matches investors with optimal ETFs based on personal goals and preferences</p>
+              
+              
+              <div class="case-study-card__footer">
+                <div class="case-study-card__meta">
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-person"></i>
+                    <span class="meta-value">AI Systems Developer &amp; Investment Tech Architect</span>
+                  </div>
+                  
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-briefcase"></i>
+                    <span class="meta-value">ETFProfiler (Open Source)</span>
+                  </div>
+                  
+                </div>
+                
+                <a href="/case-studies/etf-profiler-webapp" class="case-study-card__link">View Case Study</a>
+              </div>
+            </div>
+          </article>
+          
+          <article class="case-study-card" data-category="AI Agent Development">
+            <div class="case-study-card__header">
+              
+              <div class="case-study-card__category">AI Agent Development</div>
+              
+              <h3 class="case-study-card__title">
+                <a href="/case-studies/ai-agent-truefit">TrueFit AI Agent - Personalized Cover Letter Generation Case Study</a>
+              </h3>
+            </div>
+            
+            <div class="case-study-card__body">
+              
+              <p class="case-study-card__description">LangGraph-based AI agent with long-term memory and RAG for intelligent cover letter generation</p>
+              
+              
+              <div class="case-study-card__footer">
+                <div class="case-study-card__meta">
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-person"></i>
+                    <span class="meta-value">AI Systems Developer &amp; Career Tech Architect</span>
+                  </div>
+                  
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-briefcase"></i>
+                    <span class="meta-value">TrueFit (Open Source)</span>
+                  </div>
+                  
+                </div>
+                
+                <a href="/case-studies/ai-agent-truefit" class="case-study-card__link">View Case Study</a>
+              </div>
+            </div>
+          </article>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+:ET

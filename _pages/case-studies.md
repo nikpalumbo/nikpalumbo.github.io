@@ -27,9 +27,26 @@ keywords: "AI agent case studies, growth systems results, TrueFit AI, ETFProfile
     <div class="row">
       <div class="col col-12">
         <div class="category-filters">
-          <button class="filter-btn active" data-category="all">All Projects</button>
-          <button class="filter-btn" data-category="Intelligent Growth Systems">Growth Systems</button>
-          <button class="filter-btn" data-category="AI Agent Development">AI Agents</button>
+          <button class="filter-btn active" data-category="all">
+            <i class="fas fa-th-large"></i>
+            All Projects
+          </button>
+          <button class="filter-btn" data-category="Intelligent Growth Systems">
+            <i class="fas fa-chart-line"></i>
+            Intelligent Growth Systems
+          </button>
+          <button class="filter-btn" data-category="AI Agent Development">
+            <i class="fas fa-robot"></i>
+            AI Agent Development
+          </button>
+          <button class="filter-btn" data-category="Smart Conversion Websites">
+            <i class="fas fa-globe"></i>
+            Smart Conversion Websites
+          </button>
+          <button class="filter-btn" data-category="Product-Led Growth Prototyping">
+            <i class="fas fa-rocket"></i>
+            Product-Led Growth Prototyping
+          </button>
         </div>
       </div>
     </div>

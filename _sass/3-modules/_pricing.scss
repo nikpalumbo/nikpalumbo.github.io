@@ -37,25 +37,23 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  
+  text-decoration: none;
+  box-sizing: border-box;
+
   &:hover {
     border-color: var(--primary-color);
     color: var(--primary-color);
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(251, 196, 36, 0.15);
   }
-  
+
   &.active {
     background: var(--primary-color);
     border-color: var(--primary-color);
     color: #1f2937;
     box-shadow: 0 8px 25px rgba(251, 196, 36, 0.3);
   }
-  
-  i {
-    font-size: 18px;
-  }
-  
+
   @media (max-width: 768px) {
     padding: 12px 16px;
     font-size: 14px;
@@ -63,6 +61,10 @@
     i {
       font-size: 16px;
     }
+  }
+  
+  i {
+    font-size: 18px;
   }
 }
 
