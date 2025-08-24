@@ -108,7 +108,7 @@
 /* Side-by-side layout */
 .config-layout {
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: 1fr 380px; /* Back to original: left flexible, right fixed */
   gap: 32px;
   align-items: start;
   
@@ -145,11 +145,13 @@
 
 .config-left {
   /* Remove the flex properties that didn't work */
+  padding-top: 0; /* Ensure no extra top padding */
 }
 
 .config-right {
   position: sticky;
   top: 32px; /* Account for parent container padding */
+  padding-top: 0; /* Ensure no extra top padding */
   
   @media (max-width: 1024px) {
     position: static;
@@ -163,6 +165,7 @@
   border-radius: 12px;
   padding: 24px;
   margin-bottom: 24px;
+  margin-top: 0; /* Ensure no top margin */
   transition: all 0.3s ease;
   
   &:hover {
@@ -180,6 +183,7 @@
     font-weight: 700;
     color: #1f2937;
     margin-bottom: 20px;
+    margin-top: 0; /* Ensure no top margin */
     display: flex;
     align-items: center;
     gap: 10px;
@@ -414,32 +418,34 @@
 
 /* Update quote card - remove container styling since parent has it */
 .quote-card {
-  background: #f9fafb;
-  border: 1px solid #f3f4f6;
-  border-radius: 12px;
-  padding: 24px;
-  /* Remove flex: 1 that didn't work */
+  /* Remove background and border since it's now inside config-section */
+  padding: 0; /* Remove padding since parent config-section has it */
+  height: fit-content; /* Ensure it doesn't stretch unnecessarily */
+  margin-top: 0; /* Ensure no top margin */
   
   @media (max-width: 768px) {
-    padding: 20px;
+    padding: 0;
   }
 }
 
 .quote-header {
   text-align: center;
   margin-bottom: 28px; /* Reduced from 32px */
+  padding-top: 0; /* Ensure no extra top padding */
   
   h3 {
     font-size: 22px; /* Reduced from 24px */
     font-weight: 700;
     color: #1f2937;
     margin-bottom: 6px; /* Reduced from 8px */
+    margin-top: 0; /* Ensure no extra top margin */
   }
   
   .quote-subtitle {
     font-size: 13px; /* Reduced from 14px */
     color: #6b7280;
-    margin: 0;
+    margin: 0 0 20px 0; /* Add bottom margin for spacing */
+    text-align: center;
   }
 }
 
