@@ -207,6 +207,19 @@
   margin-top: 0;
 }
 
+/* Quote subtitle styling - now inside config-section */
+.config-section .quote-subtitle {
+  font-size: 16px; /* Same as config-header p */
+  line-height: 1.6; /* Same as config-header p */
+  color: #6b7280; /* Same as config-header p */
+  margin: 0 0 20px 0; /* Keep bottom margin for spacing */
+  text-align: left; /* Left-aligned like other content */
+  
+  @media (max-width: 768px) {
+    font-size: 14px; /* Same as config-header p mobile */
+  }
+}
+
 .config-options {
   display: grid;
   gap: 24px; /* Reduced from 32px */
@@ -449,10 +462,12 @@
   }
   
   .quote-subtitle {
-    font-size: 13px; /* Reduced from 14px */
-    color: #6b7280;
+    font-size: 16px; /* Increased from 13px for better readability */
+    font-weight: 500; /* Added medium weight */
+    color: #374151; /* Darker color for better contrast */
     margin: 0 0 20px 0; /* Add bottom margin for spacing */
     text-align: center;
+    line-height: 1.4; /* Better line height */
   }
 }
 
