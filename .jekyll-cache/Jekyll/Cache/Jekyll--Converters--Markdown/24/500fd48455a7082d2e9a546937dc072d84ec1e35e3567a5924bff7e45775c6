@@ -1,3 +1,12 @@
+I"/<!-- begin hero section -->
+<section class="hero hero--light">
+  <div class="container">
+    <h1 class="hero__title">Pricing</h1>
+    <p class="hero__subtitle">Transparent pricing for growth acceleration services. Choose the right solution for your business needs.</p>
+  </div>
+</section>
+<!-- end hero section -->
+
 <!-- begin pricing section -->
 <section class="pricing-section">
   <div class="container">
@@ -39,11 +48,11 @@
               <div class="option-group">
                 <label>Which company are you?</label>
                 <div class="radio-group">
-                  <input type="radio" id="startup" name="company-size" value="startup" checked>
+                  <input type="radio" id="startup" name="company-size" value="startup" checked="" />
                   <label for="startup">Startup</label>
-                  <input type="radio" id="sme" name="company-size" value="sme">
+                  <input type="radio" id="sme" name="company-size" value="sme" />
                   <label for="sme">SME</label>
-                  <input type="radio" id="enterprise" name="company-size" value="enterprise">
+                  <input type="radio" id="enterprise" name="company-size" value="enterprise" />
                   <label for="enterprise">Enterprise</label>
                 </div>
                 <p class="option-explanation">Startups need fewer stakeholder interactions, SMEs require moderate alignment, while enterprises need comprehensive department coordination.</p>
@@ -53,16 +62,16 @@
 
           <!-- Scope Section -->
           <div class="config-section">
-            <h3><i class="fas fa-cogs"></i> Scope & Automation</h3>
+            <h3><i class="fas fa-cogs"></i> Scope &amp; Automation</h3>
             <div class="config-options">
               <div class="option-group">
                 <label>What's your current stage?</label>
                 <div class="radio-group">
-                  <input type="radio" id="starting-leads" name="lead-strategy" value="starting" checked>
+                  <input type="radio" id="starting-leads" name="lead-strategy" value="starting" checked="" />
                   <label for="starting-leads">Just Starting</label>
-                  <input type="radio" id="increase-leads" name="lead-strategy" value="increase">
+                  <input type="radio" id="increase-leads" name="lead-strategy" value="increase" />
                   <label for="increase-leads">Want to Improve</label>
-                  <input type="radio" id="scale-leads" name="lead-strategy" value="scale">
+                  <input type="radio" id="scale-leads" name="lead-strategy" value="scale" />
                   <label for="scale-leads">Ready to Scale</label>
                 </div>
                 <p class="option-explanation">Just Starting: Building from scratch. Want to Improve: Enhancing existing processes. Ready to Scale: Optimizing and expanding current systems.</p>
@@ -71,13 +80,13 @@
               <div class="option-group">
                 <label>Which channels do you want to automate?</label>
                 <div class="checkbox-group">
-                  <label><input type="checkbox" name="channel" value="linkedin" checked> LinkedIn</label>
-                  <label><input type="checkbox" name="channel" value="email-inbound" checked> Email Inbound</label>
-                  <label><input type="checkbox" name="channel" value="email-outbound"> Email Outbound</label>
-                  <label><input type="checkbox" name="channel" value="seo"> SEO</label>
-                  <label><input type="checkbox" name="channel" value="website"> Website Forms</label>
-                  <label><input type="checkbox" name="channel" value="ads"> Ads Integration</label>
-                  <label><input type="checkbox" name="channel" value="social"> Social Media</label>
+                  <label><input type="checkbox" name="channel" value="linkedin" checked="" /> LinkedIn</label>
+                  <label><input type="checkbox" name="channel" value="email-inbound" checked="" /> Email Inbound</label>
+                  <label><input type="checkbox" name="channel" value="email-outbound" /> Email Outbound</label>
+                  <label><input type="checkbox" name="channel" value="seo" /> SEO</label>
+                  <label><input type="checkbox" name="channel" value="website" /> Website Forms</label>
+                  <label><input type="checkbox" name="channel" value="ads" /> Ads Integration</label>
+                  <label><input type="checkbox" name="channel" value="social" /> Social Media</label>
                 </div>
                 <p class="option-explanation">Choose the marketing channels you want to automate. You can select multiple channels - more channels = more complex setup.</p>
               </div>
@@ -85,18 +94,18 @@
               <div class="option-group">
                 <label>What's your CRM setup?</label>
                 <div class="checkbox-group">
-                  <label><input type="checkbox" name="crm" value="hubspot" checked> HubSpot</label>
-                  <label><input type="checkbox" name="crm" value="pipedrive"> Pipedrive</label>
-                  <label><input type="checkbox" name="crm" value="salesforce"> Salesforce</label>
-                  <label><input type="checkbox" name="crm" value="dynamics"> Microsoft Dynamics</label>
-                  <label><input type="checkbox" name="crm" value="zoho"> Zoho CRM</label>
-                  <label><input type="checkbox" name="crm" value="freshworks"> Freshworks CRM</label>
-                  <label><input type="checkbox" name="crm" value="insightly"> Insightly</label>
-                  <label><input type="checkbox" name="crm" value="nimble"> Nimble</label>
-                  <label><input type="checkbox" name="crm" value="sugar"> SugarCRM</label>
-                  <label><input type="checkbox" name="crm" value="vtrek"> vTrek</label>
-                  <label><input type="checkbox" name="crm" value="other"> Other</label>
-                  <label><input type="checkbox" name="crm" value="none"> No CRM Yet</label>
+                  <label><input type="checkbox" name="crm" value="hubspot" checked="" /> HubSpot</label>
+                  <label><input type="checkbox" name="crm" value="pipedrive" /> Pipedrive</label>
+                  <label><input type="checkbox" name="crm" value="salesforce" /> Salesforce</label>
+                  <label><input type="checkbox" name="crm" value="dynamics" /> Microsoft Dynamics</label>
+                  <label><input type="checkbox" name="crm" value="zoho" /> Zoho CRM</label>
+                  <label><input type="checkbox" name="crm" value="freshworks" /> Freshworks CRM</label>
+                  <label><input type="checkbox" name="crm" value="insightly" /> Insightly</label>
+                  <label><input type="checkbox" name="crm" value="nimble" /> Nimble</label>
+                  <label><input type="checkbox" name="crm" value="sugar" /> SugarCRM</label>
+                  <label><input type="checkbox" name="crm" value="vtrek" /> vTrek</label>
+                  <label><input type="checkbox" name="crm" value="other" /> Other</label>
+                  <label><input type="checkbox" name="crm" value="none" /> No CRM Yet</label>
                 </div>
                 <p class="option-explanation">Select all CRM systems you currently use or plan to use. Basic CRMs are easier to integrate, while advanced ones require more complex API connections.</p>
               </div>
@@ -105,18 +114,18 @@
 
           <!-- Support Section -->
           <div class="config-section">
-            <h3><i class="fas fa-chart-line"></i> Optimization & Delivery</h3>
+            <h3><i class="fas fa-chart-line"></i> Optimization &amp; Delivery</h3>
             <div class="config-options">
               <div class="option-group">
                 <label>How often do you want optimization?</label>
                 <div class="radio-group">
-                  <input type="radio" id="bi-weekly" name="optimization" value="bi-weekly" checked>
+                  <input type="radio" id="bi-weekly" name="optimization" value="bi-weekly" checked="" />
                   <label for="bi-weekly">Bi-weekly</label>
-                  <input type="radio" id="monthly" name="optimization" value="monthly">
+                  <input type="radio" id="monthly" name="optimization" value="monthly" />
                   <label for="monthly">Monthly</label>
-                  <input type="radio" id="bi-monthly" name="optimization" value="bi-monthly">
+                  <input type="radio" id="bi-monthly" name="optimization" value="bi-monthly" />
                   <label for="bi-monthly">Bi-monthly</label>
-                  <input type="radio" id="quarterly" name="optimization" value="quarterly">
+                  <input type="radio" id="quarterly" name="optimization" value="quarterly" />
                   <label for="quarterly">Quarterly</label>
                 </div>
                 <p class="option-explanation">How often we review and optimize your growth system performance.</p>
@@ -125,11 +134,11 @@
               <div class="option-group">
                 <label>How fast do you need delivery?</label>
                 <div class="radio-group">
-                  <input type="radio" id="comprehensive-delivery" name="delivery" value="comprehensive" checked>
+                  <input type="radio" id="comprehensive-delivery" name="delivery" value="comprehensive" checked="" />
                   <label for="comprehensive-delivery">Comprehensive (12+ weeks)</label>
-                  <input type="radio" id="standard-delivery" name="delivery" value="standard">
+                  <input type="radio" id="standard-delivery" name="delivery" value="standard" />
                   <label for="standard-delivery">Standard (8-12 weeks)</label>
-                  <input type="radio" id="fast-delivery" name="delivery" value="fast">
+                  <input type="radio" id="fast-delivery" name="delivery" value="fast" />
                   <label for="fast-delivery">Fast (4-6 weeks)</label>
                 </div>
                 <p class="option-explanation">Comprehensive: Full-featured system. Standard: Balanced approach. Fast: MVP with core features.</p>
@@ -223,3 +232,5 @@
   </div>
 </section>
 <!-- end pricing section -->
+
+:ET

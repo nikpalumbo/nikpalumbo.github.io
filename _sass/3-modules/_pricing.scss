@@ -283,6 +283,14 @@
     color: #1f2937;
     box-shadow: 0 2px 8px rgba(251, 196, 36, 0.3); /* Reduced shadow */
   }
+  
+  /* Alternative styling for selected state using JavaScript classes */
+  label.selected {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #1f2937;
+    box-shadow: 0 2px 8px rgba(251, 196, 36, 0.3);
+  }
 }
 
 /* Checkbox Groups - Updated to match website style */
@@ -333,6 +341,14 @@
     border-color: var(--primary-color);
     color: #1f2937;
     box-shadow: 0 2px 8px rgba(251, 196, 36, 0.3); /* Reduced shadow */
+  }
+  
+  /* Alternative styling for selected state using JavaScript classes */
+  label.selected {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #1f2937;
+    box-shadow: 0 2px 8px rgba(251, 196, 36, 0.3);
   }
 }
 
