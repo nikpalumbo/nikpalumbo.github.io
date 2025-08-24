@@ -50,10 +50,7 @@ social:
 hero:
   enable: true
   hero__badge: Growth Systems & AI Development
-  hero__title: |
-    Where Growth Strategy
-    Meets <span class="highlight">Technology</span>
-    Precisely
+  hero__title: "Where Growth Strategy Meets <span class=\"highlight\">Technology</span> Precisely"
   hero__description: "Growth doesn't come from luck. Manual work and disconnected tools slow companies down. The fastest-growing firms put growth on autopilot with intelligent systems."
   hero__image: "/images/01-1.jpg"
 
