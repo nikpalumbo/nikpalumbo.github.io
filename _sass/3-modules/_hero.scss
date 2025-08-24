@@ -55,6 +55,7 @@
   line-height: 1.2;
   margin-bottom: 20px;
   color: #1f2937;
+  white-space: pre-line; /* This ensures line breaks are respected */
 
   .highlight {
     color: var(--primary-color);
