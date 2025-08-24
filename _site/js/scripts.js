@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Radio button and checkbox functionality
     const radioGroups = document.querySelectorAll('input[type="radio"]');
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const channelCheckboxes = document.querySelectorAll('input[name="channel"]');
     
     radioGroups.forEach(radio => {
       radio.addEventListener('change', function() {
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
     
-    checkboxes.forEach(checkbox => {
+    channelCheckboxes.forEach(checkbox => {
       checkbox.addEventListener('change', function() {
         calculatePrice();
         updateQuoteDisplay();
@@ -156,7 +156,7 @@ function calculatePrice() {
   else if (leadStrategy === 'scale') basePrice *= 1.3;
   
   // Marketing channels
-  const channels = document.querySelectorAll('input[type="checkbox"]:checked');
+  const channels = document.querySelectorAll('input[name="channel"]:checked');
   basePrice += channels.length * 800;
   
   // CRM integration
@@ -192,45 +192,62 @@ function calculatePrice() {
 function updateQuoteDisplay() {
   // Company type
   const companyType = document.querySelector('input[name="company-size"]:checked');
-  const companyTypeLabel = companyType.nextElementSibling.textContent;
-  document.getElementById('quote-company-type').textContent = companyTypeLabel;
+  if (companyType && companyType.parentElement) {
+    const companyTypeLabel = companyType.parentElement.textContent.trim();
+    const companyTypeElement = document.getElementById('quote-company-type');
+    if (companyTypeElement) companyTypeElement.textContent = companyTypeLabel;
+  }
   
   // Lead strategy
   const leadStrategy = document.querySelector('input[name="lead-strategy"]:checked');
-  const leadStrategyLabel = leadStrategy.nextElementSibling.textContent;
-  document.getElementById('quote-lead-strategy').textContent = leadStrategyLabel;
+  if (leadStrategy && leadStrategy.parentElement) {
+    const leadStrategyLabel = leadStrategy.parentElement.textContent.trim();
+    const leadStrategyElement = document.getElementById('quote-lead-strategy');
+    if (leadStrategyElement) leadStrategyElement.textContent = leadStrategyLabel;
+  }
   
   // Channels
-  const channels = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
-    .map(cb => cb.nextElementSibling.textContent.trim());
-  document.getElementById('quote-channels').textContent = channels.join(', ');
+  const channels = Array.from(document.querySelectorAll('input[name="channel"]:checked'))
+    .map(cb => cb.parentElement ? cb.parentElement.textContent.trim() : '')
+    .filter(text => text.length > 0);
+  const channelsElement = document.getElementById('quote-channels');
+  if (channelsElement) channelsElement.textContent = channels.join(', ');
   
   // CRM level
   const crmLevel = document.querySelector('input[name="crm-level"]:checked');
-  const crmLevelLabel = crmLevel.nextElementSibling.textContent.split('(')[0].trim();
-  document.getElementById('quote-crm').textContent = crmLevelLabel;
+  if (crmLevel && crmLevel.parentElement) {
+    const crmLevelLabel = crmLevel.parentElement.textContent.split('(')[0].trim();
+    const crmLevelElement = document.getElementById('quote-crm');
+    if (crmLevelElement) crmLevelElement.textContent = crmLevelLabel;
+  }
   
   // Optimization
   const optimization = document.querySelector('input[name="optimization"]:checked');
-  const optimizationLabel = optimization.nextElementSibling.textContent;
-  document.getElementById('quote-optimization').textContent = optimizationLabel;
+  if (optimization && optimization.parentElement) {
+    const optimizationLabel = optimization.parentElement.textContent.trim();
+    const optimizationElement = document.getElementById('quote-optimization');
+    if (optimizationElement) optimizationElement.textContent = optimizationLabel;
+  }
   
   // Delivery
   const delivery = document.querySelector('input[name="delivery"]:checked');
-  const deliveryLabel = delivery.nextElementSibling.textContent.split('(')[0].trim();
-  document.getElementById('quote-delivery').textContent = deliveryLabel;
+  if (delivery && delivery.parentElement) {
+    const deliveryLabel = delivery.parentElement.textContent.split('(')[0].trim();
+    const deliveryElement = document.getElementById('quote-delivery');
+    if (deliveryElement) deliveryElement.textContent = deliveryLabel;
+  }
 }
 
 // Collect configuration data for email
 function collectConfigData() {
   const data = {
-    companySize: document.querySelector('input[name="company-size"]:checked').nextElementSibling.textContent,
-    leadStrategy: document.querySelector('input[name="lead-strategy"]:checked').nextElementSibling.textContent,
-    channels: Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.nextElementSibling.textContent.trim()),
-    crmLevel: document.querySelector('input[name="crm-level"]:checked').nextElementSibling.textContent.split('(')[0].trim(),
-    optimization: document.querySelector('input[name="optimization"]:checked').nextElementSibling.textContent,
-    delivery: document.querySelector('input[name="delivery"]:checked').nextElementSibling.textContent.split('(')[0].trim(),
-    estimatedPrice: document.getElementById('estimated-price').textContent
+    companySize: document.querySelector('input[name="company-size"]:checked')?.parentElement?.textContent.trim() || '',
+    leadStrategy: document.querySelector('input[name="lead-strategy"]:checked')?.parentElement?.textContent.trim() || '',
+    channels: Array.from(document.querySelectorAll('input[name="channel"]:checked')).map(cb => cb.parentElement?.textContent.trim() || '').filter(text => text.length > 0),
+    crmLevel: document.querySelector('input[name="crm-level"]:checked')?.parentElement?.textContent.split('(')[0].trim() || '',
+    optimization: document.querySelector('input[name="optimization"]:checked')?.parentElement?.textContent.trim() || '',
+    delivery: document.querySelector('input[name="delivery"]:checked')?.parentElement?.textContent.split('(')[0].trim() || '',
+    estimatedPrice: document.getElementById('estimated-price')?.textContent || ''
   };
   
   return data;

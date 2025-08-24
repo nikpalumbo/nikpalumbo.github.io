@@ -276,7 +276,8 @@
     }
   }
   
-  input[type="radio"]:checked + label {
+  /* Fix for radio checked state - since label wraps input */
+  label:has(input[type="radio"]:checked) {
     background: var(--primary-color);
     border-color: var(--primary-color);
     color: #1f2937;
@@ -322,19 +323,12 @@
     }
   }
   
-  input[type="checkbox"]:checked + span {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
-    color: #1f2937;
-    box-shadow: 0 2px 8px rgba(251, 196, 36, 0.3); /* Reduced shadow */
-  }
-  
   input[type="checkbox"] {
     display: none;
   }
   
-  /* Fix for checkbox checked state */
-  input[type="checkbox"]:checked + label {
+  /* Fix for checkbox checked state - since label wraps input */
+  label:has(input[type="checkbox"]:checked) {
     background: var(--primary-color);
     border-color: var(--primary-color);
     color: #1f2937;
