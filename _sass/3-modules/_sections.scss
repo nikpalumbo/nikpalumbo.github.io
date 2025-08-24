@@ -3,7 +3,7 @@
   position: relative;
   margin: 120px 0;
   padding-top: 60px;
-  border-top: 1px solid var(--border-color);
+  /* Removed border-top that was creating unwanted divider on home page */
 
   @media (max-width: $desktop) {
     margin: 80px 0;
