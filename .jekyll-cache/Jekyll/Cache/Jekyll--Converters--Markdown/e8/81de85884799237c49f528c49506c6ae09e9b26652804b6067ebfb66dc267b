@@ -1,3 +1,12 @@
+I"\1<!-- begin hero section -->
+<section class="hero hero--light">
+  <div class="container">
+    <h1 class="hero__title">Pricing</h1>
+    <p class="hero__subtitle">Transparent pricing for growth acceleration services. Choose the right solution for your business needs.</p>
+  </div>
+</section>
+<!-- end hero section -->
+
 <!-- begin pricing section -->
 <section class="pricing-section">
   <div class="container">
@@ -37,56 +46,63 @@
             <h3><i class="fas fa-building"></i> Company Profile</h3>
             <div class="config-options">
               <div class="option-group">
-                <label>Which company are you?</label>
+                <label>Company Size</label>
                 <div class="radio-group">
-                  <input type="radio" id="startup" name="company-size" value="startup" checked>
+                  <input type="radio" id="startup" name="company-size" value="startup" checked="" />
                   <label for="startup">Startup</label>
-                  <input type="radio" id="sme" name="company-size" value="sme">
+                  <input type="radio" id="sme" name="company-size" value="sme" />
                   <label for="sme">SME</label>
-                  <input type="radio" id="enterprise" name="company-size" value="enterprise">
+                  <input type="radio" id="enterprise" name="company-size" value="enterprise" />
                   <label for="enterprise">Enterprise</label>
                 </div>
                 <p class="option-explanation">Startups need fewer stakeholder interactions, SMEs require moderate alignment, while enterprises need comprehensive department coordination.</p>
+              </div>
+              
+              <div class="option-group">
+                <label>Team Size (Stakeholders)</label>
+                <input type="range" id="team-size" min="2" max="20" value="5" class="slider" />
+                <span class="slider-value">5 people</span>
+                <p class="option-explanation">Number of key stakeholders involved in workshops and decision-making processes.</p>
               </div>
             </div>
           </div>
 
           <!-- Scope Section -->
           <div class="config-section">
-            <h3><i class="fas fa-cogs"></i> Scope & Automation</h3>
+            <h3><i class="fas fa-cogs"></i> Scope &amp; Automation</h3>
             <div class="config-options">
               <div class="option-group">
-                <label>What's your current stage?</label>
+                <label>Lead Generation Strategy</label>
                 <div class="radio-group">
-                  <input type="radio" id="starting-leads" name="lead-strategy" value="starting" checked>
-                  <label for="starting-leads">Just Starting</label>
-                  <input type="radio" id="increase-leads" name="lead-strategy" value="increase">
-                  <label for="increase-leads">Want to Improve</label>
-                  <input type="radio" id="scale-leads" name="lead-strategy" value="scale">
-                  <label for="scale-leads">Ready to Scale</label>
+                  <input type="radio" id="starting-leads" name="lead-strategy" value="starting" checked="" />
+                  <label for="starting-leads">Starting to Generate</label>
+                  <input type="radio" id="increase-leads" name="lead-strategy" value="increase" />
+                  <label for="increase-leads">Increase Existing</label>
+                  <input type="radio" id="scale-leads" name="lead-strategy" value="scale" />
+                  <label for="scale-leads">Scale &amp; Optimize</label>
                 </div>
-                <p class="option-explanation">Just Starting: Building from scratch. Want to Improve: Enhancing existing processes. Ready to Scale: Optimizing and expanding current systems.</p>
+                <p class="option-explanation">Starting: Building from scratch. Increase: Improving current processes. Scale: Optimizing and expanding existing systems.</p>
               </div>
               
               <div class="option-group">
-                <label>Which channels do you want to automate?</label>
+                <label>Marketing Channels</label>
                 <div class="checkbox-group">
-                  <label><input type="checkbox" value="linkedin" checked> LinkedIn</label>
-                  <label><input type="checkbox" value="email" checked> Email</label>
-                  <label><input type="checkbox" value="website"> Website Forms</label>
-                  <label><input type="checkbox" value="ads"> Ads Integration</label>
-                  <label><input type="checkbox" value="social"> Social Media</label>
-                  <label><input type="checkbox" value="cold-outreach"> Cold Outreach</label>
+                  <label><input type="checkbox" value="linkedin" checked="" /> LinkedIn</label>
+                  <label><input type="checkbox" value="email" checked="" /> Email</label>
+                  <label><input type="checkbox" value="website" /> Website Forms</label>
+                  <label><input type="checkbox" value="ads" /> Ads Integration</label>
+                  <label><input type="checkbox" value="social" /> Social Media</label>
+                  <label><input type="checkbox" value="cold-outreach" /> Cold Outreach</label>
                 </div>
-                <p class="option-explanation">Choose the marketing channels you want to automate. You can select multiple channels - more channels = more complex setup.</p>
+                <p class="option-explanation">Select the channels you want to automate. More channels = more complex setup and higher investment.</p>
               </div>
               
               <div class="option-group">
-                <label>What's your CRM setup?</label>
+                <label>CRM Integration</label>
                 <div class="radio-group">
-                  <input type="radio" id="basic-crm" name="crm-level" value="basic" checked>
+                  <input type="radio" id="basic-crm" name="crm-level" value="basic" checked="" />
                   <label for="basic-crm">Basic (HubSpot/Pipedrive)</label>
-                  <input type="radio" id="advanced-crm" name="crm-level" value="advanced">
+                  <input type="radio" id="advanced-crm" name="crm-level" value="advanced" />
                   <label for="advanced-crm">Advanced (Salesforce/Dynamics)</label>
                 </div>
                 <p class="option-explanation">Basic CRMs are easier to integrate. Advanced CRMs require more complex API connections and data mapping.</p>
@@ -96,31 +112,48 @@
 
           <!-- Support Section -->
           <div class="config-section">
-            <h3><i class="fas fa-chart-line"></i> Optimization & Delivery</h3>
+            <h3><i class="fas fa-headset"></i> Support &amp; Optimization</h3>
             <div class="config-options">
               <div class="option-group">
-                <label>How often do you want optimization?</label>
+                <label>Support Level</label>
                 <div class="radio-group">
-                  <input type="radio" id="bi-weekly" name="optimization" value="bi-weekly" checked>
-                  <label for="bi-weekly">Bi-weekly</label>
-                  <input type="radio" id="monthly" name="optimization" value="monthly">
-                  <label for="monthly">Monthly</label>
-                  <input type="radio" id="bi-monthly" name="optimization" value="bi-monthly">
-                  <label for="bi-monthly">Bi-monthly</label>
-                  <input type="radio" id="quarterly" name="optimization" value="quarterly">
-                  <label for="quarterly">Quarterly</label>
+                  <input type="radio" id="email-support" name="support-level" value="email" checked="" />
+                  <label for="email-support">Email Support</label>
+                  <input type="radio" id="dedicated-support" name="support-level" value="dedicated" />
+                  <label for="dedicated-support">Dedicated CSM</label>
+                  <input type="radio" id="premium-support" name="support-level" value="premium" />
+                  <label for="premium-support">24/7 SLA</label>
                 </div>
-                <p class="option-explanation">How often we review and optimize your growth system performance.</p>
+                <p class="option-explanation">Email: Basic support. Dedicated CSM: Personal account manager. 24/7 SLA: Premium enterprise support.</p>
               </div>
               
               <div class="option-group">
-                <label>How fast do you need delivery?</label>
+                <label>Optimization Cycles</label>
                 <div class="radio-group">
-                  <input type="radio" id="comprehensive-delivery" name="delivery" value="comprehensive" checked>
+                  <input type="radio" id="quarterly" name="optimization" value="quarterly" checked="" />
+                  <label for="quarterly">Quarterly</label>
+                  <input type="radio" id="monthly" name="optimization" value="monthly" />
+                  <label for="monthly">Monthly</label>
+                  <input type="radio" id="continuous" name="optimization" value="continuous" />
+                  <label for="continuous">Continuous</label>
+                </div>
+                <p class="option-explanation">How often we review and optimize your growth system performance.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Section -->
+          <div class="config-section">
+            <h3><i class="fas fa-calendar-alt"></i> Timeline &amp; Delivery</h3>
+            <div class="config-options">
+              <div class="option-group">
+                <label>Delivery Speed</label>
+                <div class="radio-group">
+                  <input type="radio" id="comprehensive-delivery" name="delivery" value="comprehensive" checked="" />
                   <label for="comprehensive-delivery">Comprehensive (12+ weeks)</label>
-                  <input type="radio" id="standard-delivery" name="delivery" value="standard">
+                  <input type="radio" id="standard-delivery" name="delivery" value="standard" />
                   <label for="standard-delivery">Standard (8-12 weeks)</label>
-                  <input type="radio" id="fast-delivery" name="delivery" value="fast">
+                  <input type="radio" id="fast-delivery" name="delivery" value="fast" />
                   <label for="fast-delivery">Fast (4-6 weeks)</label>
                 </div>
                 <p class="option-explanation">Comprehensive: Full-featured system. Standard: Balanced approach. Fast: MVP with core features.</p>
@@ -143,8 +176,12 @@
                 <span class="quote-value" id="quote-company-type">Startup</span>
               </div>
               <div class="quote-item">
-                <span class="quote-label">Current Stage:</span>
-                <span class="quote-value" id="quote-lead-strategy">Just Starting</span>
+                <span class="quote-label">Team Size:</span>
+                <span class="quote-value" id="quote-team-size">5 people</span>
+              </div>
+              <div class="quote-item">
+                <span class="quote-label">Lead Strategy:</span>
+                <span class="quote-value" id="quote-lead-strategy">Starting to Generate</span>
               </div>
               <div class="quote-item">
                 <span class="quote-label">Channels:</span>
@@ -155,8 +192,12 @@
                 <span class="quote-value" id="quote-crm">Basic</span>
               </div>
               <div class="quote-item">
+                <span class="quote-label">Support:</span>
+                <span class="quote-value" id="quote-support">Email Support</span>
+              </div>
+              <div class="quote-item">
                 <span class="quote-label">Optimization:</span>
-                <span class="quote-value" id="quote-optimization">Bi-weekly</span>
+                <span class="quote-value" id="quote-optimization">Quarterly</span>
               </div>
               <div class="quote-item">
                 <span class="quote-label">Delivery:</span>
@@ -214,3 +255,5 @@
   </div>
 </section>
 <!-- end pricing section -->
+
+:ET

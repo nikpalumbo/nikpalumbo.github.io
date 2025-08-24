@@ -55,6 +55,7 @@
   line-height: 1.1;
   margin-bottom: 24px;
   color: #1f2937;
+  white-space: pre-line; /* This will make <br> tags work */
 
   .highlight {
     color: var(--primary-color);
