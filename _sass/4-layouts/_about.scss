@@ -2,17 +2,17 @@
 
 /* Case Studies Header - Reused from works.scss */
 .case-studies-header {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  padding: 120px 0 80px;
+  background: linear-gradient(135deg, #f8f9ff 0%, #f1f5f9 100%);
+  padding: 100px 0 60px;
   text-align: center;
   border-bottom: 1px solid #e2e8f0;
 
   @media (max-width: 768px) {
-    padding: 100px 0 60px;
+    padding: 80px 0 50px;
   }
 
   @media (max-width: 576px) {
-    padding: 80px 0 50px;
+    padding: 60px 0 40px;
   }
 }
 
@@ -25,26 +25,34 @@
   font-size: 48px;
   font-weight: 800;
   color: #1f2937;
-  margin-bottom: 20px;
-  line-height: 1.2;
+  margin-bottom: 16px;
+  line-height: 1.1;
 
   @media (max-width: 768px) {
     font-size: 36px;
+    margin-bottom: 12px;
   }
 
   @media (max-width: 576px) {
     font-size: 32px;
+    margin-bottom: 12px;
   }
 }
 
 .case-studies-description {
-  font-size: 18px;
-  line-height: 1.7;
+  font-size: 20px;
+  line-height: 1.6;
   color: #6b7280;
-  margin: 0;
+  margin: 0 0 40px 0;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
 
   @media (max-width: 576px) {
     font-size: 16px;
+    margin-bottom: 24px;
   }
 }
 
