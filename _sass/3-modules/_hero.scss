@@ -5,18 +5,7 @@
   text-align: center;
   position: relative;
   
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
-    background: var(--primary-color);
-    border-radius: 2px;
-    opacity: 0.3;
-  }
+  /* Removed the ::after pseudo-element that was creating the yellow separator line */
 }
 
 .hero__content {
@@ -254,18 +243,8 @@
 .section.stats {
   padding: 40px 0 0 0;
   margin-top: -40px;
-  border-top: none;
+  /* Removed border-top and ::before pseudo-element that was creating unwanted divider */
   position: relative;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, #e2e8f0 50%, transparent 100%);
-  }
 }
 
 /* Light Hero Variant */
