@@ -108,32 +108,58 @@
 /* Side-by-side layout */
 .config-layout {
   display: grid;
-  grid-template-columns: 1fr 380px; /* Reduced from 400px */
-  gap: 32px; /* Reduced from 40px */
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
   align-items: start;
+  
+  /* Apply EXACT same styling as homepage containers */
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.04); /* Same as homepage service cards */
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Same as homepage service cards */
+  position: relative; /* Required for ::before pseudo-element */
+  overflow: hidden; /* Required for ::before pseudo-element */
+  
+  /* Add yellow top border like homepage service cards */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--primary-color);
+  }
   
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
-    gap: 24px; /* Reduced from 32px */
+    gap: 24px;
+    padding: 24px;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 20px;
   }
 }
 
 .config-left {
-  /* Left side styling */
+  /* Remove the flex properties that didn't work */
 }
 
 .config-right {
   position: sticky;
-  top: 20px;
+  top: 32px; /* Account for parent container padding */
   
   @media (max-width: 1024px) {
     position: static;
   }
 }
 
+/* Update config sections - remove container styling since parent has it */
 .config-section {
-  background: white;
-  border: 1px solid #e2e8f0; /* Consistent with homepage containers */
+  background: #f9fafb; /* Light background to distinguish from main container */
+  border: 1px solid #f3f4f6;
   border-radius: 12px;
   padding: 24px;
   margin-bottom: 24px;
@@ -141,7 +167,7 @@
   
   &:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 4px 20px rgba(251, 196, 36, 0.1);
+    box-shadow: 0 2px 12px rgba(251, 196, 36, 0.1);
   }
   
   @media (max-width: 768px) {
@@ -376,22 +402,16 @@
   }
 }
 
-/* Quote Card - Updated with softer styling */
+/* Update quote card - remove container styling since parent has it */
 .quote-card {
-  background: white;
-  border: 1px solid #e2e8f0; /* Consistent with homepage containers */
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  position: sticky;
-  top: 20px;
-  
-  @media (max-width: 1024px) {
-    position: static;
-  }
+  background: #f9fafb;
+  border: 1px solid #f3f4f6;
+  border-radius: 12px;
+  padding: 24px;
+  /* Remove flex: 1 that didn't work */
   
   @media (max-width: 768px) {
-    padding: 24px;
+    padding: 20px;
   }
 }
 
