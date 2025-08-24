@@ -36,17 +36,27 @@
 
 .cta__buttons {
   margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
   
   .button {
-    margin: 0 10px 15px;
+    margin: 0;
     
     &.button--primary {
-      background: white;
-      color: var(--accent-color);
+      background: var(--primary-color) !important;
+      color: #1f2937 !important;
+      padding: 16px 32px !important;
+      border-radius: 8px !important;
+      font-size: 16px !important;
+      font-weight: 600 !important;
+      border: none !important;
       
       &:hover {
-        background: rgba(255, 255, 255, 0.9);
-        transform: translateY(-2px);
+        background: #e6b800 !important;
+        color: #1f2937 !important;
+        transform: translateY(-1px) !important;
       }
     }
     
@@ -60,6 +70,12 @@
         color: var(--accent-color);
       }
     }
+  }
+  
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
   }
 }
 

@@ -10,6 +10,19 @@
     flex-wrap: wrap;
     padding: 20px 48px;
     min-height: 60px;
+    
+    /* Add responsive padding to prevent elements from being too close */
+    @media (max-width: 1200px) {
+      padding: 20px 32px;
+    }
+    
+    @media (max-width: $desktop) {
+      padding: 20px 24px;
+    }
+    
+    @media (max-width: $tablet) {
+      padding: 20px 20px;
+    }
   }
 
   @media (max-width: $mobile) {
@@ -25,11 +38,25 @@
   display: block;
 }
 
-
 .logo {
   display: flex;
   align-items: center;
   margin-top: -6px;
+  
+  /* Add responsive spacing to prevent logo and menu from being too close */
+  margin-right: 40px;
+  
+  @media (max-width: $desktop) {
+    margin-right: 32px;
+  }
+  
+  @media (max-width: $tablet) {
+    margin-right: 24px;
+  }
+  
+  @media (max-width: $mobile) {
+    margin-right: 20px;
+  }
 }
 
 /* Logo */
@@ -140,15 +167,29 @@
 .main-nav__box {
   display: flex;
   align-items: center;
+  
+  /* Add responsive spacing to prevent hamburger menu from being too close to logo */
+  @media (max-width: 1200px) {
+    margin-left: 20px;
+  }
+  
+  @media (max-width: $desktop) {
+    margin-left: 16px;
+  }
+  
+  @media (max-width: $tablet) {
+    margin-left: 12px;
+  }
 }
 
 .nav__list {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   .nav__item {
     display: inline-block;
-    margin-right: 36px;
+    margin-right: 24px;
     margin-bottom: 0;
 
     &:last-child {
@@ -282,6 +323,19 @@
 .nav-button {
   display: flex;
   align-items: center;
+  
+  /* Add responsive spacing to prevent nav-button from being too close to main nav */
+  @media (max-width: 1200px) {
+    margin-left: 20px;
+  }
+  
+  @media (max-width: $desktop) {
+    margin-left: 16px;
+  }
+  
+  @media (max-width: $tablet) {
+    margin-left: 12px;
+  }
 }
 
 /* Humburger Menu */
@@ -292,6 +346,15 @@
   display: none;
   color: var(--link-color);
   cursor: pointer;
+  
+  /* Add responsive spacing to prevent hamburger from being too close to logo */
+  @media (max-width: 1200px) {
+    margin-left: 16px;
+  }
+  
+  @media (max-width: $desktop) {
+    margin-left: 12px;
+  }
 
   @media only screen and (max-width: $desktop) {
     display: flex;
@@ -388,11 +451,11 @@
 
 /* Navigation Button Styling */
 .nav__link--button {
-  background: #1f2937 !important;
-  color: white !important;
+  background: var(--primary-color) !important;
+  color: #fff !important;
   padding: 12px 24px !important;
   border-radius: 8px !important;
-  margin-left: 16px !important;
+  margin-left: 24px !important;
   font-weight: 600 !important;
   transition: all 0.2s ease !important;
 

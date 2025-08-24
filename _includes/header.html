@@ -31,10 +31,14 @@
                 {% else %}
                 <li class="nav__item">
                   {% if item.button %}
-                    {% if item.url contains 'http' %}
-                    <a href="{{ item.url }}" target="_blank" class="nav__link nav__link--button{% if page.url == item.url %} active-link{% endif %}">{{ item.title }}</a>
+                    {% if item.title == 'Book a Call' %}
+                      {% include google-calendar-button.html %}
                     {% else %}
-                    <a href="{{ item.url | relative_url }}" class="nav__link nav__link--button{% if page.url == item.url %} active-link{% endif %}">{{ item.title }}</a>
+                      {% if item.url contains 'http' %}
+                      <a href="{{ item.url }}" target="_blank" class="nav__link nav__link--button{% if page.url == item.url %} active-link{% endif %}">{{ item.title }}</a>
+                      {% else %}
+                      <a href="{{ item.url | relative_url }}" class="nav__link nav__link--button{% if page.url == item.url %} active-link{% endif %}">{{ item.title }}</a>
+                      {% endif %}
                     {% endif %}
                   {% else %}
                     {% if item.url contains 'http' %}

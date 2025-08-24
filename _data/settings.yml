@@ -21,7 +21,7 @@ menu__settings:
     - title: 'About'
       url: '/about/'
     - title: 'Book a Call'
-      url: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0fakbJiTFTnP2psXCdItY2EbGQslNZ0JoSN2Ah3sOpMkiWi--1mbMt6DiKjzUOLz_Ffatm25Uv'
+      url: '#'
       button: true
 
 #-------------------------------

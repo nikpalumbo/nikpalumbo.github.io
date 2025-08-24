@@ -46,3 +46,23 @@
     width: 100%;
   }
 }
+
+/* Book Call Button - Consistent Black Styling */
+.book-call-btn {
+  background: #1f2937 !important;
+  color: white !important;
+  padding: 16px 32px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  transition: all 0.2s ease !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  border: none !important;
+  
+  &:hover {
+    background: #111827 !important;
+    color: white !important;
+    transform: translateY(-1px) !important;
+  }
+}
