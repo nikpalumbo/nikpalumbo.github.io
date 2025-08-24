@@ -1,6 +1,15 @@
+I"¯?
 <!-- begin pricing section -->
 <section class="pricing">
   <div class="container">
+    <!-- Pricing Header -->
+    <div class="pricing-header">
+      <div class="pricing-header__content">
+        <h1 class="pricing-title">Pricing</h1>
+        <p class="pricing-description">Transparent pricing for growth acceleration services. Choose the right solution for your business needs.</p>
+      </div>
+    </div>
+
     <!-- Service Tabs -->
     <div class="service-tabs">
       <button class="service-tab active" data-service="growth-systems">
@@ -34,7 +43,7 @@
             <label>Company Size</label>
             <select id="company-size" class="pricing-select">
               <option value="startup">Startup (1-10 employees)</option>
-              <option value="sme" selected>SME (11-50 employees)</option>
+              <option value="sme" selected="">SME (11-50 employees)</option>
               <option value="enterprise">Enterprise (50+ employees)</option>
             </select>
           </div>
@@ -42,15 +51,15 @@
             <label>Growth Goals</label>
             <select id="growth-goals" class="pricing-select">
               <option value="basic">Basic Growth</option>
-              <option value="advanced" selected>Advanced Growth</option>
-              <option value="scaling">Scaling & Expansion</option>
+              <option value="advanced" selected="">Advanced Growth</option>
+              <option value="scaling">Scaling &amp; Expansion</option>
             </select>
           </div>
           <div class="input-group">
             <label>Implementation Time</label>
             <select id="implementation-time" class="pricing-select">
               <option value="1-2">1-2 months</option>
-              <option value="3-4" selected>3-4 months</option>
+              <option value="3-4" selected="">3-4 months</option>
               <option value="5-6">5-6 months</option>
             </select>
           </div>
@@ -85,7 +94,7 @@
             <label>AI Agent Complexity</label>
             <select id="agent-complexity" class="pricing-select">
               <option value="simple">Simple Agent (Basic tasks)</option>
-              <option value="medium" selected>Medium Agent (Multi-step workflows)</option>
+              <option value="medium" selected="">Medium Agent (Multi-step workflows)</option>
               <option value="complex">Complex Agent (Advanced reasoning)</option>
             </select>
           </div>
@@ -93,7 +102,7 @@
             <label>Integration Requirements</label>
             <select id="integration-level" class="pricing-select">
               <option value="basic">Basic API integration</option>
-              <option value="advanced" selected>Advanced integrations</option>
+              <option value="advanced" selected="">Advanced integrations</option>
               <option value="enterprise">Enterprise systems</option>
             </select>
           </div>
@@ -101,7 +110,7 @@
             <label>Training Data Size</label>
             <select id="training-data" class="pricing-select">
               <option value="small">Small dataset</option>
-              <option value="medium" selected>Medium dataset</option>
+              <option value="medium" selected="">Medium dataset</option>
               <option value="large">Large dataset</option>
             </select>
           </div>
@@ -174,7 +183,7 @@
           </div>
           <ul class="package-features">
             <li><i class="fas fa-check"></i> Unlimited pages</li>
-            <li><i class="fas fa-check"></i> Premium SEO & performance</li>
+            <li><i class="fas fa-check"></i> Premium SEO &amp; performance</li>
             <li><i class="fas fa-check"></i> Advanced integrations</li>
             <li><i class="fas fa-check"></i> A/B testing setup</li>
             <li><i class="fas fa-check"></i> Unlimited revisions</li>
@@ -198,7 +207,7 @@
             <label>Number of Sprints</label>
             <select id="sprint-count" class="pricing-select">
               <option value="2">2 sprints (4 weeks)</option>
-              <option value="4" selected>4 sprints (8 weeks)</option>
+              <option value="4" selected="">4 sprints (8 weeks)</option>
               <option value="6">6 sprints (12 weeks)</option>
               <option value="8">8 sprints (16 weeks)</option>
             </select>
@@ -207,7 +216,7 @@
             <label>App Complexity</label>
             <select id="app-complexity" class="pricing-select">
               <option value="simple">Simple (Basic CRUD)</option>
-              <option value="medium" selected>Medium (User auth + features)</option>
+              <option value="medium" selected="">Medium (User auth + features)</option>
               <option value="complex">Complex (Advanced workflows)</option>
             </select>
           </div>
@@ -215,7 +224,7 @@
             <label>User Base Size</label>
             <select id="user-base" class="pricing-select">
               <option value="small">Small (1-100 users)</option>
-              <option value="medium" selected>Medium (100-1000 users)</option>
+              <option value="medium" selected="">Medium (100-1000 users)</option>
               <option value="large">Large (1000+ users)</option>
             </select>
           </div>
@@ -365,4 +374,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('user-base').addEventListener('change', updateProductPrice);
 });
 </script>
+
 <!-- end pricing section -->
+
+:ET

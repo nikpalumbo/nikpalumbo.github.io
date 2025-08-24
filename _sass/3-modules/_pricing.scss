@@ -10,53 +10,6 @@
   }
 }
 
-/* Pricing Header */
-.pricing-header {
-  padding: 100px 0 60px 0;
-  background: linear-gradient(135deg, #f8f9ff 0%, #f1f5f9 100%);
-  text-align: center;
-  margin: 0 -100px 0 -100px;
-  border-bottom: 1px solid #e2e8f0;
-  
-  @media (max-width: 768px) {
-    padding: 80px 0 50px 0;
-    margin: 0 -50px 0 -50px;
-  }
-}
-
-.pricing-header__content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.pricing-title {
-  font-size: 48px;
-  font-weight: 800;
-  color: #1f2937;
-  margin-bottom: 20px;
-  line-height: 1.2;
-  
-  @media (max-width: 768px) {
-    font-size: 36px;
-    margin-bottom: 16px;
-  }
-  
-  @media (max-width: 576px) {
-    font-size: 32px;
-  }
-}
-
-.pricing-description {
-  font-size: 18px;
-  line-height: 1.7;
-  color: #6b7280;
-  margin: 0;
-  
-  @media (max-width: 576px) {
-    font-size: 16px;
-  }
-}
-
 /* Service Tabs */
 .service-tabs {
   display: flex;
