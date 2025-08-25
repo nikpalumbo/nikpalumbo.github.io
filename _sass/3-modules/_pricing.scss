@@ -1,12 +1,21 @@
 /* Pricing Section Styles */
 .pricing {
-  padding: 60px 0 100px 0;
+  padding: 60px 0 140px 0;
   margin-top: 0;
   background: white;
   
   @media (max-width: 768px) {
-    padding: 40px 0 80px 0;
+    padding: 40px 0 100px 0;
     margin-top: 0;
+  }
+}
+
+/* Pricing Section Container */
+.pricing-section {
+  margin-bottom: 80px;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 60px;
   }
 }
 
@@ -801,6 +810,15 @@
   }
 }
 
+/* CTA Section within Quote Card */
+.cta-section {
+  margin-top: 20px;
+  
+  @media (max-width: 768px) {
+    margin-top: 16px;
+  }
+}
+
 /* Email Form Styles */
 .email-simple-form {
   display: flex;
@@ -847,16 +865,15 @@
   font-size: 13px;
   color: #6b7280;
   line-height: 1.5;
-  margin-top: 10px;
+  margin-top: 6px;
   padding: 10px;
-  background: #f9fafb;
   border-radius: 6px;
   border-left: 2px solid var(--primary-color);
   text-align: left;
   
   @media (max-width: 768px) {
     font-size: 12px;
-    margin-top: 8px;
+    margin-top: 4px;
     padding: 8px;
   }
 }
