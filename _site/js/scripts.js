@@ -1,217 +1,70 @@
-// Reframe.js - Responsive iframe handling
-
-// Reframe.js - Responsive iframe handling
-function reframe(selector) {
-  const elements = typeof selector === 'string' ? document.querySelectorAll(selector) : [selector];
-  
-  elements.forEach(element => {
-    if (element.classList.contains('js-reframe')) return;
-    
-    const wrapper = document.createElement('div');
-    wrapper.className = 'js-reframe';
-    wrapper.style.position = 'relative';
-    wrapper.style.width = '100%';
-    
-    const aspectRatio = (element.height / element.width) * 100;
-    wrapper.style.paddingTop = aspectRatio + '%';
-    
-    element.style.position = 'absolute';
-    element.style.width = '100%';
-    element.style.height = '100%';
-    element.style.left = '0';
-    element.style.top = '0';
-    
-    element.parentNode.insertBefore(wrapper, element);
-    wrapper.appendChild(element);
-  });
-}
-
-// LazyLoad - Image lazy loading
-class LazyLoad {
-  constructor(options = {}) {
-    this.elements = document.querySelectorAll(options.elements_selector || '.lazy');
-    this.init();
-  }
-  
-  init() {
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            this.loadElement(entry.target);
-            observer.unobserve(entry.target);
-          }
-        });
-      });
-      
-      this.elements.forEach(element => observer.observe(element));
-    } else {
-      this.elements.forEach(element => this.loadElement(element));
-    }
-  }
-  
-  loadElement(element) {
-    if (element.dataset.src) {
-      element.src = element.dataset.src;
-      element.classList.remove('lazy');
-    }
-  }
-}
-
-// Lightense - Image zoom functionality
-function Lightense(selector, options = {}) {
-  const elements = typeof selector === 'string' ? document.querySelectorAll(selector) : [selector];
-  
-  elements.forEach(element => {
-    element.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      const overlay = document.createElement('div');
-      overlay.className = 'lightense-overlay';
-      overlay.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: zoom-out;
-      `;
-      
-      const img = document.createElement('img');
-      img.src = element.src;
-      img.style.cssText = `
-        max-width: 90%;
-        max-height: 90%;
-        object-fit: contain;
-      `;
-      
-      overlay.appendChild(img);
-      document.body.appendChild(overlay);
-      
-      overlay.addEventListener('click', function() {
-        document.body.removeChild(overlay);
-      });
-    });
-  });
-}
-
-// Pricing Configurator
+// Pricing Configurator Initialization
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM loaded, checking for pricing elements...');
-  
-  // Check if we're on the pricing page
   const configurator = document.getElementById('growth-systems-config');
   const serviceTabs = document.querySelectorAll('.service-tab');
-  const pricingContents = document.querySelectorAll('.pricing-content');
   
-  console.log('Configurator element:', configurator);
-  console.log('Service tabs found:', serviceTabs.length);
-  console.log('Pricing contents found:', pricingContents.length);
-  
-  // Only run pricing code if we're on the pricing page
   if (configurator && serviceTabs.length > 0) {
-    console.log('Pricing page detected, initializing...');
+    console.log('DOM loaded, checking for pricing elements...');
     
-    // Service tab switching
+    // Service tab functionality
     serviceTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const targetService = tab.dataset.service;
-        console.log('Service tab clicked:', targetService);
-        
-        // Update active tab
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
         serviceTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
+        // Add active class to clicked tab
+        this.classList.add('active');
         
-        // Show/hide configurator or content
-        if (targetService === 'growth-systems') {
-          configurator.style.display = 'block';
-          pricingContents.forEach(content => content.style.display = 'none');
-        } else {
-          configurator.style.display = 'none';
-          pricingContents.forEach(content => {
-            content.style.display = 'none';
-            if (content.id === targetService + '-content') {
-              content.style.display = 'block';
-            }
-          });
-        }
+        // Show corresponding content
+        const serviceType = this.getAttribute('data-service');
+        showServiceContent(serviceType);
       });
     });
-
-    // Initialize configurator as visible
-    configurator.style.display = 'block';
-    pricingContents.forEach(content => content.style.display = 'none');
-
-    // Radio button and checkbox functionality
-    const radioGroups = document.querySelectorAll('input[type="radio"]');
-    const channelCheckboxes = document.querySelectorAll('input[name="channel"]');
-    const crmCheckboxes = document.querySelectorAll('input[name="crm"]');
     
-    console.log('Radio buttons found:', radioGroups.length);
-    console.log('Channel checkboxes found:', channelCheckboxes.length);
-    console.log('CRM checkboxes found:', crmCheckboxes.length);
-    
-    // Function to update visual state of radio buttons
-    function updateRadioVisualState() {
-      radioGroups.forEach(radio => {
-        const label = radio.nextElementSibling;
-        if (label && label.tagName === 'LABEL') {
-          if (radio.checked) {
-            label.classList.add('selected');
-          } else {
-            label.classList.remove('selected');
-          }
-        }
-      });
-    }
-    
-    // Function to update visual state of checkboxes
-    function updateCheckboxVisualState() {
-      const allCheckboxes = [...channelCheckboxes, ...crmCheckboxes];
-      allCheckboxes.forEach(checkbox => {
-        const label = checkbox.parentElement;
-        if (label && label.tagName === 'LABEL') {
-          if (checkbox.checked) {
-            label.classList.add('selected');
-          } else {
-            label.classList.remove('selected');
-          }
-        }
-      });
-    }
-    
-    // Add event listeners to ALL radio buttons (including optimization and delivery)
-    radioGroups.forEach(radio => {
+    // Radio button visual state management
+    const radioButtons = document.querySelectorAll('input[type="radio"]');
+    radioButtons.forEach(radio => {
       radio.addEventListener('change', function() {
-        console.log('Radio changed:', this.name, this.value);
+        console.log('Radio button changed:', this.value);
         updateRadioVisualState();
         calculatePrice();
         updateQuoteDisplay();
+        showBannerOnUpdate(); // Show banner on calculator update
+      });
+    });
+    
+    // Checkbox visual state management
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        console.log('Checkbox changed:', this.value);
+        updateCheckboxVisualState();
+        calculatePrice();
+        updateQuoteDisplay();
+        showBannerOnUpdate(); // Show banner on calculator update
       });
     });
     
     // Add event listeners to channel checkboxes
+    const channelCheckboxes = document.querySelectorAll('input[name="channel"]');
     channelCheckboxes.forEach(checkbox => {
       checkbox.addEventListener('change', function() {
         console.log('Channel checkbox changed:', this.value);
         updateCheckboxVisualState();
         calculatePrice();
         updateQuoteDisplay();
+        showBannerOnUpdate(); // Show banner on calculator update
       });
     });
     
     // Add event listeners to CRM checkboxes
+    const crmCheckboxes = document.querySelectorAll('input[name="crm"]');
     crmCheckboxes.forEach(checkbox => {
       checkbox.addEventListener('change', function() {
         console.log('CRM checkbox changed:', this.value);
         updateCheckboxVisualState();
         calculatePrice();
         updateQuoteDisplay();
+        showBannerOnUpdate(); // Show banner on calculator update
       });
     });
 
@@ -224,7 +77,17 @@ document.addEventListener('DOMContentLoaded', function() {
     if (emailStartBtn) {
       emailStartBtn.addEventListener('click', function() {
         const configData = collectConfigData();
-        const emailUrl = generateEmailUrl(configData);
+        const emailUrl = generateQuoteEmailUrl(configData);
+        window.open(emailUrl, '_blank');
+      });
+    }
+    
+    // Email activities button functionality
+    const emailActivitiesBtn = document.getElementById('email-activities-btn');
+    if (emailActivitiesBtn) {
+      emailActivitiesBtn.addEventListener('click', function() {
+        const configData = collectConfigData();
+        const emailUrl = generateActivitiesEmailUrl(configData);
         window.open(emailUrl, '_blank');
       });
     }
@@ -233,10 +96,111 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Running initial calculations...');
     calculatePrice();
     updateQuoteDisplay();
+    updateActivitiesDescription(); // Initialize activities description
+    
+    // Ensure banner starts hidden
+    const stickyBanner = document.getElementById('sticky-price-banner');
+    if (stickyBanner) {
+      stickyBanner.classList.remove('visible');
+      console.log('Banner initialized as hidden');
+      
+      // Force remove visible class multiple times to ensure it's hidden
+      stickyBanner.classList.remove('visible');
+      stickyBanner.classList.remove('visible');
+      stickyBanner.classList.remove('visible');
+      
+      // Check if it's still visible
+      console.log('Banner classes after removal:', stickyBanner.className);
+      console.log('Banner has visible class:', stickyBanner.classList.contains('visible'));
+    }
+    
+    // Force banner to be hidden initially
+    setTimeout(() => {
+      if (stickyBanner) {
+        stickyBanner.classList.remove('visible');
+        console.log('Banner forced to be hidden after timeout');
+        console.log('Final banner classes:', stickyBanner.className);
+      }
+    }, 100);
+    
+    // Add another timeout to be extra sure
+    setTimeout(() => {
+      if (stickyBanner) {
+        stickyBanner.classList.remove('visible');
+        console.log('Banner forced to be hidden after second timeout');
+      }
+    }, 500);
+    
+    // Add scroll event listener for sticky banner visibility
+    window.addEventListener('scroll', checkStickyBannerVisibility);
+    
+    // Add event listeners for sticky banner buttons
+    const stickyEmailBtn = document.getElementById('sticky-email-btn');
+    if (stickyEmailBtn) {
+      stickyEmailBtn.addEventListener('click', function() {
+        const configData = collectConfigData();
+        const emailUrl = generateQuoteEmailUrl(configData);
+        window.open(emailUrl, '_blank');
+      });
+    }
+    
+    const stickyActivitiesBtn = document.getElementById('sticky-activities-btn');
+    if (stickyActivitiesBtn) {
+      stickyActivitiesBtn.addEventListener('click', function() {
+        const configData = collectConfigData();
+        const emailUrl = generateActivitiesEmailUrl(configData);
+        window.open(emailUrl, '_blank');
+      });
+    }
   } else {
     console.log('Not on pricing page or elements not found');
   }
 });
+
+// Show service content based on selected tab
+function showServiceContent(serviceType) {
+  // Hide all service content
+  const allContent = document.querySelectorAll('.pricing-content');
+  allContent.forEach(content => {
+    content.style.display = 'none';
+  });
+  
+  // Show selected service content
+  const selectedContent = document.getElementById(serviceType + '-content');
+  if (selectedContent) {
+    selectedContent.style.display = 'block';
+  }
+}
+
+// Update radio button visual state
+function updateRadioVisualState() {
+  const radioButtons = document.querySelectorAll('input[type="radio"]');
+  radioButtons.forEach(radio => {
+    const label = radio.nextElementSibling;
+    if (label) {
+      if (radio.checked) {
+        label.classList.add('selected');
+      } else {
+        label.classList.remove('selected');
+      }
+    }
+  });
+}
+
+// Update checkbox visual state
+function updateCheckboxVisualState() {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach(checkbox => {
+    const label = checkbox.parentElement;
+    if (label) {
+      if (checkbox.checked) {
+        label.classList.add('selected');
+      } else {
+        label.classList.remove('selected');
+      }
+    }
+  });
+}
 
 // Calculate pricing based on configuration
 function calculatePrice() {
@@ -352,6 +316,152 @@ function updateQuoteDisplay() {
     const deliveryElement = document.getElementById('quote-delivery');
     if (deliveryElement) deliveryElement.textContent = deliveryLabel;
   }
+  
+  // Update activities description
+  updateActivitiesDescription();
+  
+  // Update sticky banner price
+  updateStickyBannerPrice();
+  
+  // Show banner when calculator is updated
+  showBannerOnUpdate();
+}
+
+// Update activities description based on current selection
+function updateActivitiesDescription() {
+  const activitiesList = document.getElementById('activities-list');
+  if (!activitiesList) return;
+  
+  const companySize = document.querySelector('input[name="company-size"]:checked')?.value || 'startup';
+  const leadStrategy = document.querySelector('input[name="lead-strategy"]:checked')?.value || 'starting';
+  const channels = document.querySelectorAll('input[name="channel"]:checked').length;
+  const crmSystems = document.querySelectorAll('input[name="crm"]:checked');
+  const optimization = document.querySelector('input[name="optimization"]:checked')?.value || 'bi-weekly';
+  const delivery = document.querySelector('input[name="delivery"]:checked')?.value || 'comprehensive';
+  
+  let activities = [];
+  
+  // Base activities for all packages
+  activities.push('Initial business analysis and requirements gathering');
+  activities.push('Growth system architecture design');
+  activities.push('Marketing automation workflow setup');
+  activities.push('CRM integration and data migration');
+  activities.push('Team training and documentation');
+  
+  // Company size specific activities
+  if (companySize === 'enterprise') {
+    activities.push('Multi-department stakeholder alignment');
+    activities.push('Enterprise security and compliance setup');
+    activities.push('Advanced reporting and analytics dashboard');
+    activities.push('Custom API integrations');
+  } else if (companySize === 'sme') {
+    activities.push('Department coordination setup');
+    activities.push('Standard reporting templates');
+    activities.push('Basic API integrations');
+  }
+  
+  // Experience level specific activities
+  if (leadStrategy === 'scale') {
+    activities.push('Advanced optimization strategies');
+    activities.push('Performance benchmarking and KPIs');
+    activities.push('Scalability planning and implementation');
+  } else if (leadStrategy === 'increase') {
+    activities.push('Process improvement recommendations');
+    activities.push('Efficiency optimization');
+    activities.push('Performance monitoring setup');
+  } else {
+    activities.push('Complete system setup from scratch');
+    activities.push('Comprehensive training program');
+    activities.push('Best practices implementation');
+  }
+  
+  // Channel specific activities
+  if (channels > 2) {
+    activities.push(`Multi-channel automation setup (${channels} channels)`);
+    activities.push('Cross-channel campaign coordination');
+  }
+  
+  // CRM complexity activities
+  const hasComplexCRM = Array.from(crmSystems).some(crm => 
+    ['salesforce', 'dynamics', 'sugar'].includes(crm.value)
+  );
+  if (hasComplexCRM) {
+    activities.push('Advanced CRM API integration');
+    activities.push('Complex workflow automation');
+  }
+  if (crmSystems.length > 1) {
+    activities.push('Multi-CRM synchronization setup');
+  }
+  
+  // Optimization frequency activities
+  if (optimization === 'bi-weekly') {
+    activities.push('Bi-weekly performance reviews and optimization');
+    activities.push('Continuous improvement tracking');
+  } else if (optimization === 'monthly') {
+    activities.push('Monthly performance reviews and optimization');
+  }
+  
+  // Delivery timeline activities
+  if (delivery === 'fast') {
+    activities.push('Rapid MVP development and deployment');
+    activities.push('Priority support and quick iterations');
+  } else if (delivery === 'comprehensive') {
+    activities.push('Thorough testing and quality assurance');
+    activities.push('Comprehensive documentation and training');
+  }
+  
+  // Render activities list
+  const activitiesHTML = activities.map(activity => `<li>${activity}</li>`).join('');
+  activitiesList.innerHTML = `<ul>${activitiesHTML}</ul>`;
+}
+
+// Update sticky banner price
+function updateStickyBannerPrice() {
+  const stickyPrice = document.getElementById('sticky-price');
+  const mainPrice = document.getElementById('estimated-price');
+  
+  if (stickyPrice && mainPrice) {
+    stickyPrice.textContent = mainPrice.textContent;
+  }
+}
+
+// Check if quote section is visible and show/hide sticky banner
+function checkStickyBannerVisibility() {
+  const quoteSection = document.querySelector('.config-right');
+  const stickyBanner = document.getElementById('sticky-price-banner');
+  
+  if (!quoteSection || !stickyBanner) return;
+  
+  const quoteRect = quoteSection.getBoundingClientRect();
+  const viewportHeight = window.innerHeight;
+  
+  // Simple logic: hide banner when quote section is visible in viewport
+  // Show banner when quote section is not visible (scrolled away)
+  const isQuoteVisible = quoteRect.bottom > 0 && quoteRect.top < viewportHeight;
+  
+  if (isQuoteVisible) {
+    stickyBanner.classList.remove('visible');
+    console.log('Quote visible - hiding banner');
+  } else {
+    stickyBanner.classList.add('visible');
+    console.log('Quote not visible - showing banner');
+  }
+}
+
+// Show banner when calculator is updated
+function showBannerOnUpdate() {
+  const stickyBanner = document.getElementById('sticky-price-banner');
+  if (stickyBanner) {
+    stickyBanner.classList.add('visible');
+    console.log('Calculator updated - showing banner');
+    
+    // Hide banner after 5 seconds if user doesn't scroll
+    setTimeout(() => {
+      if (stickyBanner.classList.contains('visible')) {
+        checkStickyBannerVisibility(); // Check if we should keep it visible
+      }
+    }, 5000);
+  }
 }
 
 // Collect configuration data for email
@@ -370,7 +480,7 @@ function collectConfigData() {
 }
 
 // Generate email URL with pre-filled parameters
-function generateEmailUrl(configData) {
+function generateQuoteEmailUrl(configData) {
   const subject = encodeURIComponent('Intelligent Growth System - Custom Quote Request');
   
   const body = encodeURIComponent(`Hi Nicola,
@@ -391,10 +501,91 @@ Optimization & Delivery:
 
 Estimated Investment: CHF ${configData.estimatedPrice}
 
-I'd like to discuss this further and get a detailed proposal. When would be a good time to schedule a call?
+I'd like to discuss this further and get a detailed proposal. 
+
+📅 Book a free consultation call: https://calendar.app.google/FgPFpZKyXjmEudQu8
 
 Best regards,
 [Your Name]`);
   
   return `mailto:nicola@sdw.solutions?subject=${subject}&body=${body}`;
+}
+
+// Generate email URL for activities
+function generateActivitiesEmailUrl(configData) {
+  const subject = encodeURIComponent('Intelligent Growth System - Detailed Activities Request');
+  
+  const body = encodeURIComponent(`Hi Nicola,
+
+I'm interested in your Intelligent Growth System services and would like to receive the detailed activities list for my configuration:
+
+Company Profile:
+- Company Size: ${configData.companySize}
+
+Scope & Automation:
+- Current Stage: ${configData.leadStrategy}
+- Marketing Channels: ${configData.channels.join(', ')}
+- CRM Integration: ${configData.crmLevel}
+
+Optimization & Delivery:
+- Optimization Cycles: ${configData.optimization}
+- Delivery Speed: ${configData.delivery}
+
+Estimated Investment: CHF ${configData.estimatedPrice}
+
+Please send me the detailed activities breakdown and proposal. I'm also interested in scheduling a consultation call to discuss this further.
+
+📅 Book a free consultation call: https://calendar.app.google/FgPFpZKyXjmEudQu8
+
+Best regards,
+[Your Name]`);
+  
+  return `mailto:nicola@sdw.solutions?subject=${subject}&body=${body}`;
+}
+
+// Test function to manually show/hide banner
+function testBanner() {
+  const stickyBanner = document.getElementById('sticky-price-banner');
+  if (stickyBanner) {
+    console.log('🧪 Testing banner visibility...');
+    console.log('Banner element:', stickyBanner);
+    console.log('Current classes:', stickyBanner.className);
+    
+    // Force hide banner first
+    stickyBanner.classList.remove('visible');
+    stickyBanner.style.display = 'none';
+    console.log('✅ Forced banner to be hidden');
+    
+    // Check computed styles
+    const computedStyle = window.getComputedStyle(stickyBanner);
+    console.log('🎨 Computed display:', computedStyle.display);
+    console.log('🎨 Computed transform:', computedStyle.transform);
+    console.log('📍 Computed position:', computedStyle.position);
+    
+    // Show after 2 seconds
+    setTimeout(() => {
+      stickyBanner.classList.add('visible');
+      stickyBanner.style.display = 'block';
+      console.log('⏰ Showing banner after 2 seconds');
+    }, 2000);
+    
+    // Hide after 5 seconds
+    setTimeout(() => {
+      stickyBanner.classList.remove('visible');
+      stickyBanner.style.display = 'none';
+      console.log('⏰ Hiding banner after 5 seconds');
+    }, 5000);
+  } else {
+    console.log('❌ Banner element not found!');
+  }
+}
+
+// Force hide banner function
+function forceHideBanner() {
+  const stickyBanner = document.getElementById('sticky-price-banner');
+  if (stickyBanner) {
+    stickyBanner.classList.remove('visible');
+    stickyBanner.style.display = 'none';
+    console.log('🚫 Banner forcefully hidden');
+  }
 }

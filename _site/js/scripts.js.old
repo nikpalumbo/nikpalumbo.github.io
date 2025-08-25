@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         updateRadioVisualState();
         calculatePrice();
         updateQuoteDisplay();
-        showBannerOnUpdate(); // Show banner on calculator update
       });
     });
     
@@ -40,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCheckboxVisualState();
         calculatePrice();
         updateQuoteDisplay();
-        showBannerOnUpdate(); // Show banner on calculator update
       });
     });
     
@@ -52,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCheckboxVisualState();
         calculatePrice();
         updateQuoteDisplay();
-        showBannerOnUpdate(); // Show banner on calculator update
       });
     });
     
@@ -64,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCheckboxVisualState();
         calculatePrice();
         updateQuoteDisplay();
-        showBannerOnUpdate(); // Show banner on calculator update
       });
     });
 
@@ -97,39 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
     calculatePrice();
     updateQuoteDisplay();
     updateActivitiesDescription(); // Initialize activities description
-    
-    // Ensure banner starts hidden
-    const stickyBanner = document.getElementById('sticky-price-banner');
-    if (stickyBanner) {
-      stickyBanner.classList.remove('visible');
-      console.log('Banner initialized as hidden');
-      
-      // Force remove visible class multiple times to ensure it's hidden
-      stickyBanner.classList.remove('visible');
-      stickyBanner.classList.remove('visible');
-      stickyBanner.classList.remove('visible');
-      
-      // Check if it's still visible
-      console.log('Banner classes after removal:', stickyBanner.className);
-      console.log('Banner has visible class:', stickyBanner.classList.contains('visible'));
-    }
-    
-    // Force banner to be hidden initially
-    setTimeout(() => {
-      if (stickyBanner) {
-        stickyBanner.classList.remove('visible');
-        console.log('Banner forced to be hidden after timeout');
-        console.log('Final banner classes:', stickyBanner.className);
-      }
-    }, 100);
-    
-    // Add another timeout to be extra sure
-    setTimeout(() => {
-      if (stickyBanner) {
-        stickyBanner.classList.remove('visible');
-        console.log('Banner forced to be hidden after second timeout');
-      }
-    }, 500);
     
     // Add scroll event listener for sticky banner visibility
     window.addEventListener('scroll', checkStickyBannerVisibility);
@@ -323,8 +286,8 @@ function updateQuoteDisplay() {
   // Update sticky banner price
   updateStickyBannerPrice();
   
-  // Show banner when calculator is updated
-  showBannerOnUpdate();
+  // Show sticky banner when quote is not visible
+  checkStickyBannerVisibility();
 }
 
 // Update activities description based on current selection
@@ -435,32 +398,17 @@ function checkStickyBannerVisibility() {
   const quoteRect = quoteSection.getBoundingClientRect();
   const viewportHeight = window.innerHeight;
   
-  // Simple logic: hide banner when quote section is visible in viewport
-  // Show banner when quote section is not visible (scrolled away)
+  // Show banner when quote section is not visible in viewport
+  // Make it more sensitive - show banner when quote starts going out of view
   const isQuoteVisible = quoteRect.bottom > 0 && quoteRect.top < viewportHeight;
+  
+  // Add some debugging
+  console.log('Quote rect:', quoteRect.top, quoteRect.bottom, 'Viewport:', viewportHeight, 'Visible:', isQuoteVisible);
   
   if (isQuoteVisible) {
     stickyBanner.classList.remove('visible');
-    console.log('Quote visible - hiding banner');
   } else {
     stickyBanner.classList.add('visible');
-    console.log('Quote not visible - showing banner');
-  }
-}
-
-// Show banner when calculator is updated
-function showBannerOnUpdate() {
-  const stickyBanner = document.getElementById('sticky-price-banner');
-  if (stickyBanner) {
-    stickyBanner.classList.add('visible');
-    console.log('Calculator updated - showing banner');
-    
-    // Hide banner after 5 seconds if user doesn't scroll
-    setTimeout(() => {
-      if (stickyBanner.classList.contains('visible')) {
-        checkStickyBannerVisibility(); // Check if we should keep it visible
-      }
-    }, 5000);
   }
 }
 
@@ -541,51 +489,4 @@ Best regards,
 [Your Name]`);
   
   return `mailto:nicola@sdw.solutions?subject=${subject}&body=${body}`;
-}
-
-// Test function to manually show/hide banner
-function testBanner() {
-  const stickyBanner = document.getElementById('sticky-price-banner');
-  if (stickyBanner) {
-    console.log('🧪 Testing banner visibility...');
-    console.log('Banner element:', stickyBanner);
-    console.log('Current classes:', stickyBanner.className);
-    
-    // Force hide banner first
-    stickyBanner.classList.remove('visible');
-    stickyBanner.style.display = 'none';
-    console.log('✅ Forced banner to be hidden');
-    
-    // Check computed styles
-    const computedStyle = window.getComputedStyle(stickyBanner);
-    console.log('🎨 Computed display:', computedStyle.display);
-    console.log('🎨 Computed transform:', computedStyle.transform);
-    console.log('📍 Computed position:', computedStyle.position);
-    
-    // Show after 2 seconds
-    setTimeout(() => {
-      stickyBanner.classList.add('visible');
-      stickyBanner.style.display = 'block';
-      console.log('⏰ Showing banner after 2 seconds');
-    }, 2000);
-    
-    // Hide after 5 seconds
-    setTimeout(() => {
-      stickyBanner.classList.remove('visible');
-      stickyBanner.style.display = 'none';
-      console.log('⏰ Hiding banner after 5 seconds');
-    }, 5000);
-  } else {
-    console.log('❌ Banner element not found!');
-  }
-}
-
-// Force hide banner function
-function forceHideBanner() {
-  const stickyBanner = document.getElementById('sticky-price-banner');
-  if (stickyBanner) {
-    stickyBanner.classList.remove('visible');
-    stickyBanner.style.display = 'none';
-    console.log('🚫 Banner forcefully hidden');
-  }
 }
