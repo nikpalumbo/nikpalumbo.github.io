@@ -1,3 +1,29 @@
+# SDW Solutions Website
+
+## 🚀 Quick Start
+
+### Starting the Development Server
+
+Due to Ruby/bundler version conflicts on macOS, use Docker to run the Jekyll server:
+
+```bash
+docker run --rm -v "$(pwd):/srv/jekyll" -p 4000:4000 -p 35729:35729 jekyll/jekyll:4.2.0 jekyll serve --host 0.0.0.0 --livereload
+```
+
+**What this does:**
+- Starts Jekyll server on `http://localhost:4000`
+- Enables live reload on port 35729
+- Automatically rebuilds when you make changes
+- Bypasses local Ruby/bundler version issues
+
+**To stop the server:** Press `Ctrl+C` in the terminal
+
+**Alternative (if you fix bundler):** `bundle exec jekyll serve --livereload`
+
+---
+
+## 📝 Project Description
+
 # Akio – Creative Portfolio Theme for Jekyll
 
 Akio is a creative personal portfolio Jekyll theme. This theme has a modern design and high-speed performance. The highlights of this theme include support Github Pages, light and dark mode, and also sections such as work, blog, clients, and testimonials. Perfectly suitable for any developer, designer, freelancer, software engineer, or some other who needs a professional way to showcase their work.

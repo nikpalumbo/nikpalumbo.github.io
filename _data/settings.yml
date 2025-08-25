@@ -140,7 +140,7 @@ cta:
   cta__description: "Every engagement begins with a structured scoping session. Let's define your goals, outcomes, and constraints, then move fast to create working solutions."
   cta__buttons:
     - text: "Start Your Project"
-      url: "/contact/"
+      url: "/pricing/"
       style: "primary"
     - text: "View Case Studies"
       url: "/case-studies/"
@@ -276,16 +276,6 @@ blog__settings:
 #-------------------------------
 # Footer Settings
 footer__background__image: "/images/bg.jpg"
-
-#-------------------------------
-# Contact Settings
-contact:
-  email: nicola@sdw.solutions # Add your form_id
-  description: Ready to build something that drives real business value? Whether you need an Intelligent Growth System, AI Agent, Smart Conversion Website, or Product-Led Growth Prototype, let's start with a structured scoping session. Tell me about your challenge, and I'll show you how we can turn it into working solutions. # Add a description of your form
-
-# NOTE
-# Akio theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
-
 
 #-------------------------------
 # Comment Section (Disqus)
