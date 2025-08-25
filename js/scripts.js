@@ -446,3 +446,47 @@ function setupFormHandling() {
     });
   }
 }
+
+// Case Studies Filtering Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const caseStudyCards = document.querySelectorAll('.case-study-card');
+  
+  if (filterButtons.length > 0 && caseStudyCards.length > 0) {
+    console.log('Case studies filtering initialized');
+    
+    // Add click event listeners to filter buttons
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const category = this.getAttribute('data-category');
+        
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        // Filter case studies
+        filterCaseStudies(category);
+      });
+    });
+  }
+});
+
+// Filter case studies based on selected category
+function filterCaseStudies(category) {
+  const caseStudyCards = document.querySelectorAll('.case-study-card');
+  
+  caseStudyCards.forEach(card => {
+    const cardCategory = card.getAttribute('data-category');
+    
+    if (category === 'all' || cardCategory === category) {
+      card.style.display = 'block';
+      card.classList.remove('hidden');
+    } else {
+      card.style.display = 'none';
+      card.classList.add('hidden');
+    }
+  });
+  
+  console.log(`Filtered case studies by category: ${category}`);
+}
