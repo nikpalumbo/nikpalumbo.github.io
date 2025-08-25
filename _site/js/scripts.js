@@ -72,16 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
     updateRadioVisualState();
     updateCheckboxVisualState();
 
-    // Email start button functionality
-    const emailStartBtn = document.getElementById('email-start-btn');
-    if (emailStartBtn) {
-      emailStartBtn.addEventListener('click', function() {
-        const configData = collectConfigData();
-        const emailUrl = generateQuoteEmailUrl(configData);
-        window.open(emailUrl, '_blank');
-      });
-    }
-    
     // Email activities button functionality (quote section)
     const emailActivitiesBtn = document.getElementById('email-activities-btn');
     if (emailActivitiesBtn) {
@@ -167,24 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add scroll event listener for sticky banner visibility
     window.addEventListener('scroll', checkStickyBannerVisibility);
     
-    // Add event listeners for sticky banner buttons
-    const stickyEmailBtn = document.getElementById('sticky-email-btn');
-    if (stickyEmailBtn) {
-      stickyEmailBtn.addEventListener('click', function() {
-        const configData = collectConfigData();
-        const emailUrl = generateQuoteEmailUrl(configData);
-        window.open(emailUrl, '_blank');
-      });
-    }
-    
-    const stickyActivitiesBtn = document.getElementById('sticky-activities-btn');
-    if (stickyActivitiesBtn) {
-      stickyActivitiesBtn.addEventListener('click', function() {
-        const configData = collectConfigData();
-        const emailUrl = generateActivitiesEmailUrl(configData);
-        window.open(emailUrl, '_blank');
-      });
-    }
+
   } else {
     console.log('Not on pricing page or elements not found');
   }

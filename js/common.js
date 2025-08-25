@@ -74,6 +74,19 @@ document.addEventListener("DOMContentLoaded", function() {
   /* =======================
   // Responsive Videos
   ======================= */
+  
+  // Reframe function for responsive iframes
+  function reframe(selector) {
+    const iframes = document.querySelectorAll(selector);
+    iframes.forEach(iframe => {
+      if (iframe) {
+        iframe.style.width = '100%';
+        iframe.style.height = 'auto';
+        iframe.style.aspectRatio = '16/9';
+      }
+    });
+  }
+  
   reframe(".post iframe:not(.reframe-off), .page iframe:not(.reframe-off)");
 
 
