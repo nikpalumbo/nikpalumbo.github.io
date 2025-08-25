@@ -244,53 +244,57 @@ function calculatePrice() {
   const companySizeElement = document.querySelector('input[name="company-size"]:checked');
   if (!companySizeElement) return; // Exit early if elements don't exist
   
-  let basePrice = 5000; // Base price for startup
+  let basePrice = 5000; // Base price CHF 5,000
   
-  // Company size multiplier
+  // Company size adjustment
   const companySize = companySizeElement.value;
-  if (companySize === 'sme') basePrice *= 1.3;
-  else if (companySize === 'enterprise') basePrice *= 1.8;
+  if (companySize === 'sme') basePrice += 2000;      // SME: +2,000
+  else if (companySize === 'enterprise') basePrice += 5000; // Enterprise: +5,000
   
-  // Lead strategy adjustment
+  // Current stage adjustment (experience level)
   const leadStrategyElement = document.querySelector('input[name="lead-strategy"]:checked');
   if (!leadStrategyElement) return;
   const leadStrategy = leadStrategyElement.value;
-  if (leadStrategy === 'increase') basePrice *= 1.15;
-  else if (leadStrategy === 'scale') basePrice *= 1.3;
+  if (leadStrategy === 'increase') basePrice += 1500;  // Want to Improve: +1,500
+  else if (leadStrategy === 'scale') basePrice += 3000; // Ready to Scale: +3,000
   
-  // Marketing channels
+  // Marketing channels adjustment
   const channels = document.querySelectorAll('input[name="channel"]:checked');
-  basePrice += channels.length * 800;
+  if (channels.length > 2) {
+    basePrice += (channels.length - 2) * 500; // +500 per additional channel beyond base 2
+  }
   
-  // CRM integration
+  // CRM integration complexity
   const crmSystems = document.querySelectorAll('input[name="crm"]:checked');
-  let crmMultiplier = 1.0;
   if (crmSystems.length > 0) {
-    // Check if any advanced CRM is selected
-    const hasAdvancedCRM = Array.from(crmSystems).some(crm => 
+    // Check for complex CRMs
+    const hasComplexCRM = Array.from(crmSystems).some(crm => 
       ['salesforce', 'dynamics', 'sugar'].includes(crm.value)
     );
-    if (hasAdvancedCRM) crmMultiplier = 1.25;
+    if (hasComplexCRM) basePrice += 2000; // Complex CRM: +2,000
+    
     // Multiple CRMs add complexity
-    if (crmSystems.length > 1) crmMultiplier *= 1.1;
+    if (crmSystems.length > 1) basePrice += 1000; // Multiple CRMs: +1,000
+  } else {
+    basePrice += 500; // No CRM: +500 (setup from scratch)
   }
-  basePrice *= crmMultiplier;
   
-  // Optimization cycles
+  // Optimization frequency
   const optimizationElement = document.querySelector('input[name="optimization"]:checked');
   if (!optimizationElement) return;
   const optimization = optimizationElement.value;
-  if (optimization === 'monthly') basePrice *= 1.2;
-  else if (optimization === 'bi-monthly') basePrice *= 1.1;
-  else if (optimization === 'quarterly') basePrice *= 1.0;
-  else if (optimization === 'bi-weekly') basePrice *= 1.3;
+  if (optimization === 'monthly') basePrice += 1000;      // Monthly: +1,000
+  else if (optimization === 'bi-monthly') basePrice += 500;   // Bi-monthly: +500
+  else if (optimization === 'quarterly') basePrice += 0;      // Quarterly: +0
+  else if (optimization === 'bi-weekly') basePrice += 1500;   // Bi-weekly: +1,500
   
   // Delivery speed
   const deliveryElement = document.querySelector('input[name="delivery"]:checked');
   if (!deliveryElement) return;
   const delivery = deliveryElement.value;
-  if (delivery === 'standard') basePrice *= 0.9;
-  else if (delivery === 'fast') basePrice *= 0.8;
+  if (delivery === 'fast') basePrice += 2000;        // Fast: +2,000
+  else if (delivery === 'standard') basePrice += 0;     // Standard: +0
+  else if (delivery === 'comprehensive') basePrice += 1000; // Comprehensive: +1,000
   
   // Update price display
   const priceElement = document.getElementById('estimated-price');
