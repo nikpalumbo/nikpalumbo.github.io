@@ -248,15 +248,15 @@ function calculatePrice() {
   
   // Company size adjustment
   const companySize = companySizeElement.value;
-  if (companySize === 'sme') basePrice += 2000;      // SME: +2,000
-  else if (companySize === 'enterprise') basePrice += 5000; // Enterprise: +5,000
+  if (companySize === 'sme') basePrice += 1500;      // SME: +1,500
+  else if (companySize === 'enterprise') basePrice += 3500; // Enterprise: +3,500
   
   // Current stage adjustment (experience level)
   const leadStrategyElement = document.querySelector('input[name="lead-strategy"]:checked');
   if (!leadStrategyElement) return;
   const leadStrategy = leadStrategyElement.value;
-  if (leadStrategy === 'increase') basePrice += 1500;  // Want to Improve: +1,500
-  else if (leadStrategy === 'scale') basePrice += 3000; // Ready to Scale: +3,000
+  if (leadStrategy === 'increase') basePrice += 1000;  // Want to Improve: +1,000
+  else if (leadStrategy === 'scale') basePrice += 2500; // Ready to Scale: +2,500
   
   // Marketing channels adjustment
   const channels = document.querySelectorAll('input[name="channel"]:checked');
@@ -271,30 +271,30 @@ function calculatePrice() {
     const hasComplexCRM = Array.from(crmSystems).some(crm => 
       ['salesforce', 'dynamics', 'sugar'].includes(crm.value)
     );
-    if (hasComplexCRM) basePrice += 2000; // Complex CRM: +2,000
+    if (hasComplexCRM) basePrice += 1500; // Complex CRM: +1,500
     
     // Multiple CRMs add complexity
-    if (crmSystems.length > 1) basePrice += 1000; // Multiple CRMs: +1,000
+    if (crmSystems.length > 1) basePrice += 800; // Multiple CRMs: +800
   } else {
-    basePrice += 500; // No CRM: +500 (setup from scratch)
+    basePrice += 300; // No CRM: +300 (setup from scratch)
   }
   
   // Optimization frequency
   const optimizationElement = document.querySelector('input[name="optimization"]:checked');
   if (!optimizationElement) return;
   const optimization = optimizationElement.value;
-  if (optimization === 'monthly') basePrice += 1000;      // Monthly: +1,000
-  else if (optimization === 'bi-monthly') basePrice += 500;   // Bi-monthly: +500
+  if (optimization === 'monthly') basePrice += 800;      // Monthly: +800
+  else if (optimization === 'bi-monthly') basePrice += 400;   // Bi-monthly: +400
   else if (optimization === 'quarterly') basePrice += 0;      // Quarterly: +0
-  else if (optimization === 'bi-weekly') basePrice += 1500;   // Bi-weekly: +1,500
+  else if (optimization === 'bi-weekly') basePrice += 1200;   // Bi-weekly: +1,200
   
   // Delivery speed
   const deliveryElement = document.querySelector('input[name="delivery"]:checked');
   if (!deliveryElement) return;
   const delivery = deliveryElement.value;
-  if (delivery === 'fast') basePrice += 2000;        // Fast: +2,000
-  else if (delivery === 'standard') basePrice += 0;     // Standard: +0
-  else if (delivery === 'comprehensive') basePrice += 1000; // Comprehensive: +1,000
+  if (delivery === 'comprehensive') basePrice += 0;      // Comprehensive (12+ weeks): +0 (base)
+  else if (delivery === 'standard') basePrice += 800;    // Standard (8-12 weeks): +800
+  else if (delivery === 'fast') basePrice += 1500;       // Fast (4-6 weeks): +1,500
   
   // Update price display
   const priceElement = document.getElementById('estimated-price');
