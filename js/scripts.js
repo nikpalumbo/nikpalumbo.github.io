@@ -82,13 +82,47 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
     
-    // Email activities button functionality
+    // Email activities button functionality (quote section)
     const emailActivitiesBtn = document.getElementById('email-activities-btn');
     if (emailActivitiesBtn) {
       emailActivitiesBtn.addEventListener('click', function() {
+        const emailInput = document.getElementById('email-input');
+        const email = emailInput.value.trim();
+        
+        if (!email || !isValidEmail(email)) {
+          alert('Please enter a valid email address');
+          emailInput.focus();
+          return;
+        }
+        
         const configData = collectConfigData();
-        const emailUrl = generateActivitiesEmailUrl(configData);
+        const emailUrl = generateActivitiesEmailUrl(configData, email);
         window.open(emailUrl, '_blank');
+        
+        // Clear the input after sending
+        emailInput.value = '';
+      });
+    }
+    
+    // Email activities button functionality (sticky banner)
+    const stickyActivitiesBtn = document.getElementById('sticky-activities-btn');
+    if (stickyActivitiesBtn) {
+      stickyActivitiesBtn.addEventListener('click', function() {
+        const emailInput = document.getElementById('sticky-email-input');
+        const email = emailInput.value.trim();
+        
+        if (!email || !isValidEmail(email)) {
+          alert('Please enter a valid email address');
+          emailInput.focus();
+          return;
+        }
+        
+        const configData = collectConfigData();
+        const emailUrl = generateActivitiesEmailUrl(configData, email);
+        window.open(emailUrl, '_blank');
+        
+        // Clear the input after sending
+        emailInput.value = '';
       });
     }
 
@@ -96,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Running initial calculations...');
     calculatePrice();
     updateQuoteDisplay();
-    updateActivitiesDescription(); // Initialize activities description
     
     // Ensure banner starts hidden
     const stickyBanner = document.getElementById('sticky-price-banner');
@@ -317,102 +350,11 @@ function updateQuoteDisplay() {
     if (deliveryElement) deliveryElement.textContent = deliveryLabel;
   }
   
-  // Update activities description
-  updateActivitiesDescription();
-  
   // Update sticky banner price
   updateStickyBannerPrice();
   
   // Show banner when calculator is updated
   showBannerOnUpdate();
-}
-
-// Update activities description based on current selection
-function updateActivitiesDescription() {
-  const activitiesList = document.getElementById('activities-list');
-  if (!activitiesList) return;
-  
-  const companySize = document.querySelector('input[name="company-size"]:checked')?.value || 'startup';
-  const leadStrategy = document.querySelector('input[name="lead-strategy"]:checked')?.value || 'starting';
-  const channels = document.querySelectorAll('input[name="channel"]:checked').length;
-  const crmSystems = document.querySelectorAll('input[name="crm"]:checked');
-  const optimization = document.querySelector('input[name="optimization"]:checked')?.value || 'bi-weekly';
-  const delivery = document.querySelector('input[name="delivery"]:checked')?.value || 'comprehensive';
-  
-  let activities = [];
-  
-  // Base activities for all packages
-  activities.push('Initial business analysis and requirements gathering');
-  activities.push('Growth system architecture design');
-  activities.push('Marketing automation workflow setup');
-  activities.push('CRM integration and data migration');
-  activities.push('Team training and documentation');
-  
-  // Company size specific activities
-  if (companySize === 'enterprise') {
-    activities.push('Multi-department stakeholder alignment');
-    activities.push('Enterprise security and compliance setup');
-    activities.push('Advanced reporting and analytics dashboard');
-    activities.push('Custom API integrations');
-  } else if (companySize === 'sme') {
-    activities.push('Department coordination setup');
-    activities.push('Standard reporting templates');
-    activities.push('Basic API integrations');
-  }
-  
-  // Experience level specific activities
-  if (leadStrategy === 'scale') {
-    activities.push('Advanced optimization strategies');
-    activities.push('Performance benchmarking and KPIs');
-    activities.push('Scalability planning and implementation');
-  } else if (leadStrategy === 'increase') {
-    activities.push('Process improvement recommendations');
-    activities.push('Efficiency optimization');
-    activities.push('Performance monitoring setup');
-  } else {
-    activities.push('Complete system setup from scratch');
-    activities.push('Comprehensive training program');
-    activities.push('Best practices implementation');
-  }
-  
-  // Channel specific activities
-  if (channels > 2) {
-    activities.push(`Multi-channel automation setup (${channels} channels)`);
-    activities.push('Cross-channel campaign coordination');
-  }
-  
-  // CRM complexity activities
-  const hasComplexCRM = Array.from(crmSystems).some(crm => 
-    ['salesforce', 'dynamics', 'sugar'].includes(crm.value)
-  );
-  if (hasComplexCRM) {
-    activities.push('Advanced CRM API integration');
-    activities.push('Complex workflow automation');
-  }
-  if (crmSystems.length > 1) {
-    activities.push('Multi-CRM synchronization setup');
-  }
-  
-  // Optimization frequency activities
-  if (optimization === 'bi-weekly') {
-    activities.push('Bi-weekly performance reviews and optimization');
-    activities.push('Continuous improvement tracking');
-  } else if (optimization === 'monthly') {
-    activities.push('Monthly performance reviews and optimization');
-  }
-  
-  // Delivery timeline activities
-  if (delivery === 'fast') {
-    activities.push('Rapid MVP development and deployment');
-    activities.push('Priority support and quick iterations');
-  } else if (delivery === 'comprehensive') {
-    activities.push('Thorough testing and quality assurance');
-    activities.push('Comprehensive documentation and training');
-  }
-  
-  // Render activities list
-  const activitiesHTML = activities.map(activity => `<li>${activity}</li>`).join('');
-  activitiesList.innerHTML = `<ul>${activitiesHTML}</ul>`;
 }
 
 // Update sticky banner price
@@ -511,13 +453,21 @@ Best regards,
   return `mailto:nicola@sdw.solutions?subject=${subject}&body=${body}`;
 }
 
-// Generate email URL for activities
-function generateActivitiesEmailUrl(configData) {
+// Email validation function
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+// Generate email URL for activities (updated to include user's email)
+function generateActivitiesEmailUrl(configData, userEmail) {
   const subject = encodeURIComponent('Intelligent Growth System - Detailed Activities Request');
   
   const body = encodeURIComponent(`Hi Nicola,
 
-I'm interested in your Intelligent Growth System services and would like to receive the detailed activities list for my configuration:
+I'm interested in your Intelligent Growth System services and would like to receive the detailed activities list for my configuration.
+
+My Email: ${userEmail}
 
 Company Profile:
 - Company Size: ${configData.companySize}
@@ -541,51 +491,4 @@ Best regards,
 [Your Name]`);
   
   return `mailto:nicola@sdw.solutions?subject=${subject}&body=${body}`;
-}
-
-// Test function to manually show/hide banner
-function testBanner() {
-  const stickyBanner = document.getElementById('sticky-price-banner');
-  if (stickyBanner) {
-    console.log('🧪 Testing banner visibility...');
-    console.log('Banner element:', stickyBanner);
-    console.log('Current classes:', stickyBanner.className);
-    
-    // Force hide banner first
-    stickyBanner.classList.remove('visible');
-    stickyBanner.style.display = 'none';
-    console.log('✅ Forced banner to be hidden');
-    
-    // Check computed styles
-    const computedStyle = window.getComputedStyle(stickyBanner);
-    console.log('🎨 Computed display:', computedStyle.display);
-    console.log('🎨 Computed transform:', computedStyle.transform);
-    console.log('📍 Computed position:', computedStyle.position);
-    
-    // Show after 2 seconds
-    setTimeout(() => {
-      stickyBanner.classList.add('visible');
-      stickyBanner.style.display = 'block';
-      console.log('⏰ Showing banner after 2 seconds');
-    }, 2000);
-    
-    // Hide after 5 seconds
-    setTimeout(() => {
-      stickyBanner.classList.remove('visible');
-      stickyBanner.style.display = 'none';
-      console.log('⏰ Hiding banner after 5 seconds');
-    }, 5000);
-  } else {
-    console.log('❌ Banner element not found!');
-  }
-}
-
-// Force hide banner function
-function forceHideBanner() {
-  const stickyBanner = document.getElementById('sticky-price-banner');
-  if (stickyBanner) {
-    stickyBanner.classList.remove('visible');
-    stickyBanner.style.display = 'none';
-    console.log('🚫 Banner forcefully hidden');
-  }
 }
