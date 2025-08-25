@@ -115,6 +115,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle form submissions
     setupFormHandling();
+    
+    // Show IGS content initially
+    showServiceContent('growth-systems');
 
   } else {
     console.log('Not on pricing page or elements not found');
@@ -123,19 +126,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Show service content based on selected tab
 function showServiceContent(serviceType) {
-  // Hide all service content using CSS classes
+  // Hide all service content (add service-hidden, remove service-visible)
   const allContent = document.querySelectorAll('.pricing-content');
   allContent.forEach(content => {
     content.classList.remove('service-visible');
     content.classList.add('service-hidden');
   });
-  
-  // Handle IGS calculator using CSS classes
+
+  // Handle IGS calculator separately
   const igsCalculator = document.querySelector('.pricing-configurator');
   const igsHeader = document.querySelector('.config-header');
-  
+
   if (serviceType === 'growth-systems') {
-    // Show IGS calculator
     if (igsCalculator) {
       igsCalculator.classList.remove('service-hidden');
       igsCalculator.classList.add('service-visible');
@@ -145,7 +147,6 @@ function showServiceContent(serviceType) {
       igsHeader.classList.add('service-visible');
     }
   } else {
-    // Hide IGS calculator when other services are selected
     if (igsCalculator) {
       igsCalculator.classList.remove('service-visible');
       igsCalculator.classList.add('service-hidden');
@@ -155,8 +156,8 @@ function showServiceContent(serviceType) {
       igsHeader.classList.add('service-hidden');
     }
   }
-  
-  // Show selected service content using CSS classes
+
+  // Show selected service content (remove service-hidden, add service-visible)
   const selectedContent = document.getElementById(serviceType + '-content');
   if (selectedContent) {
     selectedContent.classList.remove('service-hidden');
