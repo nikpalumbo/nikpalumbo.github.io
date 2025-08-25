@@ -714,6 +714,32 @@
   }
 }
 
+/* Service Visibility Control */
+.service-visible {
+  display: block !important;
+}
+
+.service-hidden {
+  display: none !important;
+}
+
+/* IGS Calculator Visibility */
+.pricing-configurator.service-hidden {
+  display: none !important;
+}
+
+.pricing-configurator.service-visible {
+  display: block !important;
+}
+
+.config-header.service-hidden {
+  display: none !important;
+}
+
+.config-header.service-visible {
+  display: block !important;
+}
+
 /* Other Service Content */
 .pricing-content {
   display: none;
@@ -721,13 +747,13 @@
   margin: 0 auto;
   padding: 40px 0;
   
-  &.active {
+  &.service-visible {
     display: block;
   }
   
   .pricing-intro {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     
     h2 {
       font-size: 36px;

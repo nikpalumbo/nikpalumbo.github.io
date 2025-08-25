@@ -123,16 +123,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Show service content based on selected tab
 function showServiceContent(serviceType) {
-  // Hide all service content
+  // Hide all service content using CSS classes
   const allContent = document.querySelectorAll('.pricing-content');
   allContent.forEach(content => {
-    content.style.display = 'none';
+    content.classList.remove('service-visible');
+    content.classList.add('service-hidden');
   });
   
-  // Show selected service content
+  // Handle IGS calculator using CSS classes
+  const igsCalculator = document.querySelector('.pricing-configurator');
+  const igsHeader = document.querySelector('.config-header');
+  
+  if (serviceType === 'growth-systems') {
+    // Show IGS calculator
+    if (igsCalculator) {
+      igsCalculator.classList.remove('service-hidden');
+      igsCalculator.classList.add('service-visible');
+    }
+    if (igsHeader) {
+      igsHeader.classList.remove('service-hidden');
+      igsHeader.classList.add('service-visible');
+    }
+  } else {
+    // Hide IGS calculator when other services are selected
+    if (igsCalculator) {
+      igsCalculator.classList.remove('service-visible');
+      igsCalculator.classList.add('service-hidden');
+    }
+    if (igsHeader) {
+      igsHeader.classList.remove('service-visible');
+      igsHeader.classList.add('service-hidden');
+    }
+  }
+  
+  // Show selected service content using CSS classes
   const selectedContent = document.getElementById(serviceType + '-content');
   if (selectedContent) {
-    selectedContent.style.display = 'block';
+    selectedContent.classList.remove('service-hidden');
+    selectedContent.classList.add('service-visible');
   }
 }
 
