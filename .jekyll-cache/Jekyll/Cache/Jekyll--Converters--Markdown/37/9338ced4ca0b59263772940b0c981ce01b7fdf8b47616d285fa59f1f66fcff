@@ -1,4 +1,4 @@
-I"13<!-- begin hero section -->
+I"N4<!-- begin hero section -->
 <section class="hero hero--light">
   <div class="container">
     <h1 class="hero__title">Pricing</h1>
@@ -188,15 +188,24 @@
               </div>
               
               <div class="cta-section">
-                <div class="email-simple-form">
-                  <input type="email" id="email-input" placeholder="Enter your email address" class="email-input" />
-                  <button class="btn btn--secondary" id="email-activities-btn">
+                <form action="https://formspree.io/f/xzzapqow" method="POST" class="email-simple-form">
+                  <input type="email" name="email" id="email-input" placeholder="Enter your email address" class="email-input" required="" />
+                  <button type="submit" class="btn btn--secondary" id="email-activities-btn">
                     <i class="fas fa-paper-plane"></i>
                     Get Quote Details
                   </button>
-                </div>
+                  
+                  <!-- Hidden fields to capture configuration data -->
+                  <input type="hidden" name="company_type" id="form-company-type" />
+                  <input type="hidden" name="current_stage" id="form-current-stage" />
+                  <input type="hidden" name="channels" id="form-channels" />
+                  <input type="hidden" name="crm_level" id="form-crm-level" />
+                  <input type="hidden" name="optimization" id="form-optimization" />
+                  <input type="hidden" name="delivery" id="form-delivery" />
+                  <input type="hidden" name="estimated_price" id="form-estimated-price" />
+                </form>
                 <p class="email-explanation">
-                  Select all CRM systems you currently use or plan to use. Basic CRMs are easier to integrate, while advanced ones require more complex API connections.
+                  I'll send you a detailed implementation plan with step-by-step breakdown of what's included in your offer. Get ready to see exactly how we'll transform your growth strategy!
                 </p>
               </div>
             </div>
@@ -235,25 +244,13 @@
 
 <!-- Sticky Bottom Banner -->
 <div class="sticky-price-banner" id="sticky-price-banner">
-  <div class="container">
-    <div class="banner-content">
-      <div class="banner-info">
-        <h3>Ready to Transform Your Growth?</h3>
-        <p>Get your custom Intelligent Growth System today</p>
-      </div>
-      <div class="banner-price">
-        <span class="price-label">Estimated Investment:</span>
-        <span class="price-amount">CHF <span id="sticky-price">5,000</span></span>
-      </div>
-      <div class="banner-actions">
-        <div class="email-simple-form">
-          <input type="email" id="sticky-email-input" placeholder="Enter your email address" class="email-input" />
-          <button class="btn btn--secondary" id="sticky-activities-btn">
-            <i class="fas fa-paper-plane"></i>
-            Get Quote Details
-          </button>
-        </div>
-      </div>
+  <div class="banner-content">
+    <div class="banner-info">
+      <h3>Ready to Transform Your Growth?</h3>
+    </div>
+    <div class="banner-price">
+      <span class="price-label">Estimated Investment:</span>
+      <span class="price-amount">CHF <span id="sticky-price">5,000</span></span>
     </div>
   </div>
 </div>

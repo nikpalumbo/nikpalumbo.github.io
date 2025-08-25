@@ -72,50 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
     updateRadioVisualState();
     updateCheckboxVisualState();
 
-    // Email activities button functionality (quote section)
-    const emailActivitiesBtn = document.getElementById('email-activities-btn');
-    if (emailActivitiesBtn) {
-      emailActivitiesBtn.addEventListener('click', function() {
-        const emailInput = document.getElementById('email-input');
-        const email = emailInput.value.trim();
-        
-        if (!email || !isValidEmail(email)) {
-          alert('Please enter a valid email address');
-          emailInput.focus();
-          return;
-        }
-        
-        const configData = collectConfigData();
-        const emailUrl = generateActivitiesEmailUrl(configData, email);
-        window.open(emailUrl, '_blank');
-        
-        // Clear the input after sending
-        emailInput.value = '';
-      });
-    }
-    
-    // Email activities button functionality (sticky banner)
-    const stickyActivitiesBtn = document.getElementById('sticky-activities-btn');
-    if (stickyActivitiesBtn) {
-      stickyActivitiesBtn.addEventListener('click', function() {
-        const emailInput = document.getElementById('sticky-email-input');
-        const email = emailInput.value.trim();
-        
-        if (!email || !isValidEmail(email)) {
-          alert('Please enter a valid email address');
-          emailInput.focus();
-          return;
-        }
-        
-        const configData = collectConfigData();
-        const emailUrl = generateActivitiesEmailUrl(configData, email);
-        window.open(emailUrl, '_blank');
-        
-        // Clear the input after sending
-        emailInput.value = '';
-      });
-    }
-
     // Initial price calculation and quote display
     console.log('Running initial calculations...');
     calculatePrice();
@@ -157,6 +113,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add scroll event listener for sticky banner visibility
     window.addEventListener('scroll', checkStickyBannerVisibility);
     
+    // Handle form submissions
+    setupFormHandling();
 
   } else {
     console.log('Not on pricing page or elements not found');
@@ -328,6 +286,9 @@ function updateQuoteDisplay() {
   
   // Show banner when calculator is updated
   showBannerOnUpdate();
+  
+  // Update hidden form fields
+  updateFormFields();
 }
 
 // Update sticky banner price
@@ -375,89 +336,84 @@ function showBannerOnUpdate() {
   }
 }
 
-// Collect configuration data for email
-function collectConfigData() {
-  const data = {
-    companySize: document.querySelector('input[name="company-size"]:checked')?.nextElementSibling?.textContent.trim() || '',
-    leadStrategy: document.querySelector('input[name="lead-strategy"]:checked')?.nextElementSibling?.textContent.trim() || '',
-    channels: Array.from(document.querySelectorAll('input[name="channel"]:checked')).map(cb => cb.parentElement?.textContent.trim() || '').filter(text => text.length > 0),
-    crmLevel: Array.from(document.querySelectorAll('input[name="crm"]:checked')).map(cb => cb.parentElement?.textContent.trim() || '').filter(text => text.length > 0).join(', '),
-    optimization: document.querySelector('input[name="optimization"]:checked')?.nextElementSibling?.textContent.trim() || '',
-    delivery: document.querySelector('input[name="delivery"]:checked')?.nextElementSibling?.textContent.split('(')[0].trim() || '',
-    estimatedPrice: document.getElementById('estimated-price')?.textContent || ''
+// Update hidden form fields with current configuration
+function updateFormFields() {
+  // Get current configuration values
+  const companyType = document.querySelector('input[name="company-size"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const currentStage = document.querySelector('input[name="lead-strategy"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const channels = Array.from(document.querySelectorAll('input[name="channel"]:checked'))
+    .map(cb => cb.parentElement?.textContent.trim() || '')
+    .filter(text => text.length > 0)
+    .join(', ');
+  const crmLevel = Array.from(document.querySelectorAll('input[name="crm"]:checked'))
+    .map(cb => cb.parentElement?.textContent.trim() || '')
+    .filter(text => text.length > 0)
+    .join(', ');
+  const optimization = document.querySelector('input[name="optimization"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const delivery = document.querySelector('input[name="delivery"]:checked')?.nextElementSibling?.textContent.split('(')[0].trim() || '';
+  const estimatedPrice = document.getElementById('estimated-price')?.textContent || '';
+  
+  // Update main form fields
+  const mainFormFields = {
+    'form-company-type': companyType,
+    'form-current-stage': currentStage,
+    'form-channels': channels,
+    'form-crm-level': crmLevel,
+    'form-optimization': optimization,
+    'form-delivery': delivery,
+    'form-estimated-price': estimatedPrice
   };
   
-  return data;
+  // Update sticky banner form fields
+  const stickyFormFields = {
+    'sticky-form-company-type': companyType,
+    'sticky-form-current-stage': currentStage,
+    'sticky-form-channels': channels,
+    'sticky-form-crm-level': crmLevel,
+    'sticky-form-optimization': optimization,
+    'sticky-form-delivery': delivery,
+    'sticky-form-estimated-price': estimatedPrice
+  };
+  
+  // Update main form
+  Object.entries(mainFormFields).forEach(([id, value]) => {
+    const field = document.getElementById(id);
+    if (field) field.value = value;
+  });
+  
+  // Update sticky banner form
+  Object.entries(stickyFormFields).forEach(([id, value]) => {
+    const field = document.getElementById(id);
+    if (field) field.value = value;
+  });
 }
 
-// Generate email URL with pre-filled parameters
-function generateQuoteEmailUrl(configData) {
-  const subject = encodeURIComponent('Intelligent Growth System - Custom Quote Request');
+// Setup form handling for Formspree submissions
+function setupFormHandling() {
+  // Main form
+  const mainForm = document.querySelector('.email-simple-form');
+  if (mainForm) {
+    mainForm.addEventListener('submit', function(e) {
+      // Formspree will handle the submission
+      // We can add a loading state or success message here if needed
+      const submitBtn = mainForm.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+      }
+    });
+  }
   
-  const body = encodeURIComponent(`Hi Nicola,
-
-I'm interested in your Intelligent Growth System services. Here are my requirements:
-
-Company Profile:
-- Company Size: ${configData.companySize}
-
-Scope & Automation:
-- Current Stage: ${configData.leadStrategy}
-- Marketing Channels: ${configData.channels.join(', ')}
-- CRM Integration: ${configData.crmLevel}
-
-Optimization & Delivery:
-- Optimization Cycles: ${configData.optimization}
-- Delivery Speed: ${configData.delivery}
-
-Estimated Investment: CHF ${configData.estimatedPrice}
-
-I'd like to discuss this further and get a detailed proposal. 
-
-📅 Book a free consultation call: https://calendar.app.google/FgPFpZKyXjmEudQu8
-
-Best regards,
-[Your Name]`);
-  
-  return `mailto:nicola@sdw.solutions?subject=${subject}&body=${body}`;
-}
-
-// Email validation function
-function isValidEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}
-
-// Generate email URL for activities (updated to include user's email)
-function generateActivitiesEmailUrl(configData, userEmail) {
-  const subject = encodeURIComponent('Intelligent Growth System - Detailed Activities Request');
-  
-  const body = encodeURIComponent(`Hi Nicola,
-
-I'm interested in your Intelligent Growth System services and would like to receive the detailed activities list for my configuration.
-
-My Email: ${userEmail}
-
-Company Profile:
-- Company Size: ${configData.companySize}
-
-Scope & Automation:
-- Current Stage: ${configData.leadStrategy}
-- Marketing Channels: ${configData.channels.join(', ')}
-- CRM Integration: ${configData.crmLevel}
-
-Optimization & Delivery:
-- Optimization Cycles: ${configData.optimization}
-- Delivery Speed: ${configData.delivery}
-
-Estimated Investment: CHF ${configData.estimatedPrice}
-
-Please send me the detailed activities breakdown and proposal. I'm also interested in scheduling a consultation call to discuss this further.
-
-📅 Book a free consultation call: https://calendar.app.google/FgPFpZKyXjmEudQu8
-
-Best regards,
-[Your Name]`);
-  
-  return `mailto:nicola@sdw.solutions?subject=${subject}&body=${body}`;
+  // Sticky banner form
+  const bannerForm = document.querySelector('.banner-email-form');
+  if (bannerForm) {
+    bannerForm.addEventListener('submit', function(e) {
+      // Formspree will handle the submission
+      const submitBtn = bannerForm.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+      }
+    });
+  }
 }

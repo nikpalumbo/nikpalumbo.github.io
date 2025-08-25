@@ -1,4 +1,4 @@
-I"G4<!-- begin hero section -->
+I"8<!-- begin hero section -->
 <section class="hero hero--light">
   <div class="container">
     <h1 class="hero__title">Pricing</h1>
@@ -187,22 +187,26 @@
                 <span class="price-amount">CHF <span id="estimated-price">5,000</span></span>
               </div>
               
-              <div class="quote-disclaimer">
-                <p><strong>Important:</strong> This is a starting estimation based on your configuration. Final pricing will be confirmed during our consultation call after evaluating your specific requirements, technical constraints, and business objectives.</p>
-              </div>
-              
               <div class="cta-section">
-                <div class="cta-buttons">
-                  <button class="btn btn--primary" id="email-start-btn">
-                    <i class="fas fa-envelope"></i>
-                    Get Quote &amp; Book Consultation
+                <form action="https://formspree.io/f/xzzapqow" method="POST" class="email-simple-form">
+                  <input type="email" name="email" id="email-input" placeholder="Enter your email address" class="email-input" required="" />
+                  <button type="submit" class="btn btn--secondary" id="email-activities-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Get Quote Details
                   </button>
-                  <button class="btn btn--secondary" id="email-activities-btn">
-                    <i class="fas fa-list-alt"></i>
-                    Get Detailed Activities List
-                  </button>
-                </div>
-                <p class="cta-note">Choose your preferred option to proceed</p>
+                  
+                  <!-- Hidden fields to capture configuration data -->
+                  <input type="hidden" name="company_type" id="form-company-type" />
+                  <input type="hidden" name="current_stage" id="form-current-stage" />
+                  <input type="hidden" name="channels" id="form-channels" />
+                  <input type="hidden" name="crm_level" id="form-crm-level" />
+                  <input type="hidden" name="optimization" id="form-optimization" />
+                  <input type="hidden" name="delivery" id="form-delivery" />
+                  <input type="hidden" name="estimated_price" id="form-estimated-price" />
+                </form>
+                <p class="email-explanation">
+                  I'll send you a detailed implementation plan with step-by-step breakdown of what's included in your offer. Get ready to see exactly how we'll transform your growth strategy!
+                </p>
               </div>
             </div>
           </div>
@@ -240,27 +244,30 @@
 
 <!-- Sticky Bottom Banner -->
 <div class="sticky-price-banner" id="sticky-price-banner">
-  <div class="container">
-    <div class="banner-content">
-      <div class="banner-info">
-        <h3>Ready to Transform Your Growth?</h3>
-        <p>Get your custom Intelligent Growth System today</p>
-      </div>
-      <div class="banner-price">
-        <span class="price-label">Estimated Investment:</span>
-        <span class="price-amount">CHF <span id="sticky-price">5,000</span></span>
-      </div>
-      <div class="banner-actions">
-        <button class="btn btn--primary" id="sticky-email-btn">
-          <i class="fas fa-envelope"></i>
-          Get Quote &amp; Book Consultation
-        </button>
-        <button class="btn btn--secondary" id="sticky-activities-btn">
-          <i class="fas fa-list-alt"></i>
-          Get Detailed Activities List
-        </button>
-      </div>
+  <div class="banner-content">
+    <div class="banner-info">
+      <h3>Ready to Transform Your Growth?</h3>
     </div>
+    <div class="banner-price">
+      <span class="price-label">Estimated Investment:</span>
+      <span class="price-amount">CHF <span id="sticky-price">5,000</span></span>
+    </div>
+    <form action="https://formspree.io/f/xzzapqow" method="POST" class="banner-email-form">
+      <input type="email" name="email" placeholder="Enter your email" class="banner-email-input" required="" />
+      <button type="submit" class="btn btn--secondary">
+        <i class="fas fa-paper-plane"></i>
+        Get Details
+      </button>
+      
+      <!-- Hidden fields to capture configuration data -->
+      <input type="hidden" name="company_type" id="sticky-form-company-type" />
+      <input type="hidden" name="current_stage" id="sticky-form-current-stage" />
+      <input type="hidden" name="channels" id="sticky-form-channels" />
+      <input type="hidden" name="crm_level" id="sticky-form-crm-level" />
+      <input type="hidden" name="optimization" id="sticky-form-optimization" />
+      <input type="hidden" name="delivery" id="sticky-form-delivery" />
+      <input type="hidden" name="estimated_price" id="sticky-form-estimated-price" />
+    </form>
   </div>
 </div>
 
