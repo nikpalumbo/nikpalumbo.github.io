@@ -1,19 +1,11 @@
----
-layout: default
-title: "About Nicola Palumbo - AI Product Manager & Growth Strategist"
-description: "Swiss-based SaaS founder who scaled to Fortune 500 clients. AI product manager and growth strategist expert in intelligent systems, AI agent development, and smart conversion websites for startups, SMEs, and enterprises."
-keywords: "Nicola Palumbo, AI product manager, growth strategist, SaaS founder, Swiss AI expert, Fortune 500 experience, startup growth, AI systems"
-permalink: /about/
----
-
-<!-- About Header -->
+I"Š<!-- About Header -->
 <div class="case-studies-header">
   <div class="container">
     <div class="row">
       <div class="col col-12">
         <div class="case-studies-header__content">
-          <h1 class="case-studies-title">{{ page.title }}</h1>
-          <p class="case-studies-description">{{ page.description }}</p>
+          <h1 class="case-studies-title">About Nicola Palumbo - AI Product Manager &amp; Growth Strategist</h1>
+          <p class="case-studies-description">Swiss-based SaaS founder who scaled to Fortune 500 clients. AI product manager and growth strategist expert in intelligent systems, AI agent development, and smart conversion websites for startups, SMEs, and enterprises.</p>
         </div>
       </div>
     </div>
@@ -40,7 +32,7 @@ permalink: /about/
       </div>
       
       <div class="vision-photo">
-        <img src="/images/nicola-professional.jpg" alt="Nicola Palumbo">
+        <img src="/images/nicola-professional.jpg" alt="Nicola Palumbo" />
       </div>
     </div>
   </div>
@@ -95,7 +87,7 @@ permalink: /about/
 <div class="values-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Values & Philosophy That Guide Every Decision</h2>
+      <h2 class="section-title">Values &amp; Philosophy That Guide Every Decision</h2>
       <p class="section-subtitle">The principles and mindset that shape how I work with clients and approach every challenge</p>
     </div>
     <div class="values-grid">
@@ -141,9 +133,14 @@ permalink: /about/
       <h2 class="section-title">Ready to design products that delight users and accelerate growth?</h2>
       <p class="hero__cta-intro">Hello. Are you looking for ways to accelerate growth?</p>
       <div class="hero__buttons">
-        {% include google-calendar-button.html %}
+        <!-- Google Calendar Button for Header -->
+<a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-NcwHUpy2VQTbjOwTbXwdd0qIVBbaPQvmwg8sujsRnwtn8LEFTFOVc_qFpKQKZASWyQwaIJO8?gv=true" target="_blank" class="nav__link nav__link--button book-call-btn" onclick="trackCTA('Book a Call', 'Button Click')">
+  Book a Call
+</a>
+
         <a href="mailto:nicola@sdw.solutions" target="_blank" class="button button--primary" onclick="trackCTA('Email me to Start', 'About Page CTA')">Email me to Start</a>
       </div>
     </div>
   </div>
 </div>
+:ET

@@ -122,6 +122,29 @@ document.addEventListener('DOMContentLoaded', function() {
   } else {
     console.log('Not on pricing page or elements not found');
   }
+  
+  // Case Studies Filtering Functionality
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const caseStudyCards = document.querySelectorAll('.case-study-card');
+  
+  if (filterButtons.length > 0 && caseStudyCards.length > 0) {
+    console.log('Case studies filtering initialized');
+    
+    // Add click event listeners to filter buttons
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const category = this.getAttribute('data-category');
+        
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        // Filter case studies
+        filterCaseStudies(category);
+      });
+    });
+  }
 });
 
 // Show service content based on selected tab
@@ -446,31 +469,6 @@ function setupFormHandling() {
     });
   }
 }
-
-// Case Studies Filtering Functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const caseStudyCards = document.querySelectorAll('.case-study-card');
-  
-  if (filterButtons.length > 0 && caseStudyCards.length > 0) {
-    console.log('Case studies filtering initialized');
-    
-    // Add click event listeners to filter buttons
-    filterButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        const category = this.getAttribute('data-category');
-        
-        // Remove active class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
-        this.classList.add('active');
-        
-        // Filter case studies
-        filterCaseStudies(category);
-      });
-    });
-  }
-});
 
 // Filter case studies based on selected category
 function filterCaseStudies(category) {
