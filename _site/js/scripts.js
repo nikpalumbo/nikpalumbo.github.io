@@ -340,42 +340,38 @@ function updateStickyBannerPrice() {
   }
 }
 
-// Check if quote section is visible and show/hide sticky banner
+// Check sticky banner visibility
 function checkStickyBannerVisibility() {
-  const quoteSection = document.querySelector('.config-right');
   const stickyBanner = document.getElementById('sticky-price-banner');
+  const quoteSection = document.querySelector('.cta-section');
   
-  if (!quoteSection || !stickyBanner) return;
+  if (!stickyBanner || !quoteSection) return;
   
-  const quoteRect = quoteSection.getBoundingClientRect();
+  const quoteRect = quoteSection.getBoundingRect();
   const viewportHeight = window.innerHeight;
   
-  // Simple logic: hide banner when quote section is visible in viewport
-  // Show banner when quote section is not visible (scrolled away)
+  // Show banner when quote section is not visible in viewport
   const isQuoteVisible = quoteRect.bottom > 0 && quoteRect.top < viewportHeight;
   
-  if (isQuoteVisible) {
-    stickyBanner.classList.remove('visible');
-    console.log('Quote visible - hiding banner');
-  } else {
+  if (!isQuoteVisible) {
     stickyBanner.classList.add('visible');
-    console.log('Quote not visible - showing banner');
+  } else {
+    stickyBanner.classList.remove('visible');
   }
 }
 
-// Show banner when calculator is updated
+// Show banner on calculator update
 function showBannerOnUpdate() {
   const stickyBanner = document.getElementById('sticky-price-banner');
   if (stickyBanner) {
     stickyBanner.classList.add('visible');
-    console.log('Calculator updated - showing banner');
     
-    // Hide banner after 5 seconds if user doesn't scroll
+    // Keep banner visible for longer (10 seconds instead of 5)
     setTimeout(() => {
       if (stickyBanner.classList.contains('visible')) {
-        checkStickyBannerVisibility(); // Check if we should keep it visible
+        checkStickyBannerVisibility();
       }
-    }, 5000);
+    }, 10000);
   }
 }
 

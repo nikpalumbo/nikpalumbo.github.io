@@ -1021,7 +1021,7 @@
   right: 0;
   background: white;
   color: #1f2937;
-  padding: 20px;
+  padding: 16px 20px;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
   z-index: 1000;
   transform: translateY(100%);
@@ -1033,107 +1033,39 @@
   }
   
   .banner-content {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 24px;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
-    
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      gap: 16px;
-      text-align: center;
-    }
+    gap: 24px;
   }
   
   .banner-info {
     h3 {
-      margin: 0 0 8px 0;
-      font-size: 20px;
+      margin: 0;
+      font-size: 18px;
       font-weight: 600;
       color: #1f2937;
-    }
-    
-    p {
-      margin: 0;
-      font-size: 16px;
-      color: #6b7280;
     }
   }
   
-  .banner-actions {
+  .banner-price {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 8px;
     
-    .email-simple-form {
-      display: flex;
-      flex-direction: row;
-      gap: 12px;
-      align-items: center;
-      width: 100%;
-      max-width: 400px;
-      
-      @media (max-width: 768px) {
-        flex-direction: column;
-        gap: 12px;
-        max-width: 100%;
-      }
+    .price-label {
+      font-size: 14px;
+      color: #6b7280;
+      margin: 0;
     }
     
-    .email-input {
-      padding: 12px 16px;
-      border: 2px solid #e2e8f0;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #1f2937;
-      background: white;
-      transition: all 0.3s ease;
-      width: 100%;
-      max-width: 200px;
-      
-      &::placeholder {
-        color: #9ca3af;
-      }
-      
-      &:focus {
-        outline: none;
-        border-color: var(--primary-color);
-        box-shadow: 0 0 0 3px rgba(251, 196, 36, 0.1);
-      }
-      
-      &:hover {
-        border-color: #cbd5e1;
-      }
-    }
-    
-    .btn {
-      padding: 12px 24px;
-      font-size: 14px;
-      font-weight: 600;
-      border-radius: 10px;
-      min-width: 140px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border: none;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-
-      &--secondary {
-        background: var(--primary-color);
-        color: #1f2937;
-
-        &:hover {
-          background: #f59e0b;
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(251, 196, 36, 0.3);
-        }
-      }
+    .price-amount {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin: 0;
     }
   }
 }
