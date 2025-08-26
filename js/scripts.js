@@ -6,9 +6,53 @@ document.addEventListener('DOMContentLoaded', function() {
   if (configurator && serviceTabs.length > 0) {
     console.log('DOM loaded, checking for pricing elements...');
     
+    // Handle hash-based routing for direct calculator access
+    function handleHashRouting() {
+      const hash = window.location.hash.substring(1); // Remove the #
+      if (hash) {
+        console.log('Hash detected:', hash);
+        // Map hash to service type
+        const hashToService = {
+          'igs': 'growth-systems',
+          'intelligent-growth-systems': 'growth-systems',
+          'ai-agents': 'ai-agents',
+          'ai-agent-development': 'ai-agents',
+          'websites': 'websites',
+          'prototyping': 'prototyping'
+        };
+        
+        const serviceType = hashToService[hash];
+        if (serviceType) {
+          console.log('Showing service:', serviceType);
+          showServiceContent(serviceType);
+          
+          // Update active tab if it exists
+          const activeTab = document.querySelector(`[data-service="${serviceType}"]`);
+          if (activeTab) {
+            serviceTabs.forEach(t => t.classList.remove('active'));
+            activeTab.classList.add('active');
+          }
+        }
+      }
+    }
+    
+    // Handle hash routing on page load
+    handleHashRouting();
+    
+    // Handle hash changes (when user navigates with back/forward)
+    window.addEventListener('hashchange', handleHashRouting);
+    
+    // Also handle hash routing after a short delay to ensure all elements are loaded
+    setTimeout(handleHashRouting, 100);
+    
+    // Test hash routing - log current hash
+    console.log('Current hash on page load:', window.location.hash);
+    
     // Service tab functionality
     serviceTabs.forEach(tab => {
       tab.addEventListener('click', function() {
+        console.log('Tab clicked:', this.getAttribute('data-service'));
+        
         // Remove active class from all tabs
         serviceTabs.forEach(t => t.classList.remove('active'));
         // Add active class to clicked tab
@@ -16,7 +60,21 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Show corresponding content
         const serviceType = this.getAttribute('data-service');
+        console.log('Calling showServiceContent with:', serviceType);
         showServiceContent(serviceType);
+        
+        // Update URL hash for direct access
+        const hashMap = {
+          'growth-systems': 'igs',
+          'ai-agents': 'ai-agents',
+          'websites': 'websites',
+          'prototyping': 'prototyping'
+        };
+        const hash = hashMap[serviceType];
+        if (hash) {
+          console.log('Setting hash to:', hash);
+          window.location.hash = hash;
+        }
       });
     });
     
