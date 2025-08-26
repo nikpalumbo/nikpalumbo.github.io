@@ -1,0 +1,175 @@
+I"@<section class="section pricing-hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h1>Choose Your Service</h1>
+        <p class="lead">Select the service that matches your needs and configure your pricing</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pricing-calculators">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <!-- Service Selection Tabs -->
+        <div class="service-tabs">
+          <div class="service-tab active" data-service="igs" data-url="/pricing/igs/">
+            <div class="service-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="service-content">
+              <h3>Intelligent Growth Systems</h3>
+              <p>Automated marketing, sales, and customer success workflows</p>
+              <div class="service-features">
+                <span class="feature">Multi-channel automation</span>
+                <span class="feature">CRM integration</span>
+                <span class="feature">Analytics &amp; reporting</span>
+              </div>
+            </div>
+            <div class="service-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          
+          <div class="service-tab" data-service="ai-agents" data-url="/pricing/ai-agents/">
+            <div class="service-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="service-content">
+              <h3>AI Agent Development</h3>
+              <p>Custom AI agents for business processes and customer interactions</p>
+              <div class="service-features">
+                <span class="feature">Custom LLM integration</span>
+                <span class="feature">RAG &amp; tools</span>
+                <span class="feature">Multi-channel deployment</span>
+              </div>
+            </div>
+            <div class="service-arrow">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-5">
+          <p class="text-muted">Click on a service to configure your pricing</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.service-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.service-tab {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.service-tab:hover {
+  border-color: #007bff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,123,255,0.15);
+}
+
+.service-tab.active {
+  border-color: #007bff;
+  background: linear-gradient(135deg, #f8f9ff 0%, #e3f2fd 100%);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-right: 1.5rem;
+  min-width: 60px;
+}
+
+.service-content {
+  flex: 1;
+}
+
+.service-content h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.service-content p {
+  margin: 0 0 1rem 0;
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+.service-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.feature {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.service-arrow {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-left: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.service-tab:hover .service-arrow {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .service-tab {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .service-icon {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .service-arrow {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const serviceTabs = document.querySelectorAll('.service-tab');
+  
+  serviceTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      const url = this.getAttribute('data-url');
+      window.location.href = url;
+    });
+  });
+});
+</script>
+
+:ET
