@@ -68,11 +68,14 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
 
-    // AI Agent Development event listeners
-    const aiRadioButtons = document.querySelectorAll('input[type="radio"][name^="ai-"]');
+    // AI Agent Development event listeners - properly scoped to AI calculator container
+    const aiRadioButtons = document.querySelectorAll('#ai-agents-config input[type="radio"][name^="ai-"]');
     aiRadioButtons.forEach(radio => {
-      radio.addEventListener('change', function() {
+      radio.addEventListener('change', function(e) {
+        e.preventDefault(); // Prevent any default behavior
+        e.stopPropagation(); // Stop event bubbling
         console.log('AI radio button changed:', this.name, this.value);
+        console.log('Current service:', document.querySelector('.pricing-content.service-visible')?.id);
         updateAIButtonStates(); // Update button states
         calculateAIPrice();
         updateAIQuoteDisplay();
@@ -81,10 +84,13 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
 
-    const aiCheckboxes = document.querySelectorAll('input[type="checkbox"][name^="ai-"]');
+    const aiCheckboxes = document.querySelectorAll('#ai-agents-config input[type="checkbox"][name^="ai-"]');
     aiCheckboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', function() {
+      checkbox.addEventListener('change', function(e) {
+        e.preventDefault(); // Prevent any default behavior
+        e.stopPropagation(); // Stop event bubbling
         console.log('AI checkbox changed:', this.name, this.value);
+        console.log('Current service:', document.querySelector('.pricing-content.service-visible')?.id);
         updateAIButtonStates(); // Update button states
         calculateAIPrice();
         updateAIQuoteDisplay();
@@ -180,6 +186,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Show service content based on selected tab
 function showServiceContent(serviceType) {
+  console.log('showServiceContent called with:', serviceType);
+  
   // Hide all service content (add service-hidden, remove service-visible)
   const allContent = document.querySelectorAll('.pricing-content');
   allContent.forEach(content => {
@@ -214,22 +222,27 @@ function showServiceContent(serviceType) {
       aiHeader.classList.add('service-hidden');
     }
   } else if (serviceType === 'ai-agents') {
+    console.log('Switching to AI agents service');
     if (aiCalculator) {
       aiCalculator.classList.remove('service-hidden');
       aiCalculator.classList.add('service-visible');
+      console.log('AI calculator made visible');
     }
     if (aiHeader) {
       aiHeader.classList.remove('service-hidden');
       aiHeader.classList.add('service-visible');
+      console.log('AI header made visible');
     }
     // Hide IGS calculator
     if (igsCalculator) {
       igsCalculator.classList.remove('service-visible');
       igsCalculator.classList.add('service-hidden');
+      console.log('IGS calculator hidden');
     }
     if (igsHeader) {
       igsHeader.classList.remove('service-visible');
       igsHeader.classList.add('service-hidden');
+      console.log('IGS header hidden');
     }
   } else {
     // Hide both calculators for other services
@@ -431,7 +444,7 @@ function checkStickyBannerVisibility() {
   
   if (!stickyBanner || !quoteSection) return;
   
-  const quoteRect = quoteSection.getBoundingRect();
+  const quoteRect = quoteSection.getBoundingClientRect();
   const viewportHeight = window.innerHeight;
   
   // Show banner when quote section is not visible in viewport
@@ -563,7 +576,7 @@ function filterCaseStudies(category) {
 // AI Agent Development Calculator Functions
 function calculateAIPrice() {
   // Check if AI pricing elements exist before calculating
-  const companyTypeElement = document.querySelector('input[name="ai-company-type"]:checked');
+  const companyTypeElement = document.querySelector('#ai-agents-config input[name="ai-company-type"]:checked');
   if (!companyTypeElement) return; // Exit early if elements don't exist
   
   let basePrice = 8000; // Base price CHF 8,000
@@ -573,22 +586,14 @@ function calculateAIPrice() {
   if (companyType === 'sme') basePrice += 1000;      // SME: +1,000
   else if (companyType === 'enterprise') basePrice += 2000; // Enterprise: +2,000
   
-  // Stakeholders adjustment
-  const stakeholdersElement = document.querySelector('input[name="ai-stakeholders"]:checked');
-  if (stakeholdersElement) {
-    const stakeholders = stakeholdersElement.value;
-    if (stakeholders === '4-8') basePrice += 500;  // 4-8: +500
-    else if (stakeholders === '9+') basePrice += 1000; // 9+: +1,000
-  }
-  
   // Primary model adjustment
-  const primaryModelElement = document.querySelector('input[name="ai-primary-model"]:checked');
+  const primaryModelElement = document.querySelector('#ai-agents-config input[name="ai-primary-model"]:checked');
   if (primaryModelElement && primaryModelElement.value === 'azure') {
     basePrice += 1000; // Azure OpenAI: +1,000
   }
   
   // Ollama adjustment
-  const ollamaElement = document.querySelector('input[name="ai-ollama"]:checked');
+  const ollamaElement = document.querySelector('#ai-agents-config input[name="ai-ollama"]:checked');
   if (ollamaElement) {
     const ollama = ollamaElement.value;
     if (ollama === 'single') basePrice += 2000;  // Single model: +2,000
@@ -596,7 +601,7 @@ function calculateAIPrice() {
   }
   
   // RAG adjustment
-  const ragElement = document.querySelector('input[name="ai-rag"]:checked');
+  const ragElement = document.querySelector('#ai-agents-config input[name="ai-rag"]:checked');
   if (ragElement) {
     const rag = ragElement.value;
     if (rag === 'simple') basePrice += 2000;  // Simple RAG: +2,000
@@ -605,7 +610,7 @@ function calculateAIPrice() {
   }
   
   // Tools adjustment
-  const toolsElement = document.querySelector('input[name="ai-tools"]:checked');
+  const toolsElement = document.querySelector('#ai-agents-config input[name="ai-tools"]:checked');
   if (toolsElement) {
     const tools = toolsElement.value;
     if (tools === '3-5') basePrice += 1000;  // 3-5 tools: +1,000
@@ -614,7 +619,7 @@ function calculateAIPrice() {
   }
   
   // Interface adjustment
-  const interfaceElement = document.querySelector('input[name="ai-interface"]:checked');
+  const interfaceElement = document.querySelector('#ai-agents-config input[name="ai-interface"]:checked');
   if (interfaceElement) {
     const interface = interfaceElement.value;
     if (interface === 'widget') basePrice += 1200;  // Web widget: +1,200
@@ -624,7 +629,7 @@ function calculateAIPrice() {
 
   
   // Authentication
-  const authElement = document.querySelector('input[name="ai-auth"]:checked');
+  const authElement = document.querySelector('#ai-agents-config input[name="ai-auth"]:checked');
   if (authElement) {
     const auth = authElement.value;
     if (auth === 'basic') basePrice += 800;  // Basic: +800
@@ -632,13 +637,13 @@ function calculateAIPrice() {
   }
   
   // Authorization
-  const authzElement = document.querySelector('input[name="ai-authz"]:checked');
+  const authzElement = document.querySelector('#ai-agents-config input[name="ai-authz"]:checked');
   if (authzElement && authzElement.value === 'rbac') {
     basePrice += 2000; // RBAC: +2,000
   }
   
   // Guardrails
-  const guardrailsElement = document.querySelector('input[name="ai-guardrails"]:checked');
+  const guardrailsElement = document.querySelector('#ai-agents-config input[name="ai-guardrails"]:checked');
   if (guardrailsElement) {
     const guardrails = guardrailsElement.value;
     if (guardrails === 'injection') basePrice += 1000;  // Injection/PII: +1,000
@@ -646,13 +651,13 @@ function calculateAIPrice() {
   }
   
   // Compliance
-  const complianceElement = document.querySelector('input[name="ai-compliance"]:checked');
+  const complianceElement = document.querySelector('#ai-agents-config input[name="ai-compliance"]:checked');
   if (complianceElement && complianceElement.value === 'dpia') {
     basePrice += 2000; // DPIA: +2,000
   }
   
   // Observability
-  const observabilityElement = document.querySelector('input[name="ai-observability"]:checked');
+  const observabilityElement = document.querySelector('#ai-agents-config input[name="ai-observability"]:checked');
   if (observabilityElement && observabilityElement.value === 'tracing') {
     basePrice += 1000; // Tracing: +1,000
   }
@@ -660,7 +665,7 @@ function calculateAIPrice() {
 
   
   // Delivery speed
-  const deliveryElement = document.querySelector('input[name="ai-delivery"]:checked');
+  const deliveryElement = document.querySelector('#ai-agents-config input[name="ai-delivery"]:checked');
   if (deliveryElement && deliveryElement.value === 'fast') {
     basePrice += 2000; // Fast delivery: +2,000
   }
@@ -679,7 +684,7 @@ function calculateAIPrice() {
 }
 
 function calculateAICarePlan() {
-  const carePlanElement = document.querySelector('input[name="ai-care"]:checked');
+  const carePlanElement = document.querySelector('#ai-agents-config input[name="ai-care"]:checked');
   const carePlanEstimate = document.getElementById('ai-care-plan-estimate');
   const carePlanPriceElement = document.getElementById('ai-care-plan-price');
   
@@ -704,7 +709,7 @@ function calculateAICarePlan() {
 
 function updateAIQuoteDisplay() {
   // Company type
-  const companyType = document.querySelector('input[name="ai-company-type"]:checked');
+  const companyType = document.querySelector('#ai-agents-config input[name="ai-company-type"]:checked');
   if (companyType && companyType.nextElementSibling) {
     const companyTypeLabel = companyType.nextElementSibling.textContent.trim();
     const companyTypeElement = document.getElementById('ai-quote-company-type');
@@ -712,7 +717,7 @@ function updateAIQuoteDisplay() {
   }
   
   // LLM Stack
-  const primaryModel = document.querySelector('input[name="ai-primary-model"]:checked');
+  const primaryModel = document.querySelector('#ai-agents-config input[name="ai-primary-model"]:checked');
   let llmStack = 'OpenAI (ChatGPT) / Anthropic (Claude) / Google (Gemini) API';
   
   if (primaryModel && primaryModel.value === 'azure') {
@@ -723,7 +728,7 @@ function updateAIQuoteDisplay() {
   if (llmElement) llmElement.textContent = llmStack;
   
   // Ollama Configuration (separate from LLM Stack)
-  const ollama = document.querySelector('input[name="ai-ollama"]:checked');
+  const ollama = document.querySelector('#ai-agents-config input[name="ai-ollama"]:checked');
   let ollamaConfig = 'None';
   
   if (ollama && ollama.value !== 'none') {
@@ -738,7 +743,7 @@ function updateAIQuoteDisplay() {
   if (ollamaElement) ollamaElement.textContent = ollamaConfig;
   
   // RAG Level
-  const ragElement = document.querySelector('input[name="ai-rag"]:checked');
+  const ragElement = document.querySelector('#ai-agents-config input[name="ai-rag"]:checked');
   if (ragElement && ragElement.nextElementSibling) {
     const ragLabel = ragElement.nextElementSibling.textContent.trim();
     const ragQuoteElement = document.getElementById('ai-quote-rag');
@@ -746,7 +751,7 @@ function updateAIQuoteDisplay() {
   }
   
   // Tools
-  const toolsElement = document.querySelector('input[name="ai-tools"]:checked');
+  const toolsElement = document.querySelector('#ai-agents-config input[name="ai-tools"]:checked');
   if (toolsElement && toolsElement.nextElementSibling) {
     const toolsLabel = toolsElement.nextElementSibling.textContent.trim();
     const toolsQuoteElement = document.getElementById('ai-quote-tools');
@@ -754,7 +759,7 @@ function updateAIQuoteDisplay() {
   }
   
   // Interface
-  const interfaceElement = document.querySelector('input[name="ai-interface"]:checked');
+  const interfaceElement = document.querySelector('#ai-agents-config input[name="ai-interface"]:checked');
   if (interfaceElement && interfaceElement.nextElementSibling) {
     const interfaceLabel = interfaceElement.nextElementSibling.textContent.trim();
     const interfaceQuoteElement = document.getElementById('ai-quote-interface');
@@ -762,11 +767,51 @@ function updateAIQuoteDisplay() {
   }
   
   // Delivery
-  const deliveryElement = document.querySelector('input[name="ai-delivery"]:checked');
+  const deliveryElement = document.querySelector('#ai-agents-config input[name="ai-delivery"]:checked');
   if (deliveryElement && deliveryElement.nextElementSibling) {
     const deliveryLabel = deliveryElement.nextElementSibling.textContent.split('(')[0].trim();
     const deliveryQuoteElement = document.getElementById('ai-quote-delivery');
     if (deliveryQuoteElement) deliveryQuoteElement.textContent = deliveryLabel;
+  }
+  
+  // Authentication
+  const authElement = document.querySelector('#ai-agents-config input[name="ai-auth"]:checked');
+  if (authElement && authElement.nextElementSibling) {
+    const authLabel = authElement.nextElementSibling.textContent.trim();
+    const authQuoteElement = document.getElementById('ai-quote-auth');
+    if (authQuoteElement) authQuoteElement.textContent = authLabel;
+  }
+  
+  // Authorization
+  const authzElement = document.querySelector('#ai-agents-config input[name="ai-authz"]:checked');
+  if (authzElement && authzElement.nextElementSibling) {
+    const authzLabel = authzElement.nextElementSibling.textContent.trim();
+    const authzQuoteElement = document.getElementById('ai-quote-authz');
+    if (authzQuoteElement) authzQuoteElement.textContent = authzLabel;
+  }
+  
+  // Guardrails
+  const guardrailsElement = document.querySelector('#ai-agents-config input[name="ai-guardrails"]:checked');
+  if (guardrailsElement && guardrailsElement.nextElementSibling) {
+    const guardrailsLabel = guardrailsElement.nextElementSibling.textContent.trim();
+    const guardrailsQuoteElement = document.getElementById('ai-quote-guardrails');
+    if (guardrailsQuoteElement) guardrailsQuoteElement.textContent = guardrailsLabel;
+  }
+  
+  // Compliance
+  const complianceElement = document.querySelector('#ai-agents-config input[name="ai-compliance"]:checked');
+  if (complianceElement && complianceElement.nextElementSibling) {
+    const complianceLabel = complianceElement.nextElementSibling.textContent.trim();
+    const complianceQuoteElement = document.getElementById('ai-quote-compliance');
+    if (complianceQuoteElement) complianceQuoteElement.textContent = complianceLabel;
+  }
+  
+  // Observability
+  const observabilityElement = document.querySelector('#ai-agents-config input[name="ai-observability"]:checked');
+  if (observabilityElement && observabilityElement.nextElementSibling) {
+    const observabilityLabel = observabilityElement.nextElementSibling.textContent.trim();
+    const observabilityQuoteElement = document.getElementById('ai-quote-observability');
+    if (observabilityQuoteElement) observabilityQuoteElement.textContent = observabilityLabel;
   }
   
   // Update form fields
@@ -775,9 +820,9 @@ function updateAIQuoteDisplay() {
 
 function updateAIFormFields() {
   // Get current AI configuration values
-  const companyType = document.querySelector('input[name="ai-company-type"]:checked')?.nextElementSibling?.textContent.trim() || '';
-  const primaryModel = document.querySelector('input[name="ai-primary-model"]:checked')?.value || '';
-  const ollama = document.querySelector('input[name="ai-ollama"]:checked')?.value || '';
+  const companyType = document.querySelector('#ai-agents-config input[name="ai-company-type"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const primaryModel = document.querySelector('#ai-agents-config input[name="ai-primary-model"]:checked')?.value || '';
+  const ollama = document.querySelector('#ai-agents-config input[name="ai-ollama"]:checked')?.value || '';
   
   // Separate LLM Stack and Ollama Configuration
   let llmStack = 'OpenAI (ChatGPT) / Anthropic (Claude) / Google (Gemini) API';
@@ -794,13 +839,20 @@ function updateAIFormFields() {
     }
   }
   
-  const ragLevel = document.querySelector('input[name="ai-rag"]:checked')?.nextElementSibling?.textContent.trim() || '';
-  const toolsCount = document.querySelector('input[name="ai-tools"]:checked')?.nextElementSibling?.textContent.trim() || '';
-  const interfaceType = document.querySelector('input[name="ai-interface"]:checked')?.nextElementSibling?.textContent.trim() || '';
-  const deliverySpeed = document.querySelector('input[name="ai-delivery"]:checked')?.nextElementSibling?.textContent.split('(')[0].trim() || '';
-  const carePlan = document.querySelector('input[name="ai-care"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const ragLevel = document.querySelector('#ai-agents-config input[name="ai-rag"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const toolsCount = document.querySelector('#ai-agents-config input[name="ai-tools"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const interfaceType = document.querySelector('#ai-agents-config input[name="ai-interface"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const deliverySpeed = document.querySelector('#ai-agents-config input[name="ai-delivery"]:checked')?.nextElementSibling?.textContent.split('(')[0].trim() || '';
+  const carePlan = document.querySelector('#ai-agents-config input[name="ai-care"]:checked')?.nextElementSibling?.textContent.trim() || '';
   const estimatedPrice = document.getElementById('ai-estimated-price')?.textContent || '';
   const carePlanPrice = document.getElementById('ai-care-plan-price')?.textContent || '';
+  
+  // Advanced options
+  const auth = document.querySelector('#ai-agents-config input[name="ai-auth"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const authz = document.querySelector('#ai-agents-config input[name="ai-authz"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const guardrails = document.querySelector('#ai-agents-config input[name="ai-guardrails"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const compliance = document.querySelector('#ai-agents-config input[name="ai-compliance"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const observability = document.querySelector('#ai-agents-config input[name="ai-observability"]:checked')?.nextElementSibling?.textContent.trim() || '';
   
   // Update AI form fields
   const aiFormFields = {
@@ -812,6 +864,11 @@ function updateAIFormFields() {
     'ai-form-interface-type': interfaceType,
     'ai-form-delivery-speed': deliverySpeed,
     'ai-form-care-plan': carePlan,
+    'ai-form-auth': auth,
+    'ai-form-authz': authz,
+    'ai-form-guardrails': guardrails,
+    'ai-form-compliance': compliance,
+    'ai-form-observability': observability,
     'ai-form-estimated-price': estimatedPrice,
     'ai-form-care-plan-price': carePlanPrice
   };
@@ -853,8 +910,8 @@ function toggleAccordion(accordionId) {
 
 // Update AI calculator button states
 function updateAIButtonStates() {
-  // Update AI radio buttons
-  const aiRadioButtons = document.querySelectorAll('input[type="radio"][name^="ai-"]');
+  // Update AI radio buttons - properly scoped to AI calculator container
+  const aiRadioButtons = document.querySelectorAll('#ai-agents-config input[type="radio"][name^="ai-"]');
   aiRadioButtons.forEach(radio => {
     const label = radio.nextElementSibling;
     if (label) {
@@ -866,8 +923,8 @@ function updateAIButtonStates() {
     }
   });
   
-  // Update AI checkboxes
-  const aiCheckboxes = document.querySelectorAll('input[type="checkbox"][name^="ai-"]');
+  // Update AI checkboxes - properly scoped to AI calculator container
+  const aiCheckboxes = document.querySelectorAll('#ai-agents-config input[type="checkbox"][name^="ai-"]');
   aiCheckboxes.forEach(checkbox => {
     const label = checkbox.parentElement;
     if (label) {
