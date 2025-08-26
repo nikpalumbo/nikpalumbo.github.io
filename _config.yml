@@ -11,8 +11,18 @@ permalink: /:title
 plugins:
   - jekyll-sitemap
 
+# Sitemap Configuration
+sitemap:
+  exclude:
+    - /_site/
+    - /vendor/
+  include_priority: true
+  include_changefreq: true
+  include_lastmod: true
+  exclude_from_sitemap: false
+
 # SVG MIME type handling
-include: [".htaccess"]
+include: [".htaccess", "sitemap.xml"]
 
 #-------------------------------
 # Collections
