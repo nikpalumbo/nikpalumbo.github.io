@@ -613,12 +613,6 @@ function calculateAIPrice() {
     else if (tools === '10+') basePrice += 3000; // 10+ tools: +3,000
   }
   
-  // Multi-agent orchestration
-  const orchestrationElement = document.querySelector('input[name="ai-orchestration"]:checked');
-  if (orchestrationElement && orchestrationElement.value === 'yes') {
-    basePrice += 2000; // Multi-agent: +2,000
-  }
-  
   // Interface adjustment
   const interfaceElement = document.querySelector('input[name="ai-interface"]:checked');
   if (interfaceElement) {
@@ -627,17 +621,7 @@ function calculateAIPrice() {
     else if (interface === 'webapp') basePrice += 3000; // Full web app: +3,000
   }
   
-  // Communication channels
-  const channels = document.querySelectorAll('input[name="ai-channels"]:checked');
-  basePrice += channels.length * 800; // +800 per channel
-  
-  // SaaS integrations
-  const saasIntegrations = document.querySelectorAll('input[name="ai-saas"]:checked');
-  basePrice += saasIntegrations.length * 800; // +800 per SaaS
-  
-  // Enterprise integrations
-  const enterpriseIntegrations = document.querySelectorAll('input[name="ai-enterprise"]:checked');
-  basePrice += enterpriseIntegrations.length * 1600; // +1,600 per enterprise
+
   
   // Authentication
   const authElement = document.querySelector('input[name="ai-auth"]:checked');
@@ -687,8 +671,8 @@ function calculateAIPrice() {
     basePrice += 2000; // Fast delivery: +2,000
   }
   
-  // Apply clamping: min CHF 8,000, max CHF 30,000
-  basePrice = Math.max(8000, Math.min(basePrice, 30000));
+  // Apply clamping: min CHF 8,000, max CHF 45,000
+  basePrice = Math.max(8000, Math.min(basePrice, 45000));
   
   // Update price display
   const priceElement = document.getElementById('ai-estimated-price');
