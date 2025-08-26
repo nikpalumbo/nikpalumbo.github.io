@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     aiRadioButtons.forEach(radio => {
       radio.addEventListener('change', function() {
         console.log('AI radio button changed:', this.name, this.value);
+        updateAIButtonStates(); // Update button states
         calculateAIPrice();
         updateAIQuoteDisplay();
         updateAIStickyBannerPrice();
@@ -84,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     aiCheckboxes.forEach(checkbox => {
       checkbox.addEventListener('change', function() {
         console.log('AI checkbox changed:', this.name, this.value);
+        updateAIButtonStates(); // Update button states
         calculateAIPrice();
         updateAIQuoteDisplay();
         updateAIStickyBannerPrice();
@@ -94,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial visual state update
     updateRadioVisualState();
     updateCheckboxVisualState();
+    updateAIButtonStates(); // Update AI calculator button states
 
     // Initial price calculation and quote display
     console.log('Running initial calculations...');
@@ -840,4 +843,33 @@ function toggleAccordion(accordionId) {
       accordionHeader.classList.add('expanded');
     }
   }
+}
+
+// Update AI calculator button states
+function updateAIButtonStates() {
+  // Update AI radio buttons
+  const aiRadioButtons = document.querySelectorAll('input[type="radio"][name^="ai-"]');
+  aiRadioButtons.forEach(radio => {
+    const label = radio.nextElementSibling;
+    if (label) {
+      if (radio.checked) {
+        label.classList.add('selected');
+      } else {
+        label.classList.remove('selected');
+      }
+    }
+  });
+  
+  // Update AI checkboxes
+  const aiCheckboxes = document.querySelectorAll('input[type="checkbox"][name^="ai-"]');
+  aiCheckboxes.forEach(checkbox => {
+    const label = checkbox.parentElement;
+    if (label) {
+      if (checkbox.checked) {
+        label.classList.add('selected');
+      } else {
+        label.classList.remove('selected');
+      }
+    }
+  });
 }
