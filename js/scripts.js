@@ -657,13 +657,7 @@ function calculateAIPrice() {
     basePrice += 1000; // Tracing: +1,000
   }
   
-  // Languages
-  const languagesElement = document.querySelector('input[name="ai-languages"]:checked');
-  if (languagesElement) {
-    const languages = languagesElement.value;
-    if (languages === '2-3') basePrice += 1000;  // 2-3 languages: +1,000
-    else if (languages === '4+') basePrice += 2000; // 4+ languages: +2,000
-  }
+
   
   // Delivery speed
   const deliveryElement = document.querySelector('input[name="ai-delivery"]:checked');
