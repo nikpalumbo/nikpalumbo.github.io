@@ -735,21 +735,29 @@ function updateAIQuoteDisplay() {
   
   // LLM Stack
   const primaryModel = document.querySelector('input[name="ai-primary-model"]:checked');
-  const ollama = document.querySelector('input[name="ai-ollama"]:checked');
   let llmStack = 'OpenAI (ChatGPT) / Anthropic (Claude) / Google (Gemini) API';
   
   if (primaryModel && primaryModel.value === 'azure') {
     llmStack = 'Azure OpenAI (enterprise policies/SLA)';
-  } else if (ollama && ollama.value !== 'none') {
-    if (ollama.value === 'single') {
-      llmStack = 'Ollama Single Model (CPU)';
-    } else if (ollama.value === 'multi') {
-      llmStack = 'Ollama Multi-Model Pool + Shared Storage + Autoscaling';
-    }
   }
   
   const llmElement = document.getElementById('ai-quote-llm');
   if (llmElement) llmElement.textContent = llmStack;
+  
+  // Ollama Configuration (separate from LLM Stack)
+  const ollama = document.querySelector('input[name="ai-ollama"]:checked');
+  let ollamaConfig = 'None';
+  
+  if (ollama && ollama.value !== 'none') {
+    if (ollama.value === 'single') {
+      ollamaConfig = 'Single Model (CPU)';
+    } else if (ollama.value === 'multi') {
+      ollamaConfig = 'Multi-Model Pool + Shared Storage + Autoscaling';
+    }
+  }
+  
+  const ollamaElement = document.getElementById('ai-quote-ollama');
+  if (ollamaElement) ollamaElement.textContent = ollamaConfig;
   
   // RAG Level
   const ragElement = document.querySelector('input[name="ai-rag"]:checked');
@@ -790,10 +798,24 @@ function updateAIQuoteDisplay() {
 function updateAIFormFields() {
   // Get current AI configuration values
   const companyType = document.querySelector('input[name="ai-company-type"]:checked')?.nextElementSibling?.textContent.trim() || '';
-  const stakeholders = document.querySelector('input[name="ai-stakeholders"]:checked')?.nextElementSibling?.textContent.trim() || '';
   const primaryModel = document.querySelector('input[name="ai-primary-model"]:checked')?.value || '';
   const ollama = document.querySelector('input[name="ai-ollama"]:checked')?.value || '';
-  const llmStack = primaryModel === 'azure' ? 'Azure OpenAI' : (ollama !== 'none' ? 'Ollama' : 'OpenAI/Anthropic/Google');
+  
+  // Separate LLM Stack and Ollama Configuration
+  let llmStack = 'OpenAI (ChatGPT) / Anthropic (Claude) / Google (Gemini) API';
+  if (primaryModel === 'azure') {
+    llmStack = 'Azure OpenAI (enterprise policies/SLA)';
+  }
+  
+  let ollamaConfig = 'None';
+  if (ollama !== 'none') {
+    if (ollama === 'single') {
+      ollamaConfig = 'Single Model (CPU)';
+    } else if (ollama === 'multi') {
+      ollamaConfig = 'Multi-Model Pool + Shared Storage + Autoscaling';
+    }
+  }
+  
   const ragLevel = document.querySelector('input[name="ai-rag"]:checked')?.nextElementSibling?.textContent.trim() || '';
   const toolsCount = document.querySelector('input[name="ai-tools"]:checked')?.nextElementSibling?.textContent.trim() || '';
   const interfaceType = document.querySelector('input[name="ai-interface"]:checked')?.nextElementSibling?.textContent.trim() || '';
@@ -805,8 +827,8 @@ function updateAIFormFields() {
   // Update AI form fields
   const aiFormFields = {
     'ai-form-company-type': companyType,
-    'ai-form-stakeholders': stakeholders,
     'ai-form-llm-stack': llmStack,
+    'ai-form-ollama-config': ollamaConfig,
     'ai-form-rag-level': ragLevel,
     'ai-form-tools-count': toolsCount,
     'ai-form-interface-type': interfaceType,
