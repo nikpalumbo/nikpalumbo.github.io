@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
     
-    // Radio button visual state management
-    const radioButtons = document.querySelectorAll('input[type="radio"]');
-    radioButtons.forEach(radio => {
+    // IGS Calculator event listeners (scoped to growth-systems-config only)
+    const igsRadioButtons = document.querySelectorAll('#growth-systems-config input[type="radio"]');
+    igsRadioButtons.forEach(radio => {
       radio.addEventListener('change', function() {
-        console.log('Radio button changed:', this.value);
+        console.log('IGS radio button changed:', this.value);
         updateRadioVisualState();
         calculatePrice();
         updateQuoteDisplay();
@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
     
-    // Checkbox visual state management
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(checkbox => {
+    // IGS Checkbox visual state management
+    const igsCheckboxes = document.querySelectorAll('#growth-systems-config input[type="checkbox"]');
+    igsCheckboxes.forEach(checkbox => {
       checkbox.addEventListener('change', function() {
-        console.log('Checkbox changed:', this.value);
+        console.log('IGS checkbox changed:', this.value);
         updateCheckboxVisualState();
         calculatePrice();
         updateQuoteDisplay();
@@ -44,11 +44,11 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
     
-    // Add event listeners to channel checkboxes
-    const channelCheckboxes = document.querySelectorAll('input[name="channel"]');
+    // Add event listeners to IGS channel checkboxes
+    const channelCheckboxes = document.querySelectorAll('#growth-systems-config input[name="channel"]');
     channelCheckboxes.forEach(checkbox => {
       checkbox.addEventListener('change', function() {
-        console.log('Channel checkbox changed:', this.value);
+        console.log('IGS channel checkbox changed:', this.value);
         updateCheckboxVisualState();
         calculatePrice();
         updateQuoteDisplay();
@@ -56,11 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
     
-    // Add event listeners to CRM checkboxes
-    const crmCheckboxes = document.querySelectorAll('input[name="crm"]');
+    // Add event listeners to IGS CRM checkboxes
+    const crmCheckboxes = document.querySelectorAll('#growth-systems-config input[name="crm"]');
     crmCheckboxes.forEach(checkbox => {
       checkbox.addEventListener('change', function() {
-        console.log('CRM checkbox changed:', this.value);
+        console.log('IGS CRM checkbox changed:', this.value);
         updateCheckboxVisualState();
         calculatePrice();
         updateQuoteDisplay();
@@ -256,9 +256,9 @@ function showServiceContent(serviceType) {
   }
 }
 
-// Update radio button visual state
+// Update radio button visual state for IGS calculator
 function updateRadioVisualState() {
-  const radioButtons = document.querySelectorAll('input[type="radio"]');
+  const radioButtons = document.querySelectorAll('#growth-systems-config input[type="radio"]');
   radioButtons.forEach(radio => {
     const label = radio.nextElementSibling;
     if (label) {
@@ -271,9 +271,9 @@ function updateRadioVisualState() {
   });
 }
 
-// Update checkbox visual state
+// Update checkbox visual state for IGS calculator
 function updateCheckboxVisualState() {
-  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  const checkboxes = document.querySelectorAll('#growth-systems-config input[type="checkbox"]');
   checkboxes.forEach(checkbox => {
     const label = checkbox.parentElement;
     if (label) {

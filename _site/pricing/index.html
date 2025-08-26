@@ -674,31 +674,40 @@
             </div>
           </div>
 
-          <!-- Business Integrations Section -->
+          <!-- Delivery Speed Section -->
           <div class="config-section">
-            <h3><i class="fas fa-plug"></i> Business Integrations</h3>
+            <h3><i class="fas fa-rocket"></i> Delivery Speed</h3>
             <div class="config-options">
               <div class="option-group">
-                <label>Which common SaaS tools should the agent connect to?</label>
-                <div class="checkbox-group">
-                  <label><input type="checkbox" name="ai-saas" value="hubspot" /> HubSpot</label>
-                  <label><input type="checkbox" name="ai-saas" value="pipedrive" /> Pipedrive</label>
-                  <label><input type="checkbox" name="ai-saas" value="zendesk" /> Zendesk</label>
-                  <label><input type="checkbox" name="ai-saas" value="notion" /> Notion</label>
-                  <label><input type="checkbox" name="ai-saas" value="googledrive" /> Google Drive</label>
+                <label>How fast do you need delivery?</label>
+                <div class="radio-group">
+                  <input type="radio" id="ai-delivery-comprehensive" name="ai-delivery" value="comprehensive" checked="" />
+                  <label for="ai-delivery-comprehensive">Comprehensive (12+ weeks)</label>
+                  <input type="radio" id="ai-delivery-standard" name="ai-delivery" value="standard" />
+                  <label for="ai-delivery-standard">Standard (8-12 weeks)</label>
+                  <input type="radio" id="ai-delivery-fast" name="ai-delivery" value="fast" />
+                  <label for="ai-delivery-fast">Fast (4-6 weeks)</label>
                 </div>
-                <p class="option-explanation">Select the business tools your team uses daily.</p>
+                <p class="option-explanation">Fast adds a rush team; scope may be trimmed.</p>
               </div>
-              
+            </div>
+          </div>
+
+          <!-- Care Plan Section -->
+          <div class="config-section">
+            <h3><i class="fas fa-heart"></i> Care Plan (separate monthly)</h3>
+            <div class="config-options">
               <div class="option-group">
-                <label>Which enterprise systems should the agent integrate with?</label>
-                <div class="checkbox-group">
-                  <label><input type="checkbox" name="ai-enterprise" value="salesforce" /> Salesforce</label>
-                  <label><input type="checkbox" name="ai-enterprise" value="dynamics" /> Dynamics 365</label>
-                  <label><input type="checkbox" name="ai-enterprise" value="servicenow" /> ServiceNow</label>
-                  <label><input type="checkbox" name="ai-enterprise" value="sap" /> SAP</label>
+                <label>What level of ongoing support do you need?</label>
+                <div class="radio-group">
+                  <input type="radio" id="ai-care-none" name="ai-care" value="none" checked="" />
+                  <label for="ai-care-none">None</label>
+                  <input type="radio" id="ai-care-essentials" name="ai-care" value="essentials" />
+                  <label for="ai-care-essentials">Essentials (bugfix + minor updates, monthly review)</label>
+                  <input type="radio" id="ai-care-optimize" name="ai-care" value="optimize" />
+                  <label for="ai-care-optimize">Optimize (monthly experiments, prompts, KPIs)</label>
                 </div>
-                <p class="option-explanation">Enterprise systems require more complex API integrations and security considerations.</p>
+                <p class="option-explanation">Ongoing support ensures your AI agent continues to improve and adapt to changing needs.</p>
               </div>
             </div>
           </div>
@@ -782,44 +791,6 @@
                   <label for="ai-languages-4plus">4+ languages</label>
                 </div>
                 <p class="option-explanation">UI and prompts localized.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Delivery Speed Section -->
-          <div class="config-section">
-            <h3><i class="fas fa-rocket"></i> Delivery Speed</h3>
-            <div class="config-options">
-              <div class="option-group">
-                <label>How fast do you need delivery?</label>
-                <div class="radio-group">
-                  <input type="radio" id="ai-delivery-comprehensive" name="ai-delivery" value="comprehensive" checked="" />
-                  <label for="ai-delivery-comprehensive">Comprehensive (12+ weeks)</label>
-                  <input type="radio" id="ai-delivery-standard" name="ai-delivery" value="standard" />
-                  <label for="ai-delivery-standard">Standard (8-12 weeks)</label>
-                  <input type="radio" id="ai-delivery-fast" name="ai-delivery" value="fast" />
-                  <label for="ai-delivery-fast">Fast (4-6 weeks)</label>
-                </div>
-                <p class="option-explanation">Fast adds a rush team; scope may be trimmed.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Care Plan Section -->
-          <div class="config-section">
-            <h3><i class="fas fa-heart"></i> Care Plan (separate monthly)</h3>
-            <div class="config-options">
-              <div class="option-group">
-                <label>What level of ongoing support do you need?</label>
-                <div class="radio-group">
-                  <input type="radio" id="ai-care-none" name="ai-care" value="none" checked="" />
-                  <label for="ai-care-none">None</label>
-                  <input type="radio" id="ai-care-essentials" name="ai-care" value="essentials" />
-                  <label for="ai-care-essentials">Essentials (bugfix + minor updates, monthly review)</label>
-                  <input type="radio" id="ai-care-optimize" name="ai-care" value="optimize" />
-                  <label for="ai-care-optimize">Optimize (monthly experiments, prompts, KPIs)</label>
-                </div>
-                <p class="option-explanation">Ongoing support ensures your AI agent continues to improve and adapt to changing needs.</p>
               </div>
             </div>
           </div>
