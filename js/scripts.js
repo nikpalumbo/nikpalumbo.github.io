@@ -736,12 +736,18 @@ function updateAIQuoteDisplay() {
   // LLM Stack
   const primaryModel = document.querySelector('input[name="ai-primary-model"]:checked');
   const ollama = document.querySelector('input[name="ai-ollama"]:checked');
-  let llmStack = 'OpenAI API';
+  let llmStack = 'OpenAI (ChatGPT) / Anthropic (Claude) / Google (Gemini) API';
+  
   if (primaryModel && primaryModel.value === 'azure') {
-    llmStack = 'Azure OpenAI';
+    llmStack = 'Azure OpenAI (enterprise policies/SLA)';
   } else if (ollama && ollama.value !== 'none') {
-    llmStack = 'Ollama (Open-source)';
+    if (ollama.value === 'single') {
+      llmStack = 'Ollama Single Model (CPU)';
+    } else if (ollama.value === 'multi') {
+      llmStack = 'Ollama Multi-Model Pool + Shared Storage + Autoscaling';
+    }
   }
+  
   const llmElement = document.getElementById('ai-quote-llm');
   if (llmElement) llmElement.textContent = llmStack;
   
