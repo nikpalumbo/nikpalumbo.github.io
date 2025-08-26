@@ -136,14 +136,14 @@ work:
 # CTA Settings
 cta:
   enable: true
-  cta__title: "Ready to Build Something Real?"
-  cta__description: "Every engagement begins with a structured scoping session. Let's define your goals, outcomes, and constraints, then move fast to create working solutions."
+  cta__title: "Ready to design products that delight users and accelerate growth?"
+  cta__description: "Hello. Are you looking for ways to accelerate growth?"
   cta__buttons:
-    - text: "Start Your Project"
-      url: "/pricing/"
+    - text: "Book a Call"
+      url: "#"
       style: "primary"
-    - text: "View Case Studies"
-      url: "/case-studies/"
+    - text: "Email me to Start"
+      url: "#"
       style: "secondary"
   cta__features:
     - icon: "ion ion-md-checkmark-circle"

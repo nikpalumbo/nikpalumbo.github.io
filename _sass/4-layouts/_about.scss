@@ -367,8 +367,11 @@
 .cta-section {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   text-align: center;
-
-
+  padding: 80px 0;
+  
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
 
   .section-header {
     margin-bottom: 0;
@@ -387,10 +390,10 @@
   }
 
   .hero__cta-intro {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.6;
     color: #6b7280;
-    margin-bottom: 4px;
+    margin-bottom: 20px;
     font-weight: 400;
     text-align: center;
     width: 100%;
@@ -400,6 +403,7 @@
     display: flex;
     justify-content: center;
     gap: 16px;
+    margin-top: 40px;
     margin-bottom: 0;
 
     .button {
