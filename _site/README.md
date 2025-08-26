@@ -1,5 +1,18 @@
 # SDW Solutions Website
 
+## 📋 Project Status & TODO
+**Current Progress**: 55.6% Complete (25/45 tasks)
+
+📋 **[View Full TODO List →](./TODO.md)**
+
+**Recent Updates:**
+- ✅ **Footer Redesign**: Added social sharing + organized navigation
+- ✅ **SEO Optimizations**: Fixed title, meta description, favicons
+- ✅ **Calculator Fixes**: Resolved routing and UI issues
+- ✅ **CTA Centralization**: Unified button styles across all pages
+
+---
+
 ## 🚀 Quick Start
 
 ### Starting the Development Server
