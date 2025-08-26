@@ -68,6 +68,25 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
 
+    // AI Agent Development event listeners
+    const aiRadioButtons = document.querySelectorAll('input[type="radio"][name^="ai-"]');
+    aiRadioButtons.forEach(radio => {
+      radio.addEventListener('change', function() {
+        console.log('AI radio button changed:', this.name, this.value);
+        calculateAIPrice();
+        updateAIQuoteDisplay();
+      });
+    });
+
+    const aiCheckboxes = document.querySelectorAll('input[type="checkbox"][name^="ai-"]');
+    aiCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        console.log('AI checkbox changed:', this.name, this.value);
+        calculateAIPrice();
+        updateAIQuoteDisplay();
+      });
+    });
+
     // Initial visual state update
     updateRadioVisualState();
     updateCheckboxVisualState();
@@ -76,6 +95,10 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Running initial calculations...');
     calculatePrice();
     updateQuoteDisplay();
+    
+    // Initial AI Agent Development calculation
+    calculateAIPrice();
+    updateAIQuoteDisplay();
     
     // Ensure banner starts hidden
     const stickyBanner = document.getElementById('sticky-price-banner');
@@ -157,8 +180,12 @@ function showServiceContent(serviceType) {
   });
 
   // Handle IGS calculator separately
-  const igsCalculator = document.querySelector('.pricing-configurator');
-  const igsHeader = document.querySelector('.config-header');
+  const igsCalculator = document.querySelector('#growth-systems-config');
+  const igsHeader = document.querySelector('#growth-systems-config .config-header');
+  
+  // Handle AI Agent Development calculator
+  const aiCalculator = document.querySelector('#ai-agents-config');
+  const aiHeader = document.querySelector('#ai-agents-config .config-header');
 
   if (serviceType === 'growth-systems') {
     if (igsCalculator) {
@@ -169,7 +196,25 @@ function showServiceContent(serviceType) {
       igsHeader.classList.remove('service-hidden');
       igsHeader.classList.add('service-visible');
     }
-  } else {
+    // Hide AI calculator
+    if (aiCalculator) {
+      aiCalculator.classList.remove('service-visible');
+      aiCalculator.classList.add('service-hidden');
+    }
+    if (aiHeader) {
+      aiHeader.classList.remove('service-visible');
+      aiHeader.classList.add('service-hidden');
+    }
+  } else if (serviceType === 'ai-agents') {
+    if (aiCalculator) {
+      aiCalculator.classList.remove('service-hidden');
+      aiCalculator.classList.add('service-visible');
+    }
+    if (aiHeader) {
+      aiHeader.classList.remove('service-hidden');
+      aiHeader.classList.add('service-visible');
+    }
+    // Hide IGS calculator
     if (igsCalculator) {
       igsCalculator.classList.remove('service-visible');
       igsCalculator.classList.add('service-hidden');
@@ -177,6 +222,24 @@ function showServiceContent(serviceType) {
     if (igsHeader) {
       igsHeader.classList.remove('service-visible');
       igsHeader.classList.add('service-hidden');
+    }
+  } else {
+    // Hide both calculators for other services
+    if (igsCalculator) {
+      igsCalculator.classList.remove('service-visible');
+      igsCalculator.classList.add('service-hidden');
+    }
+    if (igsHeader) {
+      igsHeader.classList.remove('service-visible');
+      igsHeader.classList.add('service-hidden');
+    }
+    if (aiCalculator) {
+      aiCalculator.classList.remove('service-visible');
+      aiCalculator.classList.add('service-hidden');
+    }
+    if (aiHeader) {
+      aiHeader.classList.remove('service-visible');
+      aiHeader.classList.add('service-hidden');
     }
   }
 
@@ -487,4 +550,279 @@ function filterCaseStudies(category) {
   });
   
   console.log(`Filtered case studies by category: ${category}`);
+}
+
+// AI Agent Development Calculator Functions
+function calculateAIPrice() {
+  // Check if AI pricing elements exist before calculating
+  const companyTypeElement = document.querySelector('input[name="ai-company-type"]:checked');
+  if (!companyTypeElement) return; // Exit early if elements don't exist
+  
+  let basePrice = 8000; // Base price CHF 8,000
+  
+  // Company type adjustment
+  const companyType = companyTypeElement.value;
+  if (companyType === 'sme') basePrice += 1000;      // SME: +1,000
+  else if (companyType === 'enterprise') basePrice += 2000; // Enterprise: +2,000
+  
+  // Stakeholders adjustment
+  const stakeholdersElement = document.querySelector('input[name="ai-stakeholders"]:checked');
+  if (stakeholdersElement) {
+    const stakeholders = stakeholdersElement.value;
+    if (stakeholders === '4-8') basePrice += 500;  // 4-8: +500
+    else if (stakeholders === '9+') basePrice += 1000; // 9+: +1,000
+  }
+  
+  // Primary model adjustment
+  const primaryModelElement = document.querySelector('input[name="ai-primary-model"]:checked');
+  if (primaryModelElement && primaryModelElement.value === 'azure') {
+    basePrice += 1000; // Azure OpenAI: +1,000
+  }
+  
+  // Ollama adjustment
+  const ollamaElement = document.querySelector('input[name="ai-ollama"]:checked');
+  if (ollamaElement) {
+    const ollama = ollamaElement.value;
+    if (ollama === 'single') basePrice += 2000;  // Single model: +2,000
+    else if (ollama === 'multi') basePrice += 4000; // Multi-model: +4,000
+  }
+  
+  // RAG adjustment
+  const ragElement = document.querySelector('input[name="ai-rag"]:checked');
+  if (ragElement) {
+    const rag = ragElement.value;
+    if (rag === 'simple') basePrice += 2000;  // Simple RAG: +2,000
+    else if (rag === 'standard') basePrice += 4000; // Standard RAG: +4,000
+    else if (rag === 'advanced') basePrice += 6000; // Advanced RAG: +6,000
+  }
+  
+  // Tools adjustment
+  const toolsElement = document.querySelector('input[name="ai-tools"]:checked');
+  if (toolsElement) {
+    const tools = toolsElement.value;
+    if (tools === '3-5') basePrice += 1000;  // 3-5 tools: +1,000
+    else if (tools === '6-10') basePrice += 2000; // 6-10 tools: +2,000
+    else if (tools === '10+') basePrice += 3000; // 10+ tools: +3,000
+  }
+  
+  // Multi-agent orchestration
+  const orchestrationElement = document.querySelector('input[name="ai-orchestration"]:checked');
+  if (orchestrationElement && orchestrationElement.value === 'yes') {
+    basePrice += 2000; // Multi-agent: +2,000
+  }
+  
+  // Interface adjustment
+  const interfaceElement = document.querySelector('input[name="ai-interface"]:checked');
+  if (interfaceElement) {
+    const interface = interfaceElement.value;
+    if (interface === 'widget') basePrice += 1200;  // Web widget: +1,200
+    else if (interface === 'webapp') basePrice += 3000; // Full web app: +3,000
+  }
+  
+  // Communication channels
+  const channels = document.querySelectorAll('input[name="ai-channels"]:checked');
+  basePrice += channels.length * 800; // +800 per channel
+  
+  // SaaS integrations
+  const saasIntegrations = document.querySelectorAll('input[name="ai-saas"]:checked');
+  basePrice += saasIntegrations.length * 800; // +800 per SaaS
+  
+  // Enterprise integrations
+  const enterpriseIntegrations = document.querySelectorAll('input[name="ai-enterprise"]:checked');
+  basePrice += enterpriseIntegrations.length * 1600; // +1,600 per enterprise
+  
+  // Authentication
+  const authElement = document.querySelector('input[name="ai-auth"]:checked');
+  if (authElement) {
+    const auth = authElement.value;
+    if (auth === 'basic') basePrice += 800;  // Basic: +800
+    else if (auth === 'sso') basePrice += 2000; // SSO: +2,000
+  }
+  
+  // Authorization
+  const authzElement = document.querySelector('input[name="ai-authz"]:checked');
+  if (authzElement && authzElement.value === 'rbac') {
+    basePrice += 2000; // RBAC: +2,000
+  }
+  
+  // Guardrails
+  const guardrailsElement = document.querySelector('input[name="ai-guardrails"]:checked');
+  if (guardrailsElement) {
+    const guardrails = guardrailsElement.value;
+    if (guardrails === 'injection') basePrice += 1000;  // Injection/PII: +1,000
+    else if (guardrails === 'eval') basePrice += 2000; // Eval harness: +2,000
+  }
+  
+  // Compliance
+  const complianceElement = document.querySelector('input[name="ai-compliance"]:checked');
+  if (complianceElement && complianceElement.value === 'dpia') {
+    basePrice += 2000; // DPIA: +2,000
+  }
+  
+  // Observability
+  const observabilityElement = document.querySelector('input[name="ai-observability"]:checked');
+  if (observabilityElement && observabilityElement.value === 'tracing') {
+    basePrice += 1000; // Tracing: +1,000
+  }
+  
+  // Languages
+  const languagesElement = document.querySelector('input[name="ai-languages"]:checked');
+  if (languagesElement) {
+    const languages = languagesElement.value;
+    if (languages === '2-3') basePrice += 1000;  // 2-3 languages: +1,000
+    else if (languages === '4+') basePrice += 2000; // 4+ languages: +2,000
+  }
+  
+  // Delivery speed
+  const deliveryElement = document.querySelector('input[name="ai-delivery"]:checked');
+  if (deliveryElement && deliveryElement.value === 'fast') {
+    basePrice += 2000; // Fast delivery: +2,000
+  }
+  
+  // Apply clamping: min CHF 8,000, max CHF 30,000
+  basePrice = Math.max(8000, Math.min(basePrice, 30000));
+  
+  // Update price display
+  const priceElement = document.getElementById('ai-estimated-price');
+  if (priceElement) {
+    priceElement.textContent = Math.round(basePrice).toLocaleString();
+  }
+  
+  // Calculate and show care plan
+  calculateAICarePlan();
+}
+
+function calculateAICarePlan() {
+  const carePlanElement = document.querySelector('input[name="ai-care"]:checked');
+  const carePlanEstimate = document.getElementById('ai-care-plan-estimate');
+  const carePlanPriceElement = document.getElementById('ai-care-plan-price');
+  
+  if (!carePlanElement || !carePlanEstimate || !carePlanPriceElement) return;
+  
+  const carePlan = carePlanElement.value;
+  let monthlyPrice = 0;
+  
+  if (carePlan === 'essentials') {
+    monthlyPrice = 700; // CHF 500-900/mo, using middle value
+  } else if (carePlan === 'optimize') {
+    monthlyPrice = 1600; // CHF 1,200-2,000/mo, using middle value
+  }
+  
+  if (monthlyPrice > 0) {
+    carePlanEstimate.style.display = 'block';
+    carePlanPriceElement.textContent = monthlyPrice.toLocaleString();
+  } else {
+    carePlanEstimate.style.display = 'none';
+  }
+}
+
+function updateAIQuoteDisplay() {
+  // Company type
+  const companyType = document.querySelector('input[name="ai-company-type"]:checked');
+  if (companyType && companyType.nextElementSibling) {
+    const companyTypeLabel = companyType.nextElementSibling.textContent.trim();
+    const companyTypeElement = document.getElementById('ai-quote-company-type');
+    if (companyTypeElement) companyTypeElement.textContent = companyTypeLabel;
+  }
+  
+  // LLM Stack
+  const primaryModel = document.querySelector('input[name="ai-primary-model"]:checked');
+  const ollama = document.querySelector('input[name="ai-ollama"]:checked');
+  let llmStack = 'OpenAI API';
+  if (primaryModel && primaryModel.value === 'azure') {
+    llmStack = 'Azure OpenAI';
+  } else if (ollama && ollama.value !== 'none') {
+    llmStack = 'Ollama (Open-source)';
+  }
+  const llmElement = document.getElementById('ai-quote-llm');
+  if (llmElement) llmElement.textContent = llmStack;
+  
+  // RAG Level
+  const ragElement = document.querySelector('input[name="ai-rag"]:checked');
+  if (ragElement && ragElement.nextElementSibling) {
+    const ragLabel = ragElement.nextElementSibling.textContent.trim();
+    const ragQuoteElement = document.getElementById('ai-quote-rag');
+    if (ragQuoteElement) ragQuoteElement.textContent = ragLabel;
+  }
+  
+  // Tools
+  const toolsElement = document.querySelector('input[name="ai-tools"]:checked');
+  if (toolsElement && toolsElement.nextElementSibling) {
+    const toolsLabel = toolsElement.nextElementSibling.textContent.trim();
+    const toolsQuoteElement = document.getElementById('ai-quote-tools');
+    if (toolsQuoteElement) toolsQuoteElement.textContent = toolsLabel;
+  }
+  
+  // Interface
+  const interfaceElement = document.querySelector('input[name="ai-interface"]:checked');
+  if (interfaceElement && interfaceElement.nextElementSibling) {
+    const interfaceLabel = interfaceElement.nextElementSibling.textContent.trim();
+    const interfaceQuoteElement = document.getElementById('ai-quote-interface');
+    if (interfaceQuoteElement) interfaceQuoteElement.textContent = interfaceLabel;
+  }
+  
+  // Delivery
+  const deliveryElement = document.querySelector('input[name="ai-delivery"]:checked');
+  if (deliveryElement && deliveryElement.nextElementSibling) {
+    const deliveryLabel = deliveryElement.nextElementSibling.textContent.split('(')[0].trim();
+    const deliveryQuoteElement = document.getElementById('ai-quote-delivery');
+    if (deliveryQuoteElement) deliveryQuoteElement.textContent = deliveryLabel;
+  }
+  
+  // Update form fields
+  updateAIFormFields();
+}
+
+function updateAIFormFields() {
+  // Get current AI configuration values
+  const companyType = document.querySelector('input[name="ai-company-type"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const stakeholders = document.querySelector('input[name="ai-stakeholders"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const primaryModel = document.querySelector('input[name="ai-primary-model"]:checked')?.value || '';
+  const ollama = document.querySelector('input[name="ai-ollama"]:checked')?.value || '';
+  const llmStack = primaryModel === 'azure' ? 'Azure OpenAI' : (ollama !== 'none' ? 'Ollama' : 'OpenAI/Anthropic/Google');
+  const ragLevel = document.querySelector('input[name="ai-rag"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const toolsCount = document.querySelector('input[name="ai-tools"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const interfaceType = document.querySelector('input[name="ai-interface"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const deliverySpeed = document.querySelector('input[name="ai-delivery"]:checked')?.nextElementSibling?.textContent.split('(')[0].trim() || '';
+  const carePlan = document.querySelector('input[name="ai-care"]:checked')?.nextElementSibling?.textContent.trim() || '';
+  const estimatedPrice = document.getElementById('ai-estimated-price')?.textContent || '';
+  const carePlanPrice = document.getElementById('ai-care-plan-price')?.textContent || '';
+  
+  // Update AI form fields
+  const aiFormFields = {
+    'ai-form-company-type': companyType,
+    'ai-form-stakeholders': stakeholders,
+    'ai-form-llm-stack': llmStack,
+    'ai-form-rag-level': ragLevel,
+    'ai-form-tools-count': toolsCount,
+    'ai-form-interface-type': interfaceType,
+    'ai-form-delivery-speed': deliverySpeed,
+    'ai-form-care-plan': carePlan,
+    'ai-form-estimated-price': estimatedPrice,
+    'ai-form-care-plan-price': carePlanPrice
+  };
+  
+  // Update AI form
+  Object.entries(aiFormFields).forEach(([id, value]) => {
+    const field = document.getElementById(id);
+    if (field) field.value = value;
+  });
+}
+
+// Accordion functionality
+function toggleAccordion(accordionId) {
+  const accordionContent = document.getElementById(accordionId);
+  const accordionHeader = accordionContent?.previousElementSibling;
+  
+  if (accordionContent && accordionHeader) {
+    const isExpanded = accordionContent.classList.contains('expanded');
+    
+    if (isExpanded) {
+      accordionContent.classList.remove('expanded');
+      accordionHeader.classList.remove('expanded');
+    } else {
+      accordionContent.classList.add('expanded');
+      accordionHeader.classList.add('expanded');
+    }
+  }
 }
