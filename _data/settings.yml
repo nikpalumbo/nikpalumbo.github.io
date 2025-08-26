@@ -84,7 +84,7 @@ mailchimp:
 # Services Settings
 services:
   enable: true
-  services__title: "Today's Growth Companies Put Growth on Autopilot"
+  services__title: "Today's Growth Companies Use Technology to Execute Growth Strategy Precisely"
   services__description: "Top-performing companies are scaling 3× faster by automating their growth engines with"
   
 service__items:
@@ -159,7 +159,7 @@ process:
   enable: true
   process__title: "Fast Starts. Real Outcomes. No Guesswork."
   process__subtitle: "HOW"
-  process__description: "I work with a lean, agile process that's been shaped by both startup urgency and enterprise precision."
+  process__description: "I work with a lean, agile process that ensures your Growth Strategy meets Technology implementation Precisely, shaped by both startup urgency and enterprise precision."
   
   process__approach:
     title: "Structured Start, Agile Execution"

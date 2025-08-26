@@ -2,6 +2,13 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.data.settings.title }}{% endif %}</title>
   <meta name='description' content='{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.settings.description }}{% endif %}'>
@@ -10,7 +17,7 @@
   <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}AI agent development, intelligent growth systems, smart conversion websites, SaaS growth consultant, AI automation, startup growth, SME automation, enterprise AI, Swiss AI developer, conversion optimization{% endif %}">
   <meta name="author" content="Nicola Palumbo">
   <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
+  <meta name="language" content="en">
   <meta name="revisit-after" content="7 days">
   
   <!-- Geographic SEO -->
