@@ -149,29 +149,84 @@
 
 #ai-agents-config .radio-group,
 #ai-agents-config .checkbox-group {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 12px;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  margin-top: 12px !important;
 }
 
 #ai-agents-config .radio-group label,
 #ai-agents-config .checkbox-group label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background-color 0.2s ease;
-  white-space: nowrap;
-  min-width: fit-content;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  cursor: pointer !important;
+  padding: 10px 16px !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+  white-space: nowrap !important;
+  min-width: fit-content !important;
+  font-weight: 500 !important;
+  background: #f9fafb !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #6b7280 !important;
+  margin: 0 !important;
+  
+  &:hover {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    background: #fefce8 !important;
+  }
+}
+
+/* Ensure hover states work with !important */
+#ai-agents-config .radio-group label:hover,
+#ai-agents-config .checkbox-group label:hover {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  background: #fefce8 !important;
 }
 
 #ai-agents-config .radio-group label:hover,
 #ai-agents-config .checkbox-group label:hover {
   background-color: #f9fafb;
+}
+
+/* Fix checkbox input styling */
+#ai-agents-config .checkbox-group input[type="checkbox"] {
+  margin: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+#ai-agents-config .checkbox-group label input[type="checkbox"] {
+  margin-right: 8px !important;
+}
+
+/* Override any conflicting checkbox group styles */
+#ai-agents-config .checkbox-group {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  grid-template-columns: none !important;
+}
+
+/* Radio button selected state styling */
+#ai-agents-config .radio-group label:has(input[type="radio"]:checked) {
+  background: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #1f2937 !important;
+  box-shadow: 0 2px 8px rgba(251, 196, 36, 0.3) !important;
+}
+
+/* Alternative styling for selected state using JavaScript classes */
+#ai-agents-config .radio-group label.selected {
+  background: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #1f2937 !important;
+  box-shadow: 0 2px 8px rgba(251, 196, 36, 0.3) !important;
 }
 
 #ai-agents-config .option-explanation {
@@ -248,6 +303,12 @@
   display: block;
 }
 
+/* Ensure checkbox labels don't inherit bold styling */
+#ai-agents-config .checkbox-group label {
+  font-weight: normal !important;
+  font-size: 14px !important;
+}
+
 /* Responsive adjustments for AI calculator */
 @media (max-width: 768px) {
   #ai-agents-config .config-section {
@@ -267,8 +328,8 @@
   
   #ai-agents-config .radio-group label,
   #ai-agents-config .checkbox-group label {
-    padding: 6px 8px;
-    font-size: 14px;
+    padding: 8px 12px;
+    font-size: 12px;
     white-space: normal; /* Allow text wrapping on mobile */
   }
 }
