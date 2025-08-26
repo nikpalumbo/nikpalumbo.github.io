@@ -22,7 +22,7 @@ docker run --rm -v "$(pwd):/srv/jekyll" -p 4000:4000 -p 35729:35729 jekyll/jekyl
 
 ### 📊 Pricing Rules
 
-For detailed pricing calculations and rules for the Intelligent Growth System, see: [PRICING_RULES.md](./PRICING_RULES.md)
+For detailed pricing calculations and rules for the Intelligent Growth System, see: [PRICING_RULES.md](./_private/PRICING_RULES.md)
 
 ---
 
