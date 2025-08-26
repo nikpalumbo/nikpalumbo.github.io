@@ -75,6 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('AI radio button changed:', this.name, this.value);
         calculateAIPrice();
         updateAIQuoteDisplay();
+        updateAIStickyBannerPrice();
+        showBannerOnUpdate();
       });
     });
 
@@ -84,6 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('AI checkbox changed:', this.name, this.value);
         calculateAIPrice();
         updateAIQuoteDisplay();
+        updateAIStickyBannerPrice();
+        showBannerOnUpdate();
       });
     });
 
@@ -99,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial AI Agent Development calculation
     calculateAIPrice();
     updateAIQuoteDisplay();
+    updateAIStickyBannerPrice();
     
     // Ensure banner starts hidden
     const stickyBanner = document.getElementById('sticky-price-banner');
@@ -807,6 +812,16 @@ function updateAIFormFields() {
     const field = document.getElementById(id);
     if (field) field.value = value;
   });
+}
+
+// Update AI sticky banner price
+function updateAIStickyBannerPrice() {
+  const stickyPrice = document.getElementById('sticky-price');
+  const aiPrice = document.getElementById('ai-estimated-price');
+  
+  if (stickyPrice && aiPrice) {
+    stickyPrice.textContent = aiPrice.textContent;
+  }
 }
 
 // Accordion functionality
