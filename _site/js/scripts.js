@@ -11,14 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
       const hash = window.location.hash.substring(1); // Remove the #
       if (hash) {
         console.log('Hash detected:', hash);
-        // Map hash to service type
+        // Map hash to service type - using exact button titles
         const hashToService = {
-          'igs': 'growth-systems',
           'intelligent-growth-systems': 'growth-systems',
-          'ai-agents': 'ai-agents',
           'ai-agent-development': 'ai-agents',
-          'websites': 'websites',
-          'prototyping': 'prototyping'
+          'smart-conversion-websites': 'websites',
+          'product-led-growth-prototyping': 'prototyping'
         };
         
         const serviceType = hashToService[hash];
@@ -63,12 +61,12 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Calling showServiceContent with:', serviceType);
         showServiceContent(serviceType);
         
-        // Update URL hash for direct access
+        // Update URL hash for direct access - using exact button titles
         const hashMap = {
-          'growth-systems': 'igs',
-          'ai-agents': 'ai-agents',
-          'websites': 'websites',
-          'prototyping': 'prototyping'
+          'growth-systems': 'intelligent-growth-systems',
+          'ai-agents': 'ai-agent-development',
+          'websites': 'smart-conversion-websites',
+          'prototyping': 'product-led-growth-prototyping'
         };
         const hash = hashMap[serviceType];
         if (hash) {
