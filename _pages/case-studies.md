@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "AI Agent & Growth Systems Case Studies | Proven Results"
-description: "Real AI agent development and intelligent growth systems case studies. See measurable results from TrueFit AI, ETFProfiler, QuiteMatch, and enterprise growth systems."
+title: "AI Case Studies for Startups, SMEs, and Enterprises"
+description: "Explore how startups, SMEs, and enterprises use AI growth systems, agents, and smart websites to scale faster with measurable results."
 keywords: "AI agent case studies, growth systems results, TrueFit AI, ETFProfiler, QuiteMatch, startup growth, conversion optimization, SaaS results"
 ---
 
@@ -11,7 +11,7 @@ keywords: "AI agent case studies, growth systems results, TrueFit AI, ETFProfile
     <div class="row">
       <div class="col col-12">
         <div class="case-studies-header__content">
-          <h1 class="case-studies-title">Case Studies</h1>
+          <h1 class="case-studies-title">AI Case Studies for Startups, SMEs, and Enterprises</h1>
           <p class="case-studies-description">Real projects. Measurable results. Proven methodologies.</p>
         </div>
       </div>
@@ -26,6 +26,7 @@ keywords: "AI agent case studies, growth systems results, TrueFit AI, ETFProfile
     <!-- Category Filter (Optional) -->
     <div class="row">
       <div class="col col-12">
+        <h2 class="case-studies-section-title">Browse by Category</h2>
         <div class="category-filters">
           <button class="filter-btn active" data-category="all">
             <i class="fas fa-th-large"></i>
@@ -51,9 +52,19 @@ keywords: "AI agent case studies, growth systems results, TrueFit AI, ETFProfile
       </div>
     </div>
 
+    <!-- Case Studies Description -->
+    <div class="row">
+      <div class="col col-12">
+        <div class="case-studies-intro">
+          <p class="case-studies-subdescription">Discover how we've helped startups, SMEs, and enterprises scale faster with AI-powered growth systems, intelligent agents, and conversion-optimized websites. Each case study shows real results and proven methodologies.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Case Studies Grid -->
     <div class="row">
       <div class="col col-12">
+        <h2 class="case-studies-section-title">Featured Case Studies</h2>
         <div class="case-studies-grid">
           {% assign sorted_works = site.works | sort: 'date' | reverse %}
           {% for work in sorted_works %}
