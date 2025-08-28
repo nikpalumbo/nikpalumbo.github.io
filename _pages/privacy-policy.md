@@ -23,18 +23,18 @@ Email: [nicola@sdw.solutions](mailto:nicola@sdw.solutions)
 
 ## 3. Information We Collect
 
-### 3.1 Information You Provide Directly
+**3.1 Information You Provide Directly**
 - **Contact forms**: Name, email address, company information, project details
 - **Newsletter subscription**: Email address
 - **Service inquiries**: Business requirements, technical specifications, project scope
 - **Communication**: Email correspondence, phone calls, meeting notes
 
-### 3.2 Information Collected Automatically
+**3.2 Information Collected Automatically**
 - **Analytics data**: Through Google Analytics including IP address, browser type, device information, pages visited, time spent on site
 - **Cookies**: Essential cookies for website functionality, analytics cookies for usage statistics
 - **Log data**: Server logs including IP addresses, access times, referring URLs
 
-### 3.3 Client Project Data
+**3.3 Client Project Data**
 When providing our services (AI Growth Systems, AI Agent Development, Smart Conversion Websites, Product-Led Growth Prototyping), we may process:
 - Business data and processes
 - Technical specifications and requirements
@@ -45,19 +45,19 @@ When providing our services (AI Growth Systems, AI Agent Development, Smart Conv
 
 We use your personal data for the following purposes:
 
-### 4.1 Service Delivery
+**4.1 Service Delivery**
 - Providing AI development and growth system services
 - Project consultation and technical implementation
 - Customer support and communication
 - Performance monitoring and optimization
 
-### 4.2 Business Operations
+**4.2 Business Operations**
 - Responding to inquiries and providing quotes
 - Newsletter and marketing communications (with consent)
 - Website analytics and improvement
 - Legal compliance and record keeping
 
-### 4.3 Legal Basis (GDPR)
+**4.3 Legal Basis (GDPR)**
 - **Contract performance**: Delivering services you've requested
 - **Legitimate interest**: Business operations, analytics, security
 - **Consent**: Newsletter subscriptions, non-essential cookies
@@ -67,12 +67,12 @@ We use your personal data for the following purposes:
 
 We do **not** share your personal data with third parties except:
 
-### 5.1 Service Providers
+**5.1 Service Providers**
 - **Google Analytics**: For website analytics (anonymized data)
 - **Formspree**: For contact form processing
 - **Email services**: For business communication
 
-### 5.2 Legal Requirements
+**5.2 Legal Requirements**
 - When required by Swiss or EU law
 - To protect our legal rights or safety
 - In case of business merger or acquisition (with notice)
@@ -99,20 +99,20 @@ We retain your personal data for the following periods:
 
 You have the following rights regarding your personal data:
 
-### 8.1 Access Rights
+**8.1 Access Rights**
 - Request information about data we process
 - Obtain a copy of your personal data
 
-### 8.2 Correction and Deletion
+**8.2 Correction and Deletion**
 - Correct inaccurate personal data
 - Request deletion of your data ("right to be forgotten")
 
-### 8.3 Processing Limitations
+**8.3 Processing Limitations**
 - Object to processing for legitimate interests
 - Restrict processing in certain circumstances
 - Data portability for data provided by you
 
-### 8.4 Withdrawal of Consent
+**8.4 Withdrawal of Consent**
 - Unsubscribe from newsletters at any time
 - Withdraw consent for non-essential cookies
 
@@ -120,15 +120,15 @@ You have the following rights regarding your personal data:
 
 ## 9. Cookies Policy
 
-### 9.1 Essential Cookies
+**9.1 Essential Cookies**
 - Website functionality and security
 - Form submission and session management
 
-### 9.2 Analytics Cookies
+**9.2 Analytics Cookies**
 - Google Analytics for website usage statistics
 - Performance monitoring and optimization
 
-### 9.3 Cookie Management
+**9.3 Cookie Management**
 You can manage cookies through your browser settings. Disabling essential cookies may affect website functionality.
 
 ## 10. International Data Transfers
