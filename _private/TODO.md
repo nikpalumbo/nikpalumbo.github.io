@@ -8,6 +8,8 @@ This TODO list tracks all development tasks, improvements, and optimizations for
 ## 🔥 **HIGH PRIORITY - Immediate Action Required**
 
 - [ ] 🔄 Become GDPR Compliant: Cookies banner, policy and terms
+- [ ] 🔄 Add Organization schema to your homepage so Google knows that Smart Data Way GmbH = SDW Solutions.
+- [ ] 🔄 Continue submitting AI Agents:github.com/best-of-ai/ai-directories --> https://airespo.com/
 - [ ] 🔄 SEO on About US
 - [ ] 🔄 SEO on Use Cases and All subpages
 - [ ] 🔄 SEO on Use Cases and All subpages
