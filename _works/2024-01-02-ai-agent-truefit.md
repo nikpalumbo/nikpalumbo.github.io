@@ -1,7 +1,7 @@
 ---
 title: "TrueFit AI Agent - Personalized Cover Letter Generation"
 subtitle: LangGraph-based AI agent with long-term memory and RAG for intelligent cover letter generation
-description: "TrueFit AI agent case study: LangGraph-based system with long-term memory, company data extraction, and RAG for personalized cover letters. Open-source AI agent with dual LLM review system."
+description: "TrueFit AI agent: LangGraph-based system with long-term memory and RAG for personalized cover letters. Open-source AI with dual LLM review."
 keywords: "TrueFit AI agent, personalized cover letters, LangGraph AI, long-term memory AI, RAG system, open source AI agent, career assistance AI"
 category: AI Agent Development
 date: 2024-01-02 08:01:35 +0300

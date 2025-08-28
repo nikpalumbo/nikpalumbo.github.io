@@ -1,7 +1,7 @@
 ---
 title: "QuiteMatch AI Platform - 40% Conversion Improvement"
 subtitle: AI recruitment platform with 40% conversion improvement and automated workflows
-description: "QuiteMatch AI recruitment platform case study: 40% conversion improvement, automated hiring workflows, and intelligent candidate assessment. See how AI-powered systems transformed recruitment."
+description: "QuiteMatch AI recruitment platform achieved 40% conversion improvement with automated hiring workflows and intelligent candidate assessment."
 keywords: "QuiteMatch case study, AI recruitment platform, 40% conversion improvement, automated hiring workflows, recruitment AI, candidate assessment"
 category: Intelligent Growth Systems
 date: 2025-01-04 08:01:35 +0300
