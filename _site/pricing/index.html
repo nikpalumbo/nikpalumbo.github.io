@@ -6,13 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- Force HTTPS redirect -->
+  <!-- Force HTTPS redirect with proper status -->
   <script>
+    // Immediate redirect for HTTP to HTTPS
     if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
       location.replace('https:' + window.location.href.substring(window.location.protocol.length));
     }
+    // Immediate redirect for www to non-www
     if (location.hostname === 'www.sdw.solutions') {
       location.replace('https://sdw.solutions' + location.pathname + location.search);
+    }
+  </script>
+  
+  <!-- Meta redirect for search engines -->
+  
+  
+  <!-- HTTP to HTTPS meta redirect -->
+  <script>
+    if (location.protocol === 'http:' && location.hostname === 'sdw.solutions') {
+      document.write('<meta http-equiv="refresh" content="0; url=' + location.href.replace('http:', 'https:') + '">');
     }
   </script>
   
@@ -23,7 +35,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>AI Growth Systems & AI Agent Development Pricing - Transparent Rates</title>
+  <title>AI Growth Systems and AI Agent Development Pricing</title>
   <meta name='description' content='Get transparent pricing for AI growth systems, AI agent development, and smart conversion websites. Tailored solutions for startups, SMEs, and enterprises wi...'>
   
   <!-- SEO Meta Tags -->
@@ -39,17 +51,21 @@
   <meta name="geo.position" content="47.2043;8.7584">
   <meta name="ICBM" content="47.2043, 8.7584">
 
-  <link rel="canonical" href="http://0.0.0.0:4000/pricing/">
+  <link rel="canonical" href="https://sdw.solutions/pricing/">
+  
+  <!-- Additional SEO signals for HTTPS preference -->
+  <meta name="robots" content="index, follow">
+  <link rel="alternate" href="https://sdw.solutions/pricing/" hreflang="en">
   <link rel="alternate" type="application/rss+xml" title="Nicola Palumbo - AI Agent Development &amp; Intelligent Growth Systems" href="/feed.xml">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Growth Systems & AI Agent Development Pricing - Transparent Rates – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
+  <meta name="twitter:title" content="AI Growth Systems and AI Agent Development Pricing – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
   <meta name="twitter:description" content="Get transparent pricing for AI growth systems, AI agent development, and smart conversion websites. Tailored solutions for startups, SMEs, and enterprises with proven results.">
   <meta name="twitter:image:src" content="">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="AI Growth Systems & AI Agent Development Pricing - Transparent Rates – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
+  <meta property="og:title" content="AI Growth Systems and AI Agent Development Pricing – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
   <meta property="og:description" content="Get transparent pricing for AI growth systems, AI agent development, and smart conversion websites. Tailored solutions for startups, SMEs, and enterprises with proven results.">
   <meta property="og:image" content="">
 
@@ -163,7 +179,7 @@
   
   gtag('event', 'page_view', {
     'page_type': 'default',
-    'page_title': 'AI Growth Systems & AI Agent Development Pricing - Transparent Rates',
+    'page_title': 'AI Growth Systems and AI Agent Development Pricing',
     'page_location': 'http://0.0.0.0:4000/pricing/'
   });
   
@@ -870,7 +886,7 @@
       
       <div class="other-service-cta">
         <div class="cta-buttons">
-          <a href="https://calendar.app.google/FgPFpZKyXjmEudQu8" target="_blank" class="btn btn--primary">
+          <a href="https://calendar.app.google/FgPFpZKyXjmEudQu8" target="_blank" rel="nofollow noopener" class="btn btn--primary">
             <i class="fas fa-calendar"></i>
             Book a call
           </a>
@@ -893,7 +909,7 @@
       
       <div class="other-service-cta">
         <div class="cta-buttons">
-          <a href="https://calendar.app.google/FgPFpZKyXjmEudQu8" target="_blank" class="btn btn--primary">
+          <a href="https://calendar.app.google/FgPFpZKyXjmEudQu8" target="_blank" rel="nofollow noopener" class="btn btn--primary">
             <i class="fas fa-calendar"></i>
             Book a call
           </a>
@@ -955,7 +971,7 @@
                      title="Share on LinkedIn">
                     <i class="fab fa-linkedin"></i>
                   </a>
-                  <a href="https://twitter.com/intent/tweet?text=AI+Growth+Systems+%26+AI+Agent+Development+Pricing+-+Transparent+Rates&url=http://0.0.0.0:4000/pricing/" 
+                  <a href="https://twitter.com/intent/tweet?text=AI+Growth+Systems+and+AI+Agent+Development+Pricing&url=http://0.0.0.0:4000/pricing/" 
                      target="_blank" 
                      rel="nofollow noopener"
                      class="footer__social-btn footer__social-btn--twitter"
@@ -969,7 +985,7 @@
                      title="Share on Facebook">
                     <i class="fab fa-facebook"></i>
                   </a>
-                  <a href="https://wa.me/?text=AI+Growth+Systems+%26+AI+Agent+Development+Pricing+-+Transparent+Rates%20http://0.0.0.0:4000/pricing/" 
+                  <a href="https://wa.me/?text=AI+Growth+Systems+and+AI+Agent+Development+Pricing%20http://0.0.0.0:4000/pricing/" 
                      target="_blank" 
                      rel="nofollow noopener"
                      class="footer__social-btn footer__social-btn--whatsapp"

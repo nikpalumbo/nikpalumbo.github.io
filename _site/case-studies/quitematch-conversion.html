@@ -6,13 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- Force HTTPS redirect -->
+  <!-- Force HTTPS redirect with proper status -->
   <script>
+    // Immediate redirect for HTTP to HTTPS
     if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
       location.replace('https:' + window.location.href.substring(window.location.protocol.length));
     }
+    // Immediate redirect for www to non-www
     if (location.hostname === 'www.sdw.solutions') {
       location.replace('https://sdw.solutions' + location.pathname + location.search);
+    }
+  </script>
+  
+  <!-- Meta redirect for search engines -->
+  
+  
+  <!-- HTTP to HTTPS meta redirect -->
+  <script>
+    if (location.protocol === 'http:' && location.hostname === 'sdw.solutions') {
+      document.write('<meta http-equiv="refresh" content="0; url=' + location.href.replace('http:', 'https:') + '">');
     }
   </script>
   
@@ -23,7 +35,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>QuiteMatch AI Platform - 40% Conversion Improvement Case Study</title>
+  <title>QuiteMatch AI Platform - 40% Conversion Improvement</title>
   <meta name='description' content='QuiteMatch AI recruitment platform case study: 40% conversion improvement, automated hiring workflows, and intelligent candidate assessment. See how AI-power...'>
   
   <!-- SEO Meta Tags -->
@@ -39,17 +51,21 @@
   <meta name="geo.position" content="47.2043;8.7584">
   <meta name="ICBM" content="47.2043, 8.7584">
 
-  <link rel="canonical" href="http://0.0.0.0:4000/case-studies/quitematch-conversion">
+  <link rel="canonical" href="https://sdw.solutions/case-studies/quitematch-conversion">
+  
+  <!-- Additional SEO signals for HTTPS preference -->
+  <meta name="robots" content="index, follow">
+  <link rel="alternate" href="https://sdw.solutions/case-studies/quitematch-conversion" hreflang="en">
   <link rel="alternate" type="application/rss+xml" title="Nicola Palumbo - AI Agent Development &amp; Intelligent Growth Systems" href="/feed.xml">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="QuiteMatch AI Platform - 40% Conversion Improvement Case Study – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
+  <meta name="twitter:title" content="QuiteMatch AI Platform - 40% Conversion Improvement – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
   <meta name="twitter:description" content="QuiteMatch AI recruitment platform case study: 40% conversion improvement, automated hiring workflows, and intelligent candidate assessment. See how AI-powered systems transformed recruitment.">
   <meta name="twitter:image:src" content="">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="QuiteMatch AI Platform - 40% Conversion Improvement Case Study – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
+  <meta property="og:title" content="QuiteMatch AI Platform - 40% Conversion Improvement – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
   <meta property="og:description" content="QuiteMatch AI recruitment platform case study: 40% conversion improvement, automated hiring workflows, and intelligent candidate assessment. See how AI-powered systems transformed recruitment.">
   <meta property="og:image" content="">
 
@@ -163,7 +179,7 @@
   
   gtag('event', 'page_view', {
     'page_type': 'work',
-    'page_title': 'QuiteMatch AI Platform - 40% Conversion Improvement Case Study',
+    'page_title': 'QuiteMatch AI Platform - 40% Conversion Improvement',
     'page_location': 'http://0.0.0.0:4000/case-studies/quitematch-conversion'
   });
   
@@ -171,7 +187,7 @@
   // Track case study views
   
   gtag('event', 'case_study_view', {
-    'case_study_name': 'QuiteMatch AI Platform - 40% Conversion Improvement Case Study',
+    'case_study_name': 'QuiteMatch AI Platform - 40% Conversion Improvement',
     'case_study_category': 'Intelligent Growth Systems',
     'client': 'QuiteMatch (Recruitment Platform)'
   });
@@ -321,7 +337,7 @@
           
           <div class="case-study-badge">Intelligent Growth Systems</div>
           
-          <h1 class="case-studies-title">QuiteMatch AI Platform - 40% Conversion Improvement Case Study</h1>
+          <h1 class="case-studies-title">QuiteMatch AI Platform - 40% Conversion Improvement</h1>
           
           <p class="case-studies-description">AI recruitment platform with 40% conversion improvement and automated workflows</p>
           
@@ -344,7 +360,7 @@
             Intelligent Growth Systems
           </div>
           
-          <h3 class="case-study-card__title">QuiteMatch AI Platform - 40% Conversion Improvement Case Study</h3>
+          <h3 class="case-study-card__title">QuiteMatch AI Platform - 40% Conversion Improvement</h3>
           
           <p class="case-study-card__description">QuiteMatch AI recruitment platform case study: 40% conversion improvement, automated hiring workflows, and intelligent candidate assessment. See how AI-powered systems transformed recruitment.</p>
           
@@ -492,7 +508,7 @@ Next.js, Supabase, ChatGPT-4 API, Tailwind CSS, Vercel</p>
           <div class="navigation-card">
             <div class="nav-card-category">AI Agent Development</div>
             <h4 class="nav-card-title">
-              <a href="/case-studies/ai-agent-truefit">TrueFit AI Agent - Personalized Cover Letter Generation Case Study</a>
+              <a href="/case-studies/ai-agent-truefit">TrueFit AI Agent - Personalized Cover Letter Generation</a>
             </h4>
             <p class="nav-card-description">TrueFit AI agent case study: LangGraph-based system with long-term memory, company data extraction, and RAG for perso...</p>
             <a href="/case-studies/ai-agent-truefit" class="nav-card-link">View Case Study</a>
@@ -551,7 +567,7 @@ Next.js, Supabase, ChatGPT-4 API, Tailwind CSS, Vercel</p>
                      title="Share on LinkedIn">
                     <i class="fab fa-linkedin"></i>
                   </a>
-                  <a href="https://twitter.com/intent/tweet?text=QuiteMatch+AI+Platform+-+40%25+Conversion+Improvement+Case+Study&url=http://0.0.0.0:4000/case-studies/quitematch-conversion" 
+                  <a href="https://twitter.com/intent/tweet?text=QuiteMatch+AI+Platform+-+40%25+Conversion+Improvement&url=http://0.0.0.0:4000/case-studies/quitematch-conversion" 
                      target="_blank" 
                      rel="nofollow noopener"
                      class="footer__social-btn footer__social-btn--twitter"
@@ -565,7 +581,7 @@ Next.js, Supabase, ChatGPT-4 API, Tailwind CSS, Vercel</p>
                      title="Share on Facebook">
                     <i class="fab fa-facebook"></i>
                   </a>
-                  <a href="https://wa.me/?text=QuiteMatch+AI+Platform+-+40%25+Conversion+Improvement+Case+Study%20http://0.0.0.0:4000/case-studies/quitematch-conversion" 
+                  <a href="https://wa.me/?text=QuiteMatch+AI+Platform+-+40%25+Conversion+Improvement%20http://0.0.0.0:4000/case-studies/quitematch-conversion" 
                      target="_blank" 
                      rel="nofollow noopener"
                      class="footer__social-btn footer__social-btn--whatsapp"

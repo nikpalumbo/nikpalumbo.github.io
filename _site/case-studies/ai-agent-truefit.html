@@ -6,13 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- Force HTTPS redirect -->
+  <!-- Force HTTPS redirect with proper status -->
   <script>
+    // Immediate redirect for HTTP to HTTPS
     if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
       location.replace('https:' + window.location.href.substring(window.location.protocol.length));
     }
+    // Immediate redirect for www to non-www
     if (location.hostname === 'www.sdw.solutions') {
       location.replace('https://sdw.solutions' + location.pathname + location.search);
+    }
+  </script>
+  
+  <!-- Meta redirect for search engines -->
+  
+  
+  <!-- HTTP to HTTPS meta redirect -->
+  <script>
+    if (location.protocol === 'http:' && location.hostname === 'sdw.solutions') {
+      document.write('<meta http-equiv="refresh" content="0; url=' + location.href.replace('http:', 'https:') + '">');
     }
   </script>
   
@@ -23,7 +35,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>TrueFit AI Agent - Personalized Cover Letter Generation Case Study</title>
+  <title>TrueFit AI Agent - Personalized Cover Letter Generation</title>
   <meta name='description' content='TrueFit AI agent case study: LangGraph-based system with long-term memory, company data extraction, and RAG for personalized cover letters. Open-source AI ag...'>
   
   <!-- SEO Meta Tags -->
@@ -39,17 +51,21 @@
   <meta name="geo.position" content="47.2043;8.7584">
   <meta name="ICBM" content="47.2043, 8.7584">
 
-  <link rel="canonical" href="http://0.0.0.0:4000/case-studies/ai-agent-truefit">
+  <link rel="canonical" href="https://sdw.solutions/case-studies/ai-agent-truefit">
+  
+  <!-- Additional SEO signals for HTTPS preference -->
+  <meta name="robots" content="index, follow">
+  <link rel="alternate" href="https://sdw.solutions/case-studies/ai-agent-truefit" hreflang="en">
   <link rel="alternate" type="application/rss+xml" title="Nicola Palumbo - AI Agent Development &amp; Intelligent Growth Systems" href="/feed.xml">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="TrueFit AI Agent - Personalized Cover Letter Generation Case Study – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
+  <meta name="twitter:title" content="TrueFit AI Agent - Personalized Cover Letter Generation – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
   <meta name="twitter:description" content="TrueFit AI agent case study: LangGraph-based system with long-term memory, company data extraction, and RAG for personalized cover letters. Open-source AI agent with dual LLM review system.">
   <meta name="twitter:image:src" content="http://0.0.0.0:4000/images/work-2.jpg">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="TrueFit AI Agent - Personalized Cover Letter Generation Case Study – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
+  <meta property="og:title" content="TrueFit AI Agent - Personalized Cover Letter Generation – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
   <meta property="og:description" content="TrueFit AI agent case study: LangGraph-based system with long-term memory, company data extraction, and RAG for personalized cover letters. Open-source AI agent with dual LLM review system.">
   <meta property="og:image" content="http://0.0.0.0:4000/images/work-2.jpg">
 
@@ -163,7 +179,7 @@
   
   gtag('event', 'page_view', {
     'page_type': 'work',
-    'page_title': 'TrueFit AI Agent - Personalized Cover Letter Generation Case Study',
+    'page_title': 'TrueFit AI Agent - Personalized Cover Letter Generation',
     'page_location': 'http://0.0.0.0:4000/case-studies/ai-agent-truefit'
   });
   
@@ -171,7 +187,7 @@
   // Track case study views
   
   gtag('event', 'case_study_view', {
-    'case_study_name': 'TrueFit AI Agent - Personalized Cover Letter Generation Case Study',
+    'case_study_name': 'TrueFit AI Agent - Personalized Cover Letter Generation',
     'case_study_category': 'AI Agent Development',
     'client': 'TrueFit (Open Source)'
   });
@@ -321,7 +337,7 @@
           
           <div class="case-study-badge">AI Agent Development</div>
           
-          <h1 class="case-studies-title">TrueFit AI Agent - Personalized Cover Letter Generation Case Study</h1>
+          <h1 class="case-studies-title">TrueFit AI Agent - Personalized Cover Letter Generation</h1>
           
           <p class="case-studies-description">LangGraph-based AI agent with long-term memory and RAG for intelligent cover letter generation</p>
           
@@ -344,7 +360,7 @@
             AI Agent Development
           </div>
           
-          <h3 class="case-study-card__title">TrueFit AI Agent - Personalized Cover Letter Generation Case Study</h3>
+          <h3 class="case-study-card__title">TrueFit AI Agent - Personalized Cover Letter Generation</h3>
           
           <p class="case-study-card__description">TrueFit AI agent case study: LangGraph-based system with long-term memory, company data extraction, and RAG for personalized cover letters. Open-source AI agent with dual LLM review system.</p>
           
@@ -550,7 +566,7 @@ Python, LangGraph, LangSmith, GPT-4o, Claude Sonnet, Tavily API, TrustCall</p>
           <div class="navigation-card">
             <div class="nav-card-category">Intelligent Growth Systems</div>
             <h4 class="nav-card-title">
-              <a href="/case-studies/quitematch-conversion">QuiteMatch AI Platform - 40% Conversion Improvement Case Study</a>
+              <a href="/case-studies/quitematch-conversion">QuiteMatch AI Platform - 40% Conversion Improvement</a>
             </h4>
             <p class="nav-card-description">QuiteMatch AI recruitment platform case study: 40% conversion improvement, automated hiring workflows, and intelligen...</p>
             <a href="/case-studies/quitematch-conversion" class="nav-card-link">View Case Study</a>
@@ -591,7 +607,7 @@ Python, LangGraph, LangSmith, GPT-4o, Claude Sonnet, Tavily API, TrustCall</p>
                      title="Share on LinkedIn">
                     <i class="fab fa-linkedin"></i>
                   </a>
-                  <a href="https://twitter.com/intent/tweet?text=TrueFit+AI+Agent+-+Personalized+Cover+Letter+Generation+Case+Study&url=http://0.0.0.0:4000/case-studies/ai-agent-truefit" 
+                  <a href="https://twitter.com/intent/tweet?text=TrueFit+AI+Agent+-+Personalized+Cover+Letter+Generation&url=http://0.0.0.0:4000/case-studies/ai-agent-truefit" 
                      target="_blank" 
                      rel="nofollow noopener"
                      class="footer__social-btn footer__social-btn--twitter"
@@ -605,7 +621,7 @@ Python, LangGraph, LangSmith, GPT-4o, Claude Sonnet, Tavily API, TrustCall</p>
                      title="Share on Facebook">
                     <i class="fab fa-facebook"></i>
                   </a>
-                  <a href="https://wa.me/?text=TrueFit+AI+Agent+-+Personalized+Cover+Letter+Generation+Case+Study%20http://0.0.0.0:4000/case-studies/ai-agent-truefit" 
+                  <a href="https://wa.me/?text=TrueFit+AI+Agent+-+Personalized+Cover+Letter+Generation%20http://0.0.0.0:4000/case-studies/ai-agent-truefit" 
                      target="_blank" 
                      rel="nofollow noopener"
                      class="footer__social-btn footer__social-btn--whatsapp"

@@ -6,13 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- Force HTTPS redirect -->
+  <!-- Force HTTPS redirect with proper status -->
   <script>
+    // Immediate redirect for HTTP to HTTPS
     if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
       location.replace('https:' + window.location.href.substring(window.location.protocol.length));
     }
+    // Immediate redirect for www to non-www
     if (location.hostname === 'www.sdw.solutions') {
       location.replace('https://sdw.solutions' + location.pathname + location.search);
+    }
+  </script>
+  
+  <!-- Meta redirect for search engines -->
+  
+  
+  <!-- HTTP to HTTPS meta redirect -->
+  <script>
+    if (location.protocol === 'http:' && location.hostname === 'sdw.solutions') {
+      document.write('<meta http-equiv="refresh" content="0; url=' + location.href.replace('http:', 'https:') + '">');
     }
   </script>
   
@@ -39,7 +51,11 @@
   <meta name="geo.position" content="47.2043;8.7584">
   <meta name="ICBM" content="47.2043, 8.7584">
 
-  <link rel="canonical" href="http://0.0.0.0:4000/case-studies/etf-profiler-webapp">
+  <link rel="canonical" href="https://sdw.solutions/case-studies/etf-profiler-webapp">
+  
+  <!-- Additional SEO signals for HTTPS preference -->
+  <meta name="robots" content="index, follow">
+  <link rel="alternate" href="https://sdw.solutions/case-studies/etf-profiler-webapp" hreflang="en">
   <link rel="alternate" type="application/rss+xml" title="Nicola Palumbo - AI Agent Development &amp; Intelligent Growth Systems" href="/feed.xml">
 
   <!-- Twitter Card -->
@@ -553,7 +569,7 @@ Every decision the AI makes is logged and explainable, making it suitable for fi
           <div class="navigation-card">
             <div class="nav-card-category">AI Agent Development</div>
             <h4 class="nav-card-title">
-              <a href="/case-studies/ai-agent-truefit">TrueFit AI Agent - Personalized Cover Letter Generation Case Study</a>
+              <a href="/case-studies/ai-agent-truefit">TrueFit AI Agent - Personalized Cover Letter Generation</a>
             </h4>
             <p class="nav-card-description">TrueFit AI agent case study: LangGraph-based system with long-term memory, company data extraction, and RAG for perso...</p>
             <a href="/case-studies/ai-agent-truefit" class="nav-card-link">View Case Study</a>
@@ -571,7 +587,7 @@ Every decision the AI makes is logged and explainable, making it suitable for fi
           <div class="navigation-card">
             <div class="nav-card-category">Intelligent Growth Systems</div>
             <h4 class="nav-card-title">
-              <a href="/case-studies/quitematch-conversion">QuiteMatch AI Platform - 40% Conversion Improvement Case Study</a>
+              <a href="/case-studies/quitematch-conversion">QuiteMatch AI Platform - 40% Conversion Improvement</a>
             </h4>
             <p class="nav-card-description">QuiteMatch AI recruitment platform case study: 40% conversion improvement, automated hiring workflows, and intelligen...</p>
             <a href="/case-studies/quitematch-conversion" class="nav-card-link">View Case Study</a>

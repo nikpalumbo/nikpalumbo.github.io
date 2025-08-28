@@ -6,13 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- Force HTTPS redirect -->
+  <!-- Force HTTPS redirect with proper status -->
   <script>
+    // Immediate redirect for HTTP to HTTPS
     if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
       location.replace('https:' + window.location.href.substring(window.location.protocol.length));
     }
+    // Immediate redirect for www to non-www
     if (location.hostname === 'www.sdw.solutions') {
       location.replace('https://sdw.solutions' + location.pathname + location.search);
+    }
+  </script>
+  
+  <!-- Meta redirect for search engines -->
+  
+  
+  <!-- HTTP to HTTPS meta redirect -->
+  <script>
+    if (location.protocol === 'http:' && location.hostname === 'sdw.solutions') {
+      document.write('<meta http-equiv="refresh" content="0; url=' + location.href.replace('http:', 'https:') + '">');
     }
   </script>
   
@@ -23,7 +35,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>Terms and Conditions - Smart Data Way GmbH Legal Terms & Service Agreement</title>
+  <title>Terms and Conditions - Smart Data Way GmbH Legal Terms</title>
   <meta name='description' content='Terms and Conditions for Smart Data Way GmbH - Legal terms governing the use of our AI development services and website.'>
   
   <!-- SEO Meta Tags -->
@@ -39,17 +51,21 @@
   <meta name="geo.position" content="47.2043;8.7584">
   <meta name="ICBM" content="47.2043, 8.7584">
 
-  <link rel="canonical" href="http://0.0.0.0:4000/terms-conditions/">
+  <link rel="canonical" href="https://sdw.solutions/terms-conditions/">
+  
+  <!-- Additional SEO signals for HTTPS preference -->
+  <meta name="robots" content="index, follow">
+  <link rel="alternate" href="https://sdw.solutions/terms-conditions/" hreflang="en">
   <link rel="alternate" type="application/rss+xml" title="Nicola Palumbo - AI Agent Development &amp; Intelligent Growth Systems" href="/feed.xml">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Terms and Conditions - Smart Data Way GmbH Legal Terms & Service Agreement – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
+  <meta name="twitter:title" content="Terms and Conditions - Smart Data Way GmbH Legal Terms – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
   <meta name="twitter:description" content="Terms and Conditions for Smart Data Way GmbH - Legal terms governing the use of our AI development services and website.">
   <meta name="twitter:image:src" content="">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="Terms and Conditions - Smart Data Way GmbH Legal Terms & Service Agreement – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
+  <meta property="og:title" content="Terms and Conditions - Smart Data Way GmbH Legal Terms – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
   <meta property="og:description" content="Terms and Conditions for Smart Data Way GmbH - Legal terms governing the use of our AI development services and website.">
   <meta property="og:image" content="">
 
@@ -163,7 +179,7 @@
   
   gtag('event', 'page_view', {
     'page_type': 'page',
-    'page_title': 'Terms and Conditions - Smart Data Way GmbH Legal Terms & Service Agreement',
+    'page_title': 'Terms and Conditions - Smart Data Way GmbH Legal Terms',
     'page_location': 'http://0.0.0.0:4000/terms-conditions/'
   });
   
@@ -310,7 +326,7 @@
   <div class="page-head">
 
     <div class="page-info">
-      <h1 class="page-title">Terms and Conditions - Smart Data Way GmbH Legal Terms &amp; Service Agreement</h1>
+      <h1 class="page-title">Terms and Conditions - Smart Data Way GmbH Legal Terms</h1>
       
       <div class="page-description">Terms and Conditions for Smart Data Way GmbH - Legal terms governing the use of our AI development services and website.</div>
       
@@ -620,7 +636,7 @@ Website: <a href="https://sdw.solutions">sdw.solutions</a></p>
                      title="Share on LinkedIn">
                     <i class="fab fa-linkedin"></i>
                   </a>
-                  <a href="https://twitter.com/intent/tweet?text=Terms+and+Conditions+-+Smart+Data+Way+GmbH+Legal+Terms+%26+Service+Agreement&url=http://0.0.0.0:4000/terms-conditions/" 
+                  <a href="https://twitter.com/intent/tweet?text=Terms+and+Conditions+-+Smart+Data+Way+GmbH+Legal+Terms&url=http://0.0.0.0:4000/terms-conditions/" 
                      target="_blank" 
                      rel="nofollow noopener"
                      class="footer__social-btn footer__social-btn--twitter"
@@ -634,7 +650,7 @@ Website: <a href="https://sdw.solutions">sdw.solutions</a></p>
                      title="Share on Facebook">
                     <i class="fab fa-facebook"></i>
                   </a>
-                  <a href="https://wa.me/?text=Terms+and+Conditions+-+Smart+Data+Way+GmbH+Legal+Terms+%26+Service+Agreement%20http://0.0.0.0:4000/terms-conditions/" 
+                  <a href="https://wa.me/?text=Terms+and+Conditions+-+Smart+Data+Way+GmbH+Legal+Terms%20http://0.0.0.0:4000/terms-conditions/" 
                      target="_blank" 
                      rel="nofollow noopener"
                      class="footer__social-btn footer__social-btn--whatsapp"
