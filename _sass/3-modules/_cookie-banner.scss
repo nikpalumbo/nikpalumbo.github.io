@@ -5,8 +5,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(8, 2, 39, 0.98);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
   border-top: 3px solid var(--primary-color);
   z-index: 9999;
   transform: translateY(100%);
