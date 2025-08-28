@@ -38,7 +38,7 @@
               <i class="{{ step.icon }}"></i>
             </div>
           </div>
-          <h4 class="step__title">{{ step.title }}</h4>
+          <div class="step__title">{{ step.title }}</div>
           <p class="step__description">{{ step.description }}</p>
         </div>
         {% endfor %}
@@ -53,7 +53,7 @@
           <div class="values__grid">
             {% for value in site.data.settings.process.process__value_props %}
             <div class="value__item">
-              <h4 class="value__title">{{ value.title }}</h4>
+              <div class="value__title">{{ value.title }}</div>
               <p class="value__description">{{ value.description }}</p>
             </div>
             {% endfor %}
