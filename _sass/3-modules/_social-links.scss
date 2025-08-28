@@ -1,0 +1,125 @@
+/* Social Links Component */
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  color: #6b7280;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  i {
+    font-size: 20px;
+    transition: color 0.3s ease;
+  }
+
+  .social-link__name {
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px;
+    
+    i {
+      font-size: 18px;
+    }
+    
+    .social-link__name {
+      font-size: 13px;
+    }
+  }
+}
+
+/* Platform-specific colors */
+.social-link--linkedin {
+  &:hover {
+    background: #0077b5;
+    color: white;
+    border-color: #0077b5;
+  }
+}
+
+.social-link--twitter {
+  &:hover {
+    background: #1da1f2;
+    color: white;
+    border-color: #1da1f2;
+  }
+}
+
+.social-link--github {
+  &:hover {
+    background: #333;
+    color: white;
+    border-color: #333;
+  }
+}
+
+.social-link--facebook {
+  &:hover {
+    background: #1877f2;
+    color: white;
+    border-color: #1877f2;
+  }
+}
+
+/* Light theme variations */
+.header .social-links .social-link {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #374151;
+
+  &:hover {
+    background: var(--primary-color);
+    color: var(--dark);
+    border-color: var(--primary-color);
+  }
+}
+
+/* Footer variations */
+.footer .social-links .social-link {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+
+  &:hover {
+    background: var(--primary-color);
+    color: var(--dark);
+    border-color: var(--primary-color);
+  }
+}
+
+/* Compact version for header */
+.social-links--compact {
+  gap: 8px;
+
+  .social-link {
+    padding: 8px;
+    
+    i {
+      font-size: 16px;
+    }
+  }
+}

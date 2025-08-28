@@ -52,8 +52,10 @@
   <meta name="geo.position" content="47.2043;8.7584">
   <meta name="ICBM" content="47.2043, 8.7584">
 
-  <link rel="canonical" href="{{ canonical_url | replace:'index.html','' }}">
-  
+    <link rel="canonical" href="{{ canonical_url | replace:'index.html','' }}">
+
+  {% include social-meta-tags.html %}
+
   <!-- Additional SEO signals for HTTPS preference -->
   <meta name="robots" content="index, follow">
   <link rel="alternate" href="{{ canonical_url | replace:'index.html','' }}" hreflang="en">

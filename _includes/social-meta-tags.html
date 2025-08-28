@@ -1,0 +1,29 @@
+<!-- Open Graph Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.data.settings.title }}{% endif %}">
+<meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.settings.description }}{% endif %}">
+<meta property="og:url" content="{{ canonical_url | replace:'index.html','' }}">
+<meta property="og:site_name" content="Smart Data Way GmbH">
+<meta property="og:image" content="{% if page.image %}{{ site.url }}{{ page.image }}{% else %}{{ site.url }}/images/01-1.jpg{% endif %}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@sdwsolutionsch">
+<meta name="twitter:creator" content="@sdwsolutionsch">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.data.settings.title }}{% endif %}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.settings.description }}{% endif %}">
+<meta name="twitter:image" content="{% if page.image %}{{ site.url }}{{ page.image }}{% else %}{{ site.url }}/images/01-1.jpg{% endif %}">
+
+<!-- LinkedIn Meta Tags -->
+<meta property="article:author" content="Nicola Palumbo">
+<meta property="article:publisher" content="https://linkedin.com/company/sdw-ai-solutions">
+
+<!-- Additional Social Meta -->
+<meta name="author" content="Nicola Palumbo, Smart Data Way GmbH">
+<meta name="publisher" content="Smart Data Way GmbH">
+<link rel="me" href="https://linkedin.com/company/sdw-ai-solutions">
+<link rel="me" href="https://x.com/sdwsolutionsch">
+<link rel="me" href="https://www.facebook.com/sdwsolutionsch">

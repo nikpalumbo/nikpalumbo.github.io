@@ -1,0 +1,16 @@
+<!-- Social Media Links -->
+<div class="social-links">
+  {% for social in site.data.settings.social %}
+    <a href="{{ social.link }}" 
+       target="_blank" 
+       rel="nofollow noopener"
+       class="social-link social-link--{{ social.name | downcase }}"
+       title="Follow SDW Solutions on {{ social.name }}"
+       aria-label="Follow SDW Solutions on {{ social.name }}">
+      <i class="{{ social.icon }}"></i>
+      {% if include.show_names %}
+        <span class="social-link__name">{{ social.name }}</span>
+      {% endif %}
+    </a>
+  {% endfor %}
+</div>
