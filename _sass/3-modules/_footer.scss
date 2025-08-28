@@ -223,3 +223,50 @@
 .footer__separator {
   color: #6b7280;
 }
+
+/* Follow Us Section - Clean Icons Only */
+.footer__follow {
+  margin-top: 30px;
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
+}
+
+.footer__follow-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 15px;
+  text-transform: none;
+}
+
+.footer__social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.footer__social-icon {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+  }
+
+  i {
+    font-size: 20px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    
+    i {
+      font-size: 18px;
+    }
+  }
+}
