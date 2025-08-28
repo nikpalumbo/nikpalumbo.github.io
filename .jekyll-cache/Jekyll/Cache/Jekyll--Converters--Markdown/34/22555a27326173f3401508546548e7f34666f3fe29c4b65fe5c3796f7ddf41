@@ -1,12 +1,107 @@
----
-layout: default
-title: "About Nicola Palumbo - AI Product Manager & Growth Strategist"
-description: "Swiss-based SaaS founder who scaled to Fortune 500 clients. AI product manager and growth strategist expert in intelligent systems, AI agent development, and smart conversion websites for startups, SMEs, and enterprises."
-keywords: "Nicola Palumbo, AI product manager, growth strategist, SaaS founder, Swiss AI expert, Fortune 500 experience, startup growth, AI systems"
-permalink: /about/
----
-
-{% include person-schema.html %}
+I"K$<!-- Organization Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Smart Data Way GmbH",
+  "alternateName": ["SDW Solutions", "Smart Data Way"],
+  "url": "https://sdw.solutions",
+  "logo": "https://sdw.solutions/images/logo.png",
+  "description": "Helping companies design products that delight users and accelerate growth",
+  "foundingDate": "2024",
+  "founder": {
+    "@type": "Person",
+    "name": "Nicola Palumbo",
+    "jobTitle": "Founder & AI Systems Developer"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Seestrasse 112",
+    "addressLocality": "Bäch SZ",
+    "postalCode": "8806",
+    "addressCountry": "CH"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+41",
+    "email": "nicola@sdw.solutions",
+    "contactType": "customer service",
+    "areaServed": ["CH", "EU", "US"],
+    "availableLanguage": ["English", "German", "Italian"]
+  },
+  "sameAs": [
+    "https://linkedin.com/company/sdw-ai-solutions",
+    "https://x.com/sdwsolutionsch",
+    "https://www.facebook.com/sdwsolutionsch"
+  ],
+  "serviceArea": {
+    "@type": "Place",
+    "name": "Global"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "AI Development Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Agent Development",
+          "description": "Custom AI agents using ChatGPT, Claude, or open-source LLMs through Ollama for business automation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Intelligent Growth Systems",
+          "description": "Automated outreach, lead generation, and growth systems for startups and SMEs."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Smart Conversion Websites",
+          "description": "AI-enhanced conversion websites that personalize user journeys and increase engagement."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Product-Led Growth Prototyping",
+          "description": "Rapid MVP development and prototyping with built-in analytics and user feedback systems."
+        }
+      }
+    ]
+  },
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Growth Systems",
+    "Business Automation",
+    "Web Development",
+    "SaaS Development",
+    "Startup Growth",
+    "Conversion Optimization"
+  ],
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Switzerland"
+    },
+    {
+      "@type": "Continent",
+      "name": "Europe"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    }
+  ]
+}
+</script>
 
 <!-- About Header -->
 <div class="case-studies-header">
@@ -14,8 +109,8 @@ permalink: /about/
     <div class="row">
       <div class="col col-12">
         <div class="case-studies-header__content">
-          <h1 class="case-studies-title">{{ page.title }}</h1>
-          <p class="case-studies-description">{{ page.description }}</p>
+          <h1 class="case-studies-title">About Nicola Palumbo - AI Product Manager &amp; Growth Strategist</h1>
+          <p class="case-studies-description">Swiss-based SaaS founder who scaled to Fortune 500 clients. AI product manager and growth strategist expert in intelligent systems, AI agent development, and smart conversion websites for startups, SMEs, and enterprises.</p>
         </div>
       </div>
     </div>
@@ -42,7 +137,7 @@ permalink: /about/
       </div>
       
       <div class="vision-photo">
-        <img src="/images/nicola-professional.jpg" alt="Nicola Palumbo">
+        <img src="/images/nicola-professional.jpg" alt="Nicola Palumbo" />
       </div>
     </div>
   </div>
@@ -97,7 +192,7 @@ permalink: /about/
 <div class="values-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Values & Philosophy That Guide Every Decision</h2>
+      <h2 class="section-title">Values &amp; Philosophy That Guide Every Decision</h2>
       <p class="section-subtitle">The principles and mindset that shape how I work with clients and approach every challenge</p>
     </div>
     <div class="values-grid">
@@ -137,19 +232,23 @@ permalink: /about/
 </div>
 
 <!-- CTA Section -->
-{% include cta-band.html 
-   title="Ready to design products that delight users and accelerate growth?"
-   subline="Hello. Are you looking for ways to accelerate growth?"
-   primary_button='
-     text="Book a Call"
-     url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-NcwHUpy2VQTbjOwTbXwdd0qIVBbaPQvmwg8sujsRnwtn8LEFTFOVc_qFpKQKZASWyQwaIJO8?gv=true"
-     target="_blank"
-     onclick="trackCTA(\'Book a Call\', \'About Page CTA\')"
-   '
-   secondary_button='
-     text="Email me to Start"
-     url="mailto:nicola@sdw.solutions"
-     target="_blank"
-     onclick="trackCTA(\'Email me to Start\', \'About Page CTA\')"
-   '
-%}
+<!-- Shared CTA Band Component -->
+<section class="cta-band">
+  <div class="cta-band__container">
+    <h2 class="cta-band__title">Ready to design products that delight users and accelerate growth?</h2>
+    <p class="cta-band__subline">Hello. Are you looking for ways to accelerate growth?</p>
+    <div class="cta-band__actions">
+      
+        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-NcwHUpy2VQTbjOwTbXwdd0qIVBbaPQvmwg8sujsRnwtn8LEFTFOVc_qFpKQKZASWyQwaIJO8?gv=true" class="book-call-btn" rel="nofollow noopener">
+          Book a Call
+        </a>
+      
+      
+        <a href="mailto:nicola@sdw.solutions" class="btn btn--secondary">
+          Email me to Start
+        </a>
+      
+    </div>
+  </div>
+</section>
+:ET

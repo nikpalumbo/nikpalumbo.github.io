@@ -1,0 +1,91 @@
+<!-- Services Schema Markup for Case Studies/Services Pages -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "{{ page.title | default: 'AI Development Services' }}",
+  "description": "{{ page.description | default: 'Helping companies design products that delight users and accelerate growth' }}",
+  "url": "{{ site.url }}{{ page.url }}",
+  "provider": {
+    "@type": "Organization",
+    "name": "Smart Data Way GmbH",
+    "url": "https://sdw.solutions"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Seestrasse 112",
+    "addressLocality": "Bäch SZ",
+    "postalCode": "8806",
+    "addressCountry": "CH"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Switzerland"
+    },
+    {
+      "@type": "Continent", 
+      "name": "Europe"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    }
+  ],
+  "serviceType": "AI Development & Growth Services",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Complete AI & Growth Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Agent Development",
+          "description": "Custom AI agents using ChatGPT, Claude, or open-source LLMs through Ollama for business automation and intelligent workflows."
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Intelligent Growth Systems",
+          "description": "Automated outreach, systematic lead generation, and scalable growth systems for startups and SMEs."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service", 
+          "name": "Smart Conversion Websites",
+          "description": "AI-enhanced conversion websites that personalize user journeys, guide onboarding, and increase engagement."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Product-Led Growth Prototyping", 
+          "description": "Rapid MVP development and prototyping with built-in analytics, user feedback systems, and go-to-market validation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SaaS Growth Consulting",
+          "description": "Strategic consulting for SaaS companies looking to scale from zero to Fortune 500 clients with proven growth methodologies."
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Integration & Automation",
+          "description": "End-to-end AI integration services for enterprises looking to automate processes and implement intelligent systems across departments."
+        }
+      }
+    ]
+  }
+}
+</script>

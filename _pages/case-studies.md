@@ -5,7 +5,7 @@ description: "Explore how startups, SMEs, and enterprises use AI growth systems,
 keywords: "AI agent case studies, growth systems results, TrueFit AI, ETFProfiler, QuiteMatch, startup growth, conversion optimization, SaaS results"
 ---
 
-{% include organization-schema.html %}
+{% include services-schema.html %}
 
 <!-- Case Studies Header -->
 <div class="case-studies-header">
