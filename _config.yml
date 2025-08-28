@@ -11,6 +11,16 @@ permalink: /:title
 plugins:
   - jekyll-sitemap
 
+# Exclude files from being published to _site
+exclude:
+  - README.md
+  - TODO.md
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - _private/
+
 # Sitemap Configuration
 sitemap:
   exclude:

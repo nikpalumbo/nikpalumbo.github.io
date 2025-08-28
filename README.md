@@ -3,7 +3,7 @@
 ## 📋 Project Status & TODO
 **Current Progress**: 55.6% Complete (25/45 tasks)
 
-📋 **[View Full TODO List →](./TODO.md)**
+📋 **[View Full TODO List →](./_private/TODO.md)**
 
 **Recent Updates:**
 - ✅ **Footer Redesign**: Added social sharing + organized navigation
