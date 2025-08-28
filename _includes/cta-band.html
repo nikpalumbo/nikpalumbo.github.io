@@ -7,6 +7,7 @@
       {% if include.primary_button %}
         <a href="{{ include.primary_button.url | default: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-NcwHUpy2VQTbjOwTbXwdd0qIVBbaPQvmwg8sujsRnwtn8LEFTFOVc_qFpKQKZASWyQwaIJO8?gv=true' }}" 
            class="book-call-btn"
+           rel="nofollow noopener"
            {% if include.primary_button.target %}target="{{ include.primary_button.target }}"{% endif %}
            {% if include.primary_button.onclick %}onclick="{{ include.primary_button.onclick }}"{% endif %}>
           {{ include.primary_button.text | default: "Book a Call" }}

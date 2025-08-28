@@ -1,11 +1,4 @@
----
-layout: default
-title: "AI Case Studies for Startups, SMEs, and Enterprises"
-description: "Explore how startups, SMEs, and enterprises use AI growth systems, agents, and smart websites to scale faster with measurable results."
-keywords: "AI agent case studies, growth systems results, TrueFit AI, ETFProfiler, QuiteMatch, startup growth, conversion optimization, SaaS results"
----
-
-<!-- Case Studies Header -->
+I"Ã0<!-- Case Studies Header -->
 <div class="case-studies-header">
   <div class="container">
     <div class="row">
@@ -119,46 +112,152 @@ keywords: "AI agent case studies, growth systems results, TrueFit AI, ETFProfile
       <div class="col col-12">
         <h2 class="case-studies-section-title">Featured Case Studies</h2>
         <div class="case-studies-grid">
-          {% assign sorted_works = site.works | sort: 'date' | reverse %}
-          {% for work in sorted_works %}
-          <article class="case-study-card" data-category="{{ work.category }}">
+          
+          
+          <article class="case-study-card" data-category="Intelligent Growth Systems">
             <div class="case-study-card__header">
-              {% if work.category %}
-              <div class="case-study-card__category">{{ work.category }}</div>
-              {% endif %}
+              
+              <div class="case-study-card__category">Intelligent Growth Systems</div>
+              
               <h3 class="case-study-card__title">
-                <a href="{{ work.url }}">{{ work.title }}</a>
+                <a href="/case-studies/quitematch-conversion">QuiteMatch AI Recruitment Platform - 40% Conversion Improvement Case Study</a>
               </h3>
             </div>
             
             <div class="case-study-card__body">
-              {% if work.subtitle %}
-              <p class="case-study-card__description">{{ work.subtitle }}</p>
-              {% elsif work.description %}
-              <p class="case-study-card__description">{{ work.description }}</p>
-              {% endif %}
+              
+              <p class="case-study-card__description">AI recruitment platform with 40% conversion improvement and automated workflows</p>
+              
               
               <div class="case-study-card__footer">
                 <div class="case-study-card__meta">
-                  {% if work.role %}
+                  
                   <div class="meta-item">
                     <i class="ion ion-md-person"></i>
-                    <span class="meta-value">{{ work.role }}</span>
+                    <span class="meta-value">Full-Stack Developer &amp; Growth Systems Architect</span>
                   </div>
-                  {% endif %}
-                  {% if work.client %}
+                  
+                  
                   <div class="meta-item">
                     <i class="ion ion-md-briefcase"></i>
-                    <span class="meta-value">{{ work.client }}</span>
+                    <span class="meta-value">QuiteMatch (Recruitment Platform)</span>
                   </div>
-                  {% endif %}
+                  
                 </div>
                 
-                <a href="{{ work.url }}" class="case-study-card__link">View Case Study</a>
+                <a href="/case-studies/quitematch-conversion" class="case-study-card__link">View Case Study</a>
               </div>
             </div>
           </article>
-          {% endfor %}
+          
+          <article class="case-study-card" data-category="Intelligent Growth Systems">
+            <div class="case-study-card__header">
+              
+              <div class="case-study-card__category">Intelligent Growth Systems</div>
+              
+              <h3 class="case-study-card__title">
+                <a href="/case-studies/growth-system-saas">Complete Growth System for SaaS Startup - Swiss Market Entry Case Study</a>
+              </h3>
+            </div>
+            
+            <div class="case-study-card__body">
+              
+              <p class="case-study-card__description">Structured 16-week growth strategy for Swiss market entry with systematic lead generation and positioning</p>
+              
+              
+              <div class="case-study-card__footer">
+                <div class="case-study-card__meta">
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-person"></i>
+                    <span class="meta-value">Growth Systems Architect &amp; Strategic Partner</span>
+                  </div>
+                  
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-briefcase"></i>
+                    <span class="meta-value">Swiss Software Company</span>
+                  </div>
+                  
+                </div>
+                
+                <a href="/case-studies/growth-system-saas" class="case-study-card__link">View Case Study</a>
+              </div>
+            </div>
+          </article>
+          
+          <article class="case-study-card" data-category="AI Agent Development">
+            <div class="case-study-card__header">
+              
+              <div class="case-study-card__category">AI Agent Development</div>
+              
+              <h3 class="case-study-card__title">
+                <a href="/case-studies/etf-profiler-webapp">ETFProfiler AI Investment Analysis Agent - Smart ETF Matching Case Study</a>
+              </h3>
+            </div>
+            
+            <div class="case-study-card__body">
+              
+              <p class="case-study-card__description">LangGraph-powered AI agent that matches investors with optimal ETFs based on personal goals and preferences</p>
+              
+              
+              <div class="case-study-card__footer">
+                <div class="case-study-card__meta">
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-person"></i>
+                    <span class="meta-value">AI Systems Developer &amp; Investment Tech Architect</span>
+                  </div>
+                  
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-briefcase"></i>
+                    <span class="meta-value">ETFProfiler (Open Source)</span>
+                  </div>
+                  
+                </div>
+                
+                <a href="/case-studies/etf-profiler-webapp" class="case-study-card__link">View Case Study</a>
+              </div>
+            </div>
+          </article>
+          
+          <article class="case-study-card" data-category="AI Agent Development">
+            <div class="case-study-card__header">
+              
+              <div class="case-study-card__category">AI Agent Development</div>
+              
+              <h3 class="case-study-card__title">
+                <a href="/case-studies/ai-agent-truefit">TrueFit AI Agent - Personalized Cover Letter Generation Case Study</a>
+              </h3>
+            </div>
+            
+            <div class="case-study-card__body">
+              
+              <p class="case-study-card__description">LangGraph-based AI agent with long-term memory and RAG for intelligent cover letter generation</p>
+              
+              
+              <div class="case-study-card__footer">
+                <div class="case-study-card__meta">
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-person"></i>
+                    <span class="meta-value">AI Systems Developer &amp; Career Tech Architect</span>
+                  </div>
+                  
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-briefcase"></i>
+                    <span class="meta-value">TrueFit (Open Source)</span>
+                  </div>
+                  
+                </div>
+                
+                <a href="/case-studies/ai-agent-truefit" class="case-study-card__link">View Case Study</a>
+              </div>
+            </div>
+          </article>
+          
         </div>
       </div>
     </div>
@@ -170,18 +269,14 @@ keywords: "AI agent case studies, growth systems results, TrueFit AI, ETFProfile
       <h2 class="cta-band__title">Ready to turn your growth challenges into competitive advantages?</h2>
       <p class="cta-band__subline">Hello. Are you looking for ways to accelerate growth?</p>
       <div class="cta-band__actions">
-                 <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-NcwHUpy2VQTbjOwTbXwdd0qIVBbaPQvmwg8sujsRnwtn8LEFTFOVc_qFpKQKZASWyQwaIJO8?gv=true" 
-            class="book-call-btn"
-            rel="nofollow noopener"
-            onclick="trackCTA('Book a Call', 'Case Studies CTA')">
+                 <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-NcwHUpy2VQTbjOwTbXwdd0qIVBbaPQvmwg8sujsRnwtn8LEFTFOVc_qFpKQKZASWyQwaIJO8?gv=true" class="book-call-btn" rel="nofollow noopener" onclick="trackCTA('Book a Call', 'Case Studies CTA')">
           Book a Call
         </a>
-        <a href="mailto:nicola@sdw.solutions" 
-           class="btn btn--secondary"
-           onclick="trackCTA('Email me to Start', 'Case Studies CTA')">
+        <a href="mailto:nicola@sdw.solutions" class="btn btn--secondary" onclick="trackCTA('Email me to Start', 'Case Studies CTA')">
           Email me to Start
         </a>
       </div>
     </div>
   </section>
 </div>
+:ET
