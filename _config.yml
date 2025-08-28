@@ -31,8 +31,8 @@ sitemap:
   include_lastmod: true
   exclude_from_sitemap: false
 
-# SVG MIME type handling
-include: [".htaccess", "sitemap.xml"]
+# SVG MIME type handling and redirects
+include: [".htaccess", "_redirects", "sitemap.xml"]
 
 #-------------------------------
 # Collections

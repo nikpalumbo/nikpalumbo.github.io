@@ -6,6 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
+  <!-- Force HTTPS redirect -->
+  <script>
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+      location.replace('https:' + window.location.href.substring(window.location.protocol.length));
+    }
+    if (location.hostname === 'www.sdw.solutions') {
+      location.replace('https://sdw.solutions' + location.pathname + location.search);
+    }
+  </script>
+  
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -522,7 +532,7 @@ Python, LangGraph, LangSmith, GPT-4o, Claude Sonnet, Tavily API, TrustCall</p>
           <div class="navigation-card">
             <div class="nav-card-category">AI Agent Development</div>
             <h4 class="nav-card-title">
-              <a href="/case-studies/etf-profiler-webapp">ETFProfiler AI Investment Analysis Agent - Smart ETF Matching Case Study</a>
+              <a href="/case-studies/etf-profiler-webapp">ETFProfiler AI Agent - Smart ETF Matching Case Study</a>
             </h4>
             <p class="nav-card-description">ETFProfiler AI agent case study: LangGraph-powered investment analysis system with semantic retrieval and GPT-4 match...</p>
             <a href="/case-studies/etf-profiler-webapp" class="nav-card-link">View Case Study</a>
@@ -531,7 +541,7 @@ Python, LangGraph, LangSmith, GPT-4o, Claude Sonnet, Tavily API, TrustCall</p>
           <div class="navigation-card">
             <div class="nav-card-category">Intelligent Growth Systems</div>
             <h4 class="nav-card-title">
-              <a href="/case-studies/growth-system-saas">Complete Growth System for SaaS Startup - Swiss Market Entry Case Study</a>
+              <a href="/case-studies/growth-system-saas">SaaS Growth System - Swiss Market Entry Case Study</a>
             </h4>
             <p class="nav-card-description">SaaS startup growth system case study: 16-week structured strategy for Swiss market entry, systematic lead generation...</p>
             <a href="/case-studies/growth-system-saas" class="nav-card-link">View Case Study</a>
@@ -540,7 +550,7 @@ Python, LangGraph, LangSmith, GPT-4o, Claude Sonnet, Tavily API, TrustCall</p>
           <div class="navigation-card">
             <div class="nav-card-category">Intelligent Growth Systems</div>
             <h4 class="nav-card-title">
-              <a href="/case-studies/quitematch-conversion">QuiteMatch AI Recruitment Platform - 40% Conversion Improvement Case Study</a>
+              <a href="/case-studies/quitematch-conversion">QuiteMatch AI Platform - 40% Conversion Improvement Case Study</a>
             </h4>
             <p class="nav-card-description">QuiteMatch AI recruitment platform case study: 40% conversion improvement, automated hiring workflows, and intelligen...</p>
             <a href="/case-studies/quitematch-conversion" class="nav-card-link">View Case Study</a>

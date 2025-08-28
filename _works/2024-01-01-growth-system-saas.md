@@ -1,5 +1,5 @@
 ---
-title: "Complete Growth System for SaaS Startup - Swiss Market Entry Case Study"
+title: "SaaS Growth System - Swiss Market Entry Case Study"
 subtitle: Structured 16-week growth strategy for Swiss market entry with systematic lead generation and positioning
 description: "SaaS startup growth system case study: 16-week structured strategy for Swiss market entry, systematic lead generation, and market positioning. Complete growth infrastructure for Swiss software company."
 keywords: "SaaS startup growth, Swiss market entry, systematic lead generation, growth infrastructure, market positioning, startup growth strategy, Swiss software company"

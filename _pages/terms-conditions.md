@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Terms and Conditions"
+title: "Terms and Conditions - Smart Data Way GmbH Legal Terms & Service Agreement"
 description: "Terms and Conditions for Smart Data Way GmbH - Legal terms governing the use of our AI development services and website."
 permalink: /terms-conditions/
 ---

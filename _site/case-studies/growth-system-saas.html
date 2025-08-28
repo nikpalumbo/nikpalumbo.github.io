@@ -6,6 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
+  <!-- Force HTTPS redirect -->
+  <script>
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+      location.replace('https:' + window.location.href.substring(window.location.protocol.length));
+    }
+    if (location.hostname === 'www.sdw.solutions') {
+      location.replace('https://sdw.solutions' + location.pathname + location.search);
+    }
+  </script>
+  
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -13,7 +23,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>Complete Growth System for SaaS Startup - Swiss Market Entry Case Study</title>
+  <title>SaaS Growth System - Swiss Market Entry Case Study</title>
   <meta name='description' content='SaaS startup growth system case study: 16-week structured strategy for Swiss market entry, systematic lead generation, and market positioning. Complete growt...'>
   
   <!-- SEO Meta Tags -->
@@ -34,12 +44,12 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Complete Growth System for SaaS Startup - Swiss Market Entry Case Study – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
+  <meta name="twitter:title" content="SaaS Growth System - Swiss Market Entry Case Study – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
   <meta name="twitter:description" content="SaaS startup growth system case study: 16-week structured strategy for Swiss market entry, systematic lead generation, and market positioning. Complete growth infrastructure for Swiss software company.">
   <meta name="twitter:image:src" content="">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="Complete Growth System for SaaS Startup - Swiss Market Entry Case Study – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
+  <meta property="og:title" content="SaaS Growth System - Swiss Market Entry Case Study – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
   <meta property="og:description" content="SaaS startup growth system case study: 16-week structured strategy for Swiss market entry, systematic lead generation, and market positioning. Complete growth infrastructure for Swiss software company.">
   <meta property="og:image" content="">
 
@@ -153,7 +163,7 @@
   
   gtag('event', 'page_view', {
     'page_type': 'work',
-    'page_title': 'Complete Growth System for SaaS Startup - Swiss Market Entry Case Study',
+    'page_title': 'SaaS Growth System - Swiss Market Entry Case Study',
     'page_location': 'http://0.0.0.0:4000/case-studies/growth-system-saas'
   });
   
@@ -161,7 +171,7 @@
   // Track case study views
   
   gtag('event', 'case_study_view', {
-    'case_study_name': 'Complete Growth System for SaaS Startup - Swiss Market Entry Case Study',
+    'case_study_name': 'SaaS Growth System - Swiss Market Entry Case Study',
     'case_study_category': 'Intelligent Growth Systems',
     'client': 'Swiss Software Company'
   });
@@ -311,7 +321,7 @@
           
           <div class="case-study-badge">Intelligent Growth Systems</div>
           
-          <h1 class="case-studies-title">Complete Growth System for SaaS Startup - Swiss Market Entry Case Study</h1>
+          <h1 class="case-studies-title">SaaS Growth System - Swiss Market Entry Case Study</h1>
           
           <p class="case-studies-description">Structured 16-week growth strategy for Swiss market entry with systematic lead generation and positioning</p>
           
@@ -334,7 +344,7 @@
             Intelligent Growth Systems
           </div>
           
-          <h3 class="case-study-card__title">Complete Growth System for SaaS Startup - Swiss Market Entry Case Study</h3>
+          <h3 class="case-study-card__title">SaaS Growth System - Swiss Market Entry Case Study</h3>
           
           <p class="case-study-card__description">SaaS startup growth system case study: 16-week structured strategy for Swiss market entry, systematic lead generation, and market positioning. Complete growth infrastructure for Swiss software company.</p>
           
@@ -572,7 +582,7 @@ Systems designed to grow from startup to enterprise, with clear handoff processe
           <div class="navigation-card">
             <div class="nav-card-category">AI Agent Development</div>
             <h4 class="nav-card-title">
-              <a href="/case-studies/etf-profiler-webapp">ETFProfiler AI Investment Analysis Agent - Smart ETF Matching Case Study</a>
+              <a href="/case-studies/etf-profiler-webapp">ETFProfiler AI Agent - Smart ETF Matching Case Study</a>
             </h4>
             <p class="nav-card-description">ETFProfiler AI agent case study: LangGraph-powered investment analysis system with semantic retrieval and GPT-4 match...</p>
             <a href="/case-studies/etf-profiler-webapp" class="nav-card-link">View Case Study</a>
@@ -581,7 +591,7 @@ Systems designed to grow from startup to enterprise, with clear handoff processe
           <div class="navigation-card">
             <div class="nav-card-category">Intelligent Growth Systems</div>
             <h4 class="nav-card-title">
-              <a href="/case-studies/quitematch-conversion">QuiteMatch AI Recruitment Platform - 40% Conversion Improvement Case Study</a>
+              <a href="/case-studies/quitematch-conversion">QuiteMatch AI Platform - 40% Conversion Improvement Case Study</a>
             </h4>
             <p class="nav-card-description">QuiteMatch AI recruitment platform case study: 40% conversion improvement, automated hiring workflows, and intelligen...</p>
             <a href="/case-studies/quitematch-conversion" class="nav-card-link">View Case Study</a>
@@ -622,7 +632,7 @@ Systems designed to grow from startup to enterprise, with clear handoff processe
                      title="Share on LinkedIn">
                     <i class="fab fa-linkedin"></i>
                   </a>
-                  <a href="https://twitter.com/intent/tweet?text=Complete+Growth+System+for+SaaS+Startup+-+Swiss+Market+Entry+Case+Study&url=http://0.0.0.0:4000/case-studies/growth-system-saas" 
+                  <a href="https://twitter.com/intent/tweet?text=SaaS+Growth+System+-+Swiss+Market+Entry+Case+Study&url=http://0.0.0.0:4000/case-studies/growth-system-saas" 
                      target="_blank" 
                      rel="nofollow noopener"
                      class="footer__social-btn footer__social-btn--twitter"
@@ -636,7 +646,7 @@ Systems designed to grow from startup to enterprise, with clear handoff processe
                      title="Share on Facebook">
                     <i class="fab fa-facebook"></i>
                   </a>
-                  <a href="https://wa.me/?text=Complete+Growth+System+for+SaaS+Startup+-+Swiss+Market+Entry+Case+Study%20http://0.0.0.0:4000/case-studies/growth-system-saas" 
+                  <a href="https://wa.me/?text=SaaS+Growth+System+-+Swiss+Market+Entry+Case+Study%20http://0.0.0.0:4000/case-studies/growth-system-saas" 
                      target="_blank" 
                      rel="nofollow noopener"
                      class="footer__social-btn footer__social-btn--whatsapp"

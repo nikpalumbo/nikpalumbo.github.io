@@ -6,6 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
+  <!-- Force HTTPS redirect -->
+  <script>
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+      location.replace('https:' + window.location.href.substring(window.location.protocol.length));
+    }
+    if (location.hostname === 'www.sdw.solutions') {
+      location.replace('https://sdw.solutions' + location.pathname + location.search);
+    }
+  </script>
+  
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -13,7 +23,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>AI Growth Systems and AI Agent Development Pricing - Transparent Rates for Startups, SMEs and Enterprises</title>
+  <title>AI Growth Systems & AI Agent Development Pricing - Transparent Rates</title>
   <meta name='description' content='Get transparent pricing for AI growth systems, AI agent development, and smart conversion websites. Tailored solutions for startups, SMEs, and enterprises wi...'>
   
   <!-- SEO Meta Tags -->
@@ -34,12 +44,12 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Growth Systems and AI Agent Development Pricing - Transparent Rates for Startups, SMEs and Enterprises – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
+  <meta name="twitter:title" content="AI Growth Systems & AI Agent Development Pricing - Transparent Rates – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
   <meta name="twitter:description" content="Get transparent pricing for AI growth systems, AI agent development, and smart conversion websites. Tailored solutions for startups, SMEs, and enterprises with proven results.">
   <meta name="twitter:image:src" content="">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="AI Growth Systems and AI Agent Development Pricing - Transparent Rates for Startups, SMEs and Enterprises – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
+  <meta property="og:title" content="AI Growth Systems & AI Agent Development Pricing - Transparent Rates – Nicola Palumbo - AI Agent Development & Intelligent Growth Systems">
   <meta property="og:description" content="Get transparent pricing for AI growth systems, AI agent development, and smart conversion websites. Tailored solutions for startups, SMEs, and enterprises with proven results.">
   <meta property="og:image" content="">
 
@@ -153,7 +163,7 @@
   
   gtag('event', 'page_view', {
     'page_type': 'default',
-    'page_title': 'AI Growth Systems and AI Agent Development Pricing - Transparent Rates for Startups, SMEs and Enterprises',
+    'page_title': 'AI Growth Systems & AI Agent Development Pricing - Transparent Rates',
     'page_location': 'http://0.0.0.0:4000/pricing/'
   });
   
@@ -945,7 +955,7 @@
                      title="Share on LinkedIn">
                     <i class="fab fa-linkedin"></i>
                   </a>
-                  <a href="https://twitter.com/intent/tweet?text=AI+Growth+Systems+and+AI+Agent+Development+Pricing+-+Transparent+Rates+for+Startups%2C+SMEs+and+Enterprises&url=http://0.0.0.0:4000/pricing/" 
+                  <a href="https://twitter.com/intent/tweet?text=AI+Growth+Systems+%26+AI+Agent+Development+Pricing+-+Transparent+Rates&url=http://0.0.0.0:4000/pricing/" 
                      target="_blank" 
                      rel="nofollow noopener"
                      class="footer__social-btn footer__social-btn--twitter"
@@ -959,7 +969,7 @@
                      title="Share on Facebook">
                     <i class="fab fa-facebook"></i>
                   </a>
-                  <a href="https://wa.me/?text=AI+Growth+Systems+and+AI+Agent+Development+Pricing+-+Transparent+Rates+for+Startups%2C+SMEs+and+Enterprises%20http://0.0.0.0:4000/pricing/" 
+                  <a href="https://wa.me/?text=AI+Growth+Systems+%26+AI+Agent+Development+Pricing+-+Transparent+Rates%20http://0.0.0.0:4000/pricing/" 
                      target="_blank" 
                      rel="nofollow noopener"
                      class="footer__social-btn footer__social-btn--whatsapp"

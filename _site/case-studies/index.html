@@ -6,6 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
+  <!-- Force HTTPS redirect -->
+  <script>
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+      location.replace('https:' + window.location.href.substring(window.location.protocol.length));
+    }
+    if (location.hostname === 'www.sdw.solutions') {
+      location.replace('https://sdw.solutions' + location.pathname + location.search);
+    }
+  </script>
+  
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -418,7 +428,7 @@
               <div class="case-study-card__category">Intelligent Growth Systems</div>
               
               <h3 class="case-study-card__title">
-                <a href="/case-studies/quitematch-conversion">QuiteMatch AI Recruitment Platform - 40% Conversion Improvement Case Study</a>
+                <a href="/case-studies/quitematch-conversion">QuiteMatch AI Platform - 40% Conversion Improvement Case Study</a>
               </h3>
             </div>
             
@@ -454,7 +464,7 @@
               <div class="case-study-card__category">Intelligent Growth Systems</div>
               
               <h3 class="case-study-card__title">
-                <a href="/case-studies/growth-system-saas">Complete Growth System for SaaS Startup - Swiss Market Entry Case Study</a>
+                <a href="/case-studies/growth-system-saas">SaaS Growth System - Swiss Market Entry Case Study</a>
               </h3>
             </div>
             
@@ -490,7 +500,7 @@
               <div class="case-study-card__category">AI Agent Development</div>
               
               <h3 class="case-study-card__title">
-                <a href="/case-studies/etf-profiler-webapp">ETFProfiler AI Investment Analysis Agent - Smart ETF Matching Case Study</a>
+                <a href="/case-studies/etf-profiler-webapp">ETFProfiler AI Agent - Smart ETF Matching Case Study</a>
               </h3>
             </div>
             
