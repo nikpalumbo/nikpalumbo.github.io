@@ -129,7 +129,11 @@ You have the following rights regarding your personal data:
 - Performance monitoring and optimization
 
 **9.3 Cookie Management**
-You can manage cookies through your browser settings. Disabling essential cookies may affect website functionality.
+You can manage your cookie preferences at any time:
+
+- **Change Settings**: <button onclick="cookieConsent.showSettings()" style="background: var(--primary-color); color: var(--dark); border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: 600;">Manage Cookie Preferences</button>
+- **Revoke Consent**: <button onclick="cookieConsent.revokeConsent()" style="background: transparent; color: #dc2626; border: 1px solid #dc2626; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: 600;">Revoke All Consent</button>
+- **Browser Settings**: You can also control cookies through your browser settings, though disabling essential cookies may affect website functionality.
 
 ## 10. International Data Transfers
 
