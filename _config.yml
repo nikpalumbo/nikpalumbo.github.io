@@ -26,6 +26,7 @@ sitemap:
   exclude:
     - /_site/
     - /vendor/
+    - /yandex_99626cfbc10e2554.html
   include_priority: true
   include_changefreq: true
   include_lastmod: true
