@@ -61,6 +61,10 @@ defaults:
       type: "works"
     values:
       layout: "work"
+  - scope:
+      path: "yandex_99626cfbc10e2554.html"
+    values:
+      sitemap: false
 
 sass:
   sass_dir: _sass
