@@ -3,6 +3,7 @@ layout: default
 title: "AI Case Studies for Startups, SMEs, and Enterprises"
 description: "Explore how startups, SMEs, and enterprises use AI growth systems, agents, and smart websites to scale faster with measurable results."
 keywords: "AI agent case studies, growth systems results, TrueFit AI, ETFProfiler, QuiteMatch, startup growth, conversion optimization, SaaS results"
+image: '/images/social-case-studies.jpg'
 ---
 
 {% include services-schema.html %}
