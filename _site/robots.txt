@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-
-# Sitemaps
-Sitemap: https://sdw.solutions/sitemap.xml
-Sitemap: https://sdw.solutions/sitemap-extra.xml
