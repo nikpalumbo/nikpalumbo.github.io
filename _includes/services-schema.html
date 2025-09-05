@@ -1,0 +1,85 @@
+<!-- Services Schema Markup for Case Studies/Services Pages -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "{{ page.title | default: 'AI Development Services' }}",
+  "description": "Growth doesn't come from luck. Manual work and disconnected tools slow companies down. The fastest-growing firms put growth on autopilot with intelligent systems.",
+  "url": "{{ site.url }}{{ page.url }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Seestrasse 112",
+    "addressLocality": "Bäch SZ",
+    "postalCode": "8806",
+    "addressCountry": "CH"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Switzerland"
+    },
+    {
+      "@type": "Continent", 
+      "name": "Europe"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Complete AI & Growth Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Agent Development",
+          "description": "Custom AI solutions for internal tasks or customer-facing interactions. Tailored agents built on your data, not generic templates."
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Intelligent Growth Systems",
+          "description": "Full-funnel growth engines from value proposition to lead conversion. Define ideal customers, select channels, craft outreach, and automate CRM workflows."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service", 
+          "name": "Smart Conversion Websites",
+          "description": "High-performance sites designed to convert, not just inform. AI-integrated features like guided onboarding and instant quotes."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Product-Led Growth Prototyping", 
+          "description": "Functional web apps that validate ideas and drive growth through real user interaction. Production-grade MVPs delivered in weeks."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SaaS Growth Consulting",
+          "description": "Strategic consulting for SaaS companies looking to scale from zero to Fortune 500 clients with proven growth methodologies."
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Integration & Automation",
+          "description": "End-to-end AI integration services for enterprises looking to automate processes and implement intelligent systems across departments."
+        }
+      }
+    ]
+  }
+}
+</script>

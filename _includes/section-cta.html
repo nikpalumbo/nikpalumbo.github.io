@@ -1,0 +1,37 @@
+{% if site.data.settings.cta.enable == true %}
+<!-- begin cta -->
+<section class="cta">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="cta__content">
+          <h2 class="cta__title">{{ site.data.settings.cta.cta__title }}</h2>
+          {% if site.data.settings.cta.cta__description %}
+          <p class="cta__description">{{ site.data.settings.cta.cta__description }}</p>
+          {% endif %}
+          
+          {% if site.data.settings.cta.cta__buttons %}
+          <div class="cta__buttons">
+            {% for button in site.data.settings.cta.cta__buttons %}
+            <a href="{{ button.url }}" class="button button--{{ button.style }}">{{ button.text }}</a>
+            {% endfor %}
+          </div>
+          {% endif %}
+          
+          {% if site.data.settings.cta.cta__features %}
+          <div class="cta__features">
+            {% for feature in site.data.settings.cta.cta__features %}
+            <div class="cta__feature">
+              <i class="{{ feature.icon }}"></i>
+              <span>{{ feature.text }}</span>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end cta -->
+{% endif %}

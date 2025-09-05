@@ -1,0 +1,199 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Force HTTPS redirect with proper status -->
+  <script>
+    // Immediate redirect for HTTP to HTTPS
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+      location.replace('https:' + window.location.href.substring(window.location.protocol.length));
+    }
+    // Immediate redirect for www to non-www
+    if (location.hostname === 'www.sdw.solutions') {
+      location.replace('https://sdw.solutions' + location.pathname + location.search);
+    }
+  </script>
+  
+  <!-- Meta redirect for search engines -->
+  {% if site.url contains 'https://' %}
+    {% assign canonical_url = site.url | append: page.url %}
+  {% else %}
+    {% assign canonical_url = 'https://sdw.solutions' | append: page.url %}
+  {% endif %}
+  
+  <!-- HTTP to HTTPS meta redirect -->
+  <script>
+    if (location.protocol === 'http:' && location.hostname === 'sdw.solutions') {
+      document.write('<meta http-equiv="refresh" content="0; url=' + location.href.replace('http:', 'https:') + '">');
+    }
+  </script>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://sdw.solutions/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://sdw.solutions/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://sdw.solutions/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://sdw.solutions/apple-touch-icon.png">
+  <link rel="manifest" href="https://sdw.solutions/site.webmanifest">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.data.settings.title }}{% endif %}</title>
+  <meta name='description' content='{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.settings.description }}{% endif %}'>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}AI agent development, intelligent growth systems, smart conversion websites, SaaS growth consultant, AI automation, startup growth, SME automation, enterprise AI, Swiss AI developer, conversion optimization{% endif %}">
+  <meta name="author" content="Nicola Palumbo">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="en">
+  <meta name="revisit-after" content="7 days">
+  
+  <!-- Geographic SEO -->
+  <meta name="geo.region" content="CH-SZ">
+  <meta name="geo.placename" content="Freienbach, Switzerland">
+  <meta name="geo.position" content="47.2043;8.7584">
+  <meta name="ICBM" content="47.2043, 8.7584">
+
+    <link rel="canonical" href="{{ canonical_url | replace:'index.html','' }}">
+
+  {% include social-meta-tags.html %}
+
+  <!-- Facebook Domain Verification -->
+  <meta name="facebook-domain-verification" content="eqo7538c9yfwwyoxkyuubc0fmgb0ff" />
+
+  <!-- Twitter conversion tracking base code -->
+  <script>
+  !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+  },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+  a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+  twq('config','qfk70');
+  </script>
+  <!-- End Twitter conversion tracking base code -->
+
+  <!-- Additional SEO signals for HTTPS preference -->
+  <meta name="robots" content="index, follow">
+  <link rel="alternate" href="{{ canonical_url | replace:'index.html','' }}" hreflang="en">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.data.settings.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+
+
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap" as="style">
+
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Ionicons -->
+  <link rel="preload" href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" as="style">
+
+  <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <script>
+    {% if site.data.settings.color_scheme == "auto" %}
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.setAttribute("dark", "");
+      document.documentElement.classList.add('dark-mode');
+    }
+    {% elsif site.data.settings.color_scheme == "light" %}
+      document.documentElement.setAttribute("light", "");
+      document.documentElement.classList.add('light-mode');
+    {% elsif site.data.settings.color_scheme == "dark" %}
+      document.documentElement.setAttribute("dark", "");
+      document.documentElement.classList.add('dark-mode');
+    {% else %}
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.setAttribute("dark", "");
+      document.documentElement.classList.add('dark-mode');
+    }
+    {% endif %}
+  </script>
+
+  <style>
+  {% capture include_to_scssify %}
+    {% include main.scss %}
+  {% endcapture %}
+  {{ include_to_scssify | scssify }}
+  </style>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Smart Data Way GmbH",
+    "alternateName": "SDW Solutions",
+    "url": "{{ site.url }}",
+    "logo": "{{ site.url }}/images/sdw.svg",
+    "description": "Helping companies design products that delight users and accelerate growth",
+    "founder": {
+      "@type": "Person",
+      "name": "Nicola Palumbo",
+      "jobTitle": "AI Product Manager & Growth Strategist",
+      "url": "{{ site.url }}/about/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Seestrasse 112",
+      "addressLocality": "Freienbach",
+      "postalCode": "8806",
+      "addressCountry": "CH"
+    },
+    "areaServed": ["Switzerland", "Europe", "Global"],
+    "sameAs": [
+      "https://github.com/nikpalumbo",
+      "https://linkedin.com/in/nicolapalumbo"
+    ]
+  }
+  </script>
+
+  {% if page.url == "/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "{{ site.data.settings.title }}",
+    "description": "{{ site.data.settings.description }}",
+    "url": "{{ site.url }}",
+    "image": "{{ site.url }}/images/sdw.svg",
+    "serviceArea": {
+      "@type": "Country",
+      "name": "Switzerland"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI & Growth Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI Agent Development",
+            "description": "Custom AI agents for automation and intelligent workflows"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Intelligent Growth Systems",
+            "description": "Scalable systems for lead generation and business growth"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Smart Conversion Websites",
+            "description": "High-converting websites optimized for growth"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+  {% endif %}
+</head>

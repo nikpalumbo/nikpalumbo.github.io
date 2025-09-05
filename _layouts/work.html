@@ -1,0 +1,153 @@
+---
+layout: default
+---
+
+<!-- Case Study Header -->
+<div class="case-studies-header">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="case-studies-header__content">
+          {% if page.category %}
+          <div class="case-study-badge">{{ page.category }}</div>
+          {% endif %}
+          <h1 class="case-studies-title">{{ page.title }}</h1>
+          {% if page.subtitle %}
+          <p class="case-studies-description">{{ page.subtitle }}</p>
+          {% elsif page.description %}
+          <p class="case-studies-description">{{ page.description }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Case Study Visual Info -->
+<div class="case-study-visual-info">
+  <div class="container">
+    <div class="case-study-info-grid">
+      <!-- Left Side - Main Content Card -->
+      <div class="case-study-info-left">
+        <div class="case-study-card">
+          {% if page.category %}
+          <div class="case-study-card__badge">
+            <i class="ion ion-md-rocket"></i>
+            {{ page.category }}
+          </div>
+          {% endif %}
+          <div class="case-study-card__title">{{ page.title }}</div>
+          {% if page.description %}
+          <p class="case-study-card__description">{{ page.description }}</p>
+          {% endif %}
+        </div>
+      </div>
+      
+      <!-- Right Side - Meta Info Stats -->
+      <div class="case-study-info-right">
+        <div class="case-study-stats">
+          {% if page.role %}
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="ion ion-md-person"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-label">Role</div>
+              <div class="stat-value">{{ page.role }}</div>
+            </div>
+          </div>
+          {% endif %}
+          {% if page.date %}
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="ion ion-md-calendar"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-label">Year</div>
+              <div class="stat-value">{{ page.date | date: "%Y" }}</div>
+            </div>
+          </div>
+          {% endif %}
+          {% if page.client %}
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="ion ion-md-briefcase"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-label">Project</div>
+              <div class="stat-value">{{ page.client }}</div>
+            </div>
+          </div>
+          {% endif %}
+          {% if page.duration %}
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="ion ion-md-time"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-label">Duration</div>
+              <div class="stat-value">{{ page.duration }}</div>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Case Study Content -->
+<div class="case-study-content">
+  <div class="container">
+    <div class="case-study-body">
+      {{ content }}
+    </div>
+  </div>
+</div>
+
+<!-- CTA Section -->
+<section class="case-study-cta">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="case-study-cta__content">
+          <h2 class="case-study-cta__title">Ready to achieve similar results for your project?</h2>
+          <p class="hero__cta-intro">Hello. Are you looking for ways to accelerate growth?</p>
+          <div class="hero__buttons">
+            {% include google-calendar-button.html %}
+            <a href="mailto:nicola@sdw.solutions" target="_blank" class="button button--primary" onclick="trackCTA('Email me to Start', 'Case Study CTA')">Email me to Start</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Navigation -->
+<section class="case-study-navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="navigation-header">
+          <h3>More Case Studies</h3>
+        </div>
+        
+        <div class="navigation-grid">
+          {% assign current_url = page.url %}
+          {% assign related_works = site.works | where_exp: "item", "item.url != current_url" | limit: 3 %}
+          
+          {% for work in related_works %}
+          <div class="navigation-card">
+            <div class="nav-card-category">{{ work.category }}</div>
+            <h4 class="nav-card-title">
+              <a href="{{ work.url }}">{{ work.title }}</a>
+            </h4>
+            <p class="nav-card-description">{{ work.description | truncate: 120 }}</p>
+            <a href="{{ work.url }}" class="nav-card-link">View Case Study</a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,68 @@
+/* Buttons */
+.button {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 60px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all .2s;
+  will-change: transform;
+  color: var(--dark);
+  background-color: var(--primary-color);
+
+  &:hover {
+    color: var(--white);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  i {
+    margin-left: 4px;
+    font-size: 16px;
+  }
+
+  &--primary {
+    padding: 20px 32px;
+    color: var(--white);
+    background-color: var(--button-background-color);
+
+    &:hover {
+      background: var(--button-background-hover);
+    }
+  }
+
+  &--small {
+    padding: 20px 24px;
+  }
+
+  &--big {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Book Call Button - Consistent Black Styling */
+.book-call-btn {
+  background: #1f2937 !important;
+  color: white !important;
+  padding: 16px 32px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  transition: all 0.2s ease !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  border: none !important;
+  
+  &:hover {
+    background: #111827 !important;
+    color: white !important;
+    transform: translateY(-1px) !important;
+  }
+}

@@ -1,0 +1,26 @@
+{% if site.data.settings.stats.enable == true %}
+<!-- begin stats -->
+<section class="section stats animate">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+
+        <div class="section__info">
+          <h2 class="section__small__title">{{ site.data.settings.stats.stats__title }}</h2>
+        </div>
+
+        <div class="stats__grid">
+          {% for stat in site.data.settings.stats__items %}
+          <div class="stats__item">
+            <div class="stats__number">{{ stat.number }}</div>
+            <div class="stats__label">{{ stat.label }}</div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end stats -->
+{% endif %}

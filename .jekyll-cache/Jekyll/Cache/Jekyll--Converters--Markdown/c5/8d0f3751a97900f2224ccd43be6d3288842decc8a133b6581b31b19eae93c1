@@ -1,0 +1,77 @@
+I"f<h2 id="challenge">Challenge</h2>
+
+<p>Job seekers struggle with creating personalized cover letters that effectively match their background to specific company values and job requirements, often resulting in generic applications that fail to stand out.</p>
+
+<p><strong>Key Issues:</strong></p>
+<ul>
+  <li>Generic cover letters that don’t reflect company research</li>
+  <li>Time-consuming manual customization for each application</li>
+  <li>Difficulty aligning personal values with company mission</li>
+  <li>No systematic way to improve and iterate on applications</li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<p>I built TrueFit, an intelligent LangGraph-based AI agent that combines long-term memory, company research, and dual LLM systems to generate and review personalized cover letters with contextual precision.</p>
+
+<p><strong>Core AI Capabilities:</strong></p>
+<ul>
+  <li><strong>🧠 Long-term Memory:</strong> Stores user values, interests, and resume data using TrustCall</li>
+  <li><strong>🏢 Company Intelligence:</strong> Automated extraction of company mission, values, and job details</li>
+  <li><strong>🔎 Tavily-powered RAG:</strong> Dynamic web search to enrich missing company context</li>
+  <li><strong>✍️ Contextual Generation:</strong> Merges personal profile with company data for tailored letters</li>
+  <li><strong>🔄 Dual LLM Review:</strong> GPT-4o for generation, Claude Sonnet for scoring and feedback</li>
+  <li><strong>🛠️ LangGraph Architecture:</strong> Composable workflow with full traceability and debugging</li>
+</ul>
+
+<p><strong>Technical Implementation:</strong>
+Python, LangGraph, LangSmith, GPT-4o, Claude Sonnet, Tavily API, TrustCall</p>
+
+<h2 id="results">Results</h2>
+
+<div class="results-grid">
+  <div class="result-card">
+    <div class="result-number">90%</div>
+    <div class="result-label">Contextual Accuracy Score</div>
+  </div>
+  <div class="result-card">
+    <div class="result-number">75%</div>
+    <div class="result-label">Time Reduction vs Manual</div>
+  </div>
+  <div class="result-card">
+    <div class="result-number">100%</div>
+    <div class="result-label">Open Source Transparency</div>
+  </div>
+</div>
+
+<p><strong>Additional Impact:</strong></p>
+<ul>
+  <li>Persistent memory system remembers user preferences across sessions</li>
+  <li>Automated company research reduces manual preparation time</li>
+  <li>Dual LLM system provides both generation and critical review</li>
+  <li>Full LangGraph traceability enables debugging and optimization</li>
+</ul>
+
+<h2 id="live-demo--architecture">Live Demo &amp; Architecture</h2>
+
+<p><strong>🎥 Video Demonstration:</strong>
+<a href="https://youtu.be/7kv31ifuI_8">Watch TrueFit AI Agent Demo →</a></p>
+
+<p><strong>🔧 Technical Architecture:</strong></p>
+<ul>
+  <li><strong>Memory Layer:</strong> TrustCall for persistent user profile storage</li>
+  <li><strong>Research Layer:</strong> Tavily API integration for real-time company data</li>
+  <li><strong>Generation Layer:</strong> GPT-4o for contextual cover letter creation</li>
+  <li><strong>Review Layer:</strong> Claude Sonnet for scoring and improvement suggestions</li>
+  <li><strong>Orchestration:</strong> LangGraph for workflow management and debugging</li>
+</ul>
+
+<p><strong>🚀 Open Source Repository:</strong>
+<a href="https://github.com/nikpalumbo/truefit">View TrueFit Source Code →</a></p>
+
+<p>Complete codebase with setup instructions, API documentation, and LangGraph visualization tools.</p>
+
+<hr />
+
+<p><em>This AI agent showcases how advanced memory systems and multi-LLM architectures can create truly personalized career assistance tools that adapt and improve over time.</em></p>
+:ET

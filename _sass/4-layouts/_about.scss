@@ -1,0 +1,366 @@
+/* About Page */
+
+/* Case Studies Header - Reused from works.scss */
+.case-studies-header {
+  background: linear-gradient(135deg, #f8f9ff 0%, #f1f5f9 100%);
+  padding: 100px 0 60px;
+  text-align: center;
+  /* Removed border-bottom: 1px solid #e2e8f0; */
+
+  @media (max-width: 768px) {
+    padding: 80px 0 50px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 60px 0 40px;
+  }
+}
+
+.case-studies-header__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.case-studies-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 16px;
+  line-height: 1.1;
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+}
+
+.case-studies-description {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0 0 40px 0;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 16px;
+  line-height: 1.2;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 24px;
+  }
+}
+
+.section-subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+
+  @media (max-width: 576px) {
+    font-size: 16px;
+  }
+}
+
+/* Vision Section */
+.vision-section {
+  padding: 80px 0;
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 60px;
+  align-items: stretch;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.vision-left {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Service Card Styles for Vision Section */
+.service-card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color) 0%, #e6b800 100%);
+  }
+
+  @media (max-width: 768px) {
+    padding: 32px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 24px;
+  }
+}
+
+.service-card__icon {
+  margin-bottom: 20px;
+}
+
+.service-card__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+
+  .highlight {
+    color: var(--primary-color);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+.service-card__description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4b5563;
+  margin: 0 0 24px 0;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+}
+
+
+
+.section-badge {
+  background: var(--primary-color);
+  color: #1f2937;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.vision-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.benefit-item {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #d1d5db;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+}
+
+.benefit-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.benefit-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0;
+}
+
+.vision-photo {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  height: 100%;
+
+  img {
+    width: 400px;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(255, 193, 7, 0.3), 0 10px 20px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 968px) {
+      width: 350px;
+    }
+
+    @media (max-width: 576px) {
+      width: 300px;
+    }
+  }
+}
+
+/* Story Section - Same layout as Vision */
+.story-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 60px;
+  align-items: stretch;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.story-right {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.story-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  flex: 1;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  @media (max-width: 968px) {
+    padding: 16px 20px;
+  }
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 4px;
+  line-height: 1;
+
+  @media (max-width: 968px) {
+    font-size: 28px;
+  }
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+  line-height: 1.2;
+
+  @media (max-width: 968px) {
+    font-size: 13px;
+  }
+}
+
+/* Values & Philosophy Section */
+.values-section {
+  padding: 80px 0;
+  background: white;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: stretch;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.values-left,
+.values-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* CTA Section - REMOVED - Now using centralized cta-band component */

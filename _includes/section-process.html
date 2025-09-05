@@ -1,0 +1,77 @@
+{% if site.data.settings.process.enable == true %}
+<!-- begin process -->
+<section class="section process animate">
+  <div class="container">
+    
+    <!-- Process Header -->
+    <div class="row">
+      <div class="col col-12">
+        <div class="process__header">
+          <div class="process__badge">{{ site.data.settings.process.process__subtitle }}</div>
+          <h2 class="process__title">{{ site.data.settings.process.process__title }}</h2>
+          <p class="process__description">{{ site.data.settings.process.process__description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Approach Section -->
+    <div class="row">
+      <div class="col col-12">
+        <div class="process__approach">
+          <div class="approach__content">
+            <h3 class="approach__title">{{ site.data.settings.process.process__approach.title }}</h3>
+            <p class="approach__description">{{ site.data.settings.process.process__approach.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Methodology Steps -->
+    <div class="process__methodology">
+      <h3 class="methodology__title">From there, I move fast:</h3>
+      <div class="methodology__steps">
+        {% for step in site.data.settings.process.process__methodology %}
+        <div class="methodology__step">
+          <div class="step__header">
+            <div class="step__number">{{ step.step }}</div>
+            <div class="step__icon">
+              <i class="{{ step.icon }}"></i>
+            </div>
+          </div>
+          <div class="step__title">{{ step.title }}</div>
+          <p class="step__description">{{ step.description }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Value Propositions -->
+    <div class="row">
+      <div class="col col-12">
+        <div class="process__values">
+          <h3 class="values__title">Whether you're looking to experiment fast or build something production-ready, I bring:</h3>
+          <div class="values__grid">
+            {% for value in site.data.settings.process.process__value_props %}
+            <div class="value__item">
+              <div class="value__title">{{ value.title }}</div>
+              <p class="value__description">{{ value.description }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Promise Statement -->
+    <div class="row">
+      <div class="col col-12">
+        <div class="process__promise">
+          <p>{{ site.data.settings.process.process__promise }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- end process -->
+{% endif %}

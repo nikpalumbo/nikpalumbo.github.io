@@ -1,0 +1,63 @@
+name: Deploy API to Vercel
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'api/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'api/**'
+
+jobs:
+  # Deploy API to Vercel
+  deploy-api:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install Vercel CLI
+      run: npm install --global vercel@latest
+      
+    - name: Check Vercel Token
+      run: |
+        if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
+          echo "❌ VERCEL_TOKEN secret is not set!"
+          echo "Please add VERCEL_TOKEN to your GitHub repository secrets."
+          echo "You can get this token from: https://vercel.com/account/tokens"
+          exit 1
+        else
+          echo "✅ VERCEL_TOKEN is set"
+          echo "Token starts with: ${VERCEL_TOKEN:0:10}..."
+        fi
+        
+    - name: Validate Vercel Token
+      env:
+        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      run: |
+        echo "🔍 Validating Vercel token..."
+        response=$(curl -s -H "Authorization: Bearer $VERCEL_TOKEN" https://api.vercel.com/v9/user)
+        if [[ $response == *"id"* ]]; then
+          echo "✅ Token is valid!"
+        else
+          echo "❌ Token is invalid!"
+          echo "Response: $response"
+          exit 1
+        fi
+        
+    - name: Deploy to Vercel
+      env:
+        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+        VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      run: |
+        echo "🚀 Deploying to Vercel..."
+        vercel --prod --token $VERCEL_TOKEN --yes

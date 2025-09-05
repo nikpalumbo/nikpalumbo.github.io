@@ -1,0 +1,271 @@
+/* Hero - QuiteMatch Style */
+.hero {
+  padding: 60px 0 60px 0;
+  background: transparent;
+  text-align: center;
+  position: relative;
+  
+  /* Removed the ::after pseudo-element that was creating the yellow separator line */
+}
+
+.hero__content {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.hero__badge {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.05);
+  color: #1f2937;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.hero__avatar {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  will-change: transform;
+  user-select: none;
+  background-color: var(--background-alt-color);
+
+  @media (max-width: $wide) {
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: $desktop) {
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: $mobile) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.hero__title {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #1f2937;
+  white-space: pre-line; /* This will make <br> tags work */
+
+  .highlight {
+    color: var(--primary-color);
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 48px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 28px;
+  }
+}
+
+.hero__description {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #6b7280;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+}
+
+.hero__cta-intro {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6b7280;
+  margin-bottom: 4px;
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+}
+
+.hero__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 0;
+
+  .button {
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .button--primary {
+    background: var(--primary-color);
+    color: #1f2937;
+
+    &:hover {
+      background: #e6b800;
+      color: #1f2937;
+      transform: translateY(-1px);
+    }
+  }
+
+  .button--secondary {
+    background: #1f2937;
+    color: white;
+
+    &:hover {
+      background: #111827;
+      color: white;
+      transform: translateY(-1px);
+    }
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+
+
+/* Homepage CTA Section - REMOVED - Now using centralized cta-band component */
+
+.hero__right {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-top: 32px;
+    margin-left: -32px;
+    border-radius: $global-radius;
+    background-color: var(--primary-color);
+    opacity: .3;
+    filter: blur(20px);
+  }
+
+  @media (max-width: $desktop) {
+    order: -1;
+    max-width: 100%;
+    margin-top: 40px;
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.hero__image {
+  position: relative;
+  transform: translate(0);
+  width: 100%;
+  aspect-ratio: 1/1.2;
+  border-radius: $global-radius;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  background-color: var(--background-alt-color);
+  user-select: none;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @supports not (aspect-ratio: 1/1.2) {
+    padding-bottom: 120%;
+  }
+
+  @media (max-width: $desktop) {
+    aspect-ratio: 1/1;
+
+    @supports not (aspect-ratio: 1/1) {
+      padding-bottom: 100%;
+    }
+  }
+}
+
+/* Stats Section - Better Visual Separation */
+.section.stats {
+  padding: 40px 0 0 0;
+  margin-top: -40px;
+  /* Removed border-top and ::before pseudo-element that was creating unwanted divider */
+  position: relative;
+}
+
+/* Light Hero Variant */
+.hero.hero--light {
+  padding: 100px 0 60px 0 !important;
+  background: linear-gradient(135deg, #f8f9ff 0%, #f1f5f9 100%);
+  text-align: center;
+  
+  &::after {
+    display: none;
+  }
+
+  .hero__title {
+    font-size: 48px;
+    margin-bottom: 16px; /* Match about and case studies pages */
+    
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+    
+    @media (max-width: 576px) {
+      font-size: 28px;
+    }
+  }
+}
+
+/* Hero Subtitle */
+.hero__subtitle {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0 0 40px 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+}
+
+/* Hero Container */
+.hero .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}

@@ -1,0 +1,291 @@
+#-------------------------------
+# Site Settings
+title: Nicola Palumbo - AI Agent Development & Intelligent Growth Systems
+logo: '/images/sdw.png'
+description: Expert AI agent development, intelligent growth systems, and smart conversion websites for startups, SMEs, and enterprises. Swiss-based SaaS founder with Fortune 500 experience delivering 24/7 automated solutions.
+color_scheme: light # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
+
+
+#-------------------------------
+# Navigation Settings
+menu__settings:
+  menu__items:
+    - title: 'Home'
+      url: '/'
+    - title: 'Services'
+      url: '/#services'
+    - title: 'Who I Serve'
+      url: '/#solutions'
+    - title: 'Case Studies'
+      url: '/case-studies/'
+    - title: 'Pricing'
+      url: '/pricing/'
+    - title: 'About'
+      url: '/about/'
+    - title: 'Book a Call'
+      url: '#'
+      button: true
+
+#-------------------------------
+# Author Settings
+author:
+  author__name: Nicola Palumbo
+  author__bio: I know the path from zero to traction because I've walked it. As a SaaS founder who scaled to Fortune 500 clients with 4× YoY growth, I help companies design products that delight users and accelerate growth.
+  author__avatar: '/images/01.jpg'
+
+social:
+- {icon: "ion-logo-linkedin", name: "LinkedIn", link: "https://linkedin.com/company/sdw-ai-solutions"}
+- {icon: "ion-logo-twitter", name: "Twitter", link: "https://x.com/sdwsolutionsch"}
+- {icon: "ion-logo-facebook", name: "Facebook", link: "https://www.facebook.com/sdwsolutionsch"}
+
+# Example of adding a new link to the footer - {icon: "ion-logo-dribbble", link: "https://dribbble.com"}
+# Other icons can be found at https://ionicons.com/v4/
+
+
+#-------------------------------
+# Hero Settings
+hero:
+  enable: true
+  hero__badge: Growth Systems & AI Development
+  hero__title: Where&nbsp;Growth&nbsp;Strategy<br> Meets <span class="highlight">Technology</span><br> Precisely
+  hero__description: "Growth doesn't come from luck. Manual work and disconnected tools slow companies down. The fastest-growing firms put growth on autopilot with intelligent systems."
+  hero__image: "/images/01-1.jpg"
+
+
+#-------------------------------
+# Stats Settings
+stats:
+  enable: true
+  stats__title: Track record that speaks for itself
+
+stats__items:
+  - number: "50+"
+    label: "Projects Delivered"
+
+  - number: "3-6x"
+    label: "YoY Growth Systems Create"
+
+  - number: "500+"
+    label: "Customers Served"
+
+#-------------------------------
+# Newsletter
+mailchimp:
+  enable: true
+  mailchimp__identifier: frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3 # Add your MailChimp form identifier. For example - frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3
+  mailchimp__input__text: Your email address...
+  mailchimp__button__text: Subscribe
+
+
+#-------------------------------
+# Services Settings
+services:
+  enable: true
+  services__title: "Today's Growth Companies Use Technology to Execute Growth Strategy Precisely"
+  services__description: "Top-performing companies are scaling 3× faster by automating their growth engines with"
+  
+service__items:
+  - title: "Intelligent Growth Systems"
+    icon: "ion ion-md-trending-up"
+    description: "Full-funnel growth engines from value proposition to lead conversion. Define ideal customers, select channels, craft outreach, and automate CRM workflows."
+    outcomes:
+      - "Clear positioning and messaging that resonates with your market"
+      - "Consistent flow of qualified leads from multiple channels" 
+      - "Reduced manual effort in outreach and follow-up"
+      - "CRM workflows that scale with your business"
+    
+  - title: "AI Agent Development"
+    icon: "ion ion-md-cog"
+    description: "Custom AI solutions for internal tasks or customer-facing interactions. Tailored agents built on your data, not generic templates."
+    outcomes:
+      - "A faster way to handle repetitive tasks or customer interactions"
+      - "Custom solutions built on your data, not generic templates"
+      - "Clear ROI through automation and time savings"
+      - "Scalable tools that grow with your team and tech stack"
+    
+  - title: "Smart Conversion Websites"
+    icon: "ion ion-md-desktop"
+    description: "High-performance sites designed to convert, not just inform. AI-integrated features like guided onboarding and instant quotes."
+    outcomes:
+      - "Higher engagement and conversion rates from day one"
+      - "Faster load times and mobile optimization for better UX and SEO"
+      - "Seamless integration with your existing systems (CRM, analytics, chat)"
+      - "A flexible platform you can update without relying on developers"
+    
+  - title: "Product-Led Growth Prototyping"
+    icon: "ion ion-md-rocket"
+    description: "Functional web apps that validate ideas and drive growth through real user interaction. Production-grade MVPs delivered in weeks."
+    outcomes:
+      - "Fully functional web apps delivered in weeks, not months"
+      - "Rapid experimentation with real users, not mockups"
+      - "Built-in analytics to measure engagement, retention, and conversion"
+      - "Architecture ready to scale or evolve into full products when validated"
+
+#-------------------------------
+# Work Settings (keeping for portfolio)
+work:
+  enable: true
+  work__title: Case Studies
+  work__description: Real projects. Measurable results. Proven methodologies.
+
+
+#-------------------------------
+# CTA Settings
+cta:
+  enable: true
+  cta__title: "Ready to design products that delight users and accelerate growth?"
+  cta__description: "Hello. Are you looking for ways to accelerate growth?"
+  cta__buttons:
+    - text: "Book a Call"
+      url: "#"
+      style: "primary"
+    - text: "Email me to Start"
+      url: "#"
+      style: "secondary"
+  cta__features:
+    - icon: "ion ion-md-checkmark-circle"
+      text: "Working prototypes in days"
+    - icon: "ion ion-md-rocket"
+      text: "Business value driven"
+    - icon: "ion ion-md-cog"
+      text: "Full-stack execution"
+
+#-------------------------------
+# Process Settings
+process:
+  enable: true
+  process__title: "Fast Starts. Real Outcomes. No Guesswork."
+  process__subtitle: "HOW"
+  process__description: "I work with a lean, agile process that ensures your Growth Strategy meets Technology implementation Precisely, shaped by both startup urgency and enterprise precision."
+  
+  process__approach:
+    title: "Structured Start, Agile Execution"
+    description: "Every engagement begins with a structured scoping session using battle-tested tools from top consulting frameworks so I define the right goals, outcomes, and constraints from day one."
+    
+  process__methodology:
+    - step: "01"
+      title: "Problem / Need Identification"
+      description: "I start with a structured scoping session using proven consulting tools to uncover pain points, align on goals, and define success metrics."
+      icon: "ion ion-md-search"
+      
+    - step: "02"
+      title: "Strategy"
+      description: "I translate these insights into a pragmatic roadmap with clear priorities, measurable outcomes, performance goals and a plan designed for speed without sacrificing quality."
+      icon: "ion ion-md-map"
+      
+    - step: "03"
+      title: "Build"
+      description: "Work is broken into short MVP cycles so I validate quickly. You get working prototypes in days, not months. I manage the full stack from wireframes to code so nothing gets lost in translation."
+      icon: "ion ion-md-construct"
+      
+    - step: "04"
+      title: "Maintain"
+      description: "Launch is just the beginning. I put in place monitoring, analytics, and optimization routines so your systems keep improving over time. This ensures performance stays high, integrations remain reliable, and your solution is always ready to scale as your business grows."
+      icon: "ion ion-md-settings"
+      
+  process__value_props:
+    - title: "Founder's Mindset"
+      description: "Business urgency with strategic thinking"
+      
+    - title: "Product Owner's Discipline"
+      description: "Every decision tied to business value"
+      
+    - title: "Technical Fluency"
+      description: "Nothing gets lost in translation"
+      
+  process__promise: "Every sprint ends with something real. Every decision is tied to business value. You stay focused on results. I handle the build."
+
+
+#-------------------------------
+# Testimonials Section
+testimonials:
+  enable: false
+
+testimonial__title: What Clients Say About Working With Me
+testimonial__description: Real feedback from founders, executives, and teams who've experienced measurable growth through our collaboration.
+
+testimonial__items:
+  - name: "Sarah Chen"
+    image: "/images/client-1.jpg"
+    designation: "Founder, HealthTech Startup"
+    link: "#"
+    content : "Nicola's growth system transformed our business. We went from manual outreach to a predictable lead generation engine that runs 24/7. Our qualified leads increased by 300% in 90 days."
+
+  - name: "Marcus Rodriguez"
+    image: "/images/client-2.jpg"
+    designation: "VP of Growth, RetailCorp"
+    link: "#"
+    content : "The AI customer support agent Nicola built handles 80% of our inquiries automatically. Our response time went from hours to seconds, and customer satisfaction scores increased by 45%."
+
+  - name: "Jennifer Walsh"
+    image: "/images/client-3.jpg"
+    designation: "CEO, CloudTech Solutions"
+    link: "#"
+    content : "Our new landing page increased trial signups by 250%. Nicola didn't just build a website, he created a conversion machine that understands our users and adapts in real-time."
+
+  - name: "David Kim"
+    image: "/images/client-4.jpg"
+    designation: "CTO, FinanceFlow"
+    link: "#"
+    content : "In 8 weeks, we had a fully functional product validation platform with 1000+ active users. The insights we gathered led directly to our $2M seed round. Nicola delivers."
+
+  - name: "Lisa Thompson"
+    image: "/images/client-5.jpg"
+    designation: "Head of Marketing, TechScale"
+    link: "#"
+    content : "Working with Nicola was like having a founder, product owner, and technical lead all in one. Every sprint ended with something real, every decision tied to business value."
+
+  - name: "Alex Foster"
+    image: "/images/client-6.jpg"
+    designation: "VP of Operations, GrowthCorp"
+    link: "#"
+    content : "The intelligent growth system Nicola built reduced our manual work by 85% while scaling our lead generation 4x. Our sales team can finally focus on closing deals instead of chasing prospects."
+
+  - name: "Geoffrey Hinton"
+    image: "/images/client-7.jpg"
+    designation: "AI Pioneer"
+    link: "#"
+    content : "I thought [AI] was 30 to 50 years or even longer away. Obviously, I no longer think that."
+
+  - name: "Vinod Khosla"
+    image: "/images/client-8.jpg"
+    designation: "Venture Capitalist"
+    link: "#"
+    content : "Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration"
+
+  - name: "Shantanu Narayen"
+    image: "/images/client-9.jpg"
+    designation: "CEO of Adobe"
+    link: "#"
+    content : "People who use AI will replace those who don't."
+
+
+#-------------------------------
+# Blog Section
+blog:
+  enable: false
+
+blog__settings:
+  blog__title: Blog
+  blog__description:
+
+
+#-------------------------------
+# Footer Settings
+footer__background__image: "/images/bg.jpg"
+
+#-------------------------------
+# Comment Section (Disqus)
+disqus:
+  enable: true
+  disqus__identifier: anvod-studio-test # Add your shortname for Disqus Comment. For example anvod-studio-test
+
+
+#-------------------------------
+# Google Analytics
+google-analytics: G-SD2QBP5JP5 # Your GA4 Tracking Id
+
+#-------------------------------
+# Google Tag Manager (Optional)
+google-tag-manager: # Add your GTM Container Id (format: GTM-XXXXXXX)
+# Example: GTM-1234567

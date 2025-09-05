@@ -1,0 +1,1483 @@
+/* Pricing Section Styles */
+.pricing {
+  padding: 60px 0 140px 0;
+  margin-top: 0;
+  background: white;
+  
+  @media (max-width: 768px) {
+    padding: 40px 0 100px 0;
+    margin-top: 0;
+  }
+}
+
+/* Pricing Section Container */
+.pricing-section {
+  margin-bottom: 80px;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 60px;
+  }
+}
+
+/* Service Tabs */
+.service-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 60px; /* Added to match case studies spacing */
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+  
+  @media (max-width: 768px) {
+    gap: 12px;
+    margin-top: 40px; /* Adjusted for mobile */
+    margin-bottom: 40px;
+  }
+}
+
+.service-tab {
+  background: white;
+  border: 2px solid #e2e8f0;
+  color: #6b7280;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  box-sizing: border-box;
+
+  &:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(251, 196, 36, 0.15);
+  }
+
+  &.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #1f2937;
+    box-shadow: 0 8px 25px rgba(251, 196, 36, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    padding: 12px 16px;
+    font-size: 14px;
+    
+    i {
+      font-size: 16px;
+    }
+  }
+  
+  i {
+    font-size: 18px;
+  }
+}
+
+/* Pricing Configurator */
+.pricing-configurator {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0; /* Remove all padding to align with other services */
+}
+
+/* Accordion Styles */
+.accordion-header {
+  cursor: pointer;
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: #f9fafb;
+  }
+  
+  h3 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 600;
+    color: #374151;
+    
+    i:last-child {
+      transition: transform 0.3s ease;
+    }
+  }
+  
+  &.expanded h3 i:last-child {
+    transform: rotate(180deg);
+  }
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  
+  &.expanded {
+    max-height: 2000px; /* Large enough to accommodate content */
+  }
+  
+  .option-group {
+    margin-top: 20px;
+    padding-left: 20px;
+    border-left: 2px solid #e5e7eb;
+  }
+}
+
+/* Ensure accordion content is properly styled when expanded */
+.accordion-content.expanded {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* AI Agent Development specific styles */
+#ai-agents-config .config-section {
+  margin-bottom: 24px;
+}
+
+#ai-agents-config .option-group {
+  margin-bottom: 20px;
+}
+
+#ai-agents-config .radio-group,
+#ai-agents-config .checkbox-group {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  margin-top: 10px !important;
+}
+
+#ai-agents-config .radio-group label,
+#ai-agents-config .checkbox-group label {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  cursor: pointer !important;
+  padding: 10px 16px !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+  white-space: nowrap !important;
+  min-width: fit-content !important;
+  font-weight: 500 !important;
+  background: #f9fafb !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #6b7280 !important;
+  margin: 0 !important;
+  
+  &:hover {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    background: #fefce8 !important;
+  }
+}
+
+/* Ensure hover states work with !important */
+#ai-agents-config .radio-group label:hover,
+#ai-agents-config .checkbox-group label:hover {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  background: #fefce8 !important;
+}
+
+#ai-agents-config .radio-group label:hover,
+#ai-agents-config .checkbox-group label:hover {
+  background-color: #f9fafb;
+}
+
+/* Fix checkbox input styling */
+#ai-agents-config .checkbox-group input[type="checkbox"] {
+  margin: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+#ai-agents-config .checkbox-group label input[type="checkbox"] {
+  margin-right: 8px !important;
+}
+
+/* Override any conflicting checkbox group styles */
+#ai-agents-config .checkbox-group {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  grid-template-columns: none !important;
+}
+
+/* Radio button selected state styling */
+#ai-agents-config .radio-group label:has(input[type="radio"]:checked) {
+  background: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #1f2937 !important;
+  box-shadow: 0 2px 8px rgba(251, 196, 36, 0.3) !important;
+}
+
+/* Alternative styling for selected state using JavaScript classes */
+#ai-agents-config .radio-group label.selected {
+  background: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #1f2937 !important;
+  box-shadow: 0 2px 8px rgba(251, 196, 36, 0.3) !important;
+}
+
+#ai-agents-config .option-explanation {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 10px;
+  line-height: 1.5;
+  max-width: 100%;
+  padding: 10px;
+  background: #f9fafb;
+  border-radius: 6px;
+  border-left: 2px solid var(--primary-color);
+  
+  @media (max-width: 768px) {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+}
+
+/* Care plan estimate styling */
+.care-plan-estimate {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  text-align: center;
+  
+  .price-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .price-amount {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2937;
+  }
+}
+
+/* Fix spacing between email and investment amount for AI calculator */
+#ai-agents-config .cta-section {
+  margin-top: 20px;
+  
+  @media (max-width: 768px) {
+    margin-top: 16px;
+  }
+}
+
+#ai-agents-config .email-explanation {
+  margin-top: 6px;
+  
+  @media (max-width: 768px) {
+    margin-top: 4px;
+  }
+}
+
+/* Improve overall spacing consistency */
+
+
+/* Enhanced AI Agent Development styling */
+#ai-agents-config .config-section h3 {
+  color: #1f2937;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#ai-agents-config .config-section h3 i {
+  color: var(--primary-color);
+  font-size: 18px;
+}
+
+#ai-agents-config .option-group label:first-child {
+  font-weight: 600;
+  color: #374151;
+  font-size: 15px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Ensure checkbox labels don't inherit bold styling */
+#ai-agents-config .checkbox-group label {
+  font-weight: normal !important;
+  font-size: 14px !important;
+}
+
+/* Responsive adjustments for AI calculator */
+@media (max-width: 768px) {
+  #ai-agents-config .config-section {
+    margin-bottom: 20px;
+  }
+  
+  #ai-agents-config .config-section h3 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  
+  #ai-agents-config .option-group {
+    margin-bottom: 20px;
+  }
+  
+  #ai-agents-config .radio-group,
+  #ai-agents-config .checkbox-group {
+    gap: 10px;
+    margin-top: 8px;
+    flex-direction: column; /* Stack vertically on mobile for better UX */
+  }
+  
+  #ai-agents-config .radio-group label,
+  #ai-agents-config .checkbox-group label {
+    padding: 8px 12px;
+    font-size: 12px;
+    white-space: normal; /* Allow text wrapping on mobile */
+  }
+}
+
+.config-header {
+  text-align: center;
+  margin-bottom: 30px; /* Reduced from 40px */
+  
+  h2 {
+    font-size: 32px; /* Reduced from 36px */
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 12px; /* Reduced from 16px */
+    line-height: 1.2;
+    
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+  
+  p {
+    font-size: 16px; /* Reduced from 18px */
+    line-height: 1.6;
+    color: #6b7280;
+    margin: 0;
+    
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
+}
+
+/* Side-by-side layout */
+.config-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px; /* Back to original: left flexible, right fixed */
+  gap: 32px;
+  align-items: start;
+  
+  /* Apply EXACT same styling as homepage containers */
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.04); /* Same as homepage service cards */
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Same as homepage service cards */
+  position: relative; /* Required for ::before pseudo-element */
+  overflow: hidden; /* Required for ::before pseudo-element */
+  
+  /* Add yellow top border like homepage service cards */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--primary-color);
+  }
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+}
+
+.config-left {
+  /* Remove the flex properties that didn't work */
+  padding-top: 0; /* Ensure no extra top padding */
+  margin-top: 0; /* Ensure no extra top margin */
+}
+
+.config-right {
+  position: sticky;
+  padding-top: 0; /* Ensure no extra top padding */
+  margin-top: 0; /* Ensure no extra top margin */
+  
+  @media (max-width: 1024px) {
+    position: static;
+  }
+}
+
+/* Update config sections - remove container styling since parent has it */
+.config-section {
+  background: #f9fafb; /* Light background to distinguish from main container */
+  border: 1px solid #f3f4f6;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  margin-top: 0; /* Ensure no top margin */
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 12px rgba(251, 196, 36, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 20px;
+    margin-top: 0; /* Ensure no top margin */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    i {
+      color: var(--primary-color);
+      font-size: 18px;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+/* Ensure first config-section in each side has no top margin */
+.config-left .config-section:first-child,
+.config-right .config-section:first-child {
+  margin-top: 0;
+}
+
+/* Quote subtitle styling - now inside config-section */
+.config-section .quote-subtitle {
+  font-size: 16px; /* Same as config-header p */
+  line-height: 1.6; /* Same as config-header p */
+  color: #6b7280; /* Same as config-header p */
+  margin: 0 0 20px 0; /* Keep bottom margin for spacing */
+  text-align: left; /* Left-aligned like other content */
+  
+  @media (max-width: 768px) {
+    font-size: 14px; /* Same as config-header p mobile */
+  }
+}
+
+.config-options {
+  display: grid;
+  gap: 24px; /* Reduced from 32px */
+  
+  @media (max-width: 768px) {
+    gap: 20px; /* Reduced from 24px */
+  }
+}
+
+.option-group {
+  label {
+    display: block;
+    font-size: 15px; /* Reduced from 16px */
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 10px; /* Reduced from 12px */
+    
+    @media (max-width: 768px) {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+/* Option explanations */
+.option-explanation {
+  font-size: 13px; /* Reduced from 14px */
+  color: #6b7280;
+  line-height: 1.5;
+  margin-top: 10px; /* Reduced from 12px */
+  padding: 10px; /* Reduced from 12px */
+  background: #f9fafb;
+  border-radius: 6px; /* Reduced from 8px */
+  border-left: 2px solid var(--primary-color); /* Reduced from 3px */
+  
+  @media (max-width: 768px) {
+    font-size: 12px; /* Reduced from 13px */
+    margin-top: 8px;
+    padding: 8px; /* Reduced from 10px */
+  }
+}
+
+/* Radio Groups */
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px; /* Reduced from 16px */
+  
+  @media (max-width: 768px) {
+    gap: 10px; /* Reduced from 12px */
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  label {
+    padding: 10px 16px; /* Reduced from 12px 20px */
+    background: #f9fafb;
+    border: 1px solid #e2e8f0; /* Reduced from 2px */
+    border-radius: 8px; /* Reduced from 12px */
+    font-size: 13px; /* Reduced from 14px */
+    font-weight: 500;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0;
+    
+    &:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      background: #fefce8;
+    }
+    
+    @media (max-width: 768px) {
+      padding: 8px 12px; /* Reduced from 10px 16px */
+      font-size: 12px; /* Reduced from 13px */
+    }
+  }
+  
+  /* Fix for radio checked state - since label wraps input */
+  label:has(input[type="radio"]:checked) {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #1f2937;
+    box-shadow: 0 2px 8px rgba(251, 196, 36, 0.3); /* Reduced shadow */
+  }
+  
+  /* Alternative styling for selected state using JavaScript classes */
+  label.selected {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #1f2937;
+    box-shadow: 0 2px 8px rgba(251, 196, 36, 0.3);
+  }
+}
+
+/* Checkbox Groups - Updated to match website style */
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Reduced from 140px */
+  gap: 10px; /* Reduced from 12px */
+  
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); /* Reduced from 120px */
+    gap: 8px; /* Reduced from 8px */
+  }
+  
+  label {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Reduced from 8px */
+    padding: 8px 12px; /* Reduced from 10px 16px */
+    background: #f9fafb;
+    border: 1px solid #e2e8f0; /* Reduced from 2px */
+    border-radius: 8px; /* Reduced from 10px */
+    font-size: 13px; /* Reduced from 14px */
+    font-weight: 500;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0;
+    
+    &:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      background: #fefce8;
+    }
+    
+    @media (max-width: 768px) {
+      padding: 6px 10px; /* Reduced from 8px 12px */
+      font-size: 12px; /* Reduced from 13px */
+    }
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  /* Fix for checkbox checked state - since label wraps input */
+  label:has(input[type="checkbox"]:checked) {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #1f2937;
+    box-shadow: 0 2px 8px rgba(251, 196, 36, 0.3); /* Reduced shadow */
+  }
+  
+  /* Alternative styling for selected state using JavaScript classes */
+  label.selected {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #1f2937;
+    box-shadow: 0 2px 8px rgba(251, 196, 36, 0.3);
+  }
+}
+
+/* Sliders */
+.slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #e2e8f0;
+  outline: none;
+  margin: 16px 0 8px 0;
+  -webkit-appearance: none;
+  
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(251, 196, 36, 0.3);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(251, 196, 36, 0.4);
+    }
+  }
+  
+  &::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(251, 196, 36, 0.3);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(251, 196, 36, 0.4);
+    }
+  }
+}
+
+.slider-value {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-color);
+  background: #fefce8;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #fde68a;
+  
+  @media (max-width: 768px) {
+    font-size: 13px;
+    padding: 4px 10px;
+  }
+}
+
+/* Update quote card - remove container styling since parent has it */
+.quote-card {
+  /* Remove background and border since it's now inside config-section */
+  padding: 0; /* Remove padding since parent config-section has it */
+  height: fit-content; /* Ensure it doesn't stretch unnecessarily */
+  margin-top: 0; /* Ensure no top margin */
+  
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+}
+
+.quote-header {
+  text-align: center;
+  margin-bottom: 28px; /* Reduced from 32px */
+  padding-top: 0; /* Ensure no extra top padding */
+  
+  h3 {
+    font-size: 22px; /* Reduced from 24px */
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 6px; /* Reduced from 8px */
+    margin-top: 0; /* Ensure no extra top margin */
+  }
+  
+  .quote-subtitle {
+    font-size: 16px; /* Increased from 13px for better readability */
+    font-weight: 500; /* Added medium weight */
+    color: #374151; /* Darker color for better contrast */
+    margin: 0 0 20px 0; /* Add bottom margin for spacing */
+    text-align: center;
+    line-height: 1.4; /* Better line height */
+  }
+}
+
+.quote-details {
+  margin-bottom: 28px; /* Reduced from 32px */
+}
+
+.quote-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0; /* Reduced from 12px */
+  border-bottom: 1px solid #f3f4f6;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  .quote-label {
+    font-size: 13px; /* Reduced from 14px */
+    font-weight: 500;
+    color: #6b7280;
+  }
+  
+  .quote-value {
+    font-size: 13px; /* Reduced from 14px */
+    font-weight: 600;
+    color: #1f2937;
+    text-align: right;
+    max-width: 140px; /* Reduced from 150px */
+  }
+}
+
+/* Pricing Display */
+.pricing-display {
+  background: linear-gradient(135deg, #f8f9ff 0%, #f1f5f9 100%);
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  margin-top: 40px;
+  
+  @media (max-width: 768px) {
+    padding: 32px 24px;
+    margin-top: 32px;
+  }
+}
+
+.price-estimate {
+  margin-bottom: 0;
+  
+  .price-label {
+    display: block;
+    font-size: 16px; /* Reduced from 18px */
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 12px; /* Reduced from 16px */
+    
+    @media (max-width: 768px) {
+      font-size: 14px; /* Reduced from 16px */
+      margin-bottom: 10px; /* Reduced from 12px */
+    }
+  }
+  
+  .price-amount {
+    display: block;
+    font-size: 42px; /* Reduced from 48px */
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 6px; /* Reduced from 8px */
+    
+    @media (max-width: 768px) {
+      font-size: 32px; /* Reduced from 36px */
+    }
+  }
+  
+  .price-range {
+    display: block;
+    font-size: 14px; /* Reduced from 16px */
+    color: #6b7280;
+    font-weight: 500;
+    
+    @media (max-width: 768px) {
+      font-size: 13px; /* Reduced from 14px */
+    }
+  }
+}
+
+.quote-disclaimer {
+  background: #fefce8;
+  border: 1px solid #fde68a;
+  border-radius: 10px; /* Reduced from 12px */
+  padding: 16px; /* Reduced from 20px */
+  margin-bottom: 28px; /* Reduced from 32px */
+  
+  p {
+    font-size: 13px; /* Reduced from 14px */
+    line-height: 1.6;
+    color: #92400e;
+    margin: 0;
+    
+    @media (max-width: 768px) {
+      font-size: 12px; /* Reduced from 13px */
+    }
+  }
+}
+
+/* CTA Section */
+.pricing-cta {
+  text-align: center;
+  background: white;
+  border-radius: 20px;
+  padding: 60px 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  
+  h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #1f2937;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #6b7280;
+    margin: 0 0 40px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @media (max-width: 768px) {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+  }
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+/* Sticky Bottom Banner */
+.sticky-price-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  color: #1f2937;
+  padding: 16px 20px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  border-top: 3px solid var(--primary-color);
+  
+  &.visible {
+    transform: translateY(0);
+  }
+  
+  .banner-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 24px;
+  }
+  
+  .banner-info {
+    h3 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: #1f2937;
+    }
+  }
+  
+  .banner-price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    .price-label {
+      font-size: 14px;
+      color: #6b7280;
+      margin: 0;
+    }
+    
+    .price-amount {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin: 0;
+    }
+  }
+  
+  .banner-email-form {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .banner-email-input {
+      padding: 10px 14px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #1f2937;
+      background: white;
+      transition: all 0.3s ease;
+      width: 200px;
+      
+      &::placeholder {
+        color: #9ca3af;
+      }
+      
+      &:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(251, 196, 36, 0.1);
+      }
+      
+      &:hover {
+        border-color: #cbd5e1;
+      }
+      
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+    
+    .btn {
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      min-width: 120px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+
+      &--secondary {
+        background: var(--primary-color);
+        color: #1f2937;
+
+        &:hover {
+          background: #eab308;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(251, 196, 36, 0.3);
+        }
+      }
+    }
+  }
+}
+
+/* Global Button Styles for Pricing Page */
+.btn {
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  min-width: 180px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
+
+  @media (max-width: 768px) {
+    padding: 14px 24px;
+    font-size: 15px;
+    min-width: 160px;
+  }
+
+  &--secondary {
+    background: var(--primary-color); /* Yellow background */
+    color: #1f2937; /* Black text */
+
+    &:hover {
+      background: #eab308; /* Darker yellow on hover */
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(251, 196, 36, 0.3);
+    }
+  }
+  
+  &--primary {
+    background: #1f2937; /* Dark background */
+    color: white; /* White text */
+
+    &:hover {
+      background: #374151; /* Slightly lighter dark on hover */
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(31, 41, 55, 0.3);
+    }
+  }
+}
+
+
+
+/* CTA Section within Quote Card */
+.cta-section {
+  /* margin-top and padding removed */
+}
+
+/* Email Form Styles */
+.email-simple-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  
+  @media (max-width: 768px) {
+    gap: 16px;
+  }
+}
+
+.email-input {
+  padding: 18px 24px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f2937;
+  background: white;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 500px;
+  
+  &::placeholder {
+    color: #9ca3af;
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(251, 196, 36, 0.1);
+  }
+  
+  &:hover {
+    border-color: #cbd5e1;
+  }
+}
+
+.email-explanation {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-top: 6px;
+  padding: 10px;
+  border-radius: 6px;
+  border-left: 2px solid var(--primary-color);
+  text-align: left;
+  
+  @media (max-width: 768px) {
+    font-size: 12px;
+    margin-top: 4px;
+    padding: 8px;
+  }
+}
+
+.activities-description {
+  margin: 25px 0;
+  padding: 25px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-radius: 12px;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 4px 15px rgba(251, 196, 36, 0.2);
+  
+  h4 {
+    margin: 0 0 20px 0;
+    color: #1f2937;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  #activities-list {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #4b5563;
+    
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      
+      li {
+        margin-bottom: 10px;
+        font-weight: 500;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+/* Service Visibility Control */
+.service-visible {
+  display: block !important;
+}
+
+.service-hidden {
+  display: none !important;
+}
+
+/* IGS Calculator Visibility */
+.pricing-configurator.service-hidden {
+  display: none !important;
+}
+
+.pricing-configurator.service-visible {
+  display: block !important;
+}
+
+.config-header.service-hidden {
+  display: none !important;
+}
+
+.config-header.service-visible {
+  display: block !important;
+}
+
+/* Other Service Content */
+.pricing-content {
+  display: none;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 0 40px 0; /* Remove top padding to align with IGS header */
+  
+  &.service-visible {
+    display: block;
+  }
+  
+  .pricing-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    
+    h2 {
+      font-size: 32px; /* Match IGS config-header h2 */
+      font-weight: 800;
+      color: #1f2937;
+      margin-bottom: 12px; /* Match IGS config-header h2 */
+      line-height: 1.2;
+      
+      @media (max-width: 768px) {
+        font-size: 24px; /* Match IGS config-header h2 mobile */
+      }
+    }
+    
+    p {
+      font-size: 16px; /* Match IGS config-header p */
+      line-height: 1.6;
+      color: #6b7280;
+      margin: 0;
+      
+      @media (max-width: 768px) {
+        font-size: 14px; /* Match IGS config-header p mobile */
+      }
+    }
+  }
+}
+
+/* Other Service CTA Section */
+.other-service-cta {
+  text-align: center;
+  margin-top: 40px;
+  
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+  
+  .cta-explanation {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #6b7280;
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
+}
+
+/* Package Cards */
+.pricing-packages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 60px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+}
+
+.package-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  position: relative;
+  text-align: center;
+  
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  &.featured {
+    border: 3px solid var(--primary-color);
+    transform: scale(1.05);
+    
+    &:hover {
+      transform: scale(1.05) translateY(-6px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    padding: 30px 20px;
+    
+    &.featured {
+      transform: none;
+      
+      &:hover {
+        transform: translateY(-6px);
+      }
+    }
+  }
+}
+
+.package-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-color);
+  color: #1f2937;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.package-header {
+  margin-bottom: 32px;
+  
+  h3 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1f2937;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+}
+
+.package-price {
+  .price {
+    display: block;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 8px;
+    
+    @media (max-width: 768px) {
+      font-size: 32px;
+    }
+  }
+  
+  .period {
+    font-size: 16px;
+    color: #6b7280;
+    font-weight: 500;
+  }
+}
+
+.package-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  text-align: left;
+  
+  li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: #4b5563;
+    line-height: 1.5;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    i {
+      color: var(--primary-color);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+/* FAQ Section */
+.pricing-faq {
+  margin-bottom: 80px;
+  
+  h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 50px;
+    line-height: 1.2;
+    
+    @media (max-width: 768px) {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.faq-item {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+    
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #6b7280;
+    margin: 0;
+    
+    @media (max-width: 768px) {
+      font-size: 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    padding: 24px 20px;
+  }
+}

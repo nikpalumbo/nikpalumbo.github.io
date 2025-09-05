@@ -1,0 +1,368 @@
+I"	=<!-- Services Schema Markup for Case Studies/Services Pages -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "AI Case Studies for Startups, SMEs, and Enterprises",
+  "description": "Growth doesn't come from luck. Manual work and disconnected tools slow companies down. The fastest-growing firms put growth on autopilot with intelligent systems.",
+  "url": "https://sdw.solutions/case-studies/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Seestrasse 112",
+    "addressLocality": "Bäch SZ",
+    "postalCode": "8806",
+    "addressCountry": "CH"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Switzerland"
+    },
+    {
+      "@type": "Continent", 
+      "name": "Europe"
+    },
+    {
+      "@type": "Country",
+      "name": "United States"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Complete AI & Growth Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Agent Development",
+          "description": "Custom AI solutions for internal tasks or customer-facing interactions. Tailored agents built on your data, not generic templates."
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Intelligent Growth Systems",
+          "description": "Full-funnel growth engines from value proposition to lead conversion. Define ideal customers, select channels, craft outreach, and automate CRM workflows."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service", 
+          "name": "Smart Conversion Websites",
+          "description": "High-performance sites designed to convert, not just inform. AI-integrated features like guided onboarding and instant quotes."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Product-Led Growth Prototyping", 
+          "description": "Functional web apps that validate ideas and drive growth through real user interaction. Production-grade MVPs delivered in weeks."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SaaS Growth Consulting",
+          "description": "Strategic consulting for SaaS companies looking to scale from zero to Fortune 500 clients with proven growth methodologies."
+        }
+      },
+      {
+        "@type": "Offer", 
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Integration & Automation",
+          "description": "End-to-end AI integration services for enterprises looking to automate processes and implement intelligent systems across departments."
+        }
+      }
+    ]
+  }
+}
+</script>
+
+<!-- Case Studies Header -->
+<div class="case-studies-header">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="case-studies-header__content">
+          <h1 class="case-studies-title">AI Case Studies for Startups, SMEs, and Enterprises</h1>
+          <p class="case-studies-description">Real projects. Measurable results. Proven methodologies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Case Studies Grid -->
+<div class="case-studies-content">
+  <div class="container">
+    
+    <!-- New Section Title and Subtitle for Service Blocks -->
+    <div class="row">
+      <div class="col col-12">
+        <h2 class="case-studies-section-title">AI Solutions That Drive Growth</h2>
+        <p class="case-studies-section-subtitle">Discover how we empower businesses with cutting-edge AI solutions tailored for growth and measurable results.</p>
+      </div>
+    </div>
+
+    <!-- Service-Specific Blocks -->
+    <div class="row">
+      <div class="col col-12">
+        <div class="service-blocks">
+          
+          <!-- Intelligent Growth Systems -->
+          <div class="service-block">
+            <div class="service-block__icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="service-block__title">Intelligent Growth Systems Case Studies</h3>
+            <p class="service-block__description">Companies use Intelligent Growth Systems to automate outreach, generate consistent leads, and reduce manual sales work. In these case studies, you'll see how startups and SMEs created predictable growth engines, from Swiss market entry strategies to structured multi-channel campaigns.</p>
+          </div>
+
+          <!-- AI Agent Development -->
+          <div class="service-block">
+            <div class="service-block__icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3 class="service-block__title">AI Agent Development Case Studies</h3>
+            <p class="service-block__description">AI agents bring efficiency to support, HR, finance, and sales. These case studies show how organizations deployed custom-built agents using ChatGPT, Claude, or open-source LLMs through Ollama, achieving faster processes and reduced costs.</p>
+          </div>
+
+          <!-- Smart Conversion Website Case Studies -->
+          <div class="service-block">
+            <div class="service-block__icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3 class="service-block__title">Smart Conversion Website Case Studies</h3>
+            <p class="service-block__description">A website should be more than a digital brochure. These examples show how AI-enhanced conversion websites increased engagement and sales by personalizing user journeys, guiding onboarding, and offering real-time interaction.</p>
+          </div>
+
+          <!-- Product-Led Growth Prototyping Case Studies -->
+          <div class="service-block">
+            <div class="service-block__icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3 class="service-block__title">Product-Led Growth Prototyping Case Studies</h3>
+            <p class="service-block__description">Speed matters in product innovation. These case studies highlight prototypes and MVPs built in weeks, with analytics and user feedback built in from day one. They reveal how PLG prototyping reduces risk and accelerates go-to-market validation.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Filter (Optional) -->
+    <div class="row">
+      <div class="col col-12">
+        <h2 class="case-studies-section-title">Browse by Category</h2>
+        <div class="category-filters">
+          <button class="filter-btn active" data-category="all">
+            <i class="fas fa-th-large"></i>
+            All Projects
+          </button>
+          <button class="filter-btn" data-category="Intelligent Growth Systems">
+            <i class="fas fa-chart-line"></i>
+            Intelligent Growth Systems
+          </button>
+          <button class="filter-btn" data-category="AI Agent Development">
+            <i class="fas fa-robot"></i>
+            AI Agent Development
+          </button>
+          <button class="filter-btn" data-category="Smart Conversion Websites">
+            <i class="fas fa-laptop-code"></i>
+            Smart Conversion Websites
+          </button>
+          <button class="filter-btn" data-category="Product-Led Growth Prototyping">
+            <i class="fas fa-rocket"></i>
+            Product-Led Growth Prototyping
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Studies Description -->
+    <div class="row">
+      <div class="col col-12">
+        <div class="case-studies-intro">
+          <p class="case-studies-subdescription">Discover how we've helped startups, SMEs, and enterprises scale faster with AI-powered growth systems, intelligent agents, and conversion-optimized websites. Each case study shows real results and proven methodologies.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Studies Grid -->
+    <div class="row">
+      <div class="col col-12">
+        <h2 class="case-studies-section-title">Featured Case Studies</h2>
+        <div class="case-studies-grid">
+          
+          
+          <article class="case-study-card" data-category="Intelligent Growth Systems">
+            <div class="case-study-card__header">
+              
+              <div class="case-study-card__category">Intelligent Growth Systems</div>
+              
+              <h3 class="case-study-card__title">
+                <a href="/case-studies/quitematch-conversion">QuiteMatch AI Platform - 40% Conversion Improvement</a>
+              </h3>
+            </div>
+            
+            <div class="case-study-card__body">
+              
+              <p class="case-study-card__description">AI recruitment platform with 40% conversion improvement and automated workflows</p>
+              
+              
+              <div class="case-study-card__footer">
+                <div class="case-study-card__meta">
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-person"></i>
+                    <span class="meta-value">Full-Stack Developer &amp; Growth Systems Architect</span>
+                  </div>
+                  
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-briefcase"></i>
+                    <span class="meta-value">QuiteMatch (Recruitment Platform)</span>
+                  </div>
+                  
+                </div>
+                
+                <a href="/case-studies/quitematch-conversion" class="case-study-card__link">View Case Study</a>
+              </div>
+            </div>
+          </article>
+          
+          <article class="case-study-card" data-category="Intelligent Growth Systems">
+            <div class="case-study-card__header">
+              
+              <div class="case-study-card__category">Intelligent Growth Systems</div>
+              
+              <h3 class="case-study-card__title">
+                <a href="/case-studies/growth-system-saas">SaaS Growth System - Swiss Market Entry Case Study</a>
+              </h3>
+            </div>
+            
+            <div class="case-study-card__body">
+              
+              <p class="case-study-card__description">Structured 16-week growth strategy for Swiss market entry with systematic lead generation and positioning</p>
+              
+              
+              <div class="case-study-card__footer">
+                <div class="case-study-card__meta">
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-person"></i>
+                    <span class="meta-value">Growth Systems Architect &amp; Strategic Partner</span>
+                  </div>
+                  
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-briefcase"></i>
+                    <span class="meta-value">Swiss Software Company</span>
+                  </div>
+                  
+                </div>
+                
+                <a href="/case-studies/growth-system-saas" class="case-study-card__link">View Case Study</a>
+              </div>
+            </div>
+          </article>
+          
+          <article class="case-study-card" data-category="AI Agent Development">
+            <div class="case-study-card__header">
+              
+              <div class="case-study-card__category">AI Agent Development</div>
+              
+              <h3 class="case-study-card__title">
+                <a href="/case-studies/etf-profiler-webapp">ETFProfiler AI Agent - Smart ETF Matching Case Study</a>
+              </h3>
+            </div>
+            
+            <div class="case-study-card__body">
+              
+              <p class="case-study-card__description">LangGraph-powered AI agent that matches investors with optimal ETFs based on personal goals and preferences</p>
+              
+              
+              <div class="case-study-card__footer">
+                <div class="case-study-card__meta">
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-person"></i>
+                    <span class="meta-value">AI Systems Developer &amp; Investment Tech Architect</span>
+                  </div>
+                  
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-briefcase"></i>
+                    <span class="meta-value">ETFProfiler (Open Source)</span>
+                  </div>
+                  
+                </div>
+                
+                <a href="/case-studies/etf-profiler-webapp" class="case-study-card__link">View Case Study</a>
+              </div>
+            </div>
+          </article>
+          
+          <article class="case-study-card" data-category="AI Agent Development">
+            <div class="case-study-card__header">
+              
+              <div class="case-study-card__category">AI Agent Development</div>
+              
+              <h3 class="case-study-card__title">
+                <a href="/case-studies/ai-agent-truefit">TrueFit AI Agent - Personalized Cover Letter Generation</a>
+              </h3>
+            </div>
+            
+            <div class="case-study-card__body">
+              
+              <p class="case-study-card__description">LangGraph-based AI agent with long-term memory and RAG for intelligent cover letter generation</p>
+              
+              
+              <div class="case-study-card__footer">
+                <div class="case-study-card__meta">
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-person"></i>
+                    <span class="meta-value">AI Systems Developer &amp; Career Tech Architect</span>
+                  </div>
+                  
+                  
+                  <div class="meta-item">
+                    <i class="ion ion-md-briefcase"></i>
+                    <span class="meta-value">TrueFit (Open Source)</span>
+                  </div>
+                  
+                </div>
+                
+                <a href="/case-studies/ai-agent-truefit" class="case-study-card__link">View Case Study</a>
+              </div>
+            </div>
+          </article>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <section class="cta-band">
+    <div class="cta-band__container">
+      <h2 class="cta-band__title">Ready to turn your growth challenges into competitive advantages?</h2>
+      <p class="cta-band__subline">Hello. Are you looking for ways to accelerate growth?</p>
+      <div class="cta-band__actions">
+                 <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-NcwHUpy2VQTbjOwTbXwdd0qIVBbaPQvmwg8sujsRnwtn8LEFTFOVc_qFpKQKZASWyQwaIJO8?gv=true" class="book-call-btn" rel="nofollow noopener" onclick="trackCTA('Book a Call', 'Case Studies CTA'); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});">
+          Book a Call
+        </a>
+        <a href="mailto:nicola@sdw.solutions" class="btn btn--secondary" onclick="trackCTA('Email me to Start', 'Case Studies CTA'); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});">
+          Email me to Start
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+:ET

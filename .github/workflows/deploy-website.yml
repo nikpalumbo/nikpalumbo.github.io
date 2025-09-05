@@ -1,0 +1,54 @@
+name: Deploy Website
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**_pages/**'
+      - '**_sass/**'
+      - '**_layouts/**'
+      - '**_includes/**'
+      - '**_config.yml'
+      - '**Gemfile**'
+      - '**Gemfile.lock**'
+      - '!api/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '**_pages/**'
+      - '**_sass/**'
+      - '**_layouts/**'
+      - '**_includes/**'
+      - '**_config.yml'
+      - '**Gemfile**'
+      - '**Gemfile.lock**'
+      - '!api/**'
+
+jobs:
+  deploy-website:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '2.6'
+        bundler-cache: true
+        
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install
+        
+    - name: Build Jekyll site
+      run: bundle exec jekyll build
+      
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site

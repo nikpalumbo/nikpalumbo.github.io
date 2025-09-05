@@ -1,0 +1,47 @@
+I"h<h2 id="challenge">Challenge</h2>
+
+<p>A growing SaaS platform needed to dramatically improve their landing page conversion rates. Their existing site had beautiful design but poor conversion performance, with visitors leaving without understanding the value proposition or taking action.</p>
+
+<p><strong>Key Issues:</strong></p>
+<ul>
+  <li>2.1% conversion rate far below industry standards</li>
+  <li>Manual candidate screening consuming excessive HR resources</li>
+  <li>Complex employer onboarding preventing job posting adoption</li>
+</ul>
+
+<h2 id="solution">Solution</h2>
+
+<p>I built a comprehensive recruitment platform that combines high-converting landing pages with intelligent candidate assessment and streamlined employer onboarding, all designed as a growth system to systematically build their user database.</p>
+
+<p><strong>Core Features:</strong></p>
+<ul>
+  <li><strong>Psychology-Driven Design:</strong> Hero sections with immediate value clarity and social proof</li>
+  <li><strong>AI-Powered Assessment:</strong> ChatGPT-4 integration for dynamic coding challenges</li>
+  <li><strong>Smart Screening:</strong> Automated resume parsing and predictive candidate-role matching</li>
+  <li><strong>Employer Dashboard:</strong> Real-time pipeline visualization and automated scheduling</li>
+</ul>
+
+<p><strong>Technical Stack:</strong>
+Next.js, Supabase, ChatGPT-4 API, Tailwind CSS, Vercel</p>
+
+<h2 id="results">Results</h2>
+
+<div class="results-grid">
+  <div class="result-card">
+    <div class="result-number">40%</div>
+    <div class="result-label">Conversion Rate Improvement</div>
+  </div>
+  <div class="result-card">
+    <div class="result-number">85%</div>
+    <div class="result-label">Reduction in Manual Screening</div>
+  </div>
+  <div class="result-card">
+    <div class="result-number">2,400+</div>
+    <div class="result-label">Users Added to Database</div>
+  </div>
+</div>
+
+<hr />
+
+<p><em>This project demonstrates how AI integration, growth system thinking, and conversion optimization can create a self-reinforcing platform that grows its user base while delivering exceptional value to both sides of a marketplace.</em></p>
+:ET

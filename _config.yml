@@ -1,0 +1,71 @@
+#-------------------------------
+# General Site Settings
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://sdw.solutions" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+#-------------------------------
+# Build Settings
+markdown: kramdown
+permalink: /:title
+plugins:
+  - jekyll-sitemap
+
+# Exclude files from being published to _site
+exclude:
+  - README.md
+  - TODO.md
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - _private/
+
+# Sitemap Configuration
+sitemap:
+  exclude:
+    - /_site/
+    - /vendor/
+    - /yandex_99626cfbc10e2554.html
+  include_priority: true
+  include_changefreq: true
+  include_lastmod: true
+  exclude_from_sitemap: false
+
+# SVG MIME type handling and redirects
+include: [".htaccess", "_redirects", "sitemap.xml"]
+
+#-------------------------------
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+  works:
+    output: true
+    permalink: /case-studies/:slug
+
+# Pages Path
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "works"
+    values:
+      layout: "work"
+  - scope:
+      path: "yandex_99626cfbc10e2554.html"
+    values:
+      sitemap: false
+
+sass:
+  sass_dir: _sass
+  style: compressed

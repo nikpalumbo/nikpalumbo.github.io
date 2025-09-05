@@ -1,0 +1,90 @@
+<!-- begin footer -->
+<footer class="footer">
+  <div class="footer__main">
+    <div class="container">
+      <div class="row">
+        <div class="col col-12">
+          <div class="footer__grid">
+            
+            <!-- Company Info -->
+            <div class="footer__section">
+              <h3 class="footer__title">Smart Data Way GmbH</h3>
+              <p class="footer__description">AI Product Manager & Growth Strategist helping companies design products that delight users and accelerate growth.</p>
+              <div class="footer__address">Seestrasse 112, 8806 Freienbach, Switzerland</div>
+              
+              <!-- Follow Us Links -->
+              <div class="footer__follow">
+                <h4 class="footer__follow-title">Follow us:</h4>
+                <div class="footer__social-icons">
+                  {% for social in site.data.settings.social %}
+                    <a href="{{ social.link }}" 
+                       target="_blank" 
+                       rel="nofollow noopener"
+                       class="footer__social-icon"
+                       title="Follow us on {{ social.name }}"
+                       aria-label="Follow us on {{ social.name }}">
+                      <i class="{{ social.icon }}"></i>
+                    </a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            
+            <!-- Services -->
+            <div class="footer__section">
+              <h3 class="footer__title">Services</h3>
+              <ul class="footer__links">
+                <li><a href="/#services">Intelligent Growth Systems</a></li>
+                <li><a href="/#services">AI Agent Development</a></li>
+                <li><a href="/#services">Smart Conversion Websites</a></li>
+                <li><a href="/#services">Product-Led Growth Prototyping</a></li>
+              </ul>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="footer__section">
+              <h3 class="footer__title">Quick Links</h3>
+              <ul class="footer__links">
+                <li><a href="/#customers">Who I Serve</a></li>
+                <li><a href="/#process">How I Work</a></li>
+                <li><a href="/case-studies/">Case Studies</a></li>
+                <li><a href="/about/">About Me</a></li>
+              </ul>
+            </div>
+            
+            <!-- Pricing Calculators -->
+            <div class="footer__section">
+              <h3 class="footer__title">Pricing Calculators</h3>
+              <ul class="footer__links">
+                <li><a href="/pricing/#intelligent-growth-systems">Growth Systems</a></li>
+                <li><a href="/pricing/#ai-agent-development">AI Agents</a></li>
+                <li><a href="/pricing/#smart-conversion-websites">Websites</a></li>
+                <li><a href="/pricing/#product-led-growth-prototyping">Prototyping</a></li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer Bottom -->
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col col-12">
+          <div class="footer__bottom-content">
+            <div class="footer__credits">Crafted & Designed by Nicola Palumbo.</div>
+            <div class="footer__legal">
+              <a href="/privacy-policy/">Privacy Policy</a>
+              <span class="footer__separator">|</span>
+              <a href="/terms-conditions/">Terms and Conditions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- end footer -->

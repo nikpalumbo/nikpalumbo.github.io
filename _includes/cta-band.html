@@ -1,0 +1,26 @@
+<!-- Shared CTA Band Component -->
+<section class="cta-band">
+  <div class="cta-band__container">
+    <h2 class="cta-band__title">{{ include.title | default: "Ready to turn your growth challenges into competitive advantages?" }}</h2>
+    <p class="cta-band__subline">{{ include.subline | default: "Hello. Are you looking for ways to accelerate growth?" }}</p>
+    <div class="cta-band__actions">
+      {% if include.primary_button %}
+        <a href="{{ include.primary_button.url | default: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-NcwHUpy2VQTbjOwTbXwdd0qIVBbaPQvmwg8sujsRnwtn8LEFTFOVc_qFpKQKZASWyQwaIJO8?gv=true' }}" 
+           class="book-call-btn"
+           rel="nofollow noopener"
+           {% if include.primary_button.target %}target="{{ include.primary_button.target }}"{% endif %}
+           {% if include.primary_button.onclick %}onclick="{{ include.primary_button.onclick }}; twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});"{% else %}onclick="twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});"{% endif %}>
+          {{ include.primary_button.text | default: "Book a Call" }}
+        </a>
+      {% endif %}
+      {% if include.secondary_button %}
+        <a href="{{ include.secondary_button.url | default: 'mailto:nicola@sdw.solutions' }}" 
+           class="btn btn--secondary"
+           {% if include.secondary_button.target %}target="{{ include.secondary_button.target }}"{% endif %}
+           {% if include.secondary_button.onclick %}onclick="{{ include.secondary_button.onclick }}; twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});"{% else %}onclick="twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});"{% endif %}>
+          {{ include.secondary_button.text | default: "Email me to Start" }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>

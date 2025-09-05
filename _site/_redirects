@@ -1,0 +1,6 @@
+# Redirect HTTP to HTTPS
+http://sdw.solutions/* https://sdw.solutions/:splat 301!
+http://www.sdw.solutions/* https://sdw.solutions/:splat 301!
+
+# Redirect www to non-www
+https://www.sdw.solutions/* https://sdw.solutions/:splat 301!

@@ -1,0 +1,13 @@
+{
+  "name": "nikpalumbo-api",
+  "version": "1.0.0",
+  "description": "Serverless API for WhatsApp integration",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "vercel dev"
+  },
+  "keywords": ["serverless", "api", "vercel"],
+  "author": "",
+  "license": "ISC"
+}

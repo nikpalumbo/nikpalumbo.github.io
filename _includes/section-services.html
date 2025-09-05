@@ -1,0 +1,49 @@
+{% if site.data.settings.services.enable == true %}
+<!-- begin services -->
+<section id="services" class="section services animate">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="services__header">
+          <h2 class="services__title">{{ site.data.settings.services.services__title }}</h2>
+          {% if site.data.settings.services.services__description %}
+          <p class="services__description">{{ site.data.settings.services.services__description }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    
+    <div class="services__grid">
+      {% for service in site.data.settings.service__items %}
+      <div class="service-card">
+        <div class="service-card__header">
+          {% if service.icon %}
+          <div class="service-card__icon">
+            <i class="{{ service.icon }}"></i>
+          </div>
+          {% endif %}
+          <h3 class="service-card__title">{{ service.title }}</h3>
+        </div>
+        
+        <div class="service-card__content">
+          <p class="service-card__description">{{ service.description }}</p>
+          
+          {% if service.outcomes %}
+          <div class="service-card__outcomes">
+            {% for outcome in service.outcomes %}
+            <div class="outcome-badge">{{ outcome }}</div>
+            {% endfor %}
+          </div>
+          {% endif %}
+          
+          {% if service.price_range %}
+          <div class="service-card__pricing">{{ service.price_range }}</div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- end services -->
+{% endif %}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+
+  {% if site.data.settings.google-analytics %}
+    {% include google-analytics.html %}
+  {% endif %}
+
+  <!-- Custom Landing Header -->
+  <header class="header landing-header">
+    <div class="container">
+      <div class="row">
+        <div class="col col-12">
+          <div class="header__inner">
+            <div class="header__logo">
+              <a class="logo" href="{{ site.baseurl }}/">
+                {% if site.data.settings.logo %}
+                  <img class="logo__image" src="{{ site.baseurl }}{{ site.data.settings.logo }}" alt="{{ site.data.settings.title }}">
+                {% else %}
+                  {{ site.data.settings.title }}
+                {% endif %}
+              </a>
+            </div>
+            
+            <div class="header__nav">
+              <div class="header__nav__inner">
+                <div class="header__nav__list">
+                  <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-NcwHUpy2VQTbjOwTbXwdd0qIVBbaPQvmwg8sujsRnwtn8LEFTFOVc_qFpKQKZASWyQwaIJO8?gv=true" 
+                     class="header__nav__link" 
+                     onclick="trackCTA('Book a Call', 'Landing Header'); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});">
+                    Book a Call
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- begin content -->
+  <main class="content" aria-label="Content">
+    {{ content }}
+  </main>
+  <!-- end content -->
+
+  <script src="{{ site.baseurl }}/js/scripts.js"></script>
+  <script src="{{ site.baseurl }}/js/common.js"></script>
+  <script src="{{ site.baseurl }}/js/cookie-consent.js"></script>
+</body>
+
+</html>

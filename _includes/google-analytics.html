@@ -1,0 +1,64 @@
+<!-- Google Analytics 4 (GA4) with Cookie Consent -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.data.settings.google-analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  // Set default consent to denied
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied'
+  });
+
+  gtag('config', '{{ site.data.settings.google-analytics }}', {
+    // Enhanced measurement for better tracking
+    send_page_view: true,
+    // Track file downloads, outbound clicks, site search, video engagement
+    enhanced_measurement: {
+      scrolls: true,
+      outbound_clicks: true,
+      file_downloads: true,
+      page_views: true
+    },
+    // Custom dimensions for better insights
+    custom_map: {
+      'custom_parameter_1': 'page_type',
+      'custom_parameter_2': 'user_type'
+    }
+  });
+
+  // Track page type for better segmentation
+  {% if page.layout %}
+  gtag('event', 'page_view', {
+    'page_type': '{{ page.layout }}',
+    'page_title': '{{ page.title | default: site.data.settings.title }}',
+    'page_location': '{{ site.url }}{{ page.url }}'
+  });
+  {% endif %}
+
+  // Track case study views
+  {% if page.layout == 'work' %}
+  gtag('event', 'case_study_view', {
+    'case_study_name': '{{ page.title }}',
+    'case_study_category': '{{ page.category }}',
+    'client': '{{ page.client }}'
+  });
+  {% endif %}
+
+  // Track contact form interactions
+  function trackFormInteraction(action) {
+    gtag('event', action, {
+      'event_category': 'Contact Form',
+      'event_label': 'Contact Page'
+    });
+  }
+
+  // Track CTA button clicks
+  function trackCTA(buttonText, location) {
+    gtag('event', 'cta_click', {
+      'event_category': 'CTA',
+      'event_label': buttonText,
+      'cta_location': location
+    });
+  }
+</script>

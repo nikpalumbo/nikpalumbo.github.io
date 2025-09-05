@@ -1,0 +1,281 @@
+// Amplemarket-Style Landing Page
+body:has(.landing-page) {
+  overflow: auto !important;
+}
+
+.landing-page {
+  min-height: 100vh;
+  background: white;
+  overflow: auto; // Allow scrolling if needed
+  
+  // Hide footer and other elements
+  ~ .top,
+  ~ footer,
+  ~ .cookie-banner {
+    display: none !important;
+  }
+  
+  // Hide the main header completely
+  ~ .header {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  // Also hide any other headers that might appear
+  .header {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .landing-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 1000;
+    padding: 0.5rem 0; // Much smaller padding
+    // Removed box-shadow completely
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      .logo {
+        display: flex;
+        align-items: center;
+        margin-left: 2rem; // Move logo to align with content
+        
+        img {
+          max-height: 45px; // Even smaller
+          width: auto;
+          display: block;
+          vertical-align: middle;
+        }
+      }
+      
+      .header-cta {
+        background: #000 !important;
+        color: #fff !important;
+        padding: 10px 20px !important; // Smaller padding
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+        text-decoration: none;
+        transition: all 0.2s ease !important;
+        display: flex;
+        align-items: center;
+        
+        &:hover {
+          background: #111827 !important;
+          color: white !important;
+          transform: translateY(-1px) !important;
+        }
+      }
+    }
+  }
+  
+  .landing-main {
+    display: flex;
+    min-height: calc(100vh - 80px); // Account for header height
+    padding-top: 80px; // Give space for fixed header
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 2rem; // Match header padding
+    padding-right: 2rem; // Match header padding
+    
+    .landing-left {
+      flex: 1;
+      margin-top: 0; // No margin at all
+      padding: 0rem 2rem; // Restore padding to maintain content width
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      .landing-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+      
+      .landing-subtitle {
+        font-size: 1.1rem;
+        line-height: 1.4;
+        color: #666;
+        margin-bottom: 1rem;
+        font-weight: 400;
+      }
+      
+      .testimonial {
+        background: #f8fafc;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid #FFE01A;
+        margin-top: 1rem;
+        
+        .testimonial-content {
+          font-size: 1rem;
+          line-height: 1.5;
+          color: #333;
+          margin-bottom: 1rem;
+          font-style: italic;
+        }
+        
+        .testimonial-author {
+          display: flex;
+          align-items: center;
+          
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+          }
+          
+          .author-info {
+            .author-name {
+              font-weight: 600;
+              color: #000;
+              margin-bottom: 0.25rem;
+            }
+            
+            .author-title {
+              color: #666;
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+    
+    .landing-right {
+      flex: 1;
+      background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+      padding: 3rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 500px; // Ensure minimum height for form visibility
+      
+      .form-container {
+        width: 100%;
+        max-width: 400px;
+        
+        .form-title {
+          font-size: 1.75rem;
+          font-weight: 600;
+          color: white;
+          margin-bottom: 0.5rem;
+          text-align: center;
+        }
+        
+        .urgency-text {
+          font-size: 1.1rem;
+          line-height: 1.4;
+          color: #e5e7eb;
+          margin-bottom: 1.5rem;
+          text-align: center;
+          font-weight: 400;
+        }
+        
+        .form-group {
+          margin-bottom: 1.5rem;
+          
+          label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: white;
+          }
+          
+          input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            
+            &:focus {
+              outline: none;
+              border-color: #FFE01A;
+              box-shadow: 0 0 0 2px rgba(255, 224, 26, 0.2);
+            }
+          }
+          
+          .form-help {
+            color: white !important;
+            font-size: 14px;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            text-align: center;
+            display: block;
+          }
+        }
+        
+        .form-button {
+          width: 100%;
+          background: var(--primary-color);
+          color: #1f2937;
+          border: none;
+          padding: 1rem;
+          font-size: 1.1rem;
+          font-weight: 600;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          
+          &:hover {
+            background: #e6b800;
+            color: #1f2937;
+            transform: translateY(-1px);
+          }
+        }
+      }
+    }
+  }
+  
+  // Mobile responsive
+  @media (max-width: 768px) {
+    .landing-main {
+      flex-direction: column;
+      padding-top: 70px; // Account for header on mobile
+      min-height: auto; // Allow content to determine height
+      
+      .landing-left,
+      .landing-right {
+        padding: 1.5rem 1rem; // Reduced padding
+      }
+      
+      .landing-left {
+        .landing-title {
+          font-size: 2rem;
+        }
+        
+        .landing-subtitle {
+          font-size: 1.1rem;
+        }
+      }
+      
+      .landing-right {
+        .form-container {
+          .form-title {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

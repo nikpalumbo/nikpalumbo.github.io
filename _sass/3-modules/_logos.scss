@@ -1,0 +1,93 @@
+/* Stats Section (replaces logos) */
+/* Note: .section.stats styles are now defined in _hero.scss */
+
+.stats__grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+
+  @media (max-width: $tablet) {
+    gap: 60px;
+  }
+
+  @media (max-width: $mobile) {
+    gap: 40px;
+    flex-direction: column;
+  }
+}
+
+.stats__item {
+  text-align: center;
+}
+
+.stats__number {
+  font-size: 48px;
+  font-weight: 800;
+  color: #1f2937;
+  line-height: 1;
+  margin-bottom: 8px;
+
+  @media (max-width: $tablet) {
+    font-size: 40px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 36px;
+  }
+}
+
+.stats__label {
+  font-size: 16px;
+  color: #6b7280;
+  font-weight: 500;
+
+  @media (max-width: $mobile) {
+    font-size: 14px;
+  }
+}
+
+/* Legacy logos styles (kept for compatibility) */
+.section.logos {
+  padding-top: 0;
+  border-top: none;
+}
+
+.logos__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: -$base-spacing-unit;
+}
+
+.logos__item {
+  padding: $base-spacing-unit;
+  margin-bottom: 0;
+}
+
+.logos__link {
+  display: block;
+  transition: all .2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.logos__image {
+  height: 36px;
+  filter: invert(51%) sepia(4%) saturate(1703%) hue-rotate(179deg) brightness(85%) contrast(89%);
+
+  @media (max-width: $mobile) {
+    height: 32px;
+  }
+}
+
+.dark-mode {
+  .logos__image {
+    filter: invert(100%) sepia(32%) saturate(304%) hue-rotate(200deg) brightness(115%) contrast(88%);
+  }
+}
