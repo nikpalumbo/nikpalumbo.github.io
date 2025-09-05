@@ -195,19 +195,61 @@ async function submitRoadmapForm(event) {
   const name = document.getElementById('name').value.trim();
   const phone = document.getElementById('phone').value.trim();
   
+  // Clear any existing error messages
+  const existingErrors = document.querySelectorAll('.form-error');
+  existingErrors.forEach(error => error.remove());
+  
+  // Reset input borders
+  document.getElementById('name').style.borderColor = '';
+  document.getElementById('phone').style.borderColor = '';
+  
   // Validate inputs
   if (!name) {
-    alert('Please enter your name');
+    const nameInput = document.getElementById('name');
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'form-error';
+    errorDiv.style.color = '#ff6b6b';
+    errorDiv.style.fontSize = '14px';
+    errorDiv.style.marginTop = '4px';
+    errorDiv.textContent = 'Please enter your name';
+    nameInput.parentNode.appendChild(errorDiv);
+    nameInput.style.borderColor = '#ff6b6b';
+    nameInput.focus();
     return;
   }
   
   if (!phone) {
-    alert('Please enter your phone number');
+    const phoneInput = document.getElementById('phone');
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'form-error';
+    errorDiv.style.color = '#ff6b6b';
+    errorDiv.style.fontSize = '14px';
+    errorDiv.style.marginTop = '4px';
+    errorDiv.textContent = 'Please enter your phone number';
+    phoneInput.parentNode.appendChild(errorDiv);
+    phoneInput.style.borderColor = '#ff6b6b';
+    phoneInput.focus();
     return;
   }
   
   if (!validatePhoneNumber(phone)) {
-    alert('Please enter a valid phone number (e.g., +1234567890)');
+    // Show inline error message instead of alert
+    const phoneInput = document.getElementById('phone');
+    const existingError = document.querySelector('.phone-error');
+    if (existingError) {
+      existingError.remove();
+    }
+    
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'phone-error';
+    errorDiv.style.color = '#ff6b6b';
+    errorDiv.style.fontSize = '14px';
+    errorDiv.style.marginTop = '4px';
+    errorDiv.textContent = 'Please enter a valid phone number (e.g., +1234567890)';
+    
+    phoneInput.parentNode.appendChild(errorDiv);
+    phoneInput.style.borderColor = '#ff6b6b';
+    phoneInput.focus();
     return;
   }
   
