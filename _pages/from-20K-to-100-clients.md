@@ -160,8 +160,8 @@ permalink: /from-20K-to-100-clients/
 </div>
 
 <script>
-// API configuration
-const API_URL = 'http://localhost:8081'; // Local development API
+// API configuration - will be set by build process
+const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:8081' : 'https://api.sdw.solutions';
 const API_KEY = 'your_frontend_api_key'; // Replace with your frontend API key
 
 function validatePhoneNumber(phone) {
@@ -242,15 +242,8 @@ async function submitRoadmapForm(event) {
       const form = document.getElementById('roadmap-form');
       form.innerHTML = `
         <div class="success-message">
-          <h3>✅ Roadmap Sent!</h3>
-          <p>Check your WhatsApp for the download link. If you don't see it, check your spam folder.</p>
-          <p><strong>Next steps:</strong></p>
-          <ul>
-            <li>📱 Check your WhatsApp messages</li>
-            <li>📋 Review the roadmap</li>
-            <li>💬 Reply "HELP" if you need implementation support</li>
-            <li>📅 Reply "INTERESTED" to book a strategy call</li>
-          </ul>
+          <h3 style="color: #FFD700 !important; text-align: center; font-weight: bold;">✅ Roadmap Sent!</h3>
+          <p style="color: #ffd700; font-size: 18px; font-weight: bold; text-align: center;">Check your WhatsApp messages</p>
         </div>
       `;
       
