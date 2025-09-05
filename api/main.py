@@ -149,11 +149,11 @@ async def send_whatsapp_message(name: str, phone: str, download_token: str):
         print(f"📱 From WhatsApp number: {from_whatsapp}")
         print(f"📱 Download URL: {download_url}")
         
-        # Send WhatsApp message using template
+        # Send WhatsApp message with professional format
         message = client.messages.create(
             from_=f"whatsapp:{from_whatsapp}",
             to=f"whatsapp:{phone}",
-            body=f"Hi {name}! Here's your Growth Roadmap: {download_url}"
+            body=f"Hello {name},\n\nHere is the roadmap I mentioned.\n\nIt shows how I turned 20K into 100+ paying clients by launching fast and scaling lean.\n\nPlease get in touch if you'd like to discuss it more, happy to walk you through the steps.\n\nBest,\nNicola Palumbo\n\n*P.S. Your next 100 clients might be closer than you think!*\n\n📥 Download here: {download_url}"
         )
         
         print(f"✅ WhatsApp message sent successfully to {name} ({phone})")
