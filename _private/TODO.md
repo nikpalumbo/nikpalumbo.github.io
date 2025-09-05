@@ -6,6 +6,7 @@ This TODO list tracks all development tasks, improvements, and optimizations for
 ---
 
 ## 🔥 **HIGH PRIORITY - Immediate Action Required**
+- [ ] 🔄 GOOGLE is taking "description": "Custom AI solutions for internal tasks or customer-facing interactions. Tailored agents built on your data, not generic templates." Instead of the meta title. Check why.
 - [ ] 🔄 Add number to Yandex https://yandex.com/sprav/add
 - [ ] 🔄 Add to brandfetch SDW Solutions 
 - [ ] 🔄 The IndexNow protocol enables you to automatically inform search engines about changes on the site: new pages, updating or deleting already indexed pages. Use IndexNow to directly notify Yandex about changes on the site without waiting for the next crawling by the indexing robot.

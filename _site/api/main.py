@@ -136,18 +136,24 @@ async def send_whatsapp_message(name: str, phone: str, download_token: str):
         # Initialize Twilio client
         client = Client(account_sid, auth_token)
         
-        # Create download URL with token (using API server)
-        download_url = f"https://sdw.solutions/api/download/roadmap/{download_token}"
+        # Create download URL with token (configurable via environment)
+        api_base_url = os.getenv('API_BASE_URL', 'http://localhost:8081')
+        if api_base_url == 'http://localhost:8081':
+            # Local development
+            download_url = f"{api_base_url}/api/download/roadmap/{download_token}"
+        else:
+            # Production - use api.sdw.solutions subdomain
+            download_url = f"https://api.sdw.solutions/api/download/roadmap/{download_token}"
         
         print(f"📱 Sending WhatsApp template message to: {phone}")
         print(f"📱 From WhatsApp number: {from_whatsapp}")
         print(f"📱 Download URL: {download_url}")
         
-        # Send WhatsApp message using template
+        # Send WhatsApp message with professional format
         message = client.messages.create(
             from_=f"whatsapp:{from_whatsapp}",
             to=f"whatsapp:{phone}",
-            body=f"Hi {name}! Here's your Growth Roadmap: {download_url}"
+            body=f"Hello {name},\n\nHere is the roadmap I mentioned.\n\nIt shows how I turned 20K into 100+ paying clients by launching fast and scaling lean.\n\nPlease get in touch if you'd like to discuss it more, happy to walk you through the steps.\n\nBest,\nNicola Palumbo\n\nP.S. Your next 100 clients might be closer than you think!\n\nDownload: {download_url}"
         )
         
         print(f"✅ WhatsApp message sent successfully to {name} ({phone})")
