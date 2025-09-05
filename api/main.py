@@ -136,8 +136,8 @@ async def send_whatsapp_message(name: str, phone: str, download_token: str):
         # Initialize Twilio client
         client = Client(account_sid, auth_token)
         
-        # Create download URL with token (using API server)
-        download_url = f"https://sdw.solutions/api/download/roadmap/{download_token}"
+        # Create download URL with token (using Vercel API server)
+        download_url = f"https://nikpalumbo-github-io-git-main-nicolas-projects-2418791c.vercel.app/api/download/roadmap/{download_token}"
         
         print(f"📱 Sending WhatsApp template message to: {phone}")
         print(f"📱 From WhatsApp number: {from_whatsapp}")
