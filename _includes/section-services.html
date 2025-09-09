@@ -39,6 +39,14 @@
           {% if service.price_range %}
           <div class="service-card__pricing">{{ service.price_range }}</div>
           {% endif %}
+          
+          {% if service.title == "Intelligent Growth Systems" %}
+          <div class="service-card__cta">
+            <button class="btn btn--primary" onclick="openBrevoForm()">
+              Download the Intelligent Growth Deck
+            </button>
+          </div>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
