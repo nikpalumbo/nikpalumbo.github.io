@@ -155,8 +155,8 @@ async def send_whatsapp_message(name: str, phone: str, download_token: str):
             message = client.messages.create(
                 from_=f"whatsapp:{from_whatsapp}",
                 to=f"whatsapp:{phone}",
-                content_sid='HX584cd3921e65d16cb56e7730855d4ecc',  # Your template SID
-                content_variables=f'{{"name": "{name}"}}'  # JSON string format - using old template temporarily
+                content_sid='HXbc7fd26070a0ab7a8e24fe52bc90c818',  # Your new approved template SID
+                content_variables=f'{{"name": "{name}", "token": "{download_token}"}}'  # JSON string format with both variables
             )
             print(f"✅ Template message sent successfully: {message.sid}")
         except TwilioException as e:
