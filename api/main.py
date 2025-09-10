@@ -214,23 +214,46 @@ def health_check():
     return {"status": "healthy", "timestamp": datetime.now().isoformat()}
 
 @app.get("/api/roadmap/{token}")
-async def roadmap_landing_page(token: str):
-    """Landing page for roadmap - used in WhatsApp template validation"""
+async def roadmap_static_pdf(token: str):
+    """Static PDF endpoint for WhatsApp template validation"""
     try:
-        # Always serve the HTML page (no token validation for template approval)
+        # Always serve the PDF file (no token validation for template approval)
         # This allows WhatsApp to validate the URL during template approval
-        html_path = os.path.join(os.path.dirname(__file__), 'roadmap.html')
-        if os.path.exists(html_path):
-            with open(html_path, 'r', encoding='utf-8') as f:
-                html_content = f.read()
+        file_path = os.getenv('ROADMAP_FILE_PATH', 'roadmap.pdf')
+        
+        # Handle different deployment environments
+        if not os.path.isabs(file_path):
+            # If relative path, try multiple locations
+            possible_paths = [
+                file_path,  # Current directory
+                os.path.join(os.path.dirname(__file__), file_path),  # Same directory as main.py
+                os.path.join(os.getcwd(), file_path),  # Working directory
+            ]
             
-            from fastapi.responses import HTMLResponse
-            return HTMLResponse(content=html_content)
-        else:
-            return {"error": "Roadmap page not found"}
+            for path in possible_paths:
+                if os.path.exists(path):
+                    file_path = path
+                    break
+            else:
+                print(f"❌ Roadmap file not found in any of these locations: {possible_paths}")
+                return {"error": "Roadmap file not found"}
+        
+        print(f"📁 Serving static roadmap from: {file_path}")
+        with open(file_path, "rb") as file:
+            file_content = file.read()
+        
+        from fastapi.responses import Response
+        return Response(
+            content=file_content,
+            media_type="application/pdf",
+            headers={
+                "Content-Disposition": f"attachment; filename=growth-roadmap.pdf",
+                "Content-Length": str(len(file_content))
+            }
+        )
             
     except Exception as e:
-        print(f"❌ Error serving roadmap page: {e}")
+        print(f"❌ Error serving roadmap PDF: {e}")
         return {"error": "Internal server error"}
 
 @app.get("/api/download/roadmap/{token}")
