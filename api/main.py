@@ -149,12 +149,34 @@ async def send_whatsapp_message(name: str, phone: str, download_token: str):
         print(f"📱 From WhatsApp number: {from_whatsapp}")
         print(f"📱 Download URL: {download_url}")
         
-        # Send WhatsApp message with professional format
-        message = client.messages.create(
-            from_=f"whatsapp:{from_whatsapp}",
-            to=f"whatsapp:{phone}",
-            body=f"Hello {name},\n\nHere is the roadmap I mentioned.\n\nIt shows how I turned 20K into 100+ paying clients by launching fast and scaling lean.\n\nPlease get in touch if you'd like to discuss it more, happy to walk you through the steps.\n\nBest,\nNicola Palumbo\n\nP.S. Your next 100 clients might be closer than you think!\n\nDownload: {download_url}"
-        )
+        # Send WhatsApp message using approved template (required for business messaging)
+        try:
+            # Use the correct Twilio template syntax with proper content variables format
+            message = client.messages.create(
+                from_=f"whatsapp:{from_whatsapp}",
+                to=f"whatsapp:{phone}",
+                content_sid='HX584cd3921e65d16cb56e7730855d4ecc',  # Your template SID
+                content_variables=f'{{"name": "{name}"}}'  # JSON string format - using old template temporarily
+            )
+            print(f"✅ Template message sent successfully: {message.sid}")
+        except TwilioException as e:
+            print(f"❌ Twilio template error: {e}")
+            print(f"❌ Error code: {e.code}")
+            print(f"❌ Error message: {e.msg}")
+            
+            # Fallback to SMS if template fails
+            print(f"📱 Falling back to SMS for {name}")
+            try:
+                sms_message = client.messages.create(
+                    from_=from_whatsapp.replace('whatsapp:', ''),  # Remove whatsapp: prefix for SMS
+                    to=phone,
+                    body=f"Hello {name},\n\nHere is the roadmap I mentioned.\n\nIt shows how I turned 20K into 100+ paying clients by launching fast and scaling lean.\n\nPlease get in touch if you'd like to discuss it more, happy to walk you through the steps.\n\nBest,\nNicola Palumbo\n\nP.S. Your next 100 clients might be closer than you think!\n\nDownload: {download_url}"
+                )
+                print(f"✅ SMS sent successfully: {sms_message.sid}")
+                return True
+            except Exception as sms_error:
+                print(f"❌ SMS fallback also failed: {sms_error}")
+                raise e
         
         print(f"✅ WhatsApp message sent successfully to {name} ({phone})")
         print(f"📱 Message SID: {message.sid}")
@@ -162,9 +184,13 @@ async def send_whatsapp_message(name: str, phone: str, download_token: str):
         
     except TwilioException as e:
         print(f"❌ Twilio WhatsApp error: {e}")
+        print(f"❌ Error code: {e.code}")
+        print(f"❌ Error message: {e.msg}")
         return False
     except Exception as e:
         print(f"❌ Error sending WhatsApp message: {e}")
+        import traceback
+        traceback.print_exc()
         return False
 
 # API Key validation
@@ -186,6 +212,37 @@ def read_root():
 @app.get("/api/health")
 def health_check():
     return {"status": "healthy", "timestamp": datetime.now().isoformat()}
+
+@app.get("/api/roadmap/{token}")
+async def roadmap_landing_page(token: str):
+    """Landing page for roadmap - used in WhatsApp template validation"""
+    try:
+        # Check if token exists (optional validation)
+        conn = await get_database_connection()
+        if conn:
+            token_record = await conn.fetchrow("""
+                SELECT user_id, expires_at FROM download_tokens 
+                WHERE token = $1
+            """, token)
+            await conn.close()
+            
+            if not token_record:
+                return {"error": "Invalid token"}
+        
+        # Serve the HTML page
+        html_path = os.path.join(os.path.dirname(__file__), 'roadmap.html')
+        if os.path.exists(html_path):
+            with open(html_path, 'r', encoding='utf-8') as f:
+                html_content = f.read()
+            
+            from fastapi.responses import HTMLResponse
+            return HTMLResponse(content=html_content)
+        else:
+            return {"error": "Roadmap page not found"}
+            
+    except Exception as e:
+        print(f"❌ Error serving roadmap page: {e}")
+        return {"error": "Internal server error"}
 
 @app.get("/api/download/roadmap/{token}")
 async def download_roadmap(token: str):
@@ -220,6 +277,25 @@ async def download_roadmap(token: str):
         
         # Serve the actual file
         file_path = os.getenv('ROADMAP_FILE_PATH', 'roadmap.pdf')
+        
+        # Handle different deployment environments
+        if not os.path.isabs(file_path):
+            # If relative path, try multiple locations
+            possible_paths = [
+                file_path,  # Current directory
+                os.path.join(os.path.dirname(__file__), file_path),  # Same directory as main.py
+                os.path.join(os.getcwd(), file_path),  # Working directory
+            ]
+            
+            for path in possible_paths:
+                if os.path.exists(path):
+                    file_path = path
+                    break
+            else:
+                print(f"❌ Roadmap file not found in any of these locations: {possible_paths}")
+                raise HTTPException(status_code=404, detail="Roadmap file not found")
+        
+        print(f"📁 Serving roadmap from: {file_path}")
         try:
             with open(file_path, "rb") as file:
                 file_content = file.read()
@@ -294,11 +370,18 @@ async def submit_whatsapp_form(request: WhatsAppRequest):
         whatsapp_sent = await send_whatsapp_message(request.name, request.phone, download_token)
         print(f"📤 WhatsApp send result: {whatsapp_sent}")
         
-        return WhatsAppResponse(
-            success=True,
-            message="Thank you! We'll send the roadmap via WhatsApp shortly.",
-            user_id=user_id
-        )
+        if whatsapp_sent:
+            return WhatsAppResponse(
+                success=True,
+                message="Thank you! We'll send the roadmap via WhatsApp shortly.",
+                user_id=user_id
+            )
+        else:
+            return WhatsAppResponse(
+                success=False,
+                message="Sorry, there was an error sending the roadmap. Please try again or contact us directly.",
+                user_id=user_id
+            )
         
     except Exception as e:
         print(f"❌ Error processing form submission: {e}")
