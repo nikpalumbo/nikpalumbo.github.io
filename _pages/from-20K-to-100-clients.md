@@ -2,9 +2,22 @@
 layout: landing
 title: "From 20K to 100 Clients - Your AI Growth Roadmap"
 description: "Download the complete roadmap that shows how successful companies scale from 20K to 100+ clients using AI-powered growth systems. Get the exact strategies and frameworks."
-keywords: "AI growth roadmap, scaling from 20K to 100 clients, growth systems, startup scaling, client acquisition"
+keywords: "AI growth roadmap, scaling from 20K to 100 clients, growth systems, startup scaling, client acquisition, business growth, startup success, AI automation, lead generation"
 image: '/images/social_roadmap.jpg'
 permalink: /from-20K-to-100-clients/
+author: "Nicola Palumbo"
+date: 2025-01-10
+last_modified_at: 2025-01-10
+og_title: "From 20K to 100 Clients - Your AI Growth Roadmap"
+og_description: "Download the complete roadmap that shows how successful companies scale from 20K to 100+ clients using AI-powered growth systems. Get the exact strategies and frameworks."
+og_image: '/images/social_roadmap.jpg'
+og_type: "article"
+twitter_card: "summary_large_image"
+twitter_title: "From 20K to 100 Clients - Your AI Growth Roadmap"
+twitter_description: "Download the complete roadmap that shows how successful companies scale from 20K to 100+ clients using AI-powered growth systems."
+twitter_image: '/images/social_roadmap.jpg'
+canonical_url: "https://sdw.solutions/from-20K-to-100-clients/"
+robots: "index, follow"
 ---
 
 <style>
