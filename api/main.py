@@ -137,46 +137,32 @@ async def send_whatsapp_message(name: str, phone: str, download_token: str):
         client = Client(account_sid, auth_token)
         
         # Create download URL with token (configurable via environment)
-        api_base_url = os.getenv('API_BASE_URL', 'http://localhost:8081')
-        if api_base_url == 'http://localhost:8081':
-            # Local development
-            download_url = f"{api_base_url}/api/download/roadmap/{download_token}"
-        else:
-            # Production - use api.sdw.solutions subdomain
-            download_url = f"https://api.sdw.solutions/api/download/roadmap/{download_token}"
-        
+
         print(f"📱 Sending WhatsApp template message to: {phone}")
         print(f"📱 From WhatsApp number: {from_whatsapp}")
-        print(f"📱 Download URL: {download_url}")
         
         # Send WhatsApp message using approved template (required for business messaging)
         try:
-            # Use the correct Twilio template syntax with proper content variables format
+            # Use Twilio Python library as per documentation
+            import json
+            
             message = client.messages.create(
-                from_=f"whatsapp:{from_whatsapp}",
+                content_sid="HXb3dbf59c9bb7f7e868a2785d8121714a",
                 to=f"whatsapp:{phone}",
-                content_sid='HXbc7fd26070a0ab7a8e24fe52bc90c818',  # Your new approved template SID
-                content_variables=f'{{"name": "{name}", "token": "{download_token}"}}'  # JSON string format with both variables
+                from_=f"whatsapp:{from_whatsapp}",
+                content_variables=json.dumps({
+                    "name": name,
+                    "token": download_token
+                })
             )
+            
             print(f"✅ Template message sent successfully: {message.sid}")
+                
         except TwilioException as e:
             print(f"❌ Twilio template error: {e}")
             print(f"❌ Error code: {e.code}")
             print(f"❌ Error message: {e.msg}")
-            
-            # Fallback to SMS if template fails
-            print(f"📱 Falling back to SMS for {name}")
-            try:
-                sms_message = client.messages.create(
-                    from_=from_whatsapp.replace('whatsapp:', ''),  # Remove whatsapp: prefix for SMS
-                    to=phone,
-                    body=f"Hello {name},\n\nHere is the roadmap I mentioned.\n\nIt shows how I turned 20K into 100+ paying clients by launching fast and scaling lean.\n\nPlease get in touch if you'd like to discuss it more, happy to walk you through the steps.\n\nBest,\nNicola Palumbo\n\nP.S. Your next 100 clients might be closer than you think!\n\nDownload: {download_url}"
-                )
-                print(f"✅ SMS sent successfully: {sms_message.sid}")
-                return True
-            except Exception as sms_error:
-                print(f"❌ SMS fallback also failed: {sms_error}")
-                raise e
+            raise e
         
         print(f"✅ WhatsApp message sent successfully to {name} ({phone})")
         print(f"📱 Message SID: {message.sid}")
