@@ -217,19 +217,8 @@ def health_check():
 async def roadmap_landing_page(token: str):
     """Landing page for roadmap - used in WhatsApp template validation"""
     try:
-        # Check if token exists (optional validation)
-        conn = await get_database_connection()
-        if conn:
-            token_record = await conn.fetchrow("""
-                SELECT user_id, expires_at FROM download_tokens 
-                WHERE token = $1
-            """, token)
-            await conn.close()
-            
-            if not token_record:
-                return {"error": "Invalid token"}
-        
-        # Serve the HTML page
+        # Always serve the HTML page (no token validation for template approval)
+        # This allows WhatsApp to validate the URL during template approval
         html_path = os.path.join(os.path.dirname(__file__), 'roadmap.html')
         if os.path.exists(html_path):
             with open(html_path, 'r', encoding='utf-8') as f:
