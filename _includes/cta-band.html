@@ -16,6 +16,7 @@
       {% if include.secondary_button %}
         <a href="{{ include.secondary_button.url | default: 'mailto:nicola@sdw.solutions' }}" 
            class="btn btn--secondary"
+           rel="nofollow noopener"
            {% if include.secondary_button.target %}target="{{ include.secondary_button.target }}"{% endif %}
            {% if include.secondary_button.onclick %}onclick="gtag_report_conversion(); gtag('event', 'email_contact', {event_category: 'engagement', event_label: 'email_start', value: 1.0}); {{ include.secondary_button.onclick }}; twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});"{% else %}onclick="gtag_report_conversion(); gtag('event', 'email_contact', {event_category: 'engagement', event_label: 'email_start', value: 1.0}); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});"{% endif %}>
           {{ include.secondary_button.text | default: "Email me to Start" }}

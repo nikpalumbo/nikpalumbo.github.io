@@ -1033,3 +1033,83 @@ function updateAIButtonStates() {
     }
   });
 }
+
+// Handle quote request functionality
+function handleQuoteRequest(serviceType) {
+  console.log('Quote request for service:', serviceType);
+  
+  // Get the email input
+  const emailInput = serviceType === 'ai-agent' ? 
+    document.getElementById('ai-email-input') : 
+    document.getElementById('email-input');
+  
+  if (!emailInput || !emailInput.value) {
+    alert('Please enter your email address first.');
+    return;
+  }
+  
+  // Collect configuration data
+  const configData = collectConfigData(serviceType);
+  
+  // Generate email URL
+  const emailUrl = generateQuoteEmailUrl(configData, serviceType);
+  
+  // Open email client
+  window.open(emailUrl, '_blank');
+}
+
+// Collect configuration data for quote request
+function collectConfigData(serviceType) {
+  const data = {
+    email: serviceType === 'ai-agent' ? 
+      document.getElementById('ai-email-input').value : 
+      document.getElementById('email-input').value,
+    serviceType: serviceType === 'ai-agent' ? 'AI Agent Development' : 'Intelligent Growth Systems'
+  };
+  
+  if (serviceType === 'ai-agent') {
+    // AI Agent specific data
+    data.companyType = document.getElementById('ai-form-company-type')?.value || 'Unknown';
+    data.llmStack = document.getElementById('ai-form-llm-stack')?.value || 'Unknown';
+    data.agentType = document.getElementById('ai-form-agent-type')?.value || 'Unknown';
+    data.integrationComplexity = document.getElementById('ai-form-integration-complexity')?.value || 'Unknown';
+    data.estimatedPrice = document.getElementById('ai-estimated-price')?.textContent || '0';
+  } else {
+    // Growth Systems specific data
+    data.companyType = document.getElementById('form-company-type')?.value || 'Unknown';
+    data.currentStage = document.getElementById('form-current-stage')?.value || 'Unknown';
+    data.channels = document.getElementById('form-channels')?.value || 'Unknown';
+    data.estimatedPrice = document.getElementById('estimated-price')?.textContent || '0';
+  }
+  
+  return data;
+}
+
+// Generate email URL for quote request
+function generateQuoteEmailUrl(configData, serviceType) {
+  const subject = `Quote Request - ${configData.serviceType}`;
+  const body = `Hi Nicola,
+
+I'm interested in getting a detailed quote for ${configData.serviceType}.
+
+My details:
+- Email: ${configData.email}
+- Company Type: ${configData.companyType}
+- Estimated Price: CHF ${configData.estimatedPrice}
+
+${serviceType === 'ai-agent' ? 
+  `AI Agent Details:
+- LLM Stack: ${configData.llmStack}
+- Agent Type: ${configData.agentType}
+- Integration Complexity: ${configData.integrationComplexity}` :
+  `Growth Systems Details:
+- Current Stage: ${configData.currentStage}
+- Channels: ${configData.channels}`
+}
+
+Please send me a detailed proposal.
+
+Best regards`;
+
+  return `mailto:nicola@sdw.solutions?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
