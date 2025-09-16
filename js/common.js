@@ -11,9 +11,11 @@ document.addEventListener("DOMContentLoaded", function() {
   /* =======================================================
   // Menu + Theme Switcher
   ======================================================= */
-  menuToggle.addEventListener("click", () => {
-    menu();
-  });
+  if (menuToggle) {
+    menuToggle.addEventListener("click", () => {
+      menu();
+    });
+  }
 
   function menuOpen() {
     menuList.classList.add("is-open");
