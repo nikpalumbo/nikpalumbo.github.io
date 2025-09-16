@@ -7,6 +7,15 @@ document.addEventListener("DOMContentLoaded", function() {
     toggleTheme = document.querySelector(".toggle-theme-js"),
     btnScrollToTop = document.querySelector(".top");
 
+  // Debug: Check which elements exist
+  console.log('Elements found:', {
+    html: !!html,
+    menuToggle: !!menuToggle,
+    menuList: !!menuList,
+    toggleTheme: !!toggleTheme,
+    btnScrollToTop: !!btnScrollToTop
+  });
+
 
   /* =======================================================
   // Menu + Theme Switcher
@@ -159,17 +168,21 @@ document.addEventListener("DOMContentLoaded", function() {
   // Scroll Top Button
   ======================= */
   window.addEventListener("scroll", function () {
-    window.scrollY > window.innerHeight ? btnScrollToTop.classList.add("is-active") : btnScrollToTop.classList.remove("is-active");
-  });
-
-  btnScrollToTop.addEventListener("click", function () {
-    if (window.scrollY != 0) {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth"
-      })
+    if (btnScrollToTop) {
+      window.scrollY > window.innerHeight ? btnScrollToTop.classList.add("is-active") : btnScrollToTop.classList.remove("is-active");
     }
   });
+
+  if (btnScrollToTop) {
+    btnScrollToTop.addEventListener("click", function () {
+      if (window.scrollY != 0) {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth"
+        })
+      }
+    });
+  }
 
 });
