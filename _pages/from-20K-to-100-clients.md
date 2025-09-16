@@ -163,7 +163,7 @@ robots: "index, follow"
             <small class="form-help">We'll send the roadmap via WhatsApp</small>
           </div>
           
-          <button type="submit" class="form-button" onclick="twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'lead_magnet', content_name: 'Growth Roadmap', content_price: '0'}], status: 'completed'});">
+          <button type="submit" class="form-button" onclick="gtag_report_conversion(); gtag('event', 'roadmap_download', {event_category: 'engagement', event_label: 'intelligent_growth_deck', value: 1.0}); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'lead_magnet', content_name: 'Growth Roadmap', content_price: '0'}], status: 'completed'});">
             <i class="whatsapp-icon">📱</i> Send Me the Roadmap
           </button>
         </form>
