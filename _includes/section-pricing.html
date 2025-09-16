@@ -181,7 +181,7 @@
               <div class="cta-section">
                 <form action="https://formspree.io/f/xzzapqow" method="POST" class="email-simple-form">
                   <input type="email" name="email" id="email-input" placeholder="Enter your email address" class="email-input" required>
-                  <button type="submit" class="btn btn--secondary" id="email-activities-btn">
+                  <button type="submit" class="btn btn--secondary" id="email-activities-btn" onclick="gtag_report_conversion();">
                     <i class="fas fa-calculator"></i>
                     Get Quote Details
                   </button>
@@ -510,7 +510,7 @@
               <div class="cta-section">
                 <form action="https://formspree.io/f/xzzapqow" method="POST" class="email-simple-form">
                   <input type="email" name="email" id="ai-email-input" placeholder="Enter your email address" class="email-input" required>
-                  <button type="submit" class="btn btn--secondary" id="ai-email-activities-btn">
+                  <button type="submit" class="btn btn--secondary" id="ai-email-activities-btn" onclick="gtag_report_conversion();">
                     <i class="fas fa-calculator"></i>
                     Get Quote Details
                   </button>
@@ -553,11 +553,11 @@
       
       <div class="other-service-cta">
         <div class="cta-buttons">
-          <a href="https://calendar.app.google/FgPFpZKyXjmEudQu8" target="_blank" rel="nofollow noopener" class="btn btn--primary" onclick="trackCTA('Book a Call', 'Pricing Website CTA'); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'Smart Conversion Website', content_price: '0'}], status: 'started'});">
+          <a href="https://calendar.app.google/FgPFpZKyXjmEudQu8" target="_blank" rel="nofollow noopener" class="btn btn--primary" onclick="gtag_report_conversion(); trackCTA('Book a Call', 'Pricing Website CTA'); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'Smart Conversion Website', content_price: '0'}], status: 'started'});">
             <i class="fas fa-calendar"></i>
             Book a call
           </a>
-          <a href="mailto:nicola@sdw.solutions?subject=Smart Conversion Website - Let's Start" class="btn btn--secondary" onclick="trackCTA('Email me to Start', 'Pricing Website CTA'); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'Smart Conversion Website', content_price: '0'}], status: 'started'});">
+          <a href="mailto:nicola@sdw.solutions?subject=Smart Conversion Website - Let's Start" class="btn btn--secondary" onclick="gtag_report_conversion(); trackCTA('Email me to Start', 'Pricing Website CTA'); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'Smart Conversion Website', content_price: '0'}], status: 'started'});">
             <i class="fas fa-envelope"></i>
             Email me to start
           </a>

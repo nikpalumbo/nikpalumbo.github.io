@@ -145,12 +145,12 @@ permalink: /about/
      text="Book a Call"
      url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-NcwHUpy2VQTbjOwTbXwdd0qIVBbaPQvmwg8sujsRnwtn8LEFTFOVc_qFpKQKZASWyQwaIJO8?gv=true"
      target="_blank"
-     onclick="trackCTA(\'Book a Call\', \'About Page CTA\')"
+     onclick="gtag_report_conversion(); trackCTA(\'Book a Call\', \'About Page CTA\')"
    '
    secondary_button='
      text="Email me to Start"
      url="mailto:nicola@sdw.solutions"
      target="_blank"
-     onclick="trackCTA(\'Email me to Start\', \'About Page CTA\')"
+     onclick="gtag_report_conversion(); trackCTA(\'Email me to Start\', \'About Page CTA\')"
    '
 %}
