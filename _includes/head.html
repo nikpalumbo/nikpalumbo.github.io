@@ -31,8 +31,13 @@
   
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="https://sdw.solutions/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://sdw.solutions/favicon-32x32.png">
+  <link rel="icon" href="https://sdw.solutions/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="16x16" href="https://sdw.solutions/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://sdw.solutions/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="https://sdw.solutions/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="https://sdw.solutions/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://sdw.solutions/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="https://sdw.solutions/favicon-512x512.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://sdw.solutions/apple-touch-icon.png">
   <link rel="manifest" href="https://sdw.solutions/site.webmanifest">
 
@@ -42,9 +47,12 @@
   <!-- SEO Meta Tags -->
   <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}AI agent development, intelligent growth systems, smart conversion websites, SaaS growth consultant, AI automation, startup growth, SME automation, enterprise AI, Swiss AI developer, conversion optimization{% endif %}">
   <meta name="author" content="Nicola Palumbo">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="language" content="en">
   <meta name="revisit-after" content="7 days">
+  
+  <!-- Theme Color Meta Tag -->
+  <meta name="theme-color" content="#2BB2FC">
   
   <!-- Geographic SEO -->
   <meta name="geo.region" content="CH-SZ">
@@ -97,7 +105,6 @@
   </script>
 
   <!-- Additional SEO signals for HTTPS preference -->
-  <meta name="robots" content="index, follow">
   <link rel="alternate" href="{{ canonical_url | replace:'index.html','' }}" hreflang="en">
   <link rel="alternate" type="application/rss+xml" title="{{ site.data.settings.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
 
@@ -240,30 +247,14 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Smart Data Way GmbH",
-    "alternateName": "SDW Solutions",
-    "url": "{{ site.url }}",
-    "logo": "{{ site.url }}/images/sdw.svg",
-    "description": "Helping companies design products that delight users and accelerate growth",
-    "founder": {
-      "@type": "Person",
-      "name": "Nicola Palumbo",
-      "jobTitle": "AI Product Manager & Growth Strategist",
-      "url": "{{ site.url }}/about/"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Seestrasse 112",
-      "addressLocality": "Freienbach",
-      "postalCode": "8806",
-      "addressCountry": "CH"
-    },
-    "areaServed": ["Switzerland", "Europe", "Global"],
-    "sameAs": [
-      "https://github.com/nikpalumbo",
-      "https://linkedin.com/in/nicolapalumbo"
-    ]
+    "@type": "WebSite",
+    "name": "SDW Solutions",
+    "url": "{{ site.url }}/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ site.url }}/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   }
   </script>
 

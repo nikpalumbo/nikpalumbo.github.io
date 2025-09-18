@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Privacy Policy - Smart Data Way GmbH GDPR Compliance"
+title: "SDW Solutions - Privacy Policy"
 description: "Privacy Policy for Smart Data Way GmbH - How we collect, use, and protect your personal information in compliance with Swiss and EU data protection laws."
 permalink: /privacy-policy/
 ---
