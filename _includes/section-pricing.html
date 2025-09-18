@@ -576,11 +576,11 @@
       
       <div class="other-service-cta">
         <div class="cta-buttons">
-          <a href="https://calendar.app.google/FgPFpZKyXjmEudQu8" target="_blank" rel="nofollow noopener" class="btn btn--primary" onclick="trackCTA('Book a Call', 'Pricing Prototyping CTA'); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'Product-Led Growth Prototyping', content_price: '0'}], status: 'started'});">
+          <a href="https://calendar.app.google/FgPFpZKyXjmEudQu8" target="_blank" rel="nofollow noopener" class="btn btn--primary" onclick="gtag_report_conversion(); gtag('event', 'book_call', {event_category: 'engagement', event_label: 'calendar_booking', value: 1.0}); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'Product-Led Growth Prototyping', content_price: '0'}], status: 'started'});">
             <i class="fas fa-calendar"></i>
             Book a call
           </a>
-          <a href="mailto:nicola@sdw.solutions?subject=Product-Led Growth Prototyping - Let's Start" class="btn btn--secondary" onclick="trackCTA('Email me to Start', 'Pricing Prototyping CTA'); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'Product-Led Growth Prototyping', content_price: '0'}], status: 'started'});">
+          <a href="mailto:nicola@sdw.solutions?subject=Product-Led Growth Prototyping - Let's Start" class="btn btn--secondary" onclick="gtag_report_conversion(); gtag('event', 'email_contact', {event_category: 'engagement', event_label: 'email_start', value: 1.0}); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'Product-Led Growth Prototyping', content_price: '0'}], status: 'started'});">
             <i class="fas fa-envelope"></i>
             Email me to start
           </a>
