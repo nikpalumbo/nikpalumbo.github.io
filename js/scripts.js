@@ -1,44 +1,5 @@
 // Pricing Configurator Initialization
 document.addEventListener('DOMContentLoaded', function() {
-  // Mobile Menu Toggle Functionality
-  const hamburger = document.querySelector('.hamburger');
-  const mainNav = document.querySelector('.main-nav');
-  
-  if (hamburger && mainNav) {
-    hamburger.addEventListener('click', function() {
-      // Toggle hamburger state
-      hamburger.classList.toggle('is-open');
-      
-      // Toggle mobile menu visibility
-      mainNav.classList.toggle('is-visible');
-      
-      // Prevent body scroll when menu is open
-      if (mainNav.classList.contains('is-visible')) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = '';
-      }
-    });
-    
-    // Close mobile menu when clicking on a link
-    const navLinks = mainNav.querySelectorAll('.nav__link');
-    navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        hamburger.classList.remove('is-open');
-        mainNav.classList.remove('is-visible');
-        document.body.style.overflow = '';
-      });
-    });
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-      if (!hamburger.contains(event.target) && !mainNav.contains(event.target)) {
-        hamburger.classList.remove('is-open');
-        mainNav.classList.remove('is-visible');
-        document.body.style.overflow = '';
-      }
-    });
-  }
 
   const configurator = document.getElementById('growth-systems-config');
   const serviceTabs = document.querySelectorAll('.service-tab');
