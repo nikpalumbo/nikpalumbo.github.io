@@ -7,9 +7,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
     padding: 20px 48px;
-    min-height: 60px;
+    min-height: 100px;
     
     /* Add responsive padding to prevent elements from being too close */
     @media (max-width: 1200px) {
@@ -41,7 +40,7 @@
 .logo {
   display: flex;
   align-items: center;
-  margin-top: -6px;
+  margin-top: 0;
   
   /* Add responsive spacing to prevent logo and menu from being too close */
   margin-right: 40px;
@@ -69,9 +68,34 @@
 /* Nav */
 .main-nav {
 
-  @media (max-width: $desktop) {
+  @media (max-width: $desktop) and (min-width: $tablet) {
     position: absolute;
-    top: 88px;
+    top: 130px;
+    right: $base-spacing-unit;
+    z-index: -1;
+    display: block;
+    min-width: 160px;
+    padding: 20px 24px;
+    border-radius: 8px;
+    border-top: 3px solid var(--primary-color);
+    transform: translate3d(0, 10px, 0);
+    opacity: 0;
+    visibility: hidden;
+    background-color: var(--background-color);
+    box-shadow: 0 15px 40px 5px rgba(20, 20, 20, 0.07);
+    transition: all .25s ease;
+
+    &.is-visible {
+      z-index: 100;
+      opacity: 1;
+      visibility: visible;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @media (max-width: $tablet) {
+    position: absolute;
+    top: 140px;
     right: $base-spacing-unit;
     z-index: -1;
     display: block;
@@ -185,12 +209,14 @@
 .nav__list {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 
   .nav__item {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     margin-right: 24px;
     margin-bottom: 0;
+    height: 48px;
 
     &:last-child {
       margin-right: 0;
@@ -201,9 +227,11 @@
       padding: 12px 0;
       font-family: $heading-font-family;
       font-size: 18px;
-      line-height: 1;
+      line-height: 1.2;
       font-weight: 500;
       transition: color .2s ease;
+      text-align: center;
+      white-space: nowrap;
 
       &::before {
         content: "";
