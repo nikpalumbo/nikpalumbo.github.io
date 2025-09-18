@@ -151,6 +151,6 @@ permalink: /about/
      text="Email me to Start"
      url="mailto:nicola@sdw.solutions"
      target="_blank"
-     onclick="gtag_report_conversion(); gtag(\"event\", \"email_contact\", {event_category: \"engagement\", event_label: \"email_start\", value: 1.0}); trackCTA(\"Email me to Start\", \"About Page CTA\")"
+     onclick="gtag_report_conversion(); gtag(\"event\", \"email_contact\", {event_category: \"engagement\", event_label: \"email_start\", value: 1.0})"
    '
 %}
