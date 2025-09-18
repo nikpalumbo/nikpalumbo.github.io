@@ -145,7 +145,7 @@ permalink: /about/
      text="Book a Call"
      url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-NcwHUpy2VQTbjOwTbXwdd0qIVBbaPQvmwg8sujsRnwtn8LEFTFOVc_qFpKQKZASWyQwaIJO8?gv=true"
      target="_blank"
-     onclick="gtag_report_conversion(); gtag(\"event\", \"book_call\", {event_category: \"engagement\", event_label: \"calendar_booking\", value: 1.0}); trackCTA(\"Book a Call\", \"About Page CTA\")"
+     onclick="gtag_report_conversion(); gtag(\"event\", \"book_call\", {event_category: \"engagement\", event_label: \"calendar_booking\", value: 1.0})"
    '
    secondary_button='
      text="Email me to Start"
