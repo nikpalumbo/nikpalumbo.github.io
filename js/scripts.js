@@ -1012,11 +1012,8 @@ function handleQuoteRequest(serviceType) {
   // Collect configuration data
   const configData = collectConfigData(serviceType);
   
-  // Generate email URL
-  const emailUrl = generateQuoteEmailUrl(configData, serviceType);
-  
-  // Open email client
-  window.open(emailUrl, '_blank');
+  // Submit to Formspree
+  submitToFormspree(configData, serviceType);
 }
 
 // Collect configuration data for quote request
@@ -1046,10 +1043,83 @@ function collectConfigData(serviceType) {
   return data;
 }
 
-// Generate email URL for quote request
-function generateQuoteEmailUrl(configData, serviceType) {
-  const subject = `Quote Request - ${configData.serviceType}`;
-  const body = `Hi Nicola,
+// Submit quote request to Formspree
+function submitToFormspree(configData, serviceType) {
+  // Create a hidden form and submit it (this works better with Formspree)
+  const form = document.createElement('form');
+  form.action = 'https://formspree.io/f/xzzapqow';
+  form.method = 'POST';
+  form.style.display = 'none';
+  
+  // Add required fields
+  const emailField = document.createElement('input');
+  emailField.type = 'hidden';
+  emailField.name = '_replyto';
+  emailField.value = configData.email;
+  form.appendChild(emailField);
+  
+  const subjectField = document.createElement('input');
+  subjectField.type = 'hidden';
+  subjectField.name = '_subject';
+  subjectField.value = `Quote Request - ${configData.serviceType}`;
+  form.appendChild(subjectField);
+  
+  // Add service details
+  const serviceField = document.createElement('input');
+  serviceField.type = 'hidden';
+  serviceField.name = 'service_type';
+  serviceField.value = configData.serviceType;
+  form.appendChild(serviceField);
+  
+  const companyField = document.createElement('input');
+  companyField.type = 'hidden';
+  companyField.name = 'company_type';
+  companyField.value = configData.companyType;
+  form.appendChild(companyField);
+  
+  const priceField = document.createElement('input');
+  priceField.type = 'hidden';
+  priceField.name = 'estimated_price';
+  priceField.value = configData.estimatedPrice;
+  form.appendChild(priceField);
+  
+  // Add service-specific fields
+  if (serviceType === 'ai-agent') {
+    const llmField = document.createElement('input');
+    llmField.type = 'hidden';
+    llmField.name = 'llm_stack';
+    llmField.value = configData.llmStack;
+    form.appendChild(llmField);
+    
+    const agentField = document.createElement('input');
+    agentField.type = 'hidden';
+    agentField.name = 'agent_type';
+    agentField.value = configData.agentType;
+    form.appendChild(agentField);
+    
+    const integrationField = document.createElement('input');
+    integrationField.type = 'hidden';
+    integrationField.name = 'integration_complexity';
+    integrationField.value = configData.integrationComplexity;
+    form.appendChild(integrationField);
+  } else {
+    const stageField = document.createElement('input');
+    stageField.type = 'hidden';
+    stageField.name = 'current_stage';
+    stageField.value = configData.currentStage;
+    form.appendChild(stageField);
+    
+    const channelsField = document.createElement('input');
+    channelsField.type = 'hidden';
+    channelsField.name = 'channels';
+    channelsField.value = configData.channels;
+    form.appendChild(channelsField);
+  }
+  
+  // Add the main message
+  const messageField = document.createElement('textarea');
+  messageField.name = 'message';
+  messageField.value = `Hi Nicola,
 
 I'm interested in getting a detailed quote for ${configData.serviceType}.
 
@@ -1071,6 +1141,112 @@ ${serviceType === 'ai-agent' ?
 Please send me a detailed proposal.
 
 Best regards`;
+  form.appendChild(messageField);
+  
+  // Submit the form
+  document.body.appendChild(form);
+  form.submit();
+  document.body.removeChild(form);
+  
+  // Show modern success notification
+  showNotification('Quote request submitted successfully! We\'ll get back to you soon.', 'success');
+}
 
-  return `mailto:nicola@sdw.solutions?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+// Modern notification system
+function showNotification(message, type = 'info') {
+  // Create notification element
+  const notification = document.createElement('div');
+  notification.className = `notification notification--${type}`;
+  notification.innerHTML = `
+    <div class="notification__content">
+      <span class="notification__message">${message}</span>
+      <button class="notification__close" onclick="this.parentElement.parentElement.remove()">×</button>
+    </div>
+  `;
+  
+  // Add styles if not already present
+  if (!document.getElementById('notification-styles')) {
+    const styles = document.createElement('style');
+    styles.id = 'notification-styles';
+    styles.textContent = `
+      .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 10000;
+        max-width: 400px;
+        padding: 16px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .notification--success {
+        background: #10b981;
+        color: white;
+        border-left: 4px solid #059669;
+      }
+      .notification--error {
+        background: #ef4444;
+        color: white;
+        border-left: 4px solid #dc2626;
+      }
+      .notification--info {
+        background: #3b82f6;
+        color: white;
+        border-left: 4px solid #2563eb;
+      }
+      .notification__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .notification__message {
+        flex: 1;
+        margin-right: 12px;
+        line-height: 1.4;
+      }
+      .notification__close {
+        background: none;
+        border: none;
+        color: inherit;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 0;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+      }
+      .notification__close:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+      .notification.show {
+        transform: translateX(0);
+      }
+    `;
+    document.head.appendChild(styles);
+  }
+  
+  // Add to page
+  document.body.appendChild(notification);
+  
+  // Trigger animation
+  setTimeout(() => notification.classList.add('show'), 100);
+  
+  // Auto remove after 5 seconds
+  setTimeout(() => {
+    if (notification.parentElement) {
+      notification.classList.remove('show');
+      setTimeout(() => {
+        if (notification.parentElement) {
+          notification.remove();
+        }
+      }, 300);
+    }
+  }, 5000);
 }
