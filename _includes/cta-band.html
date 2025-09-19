@@ -7,8 +7,8 @@
       {% if include.primary_button %}
         <a href="{{ include.primary_button.url | default: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-NcwHUpy2VQTbjOwTbXwdd0qIVBbaPQvmwg8sujsRnwtn8LEFTFOVc_qFpKQKZASWyQwaIJO8?gv=true' }}" 
            class="book-call-btn"
+           target="_blank"
            rel="nofollow noopener"
-           {% if include.primary_button.target %}target="{{ include.primary_button.target }}"{% endif %}
            {% if include.primary_button.onclick %}onclick="gtag_report_conversion(); gtag('event', 'book_call', {event_category: 'engagement', event_label: 'calendar_booking', value: 1.0}); {{ include.primary_button.onclick }}; twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});"{% else %}onclick="gtag_report_conversion(); gtag('event', 'book_call', {event_category: 'engagement', event_label: 'calendar_booking', value: 1.0}); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});"{% endif %}>
           {{ include.primary_button.text | default: "Book a Call" }}
         </a>

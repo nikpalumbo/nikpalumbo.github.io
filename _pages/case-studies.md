@@ -175,6 +175,7 @@ image: '/images/social_usecases.jpg'
       <div class="cta-band__actions">
                  <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-NcwHUpy2VQTbjOwTbXwdd0qIVBbaPQvmwg8sujsRnwtn8LEFTFOVc_qFpKQKZASWyQwaIJO8?gv=true" 
             class="book-call-btn"
+            target="_blank"
             rel="nofollow noopener"
             onclick="gtag_report_conversion(); gtag('event', 'book_call', {event_category: 'engagement', event_label: 'calendar_booking', value: 1.0}); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});">
           Book a Call
