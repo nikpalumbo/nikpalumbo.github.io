@@ -3,17 +3,16 @@
   margin-bottom: 20px;
 }
 
-/* 1) Make the header a self-contained one-line flex row */
-.row > .header__inner {
-  width: 100% !important;          /* ignore calc(12/12 * 100%) quirks */
-  display: flex !important;
-  align-items: center !important;   /* vertical center for logo, nav, CTA */
-  justify-content: space-between !important;
-  gap: 32px;
-  flex-wrap: nowrap !important;     /* keep everything on one line */
+/* Header alignment fix */
+.header__inner {
+  display: flex;
+  align-items: center;   /* centers logo and menu vertically */
+  justify-content: space-between;
+  width: 100% !important;
+  flex-wrap: nowrap !important;
   padding: 20px 48px;
   
-  /* Add responsive padding to prevent elements from being too close */
+  /* Add responsive padding */
   @media (max-width: 1200px) {
     padding: 20px 32px;
   }
@@ -31,44 +30,40 @@
   }
 }
 
-/* 2) Logo stays fixed size */
-.header__inner .logo { 
-  flex: 0 0 auto; 
-}
-.header__inner .logo__image { 
-  max-height: 48px; 
-  height: auto; 
-  display: block; 
+/* Force logo positioning with maximum specificity - Updated for new image */
+.header .header__inner .logo {
+  display: flex !important;
+  align-items: center !important;
+  margin-right: 20px !important;    /* adjust spacing between logo and menu */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  height: 20px !important;
+  vertical-align: middle !important;
+  flex: 0 0 auto !important;        /* prevent logo from growing */
 }
 
-/* CACHE BUST: $(date +%s) */
-.logo__image {
-  max-height: 48px !important;
-  height: auto !important;
+.header .header__inner .logo .logo__link {
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+  vertical-align: middle !important;
+}
+
+.header .header__inner .logo .logo__image {
   display: block !important;
+  height: 40px !important;          /* reduced logo size */
+  object-fit: contain !important;
+  width: auto !important;
+  max-height: 30px !important;      /* reduced max height */
+  margin: 0 !important;
+  padding: 0 !important;
+  vertical-align: middle !important;
+  position: relative !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  margin-top: 0;
-  flex: 0 0 auto;
-  
-  /* Add responsive spacing to prevent logo and menu from being too close */
-  margin-right: 40px;
-  
-  @media (max-width: $desktop) {
-    margin-right: 32px;
-  }
-  
-  @media (max-width: $tablet) {
-    margin-right: 24px;
-  }
-  
-  @media (max-width: $mobile) {
-    margin-right: 20px;
-  }
-}
+/* Logo styles consolidated above */
 
 /* Logo */
 .logo__link {
@@ -110,14 +105,6 @@
 /* Single yellow dot for active link */
 .header__inner .nav__link.active-link { 
   position: relative; 
-}
-.header__inner .nav__link.active-link::after {
-  content: "•";
-  color: var(--primary-color);
-  position: absolute;
-  right: -12px;
-  top: -0.2em;
-  font-size: 1.2em;
 }
 
 /* Nav */
@@ -298,6 +285,10 @@
           opacity: 1;
           visibility: visible;
           background-color: var(--primary-color);
+        }
+        
+        &::after {
+          display: none; /* Hide the second dot */
         }
       }
     }
