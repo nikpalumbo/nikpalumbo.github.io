@@ -1,41 +1,50 @@
 /* Header */
 .header {
   margin-bottom: 20px;
+}
 
-  .header__inner {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    padding: 20px 48px;
-    min-height: 100px;
-    
-    /* Add responsive padding to prevent elements from being too close */
-    @media (max-width: 1200px) {
-      padding: 20px 32px;
-    }
-    
-    @media (max-width: $desktop) {
-      padding: 20px 24px;
-    }
-    
-    @media (max-width: $tablet) {
-      padding: 20px 20px;
-    }
+/* 1) Make the header a self-contained one-line flex row */
+.row > .header__inner {
+  width: 100% !important;          /* ignore calc(12/12 * 100%) quirks */
+  display: flex !important;
+  align-items: center !important;   /* vertical center for logo, nav, CTA */
+  justify-content: space-between !important;
+  gap: 32px;
+  flex-wrap: nowrap !important;     /* keep everything on one line */
+  padding: 20px 48px;
+  
+  /* Add responsive padding to prevent elements from being too close */
+  @media (max-width: 1200px) {
+    padding: 20px 32px;
   }
-
+  
+  @media (max-width: $desktop) {
+    padding: 20px 24px;
+  }
+  
+  @media (max-width: $tablet) {
+    padding: 20px 20px;
+  }
+  
   @media (max-width: $mobile) {
-    .header__inner {
-      padding: 32px $base-spacing-unit;
-    }
+    padding: 32px $base-spacing-unit;
   }
+}
+
+/* 2) Logo stays fixed size */
+.header__inner .logo { 
+  flex: 0 0 auto; 
+}
+.header__inner .logo__image { 
+  max-height: 48px; 
+  height: auto; 
+  display: block; 
 }
 
 /* CACHE BUST: $(date +%s) */
 .logo__image {
-  max-height: 55px !important;
-  width: auto !important;
+  max-height: 48px !important;
+  height: auto !important;
   display: block !important;
 }
 
@@ -66,6 +75,49 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+}
+
+/* 3) Nav expands and stays on one line */
+.header__inner .main-nav { 
+  flex: 1 1 auto;                   /* allow nav to consume remaining space */
+  display: flex;
+  align-items: center;
+  justify-content: center;          /* center the navigation */
+}
+.header__inner .main-nav__box { 
+  display: flex; 
+  justify-content: center; 
+  width: auto !important;           /* avoid 100% blocks from theme */
+}
+.header__inner .nav__list {
+  display: flex;
+  align-items: center;
+  gap: 28px;                        /* tighten if needed to fit */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: nowrap;                /* no wrapping of items */
+}
+.header__inner .nav__item { 
+  white-space: nowrap; 
+}
+.header__inner .nav__link { 
+  line-height: 1; 
+  text-decoration: none; 
+  color: var(--dark); 
+}
+
+/* Single yellow dot for active link */
+.header__inner .nav__link.active-link { 
+  position: relative; 
+}
+.header__inner .nav__link.active-link::after {
+  content: "•";
+  color: var(--primary-color);
+  position: absolute;
+  right: -12px;
+  top: -0.2em;
+  font-size: 1.2em;
 }
 
 /* Nav */
@@ -240,6 +292,8 @@
       }
 
       &.active-link {
+        position: relative;
+        
         &::before {
           opacity: 1;
           visibility: visible;
@@ -460,26 +514,23 @@
   }
 }
 
-/* Navigation Button Styling */
-/* Book a Call button */
-.nav__link--button.book-call-btn {
-  display: inline-block;
-  padding: 12px 24px;
+/* 4) Button aligns perfectly with text baseline (no sagging on the right) */
+.header__inner .nav__link--button.book-call-btn {
+  display: flex;                    /* center text inside */
+  align-items: center;
+  justify-content: center;
+  height: 48px;                     /* matches logo visual height */
+  padding: 0 24px;
   border-radius: 12px;
   background: #1a2533;
   color: var(--white) !important;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.2;
-  text-align: center;
+  font-weight: 700;
+  line-height: 1;
   white-space: nowrap;
-  transition: background 0.2s ease;
   margin-left: 20px;
-  text-decoration: none;
 }
-
-.nav__link--button.book-call-btn:hover,
-.nav__link--button.book-call-btn:focus {
+.header__inner .nav__link--button.book-call-btn:hover,
+.header__inner .nav__link--button.book-call-btn:focus {
   background: #0f1926;
   text-decoration: none;
 }
@@ -510,4 +561,9 @@
     text-align: center !important;
     display: inline-block !important;
   }
-}/* CACHE BUST: 1758264382 */
+}
+
+/* 5) Safety: if your theme forces the parent .row to wrap, isolate this row */
+.row { /* do NOT change globally if your site relies on it elsewhere */ }
+
+/* CACHE BUST: 1758264382 */
