@@ -9,7 +9,7 @@
            class="book-call-btn"
            target="_blank"
            rel="nofollow noopener"
-           {% if include.primary_button.onclick %}onclick="gtag_report_conversion(); gtag('event', 'book_call', {event_category: 'engagement', event_label: 'calendar_booking', value: 1.0}); {{ include.primary_button.onclick }}; twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});"{% else %}onclick="gtag_report_conversion(); gtag('event', 'book_call', {event_category: 'engagement', event_label: 'calendar_booking', value: 1.0}); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});"{% endif %}>
+           {% if include.primary_button.onclick %}onclick="gtag('event', 'book_call', {event_category: 'engagement', event_label: 'calendar_booking', value: 1.0}); {{ include.primary_button.onclick }}; twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});"{% else %}onclick="gtag('event', 'book_call', {event_category: 'engagement', event_label: 'calendar_booking', value: 1.0}); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});"{% endif %}>
           {{ include.primary_button.text | default: "Book a Call" }}
         </a>
       {% endif %}
