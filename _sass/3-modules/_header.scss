@@ -7,7 +7,7 @@
 .header__inner {
   display: flex;
   align-items: center;   /* centers logo and menu vertically */
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100% !important;
   flex-wrap: nowrap !important;
   padding: 20px 48px;
@@ -34,7 +34,7 @@
 .header .header__inner .logo {
   display: flex !important;
   align-items: center !important;
-  margin-right: 20px !important;    /* adjust spacing between logo and menu */
+  margin-right: 60px !important;    /* adjust spacing between logo and menu */
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   height: 20px !important;
