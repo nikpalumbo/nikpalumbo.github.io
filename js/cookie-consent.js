@@ -197,10 +197,7 @@ class CookieConsent {
         'analytics_storage': 'granted'
       });
       
-      // Re-send page view with consent
-      gtag('config', 'G-SD2QBP5JP5', {
-        'send_page_view': true
-      });
+      // Consent granted - page view already tracked automatically
     }
     
     console.log('Analytics cookies enabled');
