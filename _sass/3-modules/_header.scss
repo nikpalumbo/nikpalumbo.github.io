@@ -5,8 +5,9 @@
   .header__inner {
     position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
     padding: 20px 48px;
     min-height: 100px;
     
@@ -31,16 +32,18 @@
   }
 }
 
+/* CACHE BUST: $(date +%s) */
 .logo__image {
-  max-height: 55px;
-  width: auto;
-  display: block;
+  max-height: 55px !important;
+  width: auto !important;
+  display: block !important;
 }
 
 .logo {
   display: flex;
   align-items: center;
   margin-top: 0;
+  flex: 0 0 auto;
   
   /* Add responsive spacing to prevent logo and menu from being too close */
   margin-right: 40px;
@@ -67,35 +70,11 @@
 
 /* Nav */
 .main-nav {
+  margin-left: auto;
 
-  @media (max-width: $desktop) and (min-width: $tablet) {
+  @media (max-width: $desktop) {
     position: absolute;
-    top: 130px;
-    right: $base-spacing-unit;
-    z-index: -1;
-    display: block;
-    min-width: 160px;
-    padding: 20px 24px;
-    border-radius: 8px;
-    border-top: 3px solid var(--primary-color);
-    transform: translate3d(0, 10px, 0);
-    opacity: 0;
-    visibility: hidden;
-    background-color: var(--background-color);
-    box-shadow: 0 15px 40px 5px rgba(20, 20, 20, 0.07);
-    transition: all .25s ease;
-
-    &.is-visible {
-      z-index: 100;
-      opacity: 1;
-      visibility: visible;
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  @media (max-width: $tablet) {
-    position: absolute;
-    top: 140px;
+    top: 88px;
     right: $base-spacing-unit;
     z-index: -1;
     display: block;
@@ -191,64 +170,36 @@
 .main-nav__box {
   display: flex;
   align-items: center;
-
+  
   /* Add responsive spacing to prevent hamburger menu from being too close to logo */
   @media (max-width: 1200px) {
     margin-left: 20px;
   }
-
+  
   @media (max-width: $desktop) {
     margin-left: 16px;
   }
-
+  
   @media (max-width: $tablet) {
     margin-left: 12px;
-  }
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.search-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  color: var(--text-color);
-  text-decoration: none;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: scale(1.1);
-  }
-  
-  i {
-    font-size: 16px;
-  }
-  
-  @media (max-width: $desktop) {
-    display: none; // Hide on mobile/tablet to save space
   }
 }
 
 .nav__list {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: nowrap;
 
   .nav__item {
     display: flex;
     align-items: center;
-    margin-right: 24px;
+    margin-right: 0;
     margin-bottom: 0;
-    height: 48px;
+    white-space: nowrap;
 
     &:last-child {
       margin-right: 0;
@@ -259,11 +210,11 @@
       padding: 12px 0;
       font-family: $heading-font-family;
       font-size: 18px;
-      line-height: 1.2;
-      font-weight: 500;
+      line-height: 1;
+      font-weight: 600;
       transition: color .2s ease;
-      text-align: center;
-      white-space: nowrap;
+      text-decoration: none;
+      color: var(--dark);
 
       &::before {
         content: "";
@@ -510,6 +461,29 @@
 }
 
 /* Navigation Button Styling */
+/* Book a Call button */
+.nav__link--button.book-call-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 12px;
+  background: #1a2533;
+  color: var(--white) !important;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.nav__link--button.book-call-btn:hover,
+.nav__link--button.book-call-btn:focus {
+  background: #0f1926;
+  text-decoration: none;
+}
+
 .nav__link--button {
   background: var(--primary-color) !important;
   color: #fff !important;
@@ -536,4 +510,4 @@
     text-align: center !important;
     display: inline-block !important;
   }
-}
+}/* CACHE BUST: 1758264382 */

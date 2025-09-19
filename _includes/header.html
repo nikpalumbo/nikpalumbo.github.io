@@ -7,7 +7,7 @@
         <div class="logo">
           <a class="logo__link" href="{{ site.baseurl }}/">
           {% if site.data.settings.logo %}
-            <img class="logo__image" src="{{ site.baseurl }}{{ site.data.settings.logo }}" alt="{{ site.data.settings.title }}">
+            <img class="logo__image" src="{{ site.baseurl }}{{ site.data.settings.logo }}" alt="{{ site.data.settings.title }}" style="max-height: 55px !important; width: auto !important; display: block !important;">
           {% else %}
             {{ site.data.settings.title }}
           {% endif %}
@@ -54,16 +54,11 @@
           </div>
         </nav>
 
-        <div class="header-actions">
-          <a href="/search/" class="search-icon" title="Search SDW Solutions">
-            <i class="fas fa-search"></i>
-          </a>
-          
-          <div class="nav-button">
-            <div class="hamburger">
-              <div></div>
-            </div>
+        <div class="nav-button">
+          <div class="hamburger">
+            <div></div>
           </div>
+
         </div>
 
       </div>

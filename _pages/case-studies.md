@@ -181,6 +181,8 @@ image: '/images/social_usecases.jpg'
         </a>
         <a href="mailto:nicola@sdw.solutions" 
            class="btn btn--secondary"
+           target="_blank"
+           rel="nofollow noopener"
            onclick="gtag_report_conversion(); gtag('event', 'email_contact', {event_category: 'engagement', event_label: 'email_start', value: 1.0}); twq('event', 'tw-qfk70-qfk72', {contents: [{content_type: 'service', content_name: 'AI Growth Consultation', content_price: '0'}], status: 'started'});">
           Email me to Start
         </a>
