@@ -1012,11 +1012,8 @@ function handleQuoteRequest(serviceType) {
   // Collect configuration data
   const configData = collectConfigData(serviceType);
   
-  // Generate email URL
-  const emailUrl = generateQuoteEmailUrl(configData, serviceType);
-  
-  // Open email client
-  window.open(emailUrl, '_blank');
+  // Submit to Formspree
+  submitToFormspree(configData, serviceType);
 }
 
 // Collect configuration data for quote request
@@ -1073,4 +1070,207 @@ Please send me a detailed proposal.
 Best regards`;
 
   return `mailto:nicola@sdw.solutions?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+// Submit quote request to Formspree
+function submitToFormspree(configData, serviceType) {
+  // Create a hidden form and submit it (this works better with Formspree)
+  const form = document.createElement('form');
+  form.action = 'https://formspree.io/f/xzzapqow';
+  form.method = 'POST';
+  form.style.display = 'none';
+  
+  // Add required fields
+  const emailField = document.createElement('input');
+  emailField.type = 'hidden';
+  emailField.name = '_replyto';
+  emailField.value = configData.email;
+  form.appendChild(emailField);
+  
+  const subjectField = document.createElement('input');
+  subjectField.type = 'hidden';
+  subjectField.name = '_subject';
+  subjectField.value = `Quote Request - ${configData.serviceType}`;
+  form.appendChild(subjectField);
+  
+  // Add service details
+  const serviceTypeField = document.createElement('input');
+  serviceTypeField.type = 'hidden';
+  serviceTypeField.name = 'service_type';
+  serviceTypeField.value = configData.serviceType;
+  form.appendChild(serviceTypeField);
+  
+  const companyTypeField = document.createElement('input');
+  companyTypeField.type = 'hidden';
+  companyTypeField.name = 'company_type';
+  companyTypeField.value = configData.companyType;
+  form.appendChild(companyTypeField);
+  
+  const estimatedPriceField = document.createElement('input');
+  estimatedPriceField.type = 'hidden';
+  estimatedPriceField.name = 'estimated_price';
+  estimatedPriceField.value = configData.estimatedPrice;
+  form.appendChild(estimatedPriceField);
+  
+  // Add service-specific fields
+  if (serviceType === 'ai-agent') {
+    const llmStackField = document.createElement('input');
+    llmStackField.type = 'hidden';
+    llmStackField.name = 'llm_stack';
+    llmStackField.value = configData.llmStack;
+    form.appendChild(llmStackField);
+    
+    const agentTypeField = document.createElement('input');
+    agentTypeField.type = 'hidden';
+    agentTypeField.name = 'agent_type';
+    agentTypeField.value = configData.agentType;
+    form.appendChild(agentTypeField);
+    
+    const integrationComplexityField = document.createElement('input');
+    integrationComplexityField.type = 'hidden';
+    integrationComplexityField.name = 'integration_complexity';
+    integrationComplexityField.value = configData.integrationComplexity;
+    form.appendChild(integrationComplexityField);
+  } else {
+    const currentStageField = document.createElement('input');
+    currentStageField.type = 'hidden';
+    currentStageField.name = 'current_stage';
+    currentStageField.value = configData.currentStage;
+    form.appendChild(currentStageField);
+    
+    const channelsField = document.createElement('input');
+    channelsField.type = 'hidden';
+    channelsField.name = 'channels';
+    channelsField.value = configData.channels;
+    form.appendChild(channelsField);
+  }
+  
+  // Add the main message
+  const messageField = document.createElement('textarea');
+  messageField.name = 'message';
+  messageField.value = `Hi Nicola,
+
+I'm interested in getting a detailed quote for ${configData.serviceType}.
+
+My details:
+- Email: ${configData.email}
+- Company Type: ${configData.companyType}
+- Estimated Price: CHF ${configData.estimatedPrice}
+
+${serviceType === 'ai-agent' ? 
+  `AI Agent Details:
+- LLM Stack: ${configData.llmStack}
+- Agent Type: ${configData.agentType}
+- Integration Complexity: ${configData.integrationComplexity}` :
+  `Growth Systems Details:
+- Current Stage: ${configData.currentStage}
+- Channels: ${configData.channels}`
+}
+
+Please send me a detailed proposal.
+
+Best regards`;
+  form.appendChild(messageField);
+  
+  // Submit the form
+  document.body.appendChild(form);
+  form.submit();
+  document.body.removeChild(form);
+  
+  // Show modern success notification
+  showNotification('Quote request submitted successfully! We\'ll get back to you soon.', 'success');
+}
+
+// Show modern notification
+function showNotification(message, type = 'info') {
+  // Create notification element
+  const notification = document.createElement('div');
+  notification.className = `notification notification--${type}`;
+  notification.innerHTML = `
+    <div class="notification__content">
+      <span class="notification__message">${message}</span>
+      <button class="notification__close" onclick="this.parentElement.parentElement.remove()">×</button>
+    </div>
+  `;
+  
+  // Add styles if not already present
+  if (!document.getElementById('notification-styles')) {
+    const styles = document.createElement('style');
+    styles.id = 'notification-styles';
+    styles.textContent = `
+      .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 10000;
+        max-width: 400px;
+        padding: 16px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .notification--success {
+        background: #10b981;
+        color: white;
+      }
+      .notification--error {
+        background: #ef4444;
+        color: white;
+      }
+      .notification--info {
+        background: #3b82f6;
+        color: white;
+      }
+      .notification__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .notification__message {
+        flex: 1;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+      .notification__close {
+        background: none;
+        border: none;
+        color: inherit;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 0;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        opacity: 0.8;
+      }
+      .notification__close:hover {
+        opacity: 1;
+        background: rgba(255, 255, 255, 0.2);
+      }
+      .notification.show {
+        transform: translateX(0);
+      }
+    `;
+    document.head.appendChild(styles);
+  }
+  
+  // Add to page, trigger animation, auto remove
+  document.body.appendChild(notification);
+  setTimeout(() => notification.classList.add('show'), 100);
+  setTimeout(() => {
+    if (notification.parentElement) {
+      notification.classList.remove('show');
+      setTimeout(() => {
+        if (notification.parentElement) {
+          notification.remove();
+        }
+      }, 300);
+    }
+  }, 5000);
 }
