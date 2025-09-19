@@ -27,14 +27,7 @@
     }
   });
 
-  // Track page type for better segmentation (removed duplicate page_view event)
-  {% if page.layout %}
-  gtag('event', 'page_data', {
-    'page_type': '{{ page.layout }}',
-    'page_title': '{{ page.title | default: site.data.settings.title }}',
-    'page_location': '{{ site.url }}{{ page.url }}'
-  });
-  {% endif %}
+  // Page view tracking is handled automatically by send_page_view: true above
 
   // Track case study views
   {% if page.layout == 'work' %}
