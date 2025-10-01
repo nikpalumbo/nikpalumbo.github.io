@@ -4,9 +4,10 @@
 <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.settings.description }}{% endif %}">
 <meta property="og:url" content="{{ canonical_url | replace:'index.html','' }}">
 <meta property="og:site_name" content="SDW Solutions">
-<meta property="og:image" content="{% if page.image %}https://sdw.solutions{{ page.image }}?v={{ site.time | date: '%s' }}{% else %}https://sdw.solutions/images/social_share.jpg?v={{ site.time | date: '%s' }}{% endif %}">
+<meta property="og:image" content="https://sdw.solutions{{ page.image }}?v={{ site.time | date: '%s' }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nicola Palumbo - AI Product Manager & Growth Strategist">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter Card Meta Tags -->
@@ -15,7 +16,8 @@
 <meta name="twitter:creator" content="@sdwsolutionsch">
 <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.data.settings.title }}{% endif %}">
 <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.settings.description }}{% endif %}">
-<meta name="twitter:image" content="{% if page.image %}https://sdw.solutions{{ page.image }}?v={{ site.time | date: '%s' }}{% else %}https://sdw.solutions/images/social_share.jpg?v={{ site.time | date: '%s' }}{% endif %}">
+<meta name="twitter:image" content="https://sdw.solutions{{ page.image }}?v={{ site.time | date: '%s' }}">
+<meta name="twitter:image:alt" content="Nicola Palumbo - AI Product Manager & Growth Strategist">
 
 <!-- LinkedIn Meta Tags -->
 <meta property="article:author" content="Nicola Palumbo">

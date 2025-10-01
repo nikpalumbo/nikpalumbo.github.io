@@ -1,7 +1,7 @@
 ---
 layout: landing
 title: "SDW Solutions - Soluzioni Digitali Complete"
-description: "La crescita digitale, senza pensieri. Dalla visibilità online al supporto informatico quotidiano, fino alla protezione dei tuoi dati: soluzioni pensate per far crescere la tua attività in sicurezza."
+description: "La crescita digitale, senza pensieri. Dalla visibilità online al supporto informatico quotidiano, fino alla protezione dei tuoi dati: soluzioni complete."
 keywords: "soluzioni digitali, visibilità online, sito web, supporto informatico, protezione dati, consulenza digitale, SDW Solutions, checkup gratuito"
 image: '/images/social_home.jpg'
 permalink: /soluzioni-digitali-complete/

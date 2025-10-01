@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "SDW Solutions - About Nicola Palumbo, AI Expert"
-description: "Swiss-based SaaS founder who scaled to Fortune 500 clients. AI product manager and growth strategist expert in intelligent systems, AI agent development, and smart conversion websites for startups, SMEs, and enterprises."
+description: "Swiss-based SaaS founder who scaled to Fortune 500 clients. AI product manager and growth strategist expert in intelligent systems and AI agent development."
 keywords: "Nicola Palumbo, AI product manager, growth strategist, SaaS founder, Swiss AI expert, Fortune 500 experience, startup growth, AI systems"
 image: '/images/social_about.jpg'
 permalink: /about/

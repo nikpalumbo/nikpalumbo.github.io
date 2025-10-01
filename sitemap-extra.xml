@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
+  <!-- Homepage -->
+  <url>
+    <loc>https://sdw.solutions/</loc>
+    <lastmod>2025-01-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
   <!-- Homepage Anchor Sections (Hash-based URLs) -->
   <url>
     <loc>https://sdw.solutions/#services</loc>
