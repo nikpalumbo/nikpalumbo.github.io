@@ -4,248 +4,188 @@
 {% include head.html %}
 
 <style>
-/* Italian Landing Page Styles - Scoped to .landing-page only */
 .landing-page {
+  font-family: 'Rubik', sans-serif;
   min-height: 100vh;
   background: white;
-  overflow: auto;
-  font-family: 'Rubik', sans-serif;
+}
+
+.landing-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 1000;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo img {
+  max-height: 45px;
+}
+
+.header-cta {
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.landing-main {
+  display: flex;
+  min-height: 100vh;
+  padding-top: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.landing-left {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.landing-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.landing-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.services-list {
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #FFE01A;
+  padding: 1.5rem;
+}
+
+.service-point {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #4b5563;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.service-point:before {
+  content: "✓";
+  color: #FFE01A;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.landing-right {
+  flex: 1;
+  background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: white;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #1f2937;
+  background-color: white;
+}
+
+.form-button {
+  width: 100%;
+  background: #fbc51e;
+  color: #1f2937;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 1rem;
+  }
   
-  .landing-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: white;
-    z-index: 1000;
-    padding: 1rem 0;
-    
-    .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-left: 2rem;
-      padding-right: 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      
-      .logo {
-        display: flex;
-        align-items: center;
-        margin-left: 2rem;
-        
-        img {
-          max-height: 45px;
-          width: auto;
-          display: block;
-          vertical-align: middle;
-        }
-      }
-      
-      .header-cta {
-        background: #000;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 8px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.2s ease;
-        display: flex;
-        align-items: center;
-        
-        &:hover {
-          background: #111827;
-          color: white;
-          transform: translateY(-1px);
-        }
-      }
-    }
+  .header-cta {
+    padding: 8px 16px;
+    font-size: 0.8rem;
   }
   
   .landing-main {
-    display: flex;
-    height: calc(100vh - 80px);
-    padding-top: 80px;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 0;
-    
-    .landing-left {
-      flex: 1;
-      margin-top: 0;
-      padding: 0rem 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 100%;
-      
-      .landing-title {
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: #000;
-        margin-bottom: 0.8rem;
-        line-height: 1.2;
-      }
-      
-      .landing-subtitle {
-        font-size: 1rem;
-        line-height: 1.4;
-        color: #666;
-        margin-bottom: 1.2rem;
-        font-weight: 400;
-      }
-      
-      .services-list {
-        background: #f8f9fa;
-        border-radius: 12px;
-        border-left: 4px solid #FFE01A;
-        padding: 1.2rem;
-        margin-bottom: 0;
-        
-        .service-point {
-          font-size: 0.9rem;
-          line-height: 1.4;
-          color: #4b5563;
-          margin-bottom: 0.5rem;
-          padding-left: 1.5rem;
-          position: relative;
-          
-          &:before {
-            content: "✓";
-            color: #FFE01A;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-          }
-          
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-      }
-    }
-    
-    .landing-right {
-      flex: 1;
-      background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
-      padding: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      margin-top: 0;
-      min-height: 500px;
-      
-      .form-container {
-        width: 100%;
-        max-width: 350px;
-        padding: 1rem;
-        
-        .form-title {
-          font-size: 1.4rem;
-          font-weight: 600;
-          color: white;
-          margin-bottom: 1rem;
-          text-align: center;
-          line-height: 1.3;
-        }
-        
-        .form-group {
-          margin-bottom: 1rem;
-          
-          label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: white;
-          }
-          
-          input {
-            width: 100%;
-            padding: 0.6rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            color: #1f2937;
-            background-color: white;
-            
-            &:focus {
-              outline: none;
-              border-color: #FFE01A;
-              box-shadow: 0 0 0 2px rgba(255, 224, 26, 0.2);
-            }
-            
-            &::placeholder {
-              color: #6b7280;
-            }
-          }
-        }
-        
-        .form-button {
-          width: 100%;
-          background: #fbc51e;
-          color: #1f2937;
-          border: none;
-          padding: 0.8rem 1.2rem;
-          font-size: 0.9rem;
-          font-weight: 600;
-          border-radius: 6px;
-          cursor: pointer;
-          transition: all 0.2s ease;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.5rem;
-          
-          &:hover {
-            background: #e6b800;
-            color: #1f2937;
-            transform: translateY(-1px);
-          }
-          
-          i {
-            font-size: 0.9rem;
-          }
-        }
-      }
-    }
+    flex-direction: column;
+    padding-top: 70px;
   }
   
-  // Mobile responsive
-  @media (max-width: 768px) {
-    .landing-main {
-      flex-direction: column;
-      height: auto;
-      padding-top: 70px;
-      padding-bottom: 2rem;
-      
-      .landing-left,
-      .landing-right {
-        padding: 1.5rem 1rem;
-        height: auto;
-      }
-      
-      .landing-left {
-        .landing-title {
-          font-size: 1.8rem;
-        }
-        
-        .landing-subtitle {
-          font-size: 1rem;
-        }
-      }
-      
-      .landing-right {
-        .form-container {
-          .form-title {
-            font-size: 1.3rem;
-          }
-        }
-      }
-    }
+  .landing-left,
+  .landing-right {
+    padding: 1.5rem;
+  }
+  
+  .landing-title {
+    font-size: 2rem;
+  }
+  
+  .form-title {
+    font-size: 1.5rem;
   }
 }
 </style>

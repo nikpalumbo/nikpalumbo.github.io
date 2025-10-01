@@ -21,92 +21,245 @@ robots: "index, follow"
 ---
 
 <style>
-/* Hide footer for landing page */
-.footer {
-  display: none !important;
-}
-
-/* Hide the main navigation to prevent double header */
-.main-nav {
-  display: none !important;
-}
-
-/* Fix landing page layout and prevent scrolling */
 .landing-page {
+  font-family: 'Rubik', sans-serif;
   min-height: 100vh;
-  overflow: hidden;
+  background: white;
 }
 
-.landing-page .landing-main {
-  min-height: calc(100vh - 80px);
+.landing-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo img {
+  max-height: 45px;
+}
+
+.header-cta {
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.landing-main {
+  display: flex;
+  min-height: 100vh;
   padding-top: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.landing-left {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.landing-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.landing-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #FFE01A;
+  margin-top: 2rem;
+}
+
+.testimonial-content {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-author {
   display: flex;
   align-items: center;
 }
 
-/* Custom styles for form text colors and positioning */
-.landing-page .form-help {
-  color: white !important;
+.testimonial-author img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.author-info .author-name {
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 0.25rem;
+}
+
+.author-info .author-title {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.landing-right {
+  flex: 1;
+  background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.urgency-text {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #e5e7eb;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: white;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #1f2937;
+  background-color: white;
+}
+
+.form-help {
+  color: white;
   font-size: 14px;
-  margin-top: 0 !important;
-  margin-bottom: 8px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
   text-align: center;
   display: block;
 }
 
-.landing-page .success-message {
-  color: white !important;
+.form-button {
+  width: 100%;
+  background: #fbc51e;
+  color: #1f2937;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.landing-page .success-message h3,
-.landing-page .success-message p,
-.landing-page .success-message ul,
-.landing-page .success-message li {
-  color: white !important;
+.success-message {
+  color: white;
 }
 
-.landing-page .error-message {
-  color: white !important;
+.success-message h3,
+.success-message p,
+.success-message ul,
+.success-message li {
+  color: white;
 }
 
-.landing-page .error-message h3,
-.landing-page .error-message p {
-  color: white !important;
+.error-message {
+  color: white;
 }
 
-/* Fix hover issues - prevent second logo and unwanted hover effects */
-.landing-page .landing-header {
-  position: relative;
-  z-index: 1000;
+.error-message h3,
+.error-message p {
+  color: white;
 }
 
-.landing-page .landing-header .logo {
-  position: relative;
-  z-index: 1001;
-}
-
-.landing-page .landing-header .header-cta {
-  position: relative;
-  z-index: 1001;
-}
-
-/* Prevent any unwanted hover effects on the landing page */
-.landing-page *:hover {
-  transform: none !important;
-}
-
-.landing-page .form-button:hover {
-  transform: translateY(-1px) !important;
-}
-
-/* Ensure input text is visible */
-.landing-page input {
-  color: #1f2937 !important;
-  background-color: white !important;
-}
-
-.landing-page input::placeholder {
-  color: #6b7280 !important;
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 1rem;
+  }
+  
+  .logo img {
+    max-height: 35px;
+  }
+  
+  .header-cta {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+  
+  .landing-main {
+    flex-direction: column;
+    padding-top: 70px;
+  }
+  
+  .landing-left,
+  .landing-right {
+    padding: 1.5rem;
+  }
+  
+  .landing-title {
+    font-size: 2rem;
+  }
+  
+  .form-title {
+    font-size: 1.5rem;
+  }
 }
 </style>
 
