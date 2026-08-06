@@ -11,7 +11,10 @@ on:
       - '**_config.yml'
       - '**Gemfile**'
       - '**Gemfile.lock**'
+      - 'clients/**'
+      - '.github/workflows/deploy-website.yml'
       - '!api/**'
+  workflow_dispatch:
   pull_request:
     branches: [ main ]
     paths:
@@ -22,6 +25,7 @@ on:
       - '**_config.yml'
       - '**Gemfile**'
       - '**Gemfile.lock**'
+      - 'clients/**'
       - '!api/**'
 
 jobs:
